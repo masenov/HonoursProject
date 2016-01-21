@@ -1,4 +1,4 @@
-PWD /media/Data/Programming/UoE Year 4 Sem2/Honours Project/Report
+PWD /media/Data/Programming/UoE Year 4 Sem2/HonoursProject/Report
 INPUT /usr/share/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
 INPUT base.tex
@@ -52,8 +52,6 @@ INPUT /usr/share/texmf-dist/tex/latex/parskip/parskip.sty
 INPUT /usr/share/texmf-dist/tex/latex/parskip/parskip.sty
 INPUT /usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
 INPUT /usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
-INPUT /usr/share/texmf-dist/tex/latex/float/float.sty
-INPUT /usr/share/texmf-dist/tex/latex/float/float.sty
 INPUT /usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
 INPUT /usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
 INPUT /usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -70,3 +68,4 @@ INPUT /usr/share/texmf-dist/tex/latex/was/gensymb.sty
 INPUT /usr/share/texmf-dist/tex/latex/was/gensymb.sty
 INPUT /usr/share/texmf-dist/tex/latex/floatrow/floatrow.sty
 INPUT /usr/share/texmf-dist/tex/latex/floatrow/floatrow.sty
+INPUT /usr/share/texmf-dist/tex/latex/rotating/rotating.sty

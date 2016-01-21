@@ -1,4 +1,34 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{amirikian2000directional}
+Bagrat Amirikian and Apostolos~P Georgopulos.
+\newblock Directional tuning profiles of motor cortical cells.
+\newblock {\em Neuroscience research}, 36(1):73--79, 2000.
+
+\bibitem{baggott2010investigating}
+Matthew~J Baggott, Jennifer~D Siegrist, Gantt~P Galloway, Lynn~C Robertson,
+  Jeremy~R Coyle, and John~E Mendelson.
+\newblock Investigating the mechanisms of hallucinogen-induced visions using 3,
+  4-methylenedioxyamphetamine (mda): A randomized controlled trial in humans.
+\newblock {\em PloS one}, 5(12):1--13, 2010.
+
+\bibitem{cavanaugh2002nature}
+James~R Cavanaugh, Wyeth Bair, and J~Anthony Movshon.
+\newblock Nature and interaction of signals from the receptive field center and
+  surround in macaque v1 neurons.
+\newblock {\em Journal of neurophysiology}, 88(5):2530--2546, 2002.
+
+\bibitem{vision-computation}
+Vision computation from neurons~to perception.
+\newblock {Orientation Selectivity}.
+\newblock \url{http://fourier.eng.hmc.edu/e180/lectures/v1/node6}, 2016.
+\newblock [Online; accessed 21-January-2016].
+
+\bibitem{retinotopic-mapping}
+Vision computation from neurons~to perception.
+\newblock {Retinotopic Mapping}.
+\newblock \url{http://fourier.eng.hmc.edu/e180/lectures/v1/node3.html}, 2016.
+\newblock [Online; accessed 21-January-2016].
 
 \bibitem{deangelis1995receptive}
 Gregory~C DeAngelis, Izumi Ohzawa, and Ralph~D Freeman.
@@ -12,6 +42,12 @@ H.~K. Hartline.
 \newblock {\em American Journal of Physiology -- Legacy Content},
   130(4):700--711, 1940.
 
+\bibitem{hubel1968receptive}
+David~H Hubel and Torsten~N Wiesel.
+\newblock Receptive fields and functional architecture of monkey striate
+  cortex.
+\newblock {\em The Journal of physiology}, 195(1):215--243, 1968.
+
 \bibitem{keemink2015unified}
 Sander~W Keemink and Mark~CW van Rossum.
 \newblock A unified account of tilt illusions, association fields, and contour
@@ -23,5 +59,13 @@ Emily Knight, Arthur Shapiro, and Zhong-Lin Lu.
 \newblock Drastically different percepts of five illusions in foveal and
   peripheral vision reveal their differences in representing visual phase.
 \newblock {\em Journal of Vision}, 8(6):967--967, 2008.
+
+\bibitem{receptive-fields}
+Ashish Ranpura.
+\newblock {Overview of Receptive Fields}.
+\newblock
+  \url{http://brainconnection.brainhq.com/2004/03/06/overview-of-receptive-fields/},
+  2016.
+\newblock [Online; accessed 19-January-2016].
 
 \end{thebibliography}

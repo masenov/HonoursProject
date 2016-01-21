@@ -50,9 +50,15 @@ Acknowledgements go here.
 
 \chapter{Introduction}
 
-This paper develops a model, based and built upon the one described in the recent elastica paper \cite{keemink2015unified}. Although there are models explaining similar phenomenas, illusions as effects separately, the neural model described claims to have all of those properties, unifying them in one model. However all the results obtained were obtained statically with only one pass through the model. As mentioned in further development, adding dynamics to some of the already presented illusions could lead to some interesting behavior.
+In processing visual information, our brain seems to favor continuity and prioritize the greater whole, rather than individual details. Sometimes this ability serves us well, ex. when trying to find a pattern among random noise. However in other cases this leads to illusions as well (fig.\ref{illusion1}, fig.\ref{illusion2}). 
+
+This paper develops a model, based and built upon the one described in the recent elastica paper \cite{keemink2015unified}. Although there are models explaining similar phenomenas, illusions and effects separately, the neural model described claims to have all of those properties, unifying them in one model. However all the results obtained were obtained statically with only one pass through the model. As mentioned in further development, adding dynamics to some of the already presented illusions could lead to some interesting behavior.
 
 
+
+
+\plotfigure{illusion1}{\bt{Visual illusion 1}\\The orientations of the small circles inside seem tilted. \cite{baggott2010investigating}}
+\plotfigure{illusion2}{\bt{Visual illusion 2}\\The lines do not seem parallel, when it reality they are. \cite{vision-computation}}
 
 
 
@@ -68,31 +74,31 @@ In explaining the model setup, it is important to first introduce some neuroscie
 
 Visual field is the area we can see with our eyes. The initial information we receive is changes in light from our retina. This then gets processed by the lateral geniculate nucleus (LGN) and passed down to the Primary visual cortex (V1). V1 receives information about orientation information about the different parts of our visual field. 
 
-\plotfigure{visual_fields}{Information processing from retina, LGN cells and V1 orientation selective cells}
+\plotfigure{visual_fields}{Information processing from retina, LGN cells and V1 orientation selective cells \cite{receptive-fields}}
 
 Precisely how this information is processed in the main interest of this project. Most of the information we perceive is close to the central or foveal vision, which could lead to interesting behavior \cite{knight2008drastically}. However we will ignore this details in our experiments.
 
-\plotfigure{RetinotopicMapping}{Test}
+\plotfigure{RetinotopicMapping}{Central and peripheral vision\cite{retinotopic-mapping}. Substantial number of the cells in the retina are devoted to only a small part of our visual field, or central vision. Although relevant to the project, we will ignore this detail, for the benefit of simpler model}
 
 \section{Receptive fields}
 
 One of the first records on the topic explains receptive fields as the part of visual field, which affect a specific neuron \cite{Hartline700}. An alternative, more general definition is a region of the sensory space, which can stimulate a given sensory neuron.  It was later discovered that time plays a role as well, making the definition more complicated \cite{deangelis1995receptive}. In general, outside of the visual cortex, a receptive field is defined as a region of the sensory space, which can stimulate a given sensory neuron. In our model, described later, we focus on the spatial and ignore the temporal separation of receptive fields.
 The definition of receptive field of a neuron has evolved over time.
 
-\plotfigure{F4large}{Test}
+\plotfigure{F4large}{\bt{Effect of the context on receptive field on a neuron}\\The firing of neurons is indirectly modulated and their response shifted, based on the stimuli just outside of their receptive field. This leads to some of the complications of explaining receptive field. Even though a certain neuron is tuned for only a certain part of our vision field, for certain orientation, it can be affected by nearby neurons. If we take this to the extreme, then a receptive field is based on all the sensory input we receive.\cite{cavanaugh2002nature}}
 
 \section{Tuning curves}
 
 Different orientation selective neurons are tuned for different orientation at a specific part of the visual field, defined by their receptive field. However they spike not only when the preferred orientation is presented, but also on similar to its preferred orientation. The intensity of spiking, when different orientations are presented, forms a bell shaped curve with a peak the preferred orientation of the neuron. 
 
-\plotfigure{HubelWiesel}{Test}
+\plotfigure{HubelWiesel}{Test\cite{hubel1968receptive}}
 
 
 \section{Population coding}
 
 Our final perception of the orientation in a specific part of our visual field is based on the all the spiking of the neurons with that receptive field. Their directions and magnitude form vectors, which when added together give the final perceived orientation.
 
-\plotfigure{populationCoding}{Test}  
+\plotfigure{populationCoding}{Test\cite{amirikian2000directional}}  
 
 \chapter{Design}
 
@@ -103,7 +109,9 @@ The input our model receives is a matrix of numbers from the interval $0-1$, rep
 
 \plottwofigures{input_random}{input_structure}{Visualization of sample input(output) to the model. (A) Random orientations. (B) All orientations from $0\degree$ to $180\degree$, for every $1.8\degree$.}
 
-For every single orientation of the input (every single bar in fig.\ref{input_random}), we have different neurons tuned for different orientations (fig.\ref{neuron2}). 
+For every single orientation of the input (every single bar in fig.\ref{input_random}), we have different neurons tuned for different orientations.
+
+\plottwofigures{stacked_neurons3}{stacked_neurons2}{\bt{Visualization of the orientation selective neurons and their relationship with the presented input.} (A) Presented orientation(left) and responses of the orientation selective neurons(right). The more saturated the color, the stronger the response is. The neurons will spike with higher intensity, depending on the difference of the presented orientation and their preferred orientations. All the responses are combined, giving the final perceived orientation. (B) Schematic representation of the input and orientation selective neurons. Every orientation bar has its own stack of orientation selective neurons (only the first few are shown).} 
 
 \plotfigureS{neuron2}{Orientation selective neurons for a single orientation of our visual field. The nine neurons will spike with higher intensity, depending on the difference of the presented orientation and their preferred orientations. All the responses are combined, giving the final perceived orientation.}{.3}
 
@@ -162,7 +170,7 @@ The strength of the connection between every two neurons $l$ and $m$ is the same
 
 
 
-\plotfigures{weight1}{weight2}{weight3}{weight4}{Weight matrix for a full connectivity model. (A) Full weight matrix. (B) First 100 neurons. (C) First 10 neurons. (D) Scale of the values.}
+\plotthreefigures{weight1}{weight2}{weight3}{Weight matrix for a full connectivity model. (A) Full weight matrix. (B) First 100 neurons. (C) First 10 neurons. (D) Scale of the values.}
 
 \plotfiguresix{elastica1}{elastica2}{elastica3}{elastica4}{elastica5}{elastica6}{Elastica}{.7}
 
@@ -174,6 +182,86 @@ The strength of the connection between every two neurons $l$ and $m$ is the same
 (Notes)
 
 Since the model is recursive and changes with respect to time, the output is not only $1$ matrix, but $\cfrac{t}{ts}$ number of matrices, where $t$ is the simulation time and $ts$ is the length of the time step.
+
+(Libraries and Languages Used)
+
+Matlab - http://uk.mathworks.com/products/matlab/
+
+Python 2 - https://www.python.org/download/releases/2.7.2/
+
+Holoviews - http://ioam.github.io/holoviews/
+
+IPython Notebook
+
+(LaTeX)
+
+https://github.com/cfiandra/timeline
+
+\chapter{Timeline}
+\begin{figure}
+\caption{}
+\begin{tikzpicture}[timespan={}]
+
+
+% timespan={Day} -> now we have days as reference
+% timespan={}    -> no label is displayed for the timespan
+% default timespan is 'Week'
+
+\timeline[custom interval=true]{May, Jun, Jul, Aug, Sep, Nov, Oct, Dec, Jan, Feb, Mar}
+% \timeline[custom interval=true]{3,...,9} -> i.e., from Day 3 to Day 9
+% \timeline{8} -> i.e., from Week 1 to Week 8
+
+
+% put here the phases
+\begin{phases}
+\initialphase{involvement degree=4.75cm,phase color=black}
+\phase{between week=5 and 7 in 0.7,involvement degree=4cm, phase color=black}
+\phase{between week=7 and 9 in 0.7,involvement degree=2cm, phase color=black}
+\phase{between week=5 and 9 in 0.7,involvement degree=4cm, phase color=green}
+\phase{between week=9 and 11 in 0.1,involvement degree=2.25cm}
+\phase{between week=8 and 11 in 0.7,involvement degree=2.25cm ,phase color=blue!80!cyan}
+\end{phases}
+
+% put here the milestones
+\addmilestone{at=phase-0.180,direction=90:1cm,text={Project allocation},text options={above}}
+\addmilestone{at=phase-0.270,direction=270:1cm,text={Sensory Systems (MIT OpenCourseWare)},text options={below}}
+
+\addmilestone{at=phase-1.130,direction=130:2cm,text={Literature review},text options={above}}
+\addmilestone{at=phase-1.230,direction=230:1cm,text={Neural Computation},text options={below}}
+\addmilestone{at=phase-1.290,direction=290:2cm,text={Machine Learning Practical},text options={below}}
+
+\addmilestone{at=phase-2.100,direction=100:3cm,text={More literature review},text options={above}}
+\addmilestone{at=phase-2.310,direction=310:3cm,text={Neural Information Processing},text options={below}}
+
+\addmilestone{at=phase-3.170,direction=170:1cm,text={Started working on Matlab implementation},text options={above}}
+\addmilestone{at=phase-3.140,direction=140:1cm,text={Visual fields},text options={above}}
+\addmilestone{at=phase-3.120,direction=120:1cm,text={Tuning curves},text options={above}}
+\addmilestone{at=phase-3.90,direction=90:1cm,text={Population coding},text options={above}}
+\addmilestone{at=phase-3.60,direction=60:1cm,text={Simple Dynamics},text options={above}}
+\addmilestone{at=phase-3.30,direction=30:1.5cm,text={Dynamics with weight matrix},text options={above}}
+\addmilestone{at=phase-3.270,direction=270:0.5cm,text={Python implementation},text options={below}}
+\addmilestone{at=phase-3.300,direction=300:0.5cm,text={Elastica principle},text options={below}}
+
+\addmilestone{at=phase-4.120,direction=120:0.3cm,text={Matlab experiments},text options={above}}
+\addmilestone{at=phase-4.310,direction=310:0.3cm,text={Python experiments},text options={below}}
+
+\addmilestone{at=phase-5.140,direction=140:0.34cm,text={Interim report},text options={above}}
+\addmilestone{at=phase-5.50,direction=50:0.34cm,text={Write},text options={above}}
+\addmilestone{at=phase-5.330,direction=330:0.34cm,text={Write},text options={below}}
+\addmilestone{at=phase-5.20,direction=20:1cm,text={Final write up},text options={above}}
+
+\end{tikzpicture}
+\label{timeline}
+\floatfoot{\bt{Timeline of the project}\\\textcolor{gray}{Research}\\\textcolor{green}{Implementation}\\\textcolor{yellow}{Experiments}\\\textcolor{blue}{Write up}}
+\end{figure}
+
+Fig.\ref{timeline} illustrates the work I have done so far and my plan until end of march, when the final deadline for the report is. After the project was allocated to me, I spend some time during the summer watching online courses on neuroscience and sensory systems.
+
+Beginning of the year, I took Neural Computation to get even more background. I started implementing all the necessary parts, in order to simulate the model - visual fields, tuning curves, population coding, etc. Afterwards I started implementing dynamics in the system, gradually extending the model. In my final model, I assume full connectivity between all the neurons. The connection at first are modeled based on the distance and difference in preferred orientations between them. My next goal is to incorporate the elastica principle into my model. 
+
+At first I opted to use Matlab, as I had some experience with it. However with time, as I added some complexity to my model, I realized Matlab is not the base choice for the project. I decided to switch to Python, using Notebooks and Holoviews. Notebooks are a lot better way for structuring the code and write up at the same time. Holoviews was the other main reason, as it provides advanced plotting capabilities on multidimensional data, which is really viable when visualizing the output of recurrent neural networks for different time steps.
+
+
 
 \chapter{Evaluation}
 

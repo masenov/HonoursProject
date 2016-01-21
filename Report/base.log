@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.11.16)  21 JAN 2016 15:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.11.16)  21 JAN 2016 18:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -151,14 +151,6 @@ Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 \Gin@req@height=\dimen118
 \Gin@req@width=\dimen119
 )
-(/usr/share/texmf-dist/tex/latex/float/float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count93
-\float@exts=\toks16
-\float@box=\box26
-\@float@everytoks=\toks17
-\@floatcapt=\box27
-)
 (/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip43
@@ -169,7 +161,7 @@ Package: amstext 2000/06/29 v2.01
 
 (/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks18
+\@emptytoks=\toks16
 \ex@=\dimen120
 ))
 (/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
@@ -179,79 +171,102 @@ Package: amsbsy 1999/11/29 v1.2d
 (/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count94
+\inf@bad=\count93
 LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count95
-\leftroot@=\count96
+\uproot@=\count94
+\leftroot@=\count95
 LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count97
-\DOTSCASE@=\count98
+\classnum@=\count96
+\DOTSCASE@=\count97
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
-\Mathstrutbox@=\box28
-\strutbox@=\box29
+\Mathstrutbox@=\box26
+\strutbox@=\box27
 \big@size=\dimen122
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count99
-\c@MaxMatrixCols=\count100
+\macc@depth=\count98
+\c@MaxMatrixCols=\count99
 \dotsspace@=\muskip10
-\c@parentequation=\count101
-\dspbrk@lvl=\count102
-\tag@help=\toks19
-\row@=\count103
-\column@=\count104
-\maxfields@=\count105
-\andhelp@=\toks20
+\c@parentequation=\count100
+\dspbrk@lvl=\count101
+\tag@help=\toks17
+\row@=\count102
+\column@=\count103
+\maxfields@=\count104
+\andhelp@=\toks18
 \eqnshift@=\dimen123
 \alignsep@=\dimen124
 \tagshift@=\dimen125
 \tagwidth@=\dimen126
 \totwidth@=\dimen127
 \lineht@=\dimen128
-\@envbody=\toks21
+\@envbody=\toks19
 \multlinegap=\skip44
 \multlinetaggap=\skip45
-\mathdisplay@stack=\toks22
+\mathdisplay@stack=\toks20
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
 (/usr/share/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2015/09/15 v1.1-100 Sub-captions (AR)
-\c@subfigure=\count106
-\c@subtable=\count107
+\c@subfigure=\count105
+\c@subtable=\count106
 )
 (/usr/share/texmf-dist/tex/latex/was/gensymb.sty
 Package: gensymb 2003/07/02 v1.0 (WaS)
 )
 (/usr/share/texmf-dist/tex/latex/floatrow/floatrow.sty
 Package: floatrow 2008/08/02 v0.3b floatrow: float package extension
+\c@float@type=\count107
+\float@exts=\toks21
+\float@box=\box28
+\@floatcapt=\box29
+Package floatrow Info: Modified float package code loaded on input line 455.
+Package floatrow Info: Modified rotfloat package code loaded on input line 473.
 
-
-! Package floatrow Error: Do not use float package with floatrow.
-(floatrow)                The latter will be skipped.
-
-See the floatrow package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.33   \@namedef{opt@floatrow.sty}{}\endinput}
-                                              
-? 
+\FR@everyfloat=\toks22
+\flrow@foot=\insert199
+\FB@wd=\dimen129
+\FBo@wd=\dimen130
+\FBc@wd=\dimen131
+\FBo@ht=\skip46
+\FBc@ht=\skip47
+\FBf@ht=\skip48
+\FBo@max=\skip49
+\FBc@max=\skip50
+\FBf@max=\skip51
+\c@FBl@b=\count108
+\floatbox@depth=\count109
+\c@FRobj=\count110
+\c@FRsobj=\count111
+\Xhsize=\skip52
+\sXhsize=\skip53
+\Zhsize=\skip54
+\sZhsize=\skip55
+\flrow@rowbox=\box30
+\FR@Zunitlength=\dimen132
+\c@FBcnt=\count112
+\FPOScnt=\count113
+\LTleft=\skip56
+\LTright=\skip57
+\LTleft=\skip58
+\LTright=\skip59
+\flrow@types=\toks23
+))
+*
 ! Emergency stop.
- ...                                              
-                                                  
-l.33   \@namedef{opt@floatrow.sty}{}\endinput}
-                                              
+<*> base.tex
+            
 End of file on the terminal!
 
  
 Here is how much of TeX's memory you used:
- 3631 strings out of 493054
- 52463 string characters out of 6140585
- 123148 words of memory out of 5000000
- 7142 multiletter control sequences out of 15000+600000
+ 4103 strings out of 493054
+ 58965 string characters out of 6140585
+ 129994 words of memory out of 5000000
+ 7618 multiletter control sequences out of 15000+600000
  4445 words of font info for 16 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  43i,0n,40p,221b,186s stack positions out of 5000i,500n,10000p,200000b,80000s

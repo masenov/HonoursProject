@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1453391671 "base.tex" "base.pdf" "base" 1453391671
+["pdflatex"] 1453401546 "base.tex" "base.pdf" "base" 1453401546
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1447534192 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm" 1447534190 2124 2601a75482e9426d33db523edf23570a ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1447534189 1288 655e228510b4c2a1abe905c368440826 ""
@@ -19,7 +19,6 @@
   "/usr/share/texmf-dist/tex/latex/caption/caption.sty" 1447534195 65940 a45b2a79773e4008918aec3d0faa1ae9 ""
   "/usr/share/texmf-dist/tex/latex/caption/caption3.sty" 1447534195 63875 a0e716578258df3cf75195f84ec82fd1 ""
   "/usr/share/texmf-dist/tex/latex/caption/subcaption.sty" 1447534195 4470 34c7be04dc862e5775fae138598ae179 ""
-  "/usr/share/texmf-dist/tex/latex/float/float.sty" 1447534195 6749 16d2656a1984957e674b149555f1ea1d ""
   "/usr/share/texmf-dist/tex/latex/floatrow/floatrow.sty" 1447536546 60013 31ae5968a4a3fc2e332dd6a87f8e924b ""
   "/usr/share/texmf-dist/tex/latex/geometry/geometry.sty" 1447534195 40502 e003406220954b0716679d7928aedd8a ""
   "/usr/share/texmf-dist/tex/latex/graphics/graphics.sty" 1447534195 14285 20d80486c4ae98139889d8789596c967 ""
@@ -30,13 +29,14 @@
   "/usr/share/texmf-dist/tex/latex/parskip/parskip.sty" 1447534195 2763 02a40cc5a32805c41d919cfbdba7e99a ""
   "/usr/share/texmf-dist/tex/latex/pdftex-def/pdftex.def" 1447534195 55368 3c8a0d99822330f2dfabc0dfb09ce897 ""
   "/usr/share/texmf-dist/tex/latex/pslatex/pslatex.sty" 1447534195 10134 d237c4595fc396f83448a99dcf1331c4 ""
+  "/usr/share/texmf-dist/tex/latex/rotating/rotating.sty" 1447534196 7131 a49b179ae7108fe42935176733099fc0 ""
   "/usr/share/texmf-dist/tex/latex/sectsty/sectsty.sty" 1447536547 22423 d476012cd03f82f9475ad54ba6cd3267 ""
   "/usr/share/texmf-dist/tex/latex/tools/xspace.sty" 1447534196 4544 af3b6f93fee0a11f1dd120a6ec5d36c9 ""
   "/usr/share/texmf-dist/tex/latex/was/gensymb.sty" 1447536547 4612 29d19942d7123701aa6a3876b9ba11b1 ""
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1447534201 31669 df537245012f3e5f05bdc55644b7a3df ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1447712471 7214064 a03b28565203e0a3a3a6153f26ba1faa ""
   "base.aux" 1453285022 8 a94a2480d3289e625eea47cd1b285758 ""
-  "base.tex" 1453391671 3272 043276d5ce4a48094298acb1637d94f2 ""
+  "base.tex" 1453401478 3808 3a3c058ae5e5936dfeed0ec24b2c4320 ""
   "eushield.sty" 1452977237 1493 1ab6df5e08d7ba83c21cc6b1c6e8fc04 ""
   "infthesis.cls" 1452977234 24389 7004fe58ce7f59f47c84fb3c391c7d55 ""
   (generated)

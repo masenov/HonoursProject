@@ -1,0 +1,58 @@
+\documentclass[border=10pt]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{timeline}
+
+\begin{document}
+
+\begin{tikzpicture}[timespan={}]
+% timespan={Day} -> now we have days as reference
+% timespan={}    -> no label is displayed for the timespan
+% default timespan is 'Week'
+
+\timeline[custom interval=true]{May, Jun, Jul, Aug, Sep, Nov, Oct, Dec, Jan, Feb, Mar}
+% \timeline[custom interval=true]{3,...,9} -> i.e., from Day 3 to Day 9
+% \timeline{8} -> i.e., from Week 1 to Week 8
+
+
+% put here the phases
+\begin{phases}
+\initialphase{involvement degree=4.75cm,phase color=black}
+\phase{between week=5 and 7 in 0.7,involvement degree=4cm, phase color=black}
+\phase{between week=7 and 9 in 0.7,involvement degree=2cm, phase color=black}
+\phase{between week=5 and 9 in 0.7,involvement degree=4cm, phase color=green}
+\phase{between week=9 and 11 in 0.1,involvement degree=2.25cm}
+\phase{between week=8 and 11 in 0.7,involvement degree=2.25cm ,phase color=blue!80!cyan}
+\end{phases}
+
+% put here the milestones
+\addmilestone{at=phase-0.180,direction=90:1cm,text={Project allocation},text options={above}}
+\addmilestone{at=phase-0.270,direction=270:1cm,text={Sensory Systems (MIT OpenCourseWare)},text options={below}}
+
+\addmilestone{at=phase-1.130,direction=130:2cm,text={Literature review},text options={above}}
+\addmilestone{at=phase-1.230,direction=230:1cm,text={Neural Computation},text options={below}}
+\addmilestone{at=phase-1.290,direction=290:2cm,text={Machine Learning Practical},text options={below}}
+
+\addmilestone{at=phase-2.100,direction=100:3cm,text={More literature review},text options={above}}
+\addmilestone{at=phase-2.310,direction=310:3cm,text={Neural Information Processing},text options={below}}
+
+\addmilestone{at=phase-3.170,direction=170:1cm,text={Started working on Matlab implementation},text options={above}}
+\addmilestone{at=phase-3.140,direction=140:1cm,text={Visual fields},text options={above}}
+\addmilestone{at=phase-3.120,direction=120:1cm,text={Tuning curves},text options={above}}
+\addmilestone{at=phase-3.90,direction=90:1cm,text={Population coding},text options={above}}
+\addmilestone{at=phase-3.60,direction=60:1cm,text={Simple Dynamics},text options={above}}
+\addmilestone{at=phase-3.30,direction=30:1.5cm,text={Dynamics with weight matrix},text options={above}}
+\addmilestone{at=phase-3.270,direction=270:0.5cm,text={Python implementation},text options={below}}
+\addmilestone{at=phase-3.300,direction=300:0.5cm,text={Elastica principle},text options={below}}
+
+\addmilestone{at=phase-4.120,direction=120:0.3cm,text={Matlab experiments},text options={above}}
+\addmilestone{at=phase-4.310,direction=310:0.3cm,text={Python experiments},text options={below}}
+
+\addmilestone{at=phase-5.140,direction=140:0.34cm,text={Interim report},text options={above}}
+\addmilestone{at=phase-5.50,direction=50:0.34cm,text={Write},text options={above}}
+\addmilestone{at=phase-5.330,direction=330:0.34cm,text={Write},text options={below}}
+\addmilestone{at=phase-5.20,direction=20:1cm,text={Final write up},text options={above}}
+
+\end{tikzpicture}
+
+\end{document}
