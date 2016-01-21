@@ -1,3 +1,5 @@
 **/*.pdf
 elastica/
 **/*.gz
+Python/holoviews-master/
+Python/IPython-notebook-extensions-master/
