@@ -1,0 +1,45 @@
+language: python
+
+sudo: false
+cache:
+  directories:
+    - $HOME/.cache/pip
+
+python:
+  - "2.7"
+  - "3.4"
+
+notifications:
+  email:
+    on_failure: change # [always|never|change] default: always
+
+install:
+  - if [[ "$TRAVIS_PYTHON_VERSION" == "2.7" ]]; then
+      wget https://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh;
+    else
+      wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
+    fi
+  - bash miniconda.sh -b -p $HOME/miniconda
+  - export PATH="$HOME/miniconda/bin:$PATH"
+  - hash -r
+  - conda config --set always_yes yes --set changeps1 no
+  - conda update -q conda
+  # Useful for debugging any issues with conda
+  - conda info -a
+  - conda create -q -n test-environment python=$TRAVIS_PYTHON_VERSION nose numpy=1.9.1 matplotlib bokeh pandas scipy jupyter ipython param freetype=2.5.2
+  - source activate test-environment
+  - python setup.py install
+  - pip install git+git://github.com/ioam/param.git
+  - pip install path.py
+  - pip install coveralls
+
+before-script:
+  - "echo 'backend : Agg' > $HOME/.matplotlib/matplotlibrc"
+
+script:
+  - nosetests --with-doctest --with-coverage --cover-package=holoviews -a '!optional'
+  - cd doc/nbpublisher; chmod +x test_notebooks.py; ./test_notebooks.py
+  - cd ../../; mv doc/Tutorials/.coverage ./.coverage.notebooks
+  - coverage combine
+
+after_success: coveralls

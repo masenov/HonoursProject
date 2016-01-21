@@ -1,0 +1,682 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.11.16)  21 JAN 2016 16:12
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**skeleton.tex
+(./skeleton.tex
+LaTeX2e <2015/10/01> patch level 2
+Babel <3.9m> and hyphenation patterns for 79 languages loaded.
+(./base.tex (./infthesis.cls
+Document Class: infthesis 2011/02/02 v3.5 School of Informatics Thesis Class
+(/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+(/usr/share/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/share/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count79
+\Gm@cntv=\count80
+\c@Gm@tempcnt=\count81
+\Gm@bindingoffset=\dimen102
+\Gm@wd@mp=\dimen103
+\Gm@odd@mp=\dimen104
+\Gm@even@mp=\dimen105
+\Gm@layoutwidth=\dimen106
+\Gm@layoutheight=\dimen107
+\Gm@layouthoffset=\dimen108
+\Gm@layoutvoffset=\dimen109
+\Gm@dimlist=\toks15
+)
+(/usr/share/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 94.
+
+(/usr/share/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count82
+))
+(/usr/share/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+) (./eushield.sty
+Package: eushield 2006/08/28\ v1.1\ Commands for including the EU shield graphi
+c
+)
+(/usr/share/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count83
+\c@chapter=\count84
+\c@section=\count85
+\c@subsection=\count86
+\c@subsubsection=\count87
+\c@paragraph=\count88
+\c@subparagraph=\count89
+\c@figure=\count90
+\c@table=\count91
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen110
+)
+(/usr/share/texmf-dist/tex/latex/pslatex/pslatex.sty
+Package: pslatex 1996/07/24 v1.2 pslatex emulation (DPC)
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 65.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/ptmcm/m/n on input line 65.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ptmcm/m/n on input line 65.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 66.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/ptmcm/m/it on input line 66.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/ptmcm/m/it on input line 66.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 67.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/pzccm/m/n on input line 67.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/pzccm/m/n on input line 67.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 68.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/psycm/m/n on input line 68.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/psycm/m/n on input line 68.
+\symbold=\mathgroup4
+\symitalic=\mathgroup5
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 74.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 74.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 74.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 75.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/ptm/m/it on input line 75.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 75.
+)
+(/usr/share/texmf-dist/tex/latex/sectsty/sectsty.sty
+Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading sty
+les
+)
+(/usr/share/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2015/09/17 v3.3-111 Customizing captions (AR)
+
+(/usr/share/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2015/09/20 v1.7-115 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen111
+\captionmargin@=\dimen112
+\captionwidth=\dimen113
+\caption@tempdima=\dimen114
+\caption@indent=\dimen115
+\caption@parindent=\dimen116
+\caption@hangindent=\dimen117
+)
+\c@ContinuedFloat=\count92
+))
+(/usr/share/texmf-dist/tex/latex/parskip/parskip.sty
+Package: parskip 2001/04/09 non-zero parskip adjustments
+)
+(/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+\Gin@req@height=\dimen118
+\Gin@req@width=\dimen119
+)
+(/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen120
+))
+(/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen121
+)
+(/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count93
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count94
+\leftroot@=\count95
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count96
+\DOTSCASE@=\count97
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen122
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count98
+\c@MaxMatrixCols=\count99
+\dotsspace@=\muskip10
+\c@parentequation=\count100
+\dspbrk@lvl=\count101
+\tag@help=\toks17
+\row@=\count102
+\column@=\count103
+\maxfields@=\count104
+\andhelp@=\toks18
+\eqnshift@=\dimen123
+\alignsep@=\dimen124
+\tagshift@=\dimen125
+\tagwidth@=\dimen126
+\totwidth@=\dimen127
+\lineht@=\dimen128
+\@envbody=\toks19
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+(/usr/share/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2015/09/15 v1.1-100 Sub-captions (AR)
+\c@subfigure=\count105
+\c@subtable=\count106
+)
+(/usr/share/texmf-dist/tex/latex/was/gensymb.sty
+Package: gensymb 2003/07/02 v1.0 (WaS)
+)
+(/usr/share/texmf-dist/tex/latex/floatrow/floatrow.sty
+Package: floatrow 2008/08/02 v0.3b floatrow: float package extension
+\c@float@type=\count107
+\float@exts=\toks21
+\float@box=\box28
+\@floatcapt=\box29
+Package floatrow Info: Modified float package code loaded on input line 455.
+Package floatrow Info: Modified rotfloat package code loaded on input line 473.
+
+\FR@everyfloat=\toks22
+\flrow@foot=\insert199
+\FB@wd=\dimen129
+\FBo@wd=\dimen130
+\FBc@wd=\dimen131
+\FBo@ht=\skip46
+\FBc@ht=\skip47
+\FBf@ht=\skip48
+\FBo@max=\skip49
+\FBc@max=\skip50
+\FBf@max=\skip51
+\c@FBl@b=\count108
+\floatbox@depth=\count109
+\c@FRobj=\count110
+\c@FRsobj=\count111
+\Xhsize=\skip52
+\sXhsize=\skip53
+\Zhsize=\skip54
+\sZhsize=\skip55
+\flrow@rowbox=\box30
+\FR@Zunitlength=\dimen132
+\c@FBcnt=\count112
+\FPOScnt=\count113
+\LTleft=\skip56
+\LTright=\skip57
+\LTleft=\skip58
+\LTright=\skip59
+\flrow@types=\toks23
+)) (./skeleton.aux)
+\openout1 = `skeleton.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 4.
+LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 4.
+
+
+(/usr/share/texmf-dist/tex/latex/psnfss/omspzccm.fd
+File: omspzccm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/pzccm.
+)
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(113.81102pt, 412.56497pt, 71.13188pt)
+* v-part:(T,H,B)=(56.9055pt, 674.33032pt, 113.81102pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=412.56497pt
+* \textheight=674.33032pt
+* \oddsidemargin=41.54103pt
+* \evensidemargin=41.54103pt
+* \topmargin=-52.36449pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=35.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count114
+\scratchdimen=\dimen133
+\scratchbox=\box31
+\nofMPsegments=\count115
+\nofMParguments=\count116
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count117
+\MPscratchDim=\dimen134
+\MPnumerator=\count118
+\makeMPintoPDFobject=\count119
+\everyMPtoPDFconversion=\toks25
+) (/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/share/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+))
+(/usr/share/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+
+(/usr/share/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: floatrow package is loaded.
+Package caption Info: float package is loaded.
+Package caption Info: floatrow package is loaded.
+Package caption Info: End \AtBeginDocument code.
+LaTeX Info: Redefining \celsius on input line 4.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 4.
+
+
+Package gensymb Warning: Not defining \perthousand.
+
+LaTeX Info: Redefining \ohm on input line 4.
+Package gensymb Info: Using \Omega for \ohm on input line 4.
+
+Package gensymb Warning: Not defining \micro.
+
+(/usr/share/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
+
+(/usr/share/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 142.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20.74> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <20.74> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 41.
+LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
+(Font)              scaled to size 18.66588pt on input line 41.
+ [1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
+(Font)              scaled to size 10.79993pt on input line 41.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 41.
+LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
+(Font)              scaled to size 10.79993pt on input line 41.
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <12> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 41.
+LaTeX Font Info:    Font shape `OT1/phv/m/sl' will be
+(Font)              scaled to size 10.79993pt on input line 41.
+ [1
+
+]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 43.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 43.
+LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
+(Font)              scaled to size 15.55188pt on input line 43.
+ [2]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24.88> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 46.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <24.88> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 46.
+LaTeX Font Info:    Font shape `OT1/phv/b/n' will be
+(Font)              scaled to size 22.39185pt on input line 46.
+ (./skeleton.toc
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+LaTeX Font Info:    Try loading font information for OT1+ptmcm on input line 3.
+
+
+(/usr/share/texmf-dist/tex/latex/psnfss/ot1ptmcm.fd
+File: ot1ptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ptmcm.
+)
+LaTeX Font Info:    Try loading font information for OML+ptmcm on input line 3.
+
+
+(/usr/share/texmf-dist/tex/latex/psnfss/omlptmcm.fd
+File: omlptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ptmcm.
+)
+LaTeX Font Info:    Try loading font information for OMX+psycm on input line 3.
+
+
+(/usr/share/texmf-dist/tex/latex/psnfss/omxpsycm.fd
+File: omxpsycm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/psycm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
+)
+\tf@toc=\write3
+\openout3 = `skeleton.toc'.
+
+ [3
+
+]
+Chapter 1.
+[4
+
+]
+Chapter 2.
+<Pictures/background/visual_fields.png, id=23, 1489.565pt x 1039.885pt>
+File: Pictures/background/visual_fields.png Graphic file (type png)
+
+<use Pictures/background/visual_fields.png>
+Package pdftex.def Info: Pictures/background/visual_fields.png used on input li
+ne 71.
+(pdftex.def)             Requested size: 330.05322pt x 230.40974pt.
+ [5
+
+]
+<Pictures/background/RetinotopicMapping.png, id=28, 439.6425pt x 525.46312pt>
+File: Pictures/background/RetinotopicMapping.png Graphic file (type png)
+
+<use Pictures/background/RetinotopicMapping.png>
+Package pdftex.def Info: Pictures/background/RetinotopicMapping.png used on inp
+ut line 75.
+(pdftex.def)             Requested size: 330.05322pt x 394.48924pt.
+ [6 <./Pictures/background/visual_fields.png>]
+<Pictures/background/F4large.jpg, id=35, 1716.4125pt x 1806.75pt>
+File: Pictures/background/F4large.jpg Graphic file (type jpg)
+
+<use Pictures/background/F4large.jpg>
+Package pdftex.def Info: Pictures/background/F4large.jpg used on input line 82.
+
+(pdftex.def)             Requested size: 330.05322pt x 347.42139pt.
+ [7 <./Pictures/background/RetinotopicMapping.png>] <Pictures/background/HubelW
+iesel.jpg, id=39, 722.7pt x 542.025pt>
+File: Pictures/background/HubelWiesel.jpg Graphic file (type jpg)
+
+<use Pictures/background/HubelWiesel.jpg>
+Package pdftex.def Info: Pictures/background/HubelWiesel.jpg used on input line
+ 88.
+(pdftex.def)             Requested size: 330.05322pt x 247.5398pt.
+ [8 <./Pictures/background/F4large.jpg>] <populationCoding.png, id=43, 626.34pt
+ x 606.265pt>
+File: populationCoding.png Graphic file (type png)
+
+<use populationCoding.png>
+Package pdftex.def Info: populationCoding.png used on input line 95.
+(pdftex.def)             Requested size: 330.05322pt x 319.48724pt.
+ [9 <./Pictures/background/HubelWiesel.jpg>] [10 <./populationCoding.png>]
+Chapter 3.
+LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
+(Font)              scaled to size 9.85492pt on input line 104.
+<Pictures/models/input_random.png, id=50, 1027.84pt x 1027.84pt>
+File: Pictures/models/input_random.png Graphic file (type png)
+
+<use Pictures/models/input_random.png>
+Package pdftex.def Info: Pictures/models/input_random.png used on input line 10
+4.
+(pdftex.def)             Requested size: 165.02661pt x 165.02237pt.
+
+<Pictures/models/input_structure.png, id=51, 1027.84pt x 1027.84pt>
+File: Pictures/models/input_structure.png Graphic file (type png)
+
+<use Pictures/models/input_structure.png>
+Package pdftex.def Info: Pictures/models/input_structure.png used on input line
+ 104.
+(pdftex.def)             Requested size: 165.02661pt x 165.02237pt.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 104.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 104.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 104.
+
+<Pictures/models/neuron2.png, id=52, 250.9375pt x 250.9375pt>
+File: Pictures/models/neuron2.png Graphic file (type png)
+
+<use Pictures/models/neuron2.png>
+Package pdftex.def Info: Pictures/models/neuron2.png used on input line 108.
+(pdftex.def)             Requested size: 123.77074pt x 123.77219pt.
+ [11
+
+ <./Pictures/models/input_random.png> <./Pictures/models/input_structure.png>] 
+[12 <./Pictures/models/neuron2.png>]
+<Pictures/models/neuron5.png, id=67, 503.8825pt x 250.9375pt>
+File: Pictures/models/neuron5.png Graphic file (type png)
+
+<use Pictures/models/neuron5.png>
+Package pdftex.def Info: Pictures/models/neuron5.png used on input line 140.
+(pdftex.def)             Requested size: 165.02661pt x 82.1855pt.
+
+<Pictures/models/neuron3.png, id=68, 503.8825pt x 313.17pt>
+File: Pictures/models/neuron3.png Graphic file (type png)
+
+<use Pictures/models/neuron3.png>
+Package pdftex.def Info: Pictures/models/neuron3.png used on input line 140.
+(pdftex.def)             Requested size: 165.02661pt x 102.5675pt.
+
+<Pictures/models/neuron1.png, id=69, 756.8275pt x 754.82pt>
+File: Pictures/models/neuron1.png Graphic file (type png)
+
+<use Pictures/models/neuron1.png>
+Package pdftex.def Info: Pictures/models/neuron1.png used on input line 149.
+(pdftex.def)             Requested size: 288.79422pt x 288.03241pt.
+ [13 <./Pictures/models/neuron5.png> <./Pictures/models/neuron3.png>] [14 <./Pi
+ctures/models/neuron1.png>]
+<Pictures/models/weight1.jpg, id=80, 4015.0pt x 3011.25pt>
+File: Pictures/models/weight1.jpg Graphic file (type jpg)
+
+<use Pictures/models/weight1.jpg>
+Package pdftex.def Info: Pictures/models/weight1.jpg used on input line 165.
+(pdftex.def)             Requested size: 206.28249pt x 154.70663pt.
+
+<Pictures/models/weight2.jpg, id=81, 4015.0pt x 3011.25pt>
+File: Pictures/models/weight2.jpg Graphic file (type jpg)
+
+<use Pictures/models/weight2.jpg>
+Package pdftex.def Info: Pictures/models/weight2.jpg used on input line 165.
+(pdftex.def)             Requested size: 206.28249pt x 154.70663pt.
+
+<Pictures/models/weight3.jpg, id=82, 4015.0pt x 3011.25pt>
+File: Pictures/models/weight3.jpg Graphic file (type jpg)
+
+<use Pictures/models/weight3.jpg>
+Package pdftex.def Info: Pictures/models/weight3.jpg used on input line 165.
+(pdftex.def)             Requested size: 206.28249pt x 154.70663pt.
+
+<Pictures/models/weight4.jpg, id=83, 399.4925pt x 2647.8925pt>
+File: Pictures/models/weight4.jpg Graphic file (type jpg)
+
+<use Pictures/models/weight4.jpg>
+Package pdftex.def Info: Pictures/models/weight4.jpg used on input line 165.
+(pdftex.def)             Requested size: 20.6295pt x 136.72556pt.
+
+<Pictures/elastica/elastica1.png, id=84, 608.2725pt x 608.2725pt>
+File: Pictures/elastica/elastica1.png Graphic file (type png)
+
+<use Pictures/elastica/elastica1.png>
+Package pdftex.def Info: Pictures/elastica/elastica1.png used on input line 167
+.
+(pdftex.def)             Requested size: 144.39711pt x 144.39197pt.
+
+<Pictures/elastica/elastica2.png, id=85, 608.2725pt x 612.2875pt>
+File: Pictures/elastica/elastica2.png Graphic file (type png)
+
+<use Pictures/elastica/elastica2.png>
+Package pdftex.def Info: Pictures/elastica/elastica2.png used on input line 167
+.
+(pdftex.def)             Requested size: 144.39711pt x 145.34505pt.
+
+<Pictures/elastica/elastica3.png, id=86, 610.28pt x 610.28pt>
+File: Pictures/elastica/elastica3.png Graphic file (type png)
+
+<use Pictures/elastica/elastica3.png>
+Package pdftex.def Info: Pictures/elastica/elastica3.png used on input line 167
+.
+(pdftex.def)             Requested size: 144.39711pt x 144.39359pt.
+
+<Pictures/elastica/elastica4.png, id=87, 610.28pt x 612.2875pt>
+File: Pictures/elastica/elastica4.png Graphic file (type png)
+
+<use Pictures/elastica/elastica4.png>
+Package pdftex.def Info: Pictures/elastica/elastica4.png used on input line 167
+.
+(pdftex.def)             Requested size: 144.39711pt x 144.86856pt.
+
+<Pictures/elastica/elastica5.png, id=88, 610.28pt x 610.28pt>
+File: Pictures/elastica/elastica5.png Graphic file (type png)
+
+<use Pictures/elastica/elastica5.png>
+Package pdftex.def Info: Pictures/elastica/elastica5.png used on input line 167
+.
+(pdftex.def)             Requested size: 144.39711pt x 144.39359pt.
+
+<Pictures/elastica/elastica6.png, id=89, 608.2725pt x 610.28pt>
+File: Pictures/elastica/elastica6.png Graphic file (type png)
+
+<use Pictures/elastica/elastica6.png>
+Package pdftex.def Info: Pictures/elastica/elastica6.png used on input line 167
+.
+(pdftex.def)             Requested size: 144.39711pt x 144.8685pt.
+ [15 <./Pictures/models/weight1.jpg> <./Pictures/models/weight2.jpg> <./Picture
+s/models/weight3.jpg> <./Pictures/models/weight4.jpg>] [16 <./Pictures/elastica
+/elastica1.png> <./Pictures/elastica/elastica2.png> <./Pictures/elastica/elasti
+ca3.png> <./Pictures/elastica/elastica4.png> <./Pictures/elastica/elastica5.png
+> <./Pictures/elastica/elastica6.png>]
+Chapter 4.
+[17
+
+]
+Chapter 5.
+[18
+
+]
+Chapter 6.
+(./skeleton.bbl [19
+
+]) [20
+
+] (./skeleton.aux) ) 
+Here is how much of TeX's memory you used:
+ 5102 strings out of 493054
+ 75959 string characters out of 6140585
+ 148165 words of memory out of 5000000
+ 8484 multiletter control sequences out of 15000+600000
+ 53767 words of font info for 101 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 45i,8n,47p,688b,498s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/sh
+are/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/
+share/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-dist/fon
+ts/type1/urw/helvetic/uhvro8a.pfb></usr/share/texmf-dist/fonts/type1/urw/symbol
+/usyr.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/t
+exmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/u
+rw/times/utmri8a.pfb>
+Output written on skeleton.pdf (21 pages, 3122921 bytes).
+PDF statistics:
+ 152 PDF objects out of 1000 (max. 8388607)
+ 83 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 106 words of extra memory for PDF output out of 10000 (max. 10000000)
+

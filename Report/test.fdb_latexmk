@@ -1,0 +1,14 @@
+# Fdb version 3
+["pdflatex"] 1453287276 "test.tex" "test.pdf" "test" 1453287276
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1447534193 35752 024fb6c41858982481f6968b5fc26508 ""
+  "/usr/share/texmf-dist/tex/latex/base/article.cls" 1447534195 20708 96f8bca6e380179cada1d49716376167 ""
+  "/usr/share/texmf-dist/tex/latex/base/size10.clo" 1447534195 9179 632e23fed01c842f2eaef1dd9953a446 ""
+  "/usr/share/texmf-dist/web2c/texmf.cnf" 1447534201 31669 df537245012f3e5f05bdc55644b7a3df ""
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1448638170 334510 5208d74ebe3601abc4cba870d3e96f2d ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1447712471 7214064 a03b28565203e0a3a3a6153f26ba1faa ""
+  "test.aux" 1453287276 8 a94a2480d3289e625eea47cd1b285758 ""
+  "test.tex" 1453287275 292 777f48b0fbdd27d6003291e054dea91d ""
+  (generated)
+  "test.aux"
+  "test.log"
+  "test.pdf"

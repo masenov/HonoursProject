@@ -1,0 +1,135 @@
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{svg}
+\usepackage{amsmath}
+\setsvg{
+    inkscape = inkscape -z -D % conversion options for svg package, export drawing instead of page
+}
+
+\graphicspath{ {Pictures/background/}{Pictures/models/} }
+
+
+
+\newcommand{\plottwofigures}[3]{
+\begin{figure}[H]
+\caption{#3}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.8\linewidth]{#1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.8\linewidth]{#2}
+\end{subfigure}
+\label{#1}
+\end{figure}
+}
+
+
+
+\newcommand{\plotfigure}[2]{
+\begin{figure}[H]
+\caption{#2}
+\centering
+\includegraphics[width=.8\linewidth]{#1}
+\label{#1}
+\end{figure}
+}
+
+
+\newcommand{\plotfigures}[5]{
+\begin{figure}[H]
+\caption{#5}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.8\linewidth]{#1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.8\linewidth]{#2}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.8\linewidth]{#3}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.8\linewidth]{#4}
+\end{subfigure}
+\label{#1}
+\end{figure}
+}
+
+\newcommand{\plotfiguresix}[7]{
+\begin{figure}[H]
+\caption{#7}
+\begin{subfigure}{.5\textwidth}
+  \caption{Learned stimulus 1}
+  \centering
+  \includegraphics[width=.8\linewidth]{#1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \caption{Learned stimulus 2}
+  \centering
+  \includegraphics[width=.8\linewidth]{#2}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \caption{Learned stimulus 3}
+  \centering
+  \includegraphics[width=.8\linewidth]{#3}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \caption{Learned stimulus 4}
+  \centering
+  \includegraphics[width=.8\linewidth]{#4}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \caption{Learned stimulus 5}
+  \centering
+  \includegraphics[width=.8\linewidth]{#5}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \caption{Novel stimulus}
+  \centering
+  \includegraphics[width=.8\linewidth]{#6}
+\end{subfigure}
+\label{#1}
+\end{figure}
+}
+
+\newcommand{\plotfiguresixn}[7]{
+\begin{figure}[H]
+\caption{#7}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.8\linewidth]{#1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.8\linewidth]{#2}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.8\linewidth]{#3}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.8\linewidth]{#4}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.8\linewidth]{#5}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.8\linewidth]{#6}
+\end{subfigure}
+\label{#1}
+\end{figure}
+}
+\newcommand{\eq}[1]{
+\begin{equation}
+  {#1}
+\end{equation}
+}
+

@@ -1,0 +1,545 @@
+/* Styles from institute in a box theme from plone, which was lifted from
+   polopoly */
+
+body {
+	font-family: arial,helvetica,clean,sans-serif;
+	font-size: small;
+	font-size-adjust: none;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	line-height: 1.22;
+
+        background-image: url(/images/plone/centralsitebg.gif);
+	background-repeat: repeat-x;
+	color: #000000;
+}
+
+/* Branding from ed.ac.uk */
+
+#branding { margin: 0; float: left; }
+#branding a {margin: 0; color: #ffffff;}
+#branding img { margin: 0; float: left; padding-right: 5px; border: none;}
+
+#visual-portal-wrapper {
+	width: 95%; 
+	background-color: #fff;
+	margin-right: auto;
+	margin-left: auto;
+	text-align:left;
+}
+
+#portal-header{
+	float:left;
+	position:relative;
+	height: 71px; /* height of top banner seems to vary btwn browsers */
+	width: 100%;
+	background: #25476C;
+}	
+
+/* our top banner float left and right */
+
+#banner-left {
+	float: left;
+}
+
+#banner-right {
+	float: right;
+}
+
+/* Global Nav, ie the Tabs section - lifted from ed.ac.uk css */
+
+#portal-globalnav, #portal-siteactions {
+	background-color:#25476C;
+	float:right;
+	font-size:85%;
+	text-align:right;
+	margin: 1px 0 0 0;
+	padding: 3px 2em 3px 0;
+}
+
+#portal-globalnav ul, #portal-siteactions ul {
+	list-style-image:none;
+	list-style-position:outside;
+	list-style-type:none;
+}
+#portal-globalnav li, #portal-siteactions li {
+	display:inline;
+	padding-left:2px;
+}
+
+#portal-globalnav li a, #portal-siteactions li a {
+	color:#FFFFFF;
+	line-height:2em;
+	text-align:center;
+	text-decoration:none;
+	margin-right: 0;
+	padding: 0 0;
+	border: none;
+}
+
+#portal-globalnav li.selected {
+	border-top:2px solid #cad8e5;
+}
+
+#portal-globalnav li a:hover, #portal-siteactions li a:hover {
+	background-color: #006699;
+	color: #ffffff;
+        border: none;
+	border-top: 2px solid #cad8e5;
+}
+
+#portal-globalnav li a:active, #portal-siteactions li a:active {
+	color:#FFFFFF;
+}
+
+/* end global nav */
+
+/* Uses a lot of globalnav */
+
+#portal-siteactions{
+	background-color:#25476C;
+	float: right;
+	font-size:85%;
+	text-align:right;
+	margin-top: 0em;
+	padding: 0px;
+}
+
+/* Search - some copied from "utility" on .ed.ac.uk */
+
+#portal-searchbox {
+	background-color: #cad8e5;
+	float:right;
+/*	margin-top:21px !important; */
+	margin-top: 1.5em;
+	padding: 0 2em 1px 1px;
+	text-align:center;
+/*	width:465px; */
+}
+
+#portal-searchbox div {
+	display: inline;
+}
+
+#portal-searchbox input{
+	border-style: inset;
+	border-width: 2px;
+	border-color: #f6f4f1;
+	background-color: #ffffff;
+	background-image: none;
+	color: #000000;
+	vertical-align: top;
+	font-size: 93%;
+	margin-top: 5px;
+	margin-left: 4px;
+}
+
+#portal-searchbox input.inputLabelActive-off {
+	background-color: #ffffff;
+	margin-left: 2px;
+}
+
+#portal-searchbox input.searchGadget {
+	height: 1.25em;
+}
+
+#portal-searchbox input.searchButton{
+	background-color: #F6F4F1;
+	border-style: outset;
+	margin-bottom: 0px;
+	padding: 0px;
+	text-transform: none;
+}
+
+#portal-searchbox .searchSection {
+	display: none;
+}
+
+div#portal-advanced-search.hiddenStructure {
+	display: none;
+}
+
+/* end search */
+
+/* portal breadcrumbs/path */
+
+#portal-breadcrumbs {
+  padding-left: 1em;
+  border: none;
+}
+
+/* Live Search fixes */
+.livesearchContainer {
+	background-color: #f0f0f0;
+	top: 1.8em;
+}
+
+/* personal tools */
+
+#portal-personaltools-wrapper {
+	clear: none; /* I had set it to both for a reason, but can't see why now*/
+}
+
+#portal-personaltools {
+	margin-top: 0;
+	color: black;
+	background-color: #cad8e5;
+	border: none;
+}
+
+/* end personal tools */
+
+/* kupu fixes */
+
+/* end kupu fixes */
+
+body.kupu {
+	background-image: none;
+}
+
+/* some global stuff */
+
+#portal-column-one {
+	width: 175px;
+}
+
+#portal-column-one .visualPadding {
+	padding: 0 0 0 0;
+}
+
+#portal-column-two .visualPadding {
+	padding: 0 0 0 0;
+}
+
+#portal-column-content {
+	padding: 0 1em 0 1em;
+}
+
+/* footer mostly lifted from ed.ac.uk */
+
+#portal-footer {
+	border-top: #25476C 10px solid;
+	font-size: 1em;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+	background: #F2F2F2 url(/images/plone/footerbg.jpg) repeat-x;
+	width: 100%;
+}
+
+#portal-footer a { color: #333333;}
+
+#portal-footer a:visited { color: #333333;}
+
+#portal-footer a:hover { color: #FF0000;}
+
+#portal-footer div {
+	margin: 0 auto;
+	text-align: left;
+	color: #000000;
+	padding: 10px 0;
+	width: 70%;
+	line-height: 1em;
+}
+
+#portal-footer div ul {
+	padding: 0 0 10px 0;
+	margin: 0 0 0 0;
+	text-align: left;
+}
+
+#portal-footer div ul li {
+	display: inline;
+	padding: 0 20px 0 0;
+	font-size: 85%;
+	margin: 0 0 0 0;
+}
+
+#portal-footer div p {
+	display: block;
+	padding-bottom: 5px;
+	margin: 0 0 0 0;
+	font-size: 85%;
+}
+
+/* end footer */
+
+/* portlets */
+
+div.portletWrapper {
+  background-image: url(/images/plone/portalbg.jpg); /* fade eaeff5 to ffffff*/
+  background-repeat: repeat-x;
+  background-attachment: scroll;
+  background-position: top left;
+}
+
+.portlet {
+  background: transparent;
+}
+
+dd .even {
+	opacity: 0.5; /* the standard */
+}
+
+/* public tags */
+
+p {
+  line-height: 1.22; /* same as defined in body but base resets it */
+}
+
+/* Content area */
+h1, h2 {
+    font-weight: normal;
+    border: none;
+}
+
+h1 {
+  color: #24476B;
+}
+
+h2 {
+  color: #0099FF;
+}
+
+/* Compensate for the inline editing hover, since we have a 1px border */
+body.kssActive h2.inlineEditable:hover,
+body.kssActive h1.inlineEditable:hover {
+    padding-bottom: 1px;
+}
+
+
+h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+h1.documentFirstHeading {
+    background-image: url(/images/plone/childHeader-bg.jpg);
+    margin-top: 0;
+}
+
+.documentDescription {
+  color: #25476C;
+  font-weight: bold;
+}
+
+.documentContent {
+  font-size: 100%;
+}
+
+.documentContent ul {
+  list-style-image: none;
+  list-style-position: outside;
+  list-style-type: square;
+  padding: 0 0 0 15px;
+  margin: 0 0 0 0;
+}
+
+.documentContent ol {
+  padding: 0 0 0 15px;
+  margin: 0 0 0 0;
+}
+
+.documentContent ul li, .documentContent ol li {
+  padding: 3px 0 5px 3px;
+  margin-bottom: 0px;
+}
+
+.documentContent dt {
+  padding-left: 5px;
+  font-weight: bold;
+  background-color: #FAFDFE;
+} 
+
+.documentContent dd {
+  padding-left: 10px;
+  padding-bottom: 0.5em;
+  background-color: #FAFDFE;
+  margin-bottom: 0.25em;
+} 
+
+.documentContent .callout {
+  background-color: #F2F9FF;
+  color: #000000;
+  margin: 1em;
+  padding: 0.5em;
+  font-size: 108%; /* 14px*/
+  border-left: #25476C 10px solid;
+}
+
+.documentContent .pullquote {
+  background-color: #F2F9FF;
+  color: #000000;
+  width: 135px;
+  margin-left: 0.5em;
+  margin-top: 0.5em;
+  padding: 0.5em;
+  border-left: #25476C 10px solid;
+  float: right;
+}
+
+code, tt {
+  font-size: 100%;
+}
+
+/***
+  The Site Setup->Themes -> Mark external links option doesn't work.
+  This should fix it. neilb
+**/
+
+/*** First override the default behaviour for the external links */
+
+#content a[href ^="http:"],
+#content a[href ^="https:"],
+#content a.link-external,
+#content a.link-https {
+    background: none;
+    padding: 0;
+}
+
+/*** Then do it as it probably should have been, ie if contained within
+     a link-external class                                               ***/
+
+#content .link-external a[href ^="http:"],
+#content .link-external a.link-external {
+    background: transparent url(/images/plone/link_icon.gif) 0px 1px no-repeat;
+    padding: 1px 0px 1px 16px;
+}
+
+#content .link-external a[href ^="https:"],
+#content .link-external a.link-https {
+    background: transparent url(/images/plone/lock_icon.gif) 0px 1px no-repeat;
+    padding: 1px 0px 1px 16px;
+}
+
+/* end public tags */
+
+/* Main Nav */
+
+/* the normal box around the navtree */
+.portletNavigationTree {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.portletNavigationTree .portletHeader {
+	display: none;
+}
+
+.portletNavigationTree .portletItem {
+	border: none;
+	padding: 0;
+}
+
+.navTree {
+	clear: both;
+	width: 175px;
+	height: 100%;
+	padding: 0;
+	background: url(/images/plone/3colContainer.jpg) repeat-y;
+}
+
+
+ul.navTree {
+	margin: 0;
+	background-color: #ffffff;
+	border-top: #EAEFF5 1px solid;
+	padding: 0;
+	height: 100%;
+}
+
+.navTree li {
+	list-style: none;
+	font-size: 108%;
+	border-bottom: #E3D9DD 1px solid;
+	border-left: #EAEFF5 5px solid;
+	border-right: #EAEFF5 1px solid;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 5px;
+	color: #430019;
+	margin-bottom: 0px;
+	overflow: hidden;
+}
+
+.navTreeItem {
+}
+
+
+.navTreeItem a,
+dd.portletItem .navTreeItem a {
+	color: #430019;
+	display: block;
+}
+
+.navTreeItem a:hover,
+dd.portletItem .navTreeItem a:hover {
+	color: #25476c;
+}
+
+#primaryNav a:link, #secondaryNav a:link {   text-decoration: none; color: #430019; display: block;}
+
+.navTreeItem a:link,
+dd.portletItem .navTreeItem a:link {
+}
+
+.navTreeItem a:visited,
+dd.portletItem .navTreeItem a:visited {
+}
+
+.navTreeItem a:active,
+dd.portletItem .navTreeItem a:active {
+	text-decoration: none;
+	color: #4A0000;
+}
+
+
+.navTree li:hover,
+.navTreeItem li:hover,
+dd.portletItem .navTreeItem li:hover {
+	border-left: #0099FF 5px solid;
+	background-color: #EAEFF5;
+}
+
+.navTree li:active,
+.navTreeItem li:active,
+dd.portletItem .navTreeItem li:active {
+	border-left: #BF0149 5px solid;
+	background-color: #FFE8E8;
+}
+
+.navTreeCurrentItem {
+	background-color: #F2F2F2;
+}
+
+li.navTreeCurrentItem {
+}
+
+li.navTreeCurrentNode {
+	background-color: #F2F2F2;
+	border-left: #36A7E9 5px solid;
+}
+
+li.navTreeCurrentItem a,
+li.navTreeCurrentItem a:hover {
+}
+
+/* want to hide icons in the main left nav */
+
+.navTree li.navTreeItem img {
+	display: none;
+}
+
+/* Another workaround for broken Internet Explorer */
+* html li.navTreeCurrentItem a,
+* html li.navTreeCurrentItem a:hover {
+}
+
+.navTreeLevel0 { margin: 0; }
+.navTreeLevel1 { margin-left: 1em;}
+.navTreeLevel2 { margin-left: 0.75em; }
+.navTreeLevel3 { margin-left: 0.75em; }
+.navTreeLevel4 { margin-left: 0.75em; }
+.navTreeLevel5 { margin-left: 0.75em; }
+
+/* end Main Nav */

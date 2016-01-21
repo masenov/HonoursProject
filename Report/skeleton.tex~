@@ -1,0 +1,137 @@
+
+% to choose your degree
+% please un-comment just one of the following
+\documentclass[bsc,frontabs,singlespacing,parskip,deptreport]{infthesis}     % for BSc, BEng etc.
+% \documentclass[minf,frontabs,twoside,singlespacing,parskip,deptreport]{infthesis}  % for MInf
+
+\usepackage{amsmath}
+
+\input{base.tex}
+
+
+\begin{document}
+
+\title{Visual illusions and interactions in biologically inspired neural networks. Analyzing perception of tilt}
+
+\author{Martin Andreev Asenov}
+
+% to choose your course
+% please un-comment just one of the following
+\course{Artificial Intelligence and Computer Science}
+%\course{Artificial Intelligence and Software Engineering}
+%\course{Artificial Intelligence and Mathematics}
+%\course{Artificial Intelligence and Psychology }   
+%\course{Artificial Intelligence with Psychology }   
+%\course{Linguistics and Artificial Intelligence}    
+%\course{Computer Science}
+%\course{Software Engineering}
+%\course{Computer Science and Electronics}    
+%\course{Electronics and Software Engineering}    
+%\course{Computer Science and Management Science}    
+%\course{Computer Science and Mathematics}
+%\course{Computer Science and Physics}  
+%\course{Computer Science and Statistics}    
+
+% to choose your report type
+% please un-comment just one of the following
+%\project{Undergraduate Dissertation} % CS&E, E&SE, AI&L
+%\project{Undergraduate Thesis} % AI%Psy
+\project{4th Year Project Report}
+
+\date{\today}
+
+\abstract{
+Human vision has been extensively studied both at a single cell level as well as on a higher cortical level, using different techniques like EEG, fMRI, Extracellular and Intracellular recordings as well as optical imaging. A lot of work has been done in analyzing edge detection and representation of a line in our visual cortex. Different neurons are tuned for specific orientation and specific part of our visual field. Based on those neurons we get multiple responses for those parts of our visual field, which combined together give us our perception of tilt.
+
+Models have been developed, which explain variety of visual illusions we experience, including pop-out and tilt illusions. However usually these models calculate the the perceived orientation in a static model, depending only on the current orientations in our visual field. The effect on those connections has not been tested in a full dynamic model, where groups of neurons keep acting on each other. This paper aims to explore a dynamic model, what effects does it have on our overall perception of tilt, and verify the validity of existing models.  
+}
+
+\maketitle
+
+\section*{Acknowledgements}
+Acknowledgements go here. 
+
+\tableofcontents
+
+%\pagenumbering{arabic}
+
+
+\chapter{Introduction}
+
+This paper develops a model, based and built upon the one described in the recent elastica paper \cite{keemink2015unified}. Although there are models explaining similar phenomenas, illusions as effects separately, the neural model described claims to have all of those properties, unifying them in one model. However all the results obtained were obtained statically with only one pass through the model. As mentioned in further development, adding dynamics to some of the already presented illusions could lead to some interesting behavior.
+
+
+
+\chapter{Background}
+
+In explaining the model setup, it is important to first introduce some neuroscience terminology, used in the developed model. As one can imagine the visual cortex is utterly complex. We are focusing on the V1 cortex, analyzing the orientation selective neurons. Even though we are focusing on a specific neurons in only a part of our visual processing pipeline, we make even more simplifications in order to be able to analyze specific features of those neurons. 
+
+\section{Visual field}
+
+
+
+
+
+Visual field is the area we can see with our eyes. The initial information we receive is changes in light from our retina. This then gets processed by the lateral geniculate nucleus (LGN) and passed down to the Primary visual cortex (V1). V1 receives information about orientation information about the different parts of our visual field. 
+
+\plotfigure{visual_fields}{Information processing from retina, LGN cells and V1 orientation selective cells}
+
+Precisely how this information is processed in the main interest of this project. Most of the information we perceive is close to the central or foveal vision, which could lead to interesting behavior \cite{knight2008drastically}. However we will ignore this details in our experiments.
+
+\plotfigure{RetinotopicMapping}{Test}
+
+\section{Receptive fields}
+
+One of the first records on the topic explains receptive fields as the part of visual field, which affect a specific neuron \cite{Hartline700}. An alternative, more general definition is a region of the sensory space, which can stimulate a given sensory neuron.  It was later discovered that time plays a role as well, making the definition more complicated \cite{deangelis1995receptive}. In general, outside of the visual cortex, a receptive field is defined as a region of the sensory space, which can stimulate a given sensory neuron. In our model, described later, we focus on the spatial and ignore the temporal separation of receptive fields.
+The definition of receptive field of a neuron has evolved over time.
+
+\plotfigure{F4large}{Test}
+
+\section{Tuning curves}
+
+Different orientation selective neurons are tuned for different orientation at a specific part of the visual field, defined by their receptive field. However they spike not only when the preferred orientation is presented, but also on similar to its preferred orientation. The intensity of spiking, when different orientations are presented, forms a Gaussian like curve with a peak the preferred orientation of the neuron. 
+
+\plotfigure{HubelWiesel}{Test}
+
+
+\section{Population coding}
+
+Our final perception of the orientation in a specific part of our visual field is based on the all the spiking of the neurons with that receptive field. Their directions and magnitude form vectors, which when added together give the final perceived orientation.
+
+\plotfigure{populationCoding}{Test}  
+
+\chapter{Design}
+
+This paper implements simplified version of visual field, receptive fields, tuning curves and population coding in a recurrent neural network with orientation selective neurons.
+
+What is fed to the model is 
+
+
+\begin{figure}
+    \centering
+    \includesvg[svgpath = images/, width = 0.7\textwidth]{example}
+    \caption{Figure will regular font.}
+    \label{fig:example}
+\end{figure}
+  
+
+\begin{equation}
+\tau_{syn}\cfrac{dr(t)}{dt}=-r(t)+in+\sum wr_{i}
+\end{equation}
+
+\begin{equation}
+\tau_{syn}\cfrac{dr(t)}{dt}=-r(t)+in+\sum\sigma_{distance}\sigma_{orientation}r_{i}
+\end{equation}
+
+\chapter{Implementation}
+
+\chapter{Evaluation}
+
+\chapter{Conclusions}
+
+% use the following and \cite{} as above if you use BibTeX
+% otherwise generate bibtem entries
+\bibliographystyle{plain}
+\bibliography{mybib}
+
+\end{document}

@@ -1,0 +1,75 @@
+Dayan paper about contextual effects inferred from image statistics.
+It's a really tough paper but worth the effort. I don't think it will be
+directly relevant to how we will be approaching the modeling, but it
+should give you an idea of what the interplay between brain inspired
+modeling and machine learning can be.
+
+
+For starting off I would recommend implementing Euler integration by hand to get a bit of a feel for differential equations
+
+Try to solve the following equation: 
+tau*dr/dt = -r + a
+
+And play around with starting values for r, and different values for tau and a. 
+
+
+html tool about variable coding (check folder)
+
+You might also find this website very useful in general:
+http://fourier.eng.hmc.edu/e180/lectures/v1/node1.html
+
+A lot details most of which are not directly relevant at the moment, but
+is a very good, quick to read, resource on everything V1.
+
+
+Hi Martin,
+
+Here's the working illusion:
+http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0014074
+
+I attached the hubel and wiesel slide.
+
+Let me know if you need anything else!
+
+It might be useful to make digital versions of the grid drawing we had
+today, or to do that on the whiteboard.
+
+I'm busy most of tomorrow morning, but if you want we could meet before
+if you want vocal feedback. If you send me a presentation tonight I'll
+also have a look at it and email you back.
+
+In the Coursera course week 2 section 2 is probably useful, they explain
+tuning curves there.
+
+Sander
+
+
+
+visual system's internal model of world - tai sing lee
+
+
+
+
+Concerning future goal: Currently you have a trivial lateral connecivity 
+/ weight matrix.
+The goal is examine to the dynamics of the neural activity in response 
+to various stimuli when the lateral connections are made more realistic 
+(taken from Sander's paper)
+
+Hi Martin,
+
+Glad to see your interest in this project! 
+
+I would suggest one of two papers to check out, depending on what you want to know more on. 
+
+If you want to know more about the kind of illusions and biases we will study, have a look at the review paper Schwartz et al (2007) - Space and time in visual context (attached). Especially note how they intuitively explain illusions from neural activities, figure 3. 
+
+If you want to know more about the kind of neural network we would be building to study these biases, take a look at the model in Zhaoping (1999) - Contextual influences in V1 as a basis for pop out and asymmetry in visual search (also attached). This is bit a more technical paper, and gives you an idea of the kind of maths involved in simulating a neural network. The results presented are not directly relevant to our project, so you can safely ignore the bulk of this paper. 
+
+Hope that helps, and let us know if you have any other questions. 
+
+Sander
+
+
+
+
