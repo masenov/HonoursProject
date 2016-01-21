@@ -48,14 +48,17 @@ displayHOG2(ac_orient);
 figure;
 displayHOG2(direction(:,:,timesteps));
 %% Print weight matrix
-set(gca,'fontize',14);
 h1 = figure;
 imagesc(weight_matrix)
-print(h1,'-djpeg','-r500','filename')
+set(gca,'fontsize',20,'fontweight','demi');
+print(h1,'-djpeg','-r500','weight1')
 h2 = figure;
 imagesc(weight_matrix(1:100,1:100))
-print(h2,'-djpeg','-r500','filename2')
+set(gca,'fontsize',20,'fontweight','demi');
+print(h2,'-djpeg','-r500','weight2')
 h3 = figure;
 imagesc(weight_matrix(1:10,1:10))
-print(h3,'-djpeg','-r500','filename3')
-print(h1,'-djpeg','-r500','filename4')
+set(gca,'fontsize',20,'fontweight','demi');
+print(h3,'-djpeg','-r500','weight3')
+set(gca,'fontsize',20,'fontweight','demi');
+print(h1,'-djpeg','-r500','weight4')
