@@ -33,9 +33,9 @@
 \date{\today}
 
 \abstract{
-Human vision has been extensively studied both at a single cell level as well as on a higher cortical level, using different techniques like EEG, fMRI, Extracellular and Intracellular recordings as well as optical imaging. A lot of work has been done in analyzing edge detection and representation of a line in our visual cortex. Different neurons are tuned for specific orientation and specific part of our visual field. Based on those neurons we get multiple responses for those parts of our visual field, which combined together give us our perception of tilt.
+Human vision has been extensively studied both at a single cell level as well as on a higher cortical level, using different techniques like EEG, fMRI, Extracellular and Intracellular recordings as well as optical imaging. A lot of work has been done in analyzing edge detection and representation of a line in our visual cortex. Different neurons are tuned for specific orientations and specific parts of our visual field. Based on those neurons we get multiple responses for those parts of our visual field, which combined together give us our perception of tilt.
 
-Models have been developed, which explain variety of visual illusions we experience, including pop-out and tilt illusions. However usually these models calculate the the perceived orientation in a static model, depending only on the current orientations in our visual field. The effect on those connections has not been tested in a full dynamic model, where groups of neurons keep acting on each other. This paper aims to explore a dynamic model, what effects does it have on our overall perception of tilt, and verify the validity of existing models.  
+Models have been developed, which explain variety of visual illusions we experience connected with this part of our vision processing, including pop-out and tilt illusions. However usually these models calculate the perceived orientation in a static model, depending only on the current orientations in our visual field. The effect on those connections has not been tested in a full dynamic model, where groups of neurons keep acting on each other. This paper aims to explore a dynamic model, what effects does it have on our overall perception of tilt, and verify the validity of existing models.  
 }
 
 \maketitle
@@ -50,15 +50,15 @@ Acknowledgements go here.
 
 \chapter{Introduction}
 
-In processing visual information, our brain seems to favor continuity and prioritize the greater whole, rather than individual details. Sometimes this ability serves us well, ex. when trying to find a pattern among random noise. However in other cases this leads to illusions as well (fig.\ref{illusion1}, fig.\ref{illusion2}). 
+In processing visual information, our brain seems to favor continuity and prioritize the greater whole, rather than individual details. Sometimes this ability serves us well, ex. when trying to find a pattern among random noise, or a discontinuity in a certain pattern. However in other cases this leads to various illusions (fig.\ref{illusion1}, fig.\ref{illusion2}). The project aims to explore the relevance of V1 and its orientation selectivity neurons in the context of those effects. 
 
-This paper develops a model, based and built upon the one described in the recent elastica paper \cite{keemink2015unified}. Although there are models explaining similar phenomenas, illusions and effects separately, the neural model described claims to have all of those properties, unifying them in one model. However all the results obtained were obtained statically with only one pass through the model. As mentioned in further development, adding dynamics to some of the already presented illusions could lead to some interesting behavior.
-
-
+This paper develops a model, based and built upon the one described in the recent elastica paper \cite{keemink2015unified}. Although there are models explaining similar phenomena, illusions and effects separately, the neural model described claims to have all of those properties, unifying them in one model. However all the results obtained were obtained statically with only one pass through the model. As mentioned in further development, adding dynamics to some of the already presented illusions could lead to some interesting behavior.
 
 
-\plotfigure{illusion1}{\bt{Visual illusion 1}\\The orientations of the small circles inside seem tilted. \cite{baggott2010investigating}}
-\plotfigure{illusion2}{\bt{Visual illusion 2}\\The lines do not seem parallel, when it reality they are. \cite{vision-computation}}
+
+
+\plotfigure{illusion1}{\bt{Visual illusion 1.}The orientations of the small circles inside seem tilted. \cite{baggott2010investigating}}
+\plotfigure{illusion2}{\bt{Visual illusion 2.}The lines do not seem parallel, when it reality they are. \cite{vision-computation}}
 
 
 
@@ -72,48 +72,60 @@ In explaining the model setup, it is important to first introduce some neuroscie
 
 
 
-Visual field is the area we can see with our eyes. The initial information we receive is changes in light from our retina. This then gets processed by the lateral geniculate nucleus (LGN) and passed down to the Primary visual cortex (V1). V1 receives information about orientation information about the different parts of our visual field. 
+Visual field is the area we can see with our eyes. The first few processing steps are illustrated in fig.\ref{visual_fields}. The initial information we receive is changes in light from our retina. This then gets processed by the lateral geniculate nucleus (LGN) and passed down to the Primary visual cortex (V1). V1 receives information about orientation information about the different parts of our visual field. 
 
-\plotfigure{visual_fields}{Information processing from retina, LGN cells and V1 orientation selective cells \cite{receptive-fields}}
+\plotfigure{visual_fields}{\bt{Information processing from retina, LGN cells and V1 orientation selective cells.}\cite{receptive-fields}}
 
-Precisely how this information is processed in the main interest of this project. Most of the information we perceive is close to the central or foveal vision, which could lead to interesting behavior \cite{knight2008drastically}. However we will ignore this details in our experiments.
+Precisely how this information is processed in the main interest of this project. While at a retinal and LGN level, most of the transformations are low-level, V1 starts to extract some patterns useful for the high level visual processing happening in V2, V3, V4, V5 and V6. 
 
-\plotfigure{RetinotopicMapping}{Central and peripheral vision\cite{retinotopic-mapping}. Substantial number of the cells in the retina are devoted to only a small part of our visual field, or central vision. Although relevant to the project, we will ignore this detail, for the benefit of simpler model}
+Finally it is also worth mentioning that we see in different details in different parts of our visual fields. Most of the information we perceive is close to the central or foveal vision, which could lead to interesting behavior \cite{knight2008drastically}. However we will ignore this details in our experiments.
+
+\plotfigure{RetinotopicMapping}{\bt{Central and peripheral vision}\cite{retinotopic-mapping} Substantial number of the cells in the retina are devoted to only a small part of our visual field, or central vision. Although relevant to the project, we will ignore this detail, for the benefit of simpler model}
 
 \section{Receptive fields}
 
-One of the first records on the topic explains receptive fields as the part of visual field, which affect a specific neuron \cite{Hartline700}. An alternative, more general definition is a region of the sensory space, which can stimulate a given sensory neuron.  It was later discovered that time plays a role as well, making the definition more complicated \cite{deangelis1995receptive}. In general, outside of the visual cortex, a receptive field is defined as a region of the sensory space, which can stimulate a given sensory neuron. In our model, described later, we focus on the spatial and ignore the temporal separation of receptive fields.
-The definition of receptive field of a neuron has evolved over time.
+In general, a receptive field is defined as a region of the sensory space, which can stimulate a given sensory neuron. In our context we can define the receptive field of a neuron, as the part of visual field, which affects it \cite{Hartline700}. The above two definition are known as classical receptive fields.
 
-\plotfigure{F4large}{\bt{Effect of the context on receptive field on a neuron}\\The firing of neurons is indirectly modulated and their response shifted, based on the stimuli just outside of their receptive field. This leads to some of the complications of explaining receptive field. Even though a certain neuron is tuned for only a certain part of our vision field, for certain orientation, it can be affected by nearby neurons. If we take this to the extreme, then a receptive field is based on all the sensory input we receive.\cite{cavanaugh2002nature}}
+It was later discovered that time plays a role as well, making the definition more complicated \cite{deangelis1995receptive}. In our model, described later, we focus on the spatial and ignore the temporal separation of receptive fields. Moreover because neurons are connected to each other, the notion of receptive field can get a bit vague. Because of those connection a neuron, can get excited or inhibited from parts of the visual field, that the neuron is not directly connected to (fig.\ref{F4large}).
+
+To avoid confusion we will stick to the definition of classical receptive fields, and use context modulation for the effects described above.
+
+\plotfigure{F4large}{\bt{Effect of the context on receptive field on a neuron}\cite{cavanaugh2002nature} The firing of neurons is indirectly modulated and their response shifted, based on the stimuli just outside of their receptive field. This leads to some of the complications of explaining receptive field. Even though a certain neuron is tuned for only a certain part of our vision field, for certain orientation, it can be affected by nearby neurons. If we take this to the extreme, then a receptive field is based on all the sensory input we receive.}
 
 \section{Tuning curves}
 
 Different orientation selective neurons are tuned for different orientation at a specific part of the visual field, defined by their receptive field. However they spike not only when the preferred orientation is presented, but also on similar to its preferred orientation. The intensity of spiking, when different orientations are presented, forms a bell shaped curve with a peak the preferred orientation of the neuron. 
 
-\plotfigure{HubelWiesel}{Test\cite{hubel1968receptive}}
+\plotfigure{HubelWiesel}{\bt{Tuning curves}\cite{hubel1968receptive} Different orientation bars are presented in a certain part of the visual field(on the left), and the response of the neuron tuned for this specific part of the visual field and $0\degree$. Even though the neuron is tuned for $0\degree$, its spikes when similar orientations are presented. The closer the orientation is to its preferred one, the stronger the response.}
 
 
 \section{Population coding}
 
 Our final perception of the orientation in a specific part of our visual field is based on the all the spiking of the neurons with that receptive field. Their directions and magnitude form vectors, which when added together give the final perceived orientation.
 
-\plotfigure{populationCoding}{Test\cite{amirikian2000directional}}  
+\plotfigure{populationCoding}{\bt{Population coding in the motor cortex}\cite{amirikian2000directional} Although the above picture illustrates population coding in a different part of the brain, it still illustrates the idea very well. Different orientation selective neurons respond with certain intensity (black bars) and their response are combined to show the final perceived perception(red bars).}  
 
 \chapter{Design}
 
 This paper implements simplified version of visual field, receptive fields, tuning curves and population coding in a recurrent neural network with orientation selective neurons. We start with a simple model with one receptive field, extend the model to multiple receptive fields, define limited and full connectivity and finally implement the elastica principle as well. In this section the different models are described in detail.
 
-The input our model receives is a matrix of numbers from the interval $0-1$, representing different orientation from $0\degree$ to $180\degree$. The output has the same form and represents what orientations the model perceives.
+The input our model receives is a matrix of numbers from the interval $0-1$, representing different orientation from $0\degree$ to $180\degree$. The output has the same form and represents what orientations the model perceives. Fig.\ref{input_random} shows a nice visualization of a sample input to the model.
 
 
-\plottwofigures{input_random}{input_structure}{Visualization of sample input(output) to the model. (A) Random orientations. (B) All orientations from $0\degree$ to $180\degree$, for every $1.8\degree$.}
+\plottwofigures{input_random}{input_structure}{\bt{Visualization of sample input(output) to the model}\\ (A) Random orientations. (B) All orientations from $0\degree$ to $180\degree$, for every $1.8\degree$.}
 
-For every single orientation of the input (every single bar in fig.\ref{input_random}), we have different neurons tuned for different orientations.
+For every single orientation of the input (every single bar in fig.\ref{input_random}), we have different neurons tuned for different orientations. Fig.\ref{stacked_neurons3} illustrates this. Here it is important two things. 
 
+First of all to detect a specific orientation, we have a stack of different neurons tuned for different orientations (fig.\ref{stacked_neurons3}, (A)). They all spike with different intensities and their collective response, forms the perceived orientation. 
+
+Secondly, every single orientation orientation in our visual field, has its own stack of neurons (fig.\ref{stacked_neurons3}, (B)). Based on all those neurons, we can get accurate information about all the orientations (the higher the number of neurons used, the more accurate the perceived orientation is).
+
+The complexity comes from the fact that the different 'stacks of neurons' are connected with the nearby stacks. 
 \plottwofigures{stacked_neurons3}{stacked_neurons2}{\bt{Visualization of the orientation selective neurons and their relationship with the presented input.} (A) Presented orientation(left) and responses of the orientation selective neurons(right). The more saturated the color, the stronger the response is. The neurons will spike with higher intensity, depending on the difference of the presented orientation and their preferred orientations. All the responses are combined, giving the final perceived orientation. (B) Schematic representation of the input and orientation selective neurons. Every orientation bar has its own stack of orientation selective neurons (only the first few are shown).} 
 
-\plotfigureS{neuron2}{Orientation selective neurons for a single orientation of our visual field. The nine neurons will spike with higher intensity, depending on the difference of the presented orientation and their preferred orientations. All the responses are combined, giving the final perceived orientation.}{.3}
+\plottwofiguresS{stacked_neurons}{neuron2}{\bt{Two different visualizations of orientation selective neurons} Orientation selective neurons for a single orientation of our visual field. We use the two pictures interchangeably to explain different concepts.}{.3}
+
+First we implement a visual field with a single orientation. We have a couple of neurons responsible for detecting the orientation (fig.\ref{stacked_neurons}).
 
 As described in \cite{keemink2015unified}, we represent those responses as vectors, with direction their preferred orientation and magnitude, the strength of the response with respect to the stimuli. Summing those vectors gives us the perceived orientation. Although used for recording responses from different types of neurons, fig.\ref{populationCoding} shows how population coding works. Black vectors are neural activity from specific neurons, and the red vector is the sum of all those responses.
 
@@ -141,30 +153,40 @@ where $\tau_{syn}$ is a constant, $\cfrac{dr_{1/2}(t)}{dt}$ is the change of the
 
 The different values of $A$ and $k$ are again described in \cite{keemink2015unified}, but ultimately the function with the correct set of parameters gives us the similarly looking tuning curves as in fig.\ref{HubelWiesel}.
 
-\begin{equation}
-\tau_{syn}\cfrac{dr(t)}{dt}=-r(t)+in+\sum\sigma_{distance}\sigma_{orientation}r_{i}
-\end{equation}
 
-\plottwofigures{neuron5}{neuron3}{Two orientation, with limited connectivity between neurons}
+\plottwofigures{neuron5}{neuron3}{\bt{Two orientations, with limited connectivity between neurons}}
 
 Next we extend the model, so we can have any number of orientations (fig.\ref{neuron1}). Every neuron (except the ones at the end at the visual field) is connected with the eight closest neurons, which have the same preferred orientation as his (fig.\ref{neuron1}). We can extend the formulas \ref{model11} and \ref{model12} to:
 
 \begin{equation}
-\tau_{syn}\cfrac{dr(t)}{dt}=-r(t)+in+\sum wr_{i}
+\tau_{syn}\cfrac{dr_{i}(t)}{dt}=-r_{i}(t)+in+\sum_{j} w_{ij}r_{j}
 \end{equation}
 
  
-\plotfigureS{neuron1}{Any number of orientations, with limited connectivity between neurons. *The connections for only one neuron are shown.}{0.7}
+\plotfigureS{neuron1}{\bt{Any number of orientations, with limited connectivity between neurons} *The connections for only one neuron are shown.}{0.7}
 
-The final modification we do, on single neuron level, is to add full connectivity between all the neurons. We set the weights depending on the closeness of the neurons to each other, as well as the similarity of their preferred orientation. To explain how we setup the weights, let use an example. Let's have a $10x10$ visual field with different orientations, as in fig.\ref{input_random} and $9$ orientations selective neurons as shown in fig.\ref{neuron2}. We have $900$ neurons all together. We can setup $900x900$ weight matrix defining the connections between the neurons. 
+The final modification we do, on single neuron level, is to add full connectivity between all the neurons. We set the weights depending on the closeness of the neurons to each other, as well as the similarity of their preferred orientation. To explain how we setup the weights, let use an example. Let's have a $10x10$ visual field with different orientations, as in fig.\ref{input_random} and $9$ orientations selective neurons. Unrolling the $10x10x9$ matrix, we have a vector of $900$ neurons all together. We can setup $900x900$ weight matrix defining the connections between the neurons. 
 
-Having some distance factor and the orientation factor as $\sigma_{distance}$ and $\sigma_{orientation}$ and for every two neurons $l$ and $m$ model the strength of the connection between them as:
+Having some distance and the orientation constants as $\kappa_{distance}$ and $\kappa_{orientation}$, for every two neurons $l$ and $m$, we model the strength of the connection between them as:
 
 \eq{d=\sqrt{{(i_{l}-i_{m})}^{2}+{{(j_{l}-j_{m})}^{2}}}}
 
 \eq{\delta=min(mod(\alpha_{l}-\alpha_{m},1),mod(\alpha_{m}-\alpha_{l},1))}
 
-\eq{w_{i,j}=w_{j,i}=\sigma_{distance}\cfrac{1}{exp(d)} + \sigma_{orientation}\cfrac{1}{exp(\delta)}}
+\eq{w_{i,j}=w_{j,i}=\kappa_{distance}\cfrac{1}{exp(d)} + \kappa_{orientation}\cfrac{1}{exp(\delta)}}
+
+
+Based on the above equations we have the updating of the network as:
+
+\begin{equation}
+\tau_{syn}\cfrac{dr_{i}(t)}{dt}=-r_{i}(t)+in+\sum_{j=0}^{\#neurons}w_{ij}r_{j}
+\end{equation}
+
+We can vectorize our equation (and code), so we have:
+
+\begin{equation}
+\tau_{syn}\cfrac{dr_{i}(t)}{dt}=-r_{i}(t)+in+Wr
+\end{equation}
 
 The strength of the connection between every two neurons $l$ and $m$ is the same as the recurrent connection between $l$ and $m$, so the matrix is symmetric with respect to the main diagonal. The values along the main diagonals are $0$ (a neuron does not have a connection with itself). We can also notice the general trend of having highest values along the main diagonal and then smaller values the further away we go. This is true for different scales of our matrix - the full matrix (a), the first $100x100$ square (b) as well as the first $10x10$ square (c). The three different scales represent the change in orientation, horizontal and vertical position.
 
@@ -172,7 +194,9 @@ The strength of the connection between every two neurons $l$ and $m$ is the same
 
 \plotthreefigures{weight1}{weight2}{weight3}{Weight matrix for a full connectivity model. (A) Full weight matrix. (B) First 100 neurons. (C) First 10 neurons. (D) Scale of the values.}
 
-\plotfiguresix{elastica1}{elastica2}{elastica3}{elastica4}{elastica5}{elastica6}{Elastica}{.7}
+The final part is implementing the elastica principle into the model (still to be done).
+
+\plotfiguresix{elastica1}{elastica2}{elastica3}{elastica4}{elastica5}{elastica6}{\bt{Elastica principle}\\}{.7}
 
 
 

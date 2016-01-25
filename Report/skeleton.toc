@@ -5,8 +5,8 @@
 \contentsline {section}{\numberline {2.3}Tuning curves}{9}
 \contentsline {section}{\numberline {2.4}Population coding}{10}
 \contentsline {chapter}{\numberline {3}Design}{12}
-\contentsline {chapter}{\numberline {4}Implementation}{18}
-\contentsline {chapter}{\numberline {5}Timeline}{19}
-\contentsline {chapter}{\numberline {6}Evaluation}{21}
-\contentsline {chapter}{\numberline {7}Conclusions}{22}
-\contentsline {chapter}{Bibliography}{23}
+\contentsline {chapter}{\numberline {4}Implementation}{19}
+\contentsline {chapter}{\numberline {5}Timeline}{20}
+\contentsline {chapter}{\numberline {6}Evaluation}{22}
+\contentsline {chapter}{\numberline {7}Conclusions}{23}
+\contentsline {chapter}{Bibliography}{24}

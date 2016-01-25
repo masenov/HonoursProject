@@ -39,6 +39,24 @@
 }
 
 
+\newcommand{\plottwofiguresS}[4]{
+\begin{figure}[H]
+\caption{}
+\begin{subfigure}{.5\textwidth}
+  \caption{}
+  \centering
+  \includegraphics[width=#4\linewidth]{#1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \caption{}
+  \centering
+  \includegraphics[width=#4\linewidth]{#2}
+\end{subfigure}
+\label{#1}
+\floatfoot{#3}
+\end{figure}
+}
+
 
 \newcommand{\plotfigure}[2]{
 \begin{figure}[H]
@@ -46,7 +64,9 @@
 \centering
 \includegraphics[width=.8\linewidth]{#1}
 \label{#1}
+\begin{center}
 \floatfoot{#2}
+\end{center}
 \end{figure}
 }
 
