@@ -13,7 +13,7 @@ from PIL import Image
 from random import random
 import elastica as el
 import elastica_neurons as en
-
+from holoviews import RGB
 
 
 
@@ -44,7 +44,7 @@ def mises_curve(a,k,angle,neuron=32):
     return curve
 
 
-def plotbar(x,y,th,color='k',width=2,l=1):
+def plotbar(x,y,th,color='k',width=2,l=1, aspect=1):
     ''' 
     Plot a single bar 
     x,y: location middle of bar
@@ -56,7 +56,6 @@ def plotbar(x,y,th,color='k',width=2,l=1):
     '''
     th = np.asarray(th)
     th = th + np.pi/2 # so that the orientation is relative to the vertical
-    print(th)
     hl = l/2 # half length bar
     
     # define x and y points of bar
@@ -65,7 +64,9 @@ def plotbar(x,y,th,color='k',width=2,l=1):
     
     # return holoviews curve
     curve = hv.Curve(zip(X,Y))
-    return curve(plot={'yaxis':None, 'xaxis':None})(style={'alpha':0.4, 'linewidth':width})    
+    return curve(plot={'yaxis':None, 'xaxis':None, 'aspect':aspect})(style={'alpha':0.4, 'linewidth':width})    
+
+
 
 
 def printMatrix(testMatrix):
@@ -84,12 +85,20 @@ def padwithzeros(vector, pad_width, iaxis, kwargs):
     return vector
 
 def plotOneField(k,t,nosn,rs):
-    result = hv.Points(zip(np.tile(t,nosn),rs[1,k[0],k[1],:].reshape(-1)))
+    result = hv.Points(zip(np.tile(t,nosn),rs[0,k[0],k[1],:].reshape(-1)))
     for j in range(1,rs.shape[0]):
         result *= hv.Points(zip(np.tile(t,nosn),rs[j,k[0],k[1],:].reshape(-1)))
     return result
     #return hv.Curve(zip(t,rs[:,1,1,:]))
 
+def plotOneField2(orientations, k,t,nosn,rs):
+    magnitude = np.empty(orientations.shape)
+    for i in range(orientations.shape[0]):
+        magnitude[i] = max(rs[i,k[0],k[1],:])
+    size = m.sqrt(len(orientations))
+    result = visualField3(orientations.reshape(size,size), magnitude.reshape(size,size))
+    return result
+    #return hv.Curve(zip(t,rs[:,1,1,:]))
 
 def setNumberOfColors(num_colors):
     import colorsys
@@ -137,7 +146,7 @@ def populationVector(orientations, r, nosn, timesteps):
     magnitude = np.sqrt(np.power(r_x,2) + np.power(r_y,2))
     r_x = np.divide(r_x, magnitude)
     r_y = np.divide(r_y, magnitude)
-    direction = (np.arcsin(r_x)>0)*np.arccos(r_y) + (np.arcsin(r_x)<0)*(2*np.pi-arccos(r_y))
+    direction = (np.arcsin(r_x)>0)*np.arccos(r_y) + (np.arcsin(r_x)<0)*(2*np.pi-np.arccos(r_y))
     direction = direction.real/2
     direction = np.reshape(direction, (m, n, timesteps))
     magnitude = np.reshape(magnitude, (m, n, timesteps))
@@ -147,7 +156,7 @@ def populationVector(orientations, r, nosn, timesteps):
 
 # Visualization of orienatations
 
-def visualField(orientations):
+def visualField(orientations, aspect=1):
     renderer = hv.Store.renderers['matplotlib'].instance(fig='svg', holomap='gif')
     if len(orientations.shape)==2 :
         x_ind = []
@@ -156,11 +165,13 @@ def visualField(orientations):
         for i in range(orientations.shape[0]):
             for j in range(orientations.shape[1]):
                 x_ind.append(i)
-                y_ind.append(orientations.shape[1]-1-j)
-                theta.append(orientations[j,i])
-        bars = plotbar(x_ind, y_ind, theta, l=0.9)
+                y_ind.append(j)
+                theta.append(orientations[i,j])
+                #y_ind.append(orientations.shape[1]-1-j)
+                #theta.append(orientations[j,i])
+        bars = plotbar(x_ind, y_ind, theta, l=0.9, width=7, aspect=aspect)
     else:
-        bars = plotbar(0,0,orientations,l=0.9)
+        bars = plotbar(0,0,orientations,l=0.9, width=7, aspect=aspect)
     return bars
 
 
@@ -172,32 +183,40 @@ def visualField2(orientations):
         for i in range(orientations.shape[0]):
             for j in range(orientations.shape[1]):
                 if (i==0 and j==0):
-                    bars = plotbar(i,j,orientations[0,0], l=0.9)
+                    bars = plotbar(i,j,orientations[0,0], l=0.9, width=7)
                 else:
-                    bars *= plotbar(i, j, orientations[i,j], l=0.9, width=4)
+                    bars *= plotbar(i, j, orientations[i,j], l=0.9, width=7)
+    
+
     renderer.save(bars, 'orientations')
 
     bars1 = SVG(filename='orientations.svg')
-    return bars1
+    return bars
 
 
 
 # Visualization of orienatations
 
 def visualField3(orientations, magnitude):
-    oneColor()
-    renderer = hv.Store.renderers['matplotlib'].instance(fig='svg', holomap='gif')
+    #oneColor()
+    renderer = hv.Store.renderers['matplotlib'].instance(fig='png', holomap='gif')
     if len(orientations.shape)==2:
         for i in range(orientations.shape[0]):
             for j in range(orientations.shape[1]):
                 if (i==0 and j==0):
-                    bars = plotbar(i,j,orientations[i,j], l=0.9, width=magnitude[i,j])
+                    bars = plotbar(i,j,orientations[i,j], l=0.9, width=magnitude[i,j]*3)
                 else:
-                    bars *= plotbar(i, j, orientations[i,j], l=0.9, width=magnitude[i,j])
-    renderer.save(bars, 'orientations')
+                    bars *= plotbar(i, j, orientations[i,j], l=0.9, width=magnitude[i,j]*3)
+    #renderer.save(bars, 'orientations')
 
-    bars1 = SVG(filename='orientations.svg')
-    return bars1
+    #bars1 = SVG(filename='orientations.svg')
+    renderer.save(bars, 'example_I')
+    parrot = RGB.load_image('example_I.png', array=True)
+    rgb_parrot = RGB(parrot)
+    rgb_parrot
+    return rgb_parrot
+
+
 
 
 def covarianceMatrix(rate_matrix, distance_factor, orientation_factor):
@@ -211,8 +230,8 @@ def covarianceMatrix(rate_matrix, distance_factor, orientation_factor):
                 i_coord = calculateCoordinates(i, rate_matrix.shape)
                 j_coord = calculateCoordinates(j, rate_matrix.shape)
                 distance = np.sqrt(np.power(i_coord[0]-j_coord[0],2)+np.power(i_coord[1]-j_coord[1],2))
-                angle_diff = min(mod(i_coord[2]-j_coord[2],rate_matrix.shape[2]), 
-                                 mod(j_coord[2]-i_coord[2],rate_matrix.shape[2]))
+                angle_diff = min(np.mod(i_coord[2]-j_coord[2],rate_matrix.shape[2]), 
+                                 np.mod(j_coord[2]-i_coord[2],rate_matrix.shape[2]))
                 matrix[i,j] = min(distance_factor, distance_factor*(1/exp(distance)))+\
                               min(orientation_factor, orientation_factor*(1/exp(angle_diff)))
                 matrix[j,i] = matrix[i,j]
@@ -225,4 +244,12 @@ def calculateCoordinates(index,size_matrix):
     remainder = np.mod(index,(size_matrix[0]*size_matrix[1]))
     y_size = np.fix(remainder/size_matrix[0])
     x_size = np.mod(remainder,size_matrix[0])
+    return np.array((x_size,y_size,z_size))
+
+
+def calculateCoordinatesZ(index,size_matrix):
+    x_size = np.fix(index/(size_matrix[1]*size_matrix[2]))
+    remainder = np.mod(index,(size_matrix[0]*size_matrix[1]))
+    y_size = np.fix(remainder/size_matrix[2])
+    z_size = np.mod(remainder,size_matrix[2])
     return np.array((x_size,y_size,z_size))
