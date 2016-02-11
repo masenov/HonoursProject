@@ -1,0 +1,2 @@
+source Python/venv/bin/activate
+ipython notebook

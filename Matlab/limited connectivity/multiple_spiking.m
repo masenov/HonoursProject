@@ -1,6 +1,6 @@
 close all; clear;
-m = 10;
-n = 10;
+m = 2;
+n = 2;
 tau = 6;
 % Number of orientation selective neurons
 nosn = 9;
@@ -12,8 +12,8 @@ A = 3;
 
 orientations = [0:pi/nosn:(nosn-1)*pi/nosn];
 %ac_orient = pi*rand(m,n);
-ac_orient = (0:99)*pi/100;
-ac_orient = reshape(ac_orient, [10 10]);
+ac_orient = (1:4)*pi/4;
+ac_orient = reshape(ac_orient, [2 2]);
 responses = zeros(nosn,timesteps);
 t = 1:1:timesteps;
 
