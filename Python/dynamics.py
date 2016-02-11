@@ -9,7 +9,7 @@ import seaborn as sb
 import holoviews as hv
 from IPython.display import SVG
 import io
-from PIL import Image
+#from PIL import Image
 from random import random
 import elastica as el
 import elastica_neurons as en
