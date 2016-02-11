@@ -154,7 +154,7 @@ def populationVector(orientations, r, nosn, timesteps):
 
 
 
-# Visualization of orienatations
+# Visualization of presented stimulus
 
 def visualField(orientations, aspect=1):
     renderer = hv.Store.renderers['matplotlib'].instance(fig='svg', holomap='gif')
@@ -175,9 +175,9 @@ def visualField(orientations, aspect=1):
     return bars
 
 
-# Visualization of orienatations
+# Visualization of orientation selective neurons
 
-def visualField2(orientations):
+def visualFieldColors(orientations):
     renderer = hv.Store.renderers['matplotlib'].instance(fig='svg', holomap='gif')
     if len(orientations.shape)==2:
         for i in range(orientations.shape[0]):
@@ -195,9 +195,9 @@ def visualField2(orientations):
 
 
 
-# Visualization of orienatations
+# Visualization of decoded stimulus
 
-def visualField3(orientations, magnitude):
+def visualFieldMagnitude(orientations, magnitude):
     #oneColor()
     renderer = hv.Store.renderers['matplotlib'].instance(fig='png', holomap='gif')
     if len(orientations.shape)==2:
@@ -218,6 +218,7 @@ def visualField3(orientations, magnitude):
 
 
 
+# Generate a weight matrix based on the difference in orientation and distance
 
 def covarianceMatrix(rate_matrix, distance_factor, orientation_factor):
     vector_length = np.size(rate_matrix)
