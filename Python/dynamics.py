@@ -225,17 +225,19 @@ def covarianceMatrix(rate_matrix, distance_factor, orientation_factor):
     matrix = np.zeros((vector_length, vector_length))
     for i in range(vector_length):
         for j in range(vector_length):
-            if (i==j):
+            # Calculate the coordinates of the two neurons (x,y,preferred_orientation)
+            first_neuron = calculateCoordinates(i, rate_matrix.shape)
+            second_neuron = calculateCoordinates(j, rate_matrix.shape)
+            # If the neurons respond to the same part of the visual field, don't have any connection between them
+            if (first_neuron[0]==second_neuron[0] and first_neuron[1]==second_neuron[1]):
                 continue
-            else:
-                i_coord = calculateCoordinates(i, rate_matrix.shape)
-                j_coord = calculateCoordinates(j, rate_matrix.shape)
-                distance = np.sqrt(np.power(i_coord[0]-j_coord[0],2)+np.power(i_coord[1]-j_coord[1],2))
-                angle_diff = min(np.mod(i_coord[2]-j_coord[2],rate_matrix.shape[2]), 
-                                 np.mod(j_coord[2]-i_coord[2],rate_matrix.shape[2]))
-                matrix[i,j] = min(distance_factor, distance_factor*(1/exp(distance)))+\
-                              min(orientation_factor, orientation_factor*(1/exp(angle_diff)))
-                matrix[j,i] = matrix[i,j]
+            # Model their connection based on distance and difference in orientation between them
+            distance = np.sqrt(np.power(first_neuron[0]-second_neuron[0],2)+np.power(first_neuron[1]-second_neuron[1],2))
+            angle_diff = min(np.mod(first_neuron[2]-second_neuron[2],rate_matrix.shape[2]), 
+                             np.mod(second_neuron[2]-first_neuron[2],rate_matrix.shape[2]))
+            matrix[i,j] = min(distance_factor, distance_factor*(1/exp(distance)))+\
+                          min(orientation_factor, orientation_factor*(1/exp(angle_diff)))
+            matrix[j,i] = matrix[i,j]
     return matrix
 
 
