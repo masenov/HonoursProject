@@ -2,4 +2,4 @@ a="'"
 git config credential.helper store
 git add -A
 b=$a$@$a
-echo $b
+echo $(git commit -m $b)
