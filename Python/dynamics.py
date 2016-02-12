@@ -68,8 +68,8 @@ def plotbar(x,y,th,color='k',width=2,l=1, aspect=1):
     
     # return holoviews curve
     curve = hv.Curve(zip(X,Y))
-    return curve(plot={'xticks':1,'aspect':aspect})(style={'alpha':0.4, 'linewidth':width})    
-
+    #return curve(plot={'xticks':x, 'yticks':y, 'zticks':l, 'aspect':aspect})(style={'alpha':0.4, 'linewidth':width})    
+    return curve(plot={'aspect':aspect})(style={'alpha':0.4, 'linewidth':width})    
 
 
 
@@ -218,7 +218,7 @@ def visualFieldMagnitude(orientations, magnitude, aspect=1):
     parrot = RGB.load_image('example_I.png', array=True)
     rgb_parrot = RGB(parrot)
     rgb_parrot
-    return rgb_parrot(plot={'yaxis':None, 'xaxis':None, 'aspect':aspect})
+    return bars(plot={'xticks':[0,orientations.shape[0]-1], 'yticks':[0,orientations.shape[1]-1], 'zticks':0.9, 'aspect':aspect})
 
 
 
