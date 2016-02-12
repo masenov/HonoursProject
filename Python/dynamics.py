@@ -68,7 +68,7 @@ def plotbar(x,y,th,color='k',width=2,l=1, aspect=1):
     
     # return holoviews curve
     curve = hv.Curve(zip(X,Y))
-    return curve(plot={'yaxis':None, 'xaxis':None, 'aspect':aspect})(style={'alpha':0.4, 'linewidth':width})    
+    return curve(plot={'xticks':1,'aspect':aspect})(style={'alpha':0.4, 'linewidth':width})    
 
 
 
@@ -208,9 +208,9 @@ def visualFieldMagnitude(orientations, magnitude, aspect=1):
         for i in range(orientations.shape[0]):
             for j in range(orientations.shape[1]):
                 if (i==0 and j==0):
-                    bars = plotbar(i,j,orientations[i,j], l=0.9, width=magnitude[i,j]*3, aspect=aspect)
+                    bars = plotbar(i,j,orientations[i,j], l=0.9, width=magnitude[i,j]*3)
                 else:
-                    bars *= plotbar(i, j, orientations[i,j], l=0.9, width=magnitude[i,j]*3, aspect=aspect)
+                    bars *= plotbar(i, j, orientations[i,j], l=0.9, width=magnitude[i,j]*3)
     #renderer.save(bars, 'orientations')
 
     #bars1 = SVG(filename='orientations.svg')
@@ -218,7 +218,7 @@ def visualFieldMagnitude(orientations, magnitude, aspect=1):
     parrot = RGB.load_image('example_I.png', array=True)
     rgb_parrot = RGB(parrot)
     rgb_parrot
-    return bars
+    return rgb_parrot(plot={'yaxis':None, 'xaxis':None, 'aspect':aspect})
 
 
 
