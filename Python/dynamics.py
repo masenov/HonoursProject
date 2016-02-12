@@ -14,6 +14,10 @@ from random import random
 import elastica as el
 import elastica_neurons as en
 from holoviews import RGB
+import inspect
+
+
+
 
 
 
@@ -197,16 +201,16 @@ def visualFieldColors(orientations):
 
 # Visualization of decoded stimulus
 
-def visualFieldMagnitude(orientations, magnitude):
+def visualFieldMagnitude(orientations, magnitude, aspect=1):
     #oneColor()
     renderer = hv.Store.renderers['matplotlib'].instance(fig='png', holomap='gif')
     if len(orientations.shape)==2:
         for i in range(orientations.shape[0]):
             for j in range(orientations.shape[1]):
                 if (i==0 and j==0):
-                    bars = plotbar(i,j,orientations[i,j], l=0.9, width=magnitude[i,j]*3)
+                    bars = plotbar(i,j,orientations[i,j], l=0.9, width=magnitude[i,j]*3, aspect=aspect)
                 else:
-                    bars *= plotbar(i, j, orientations[i,j], l=0.9, width=magnitude[i,j]*3)
+                    bars *= plotbar(i, j, orientations[i,j], l=0.9, width=magnitude[i,j]*3, aspect=aspect)
     #renderer.save(bars, 'orientations')
 
     #bars1 = SVG(filename='orientations.svg')
@@ -214,7 +218,7 @@ def visualFieldMagnitude(orientations, magnitude):
     parrot = RGB.load_image('example_I.png', array=True)
     rgb_parrot = RGB(parrot)
     rgb_parrot
-    return rgb_parrot
+    return bars
 
 
 
@@ -240,6 +244,35 @@ def covarianceMatrix(rate_matrix, distance_factor, orientation_factor):
             matrix[j,i] = matrix[i,j]
     return matrix
 
+
+# Generate a weight matrix based on the elastica principle
+
+def elasticaMatrix(m, n, nosn):
+    # replicate a vector with different orientation of length nosn to an m x n x nosn matrix
+    orientations = np.arange(0, np.pi, np.pi/nosn)
+    orientations2 = np.expand_dims(orientations, axis=1)
+    orientations3 = np.expand_dims(orientations2, axis=2)
+    orientations4 = np.tile(orientations3, (1, m, n))
+    vector_length = np.size(orientations4.ravel())
+    matrix = np.zeros((vector_length, vector_length))
+    unrolled_vector = orientations4.ravel()
+    for i in range(vector_length):
+            for j in range(vector_length):
+                # Calculate the coordinates of the two neurons (x,y,preferred_orientation)
+                first_neuron = calculateCoordinatesZ(i, orientations4.shape)
+                second_neuron = calculateCoordinatesZ(j, orientations4.shape)
+                # If the neurons respond to the same part of the visual field, don't have any connection between them
+                if (first_neuron[0]==second_neuron[0] and first_neuron[1]==second_neuron[1]):
+                    continue
+                # Model the connection of the neurons according to the elastica principle
+                x = first_neuron[1]-second_neuron[1]
+                y = first_neuron[2]-second_neuron[2]
+                theta1 = orientations4[first_neuron[0],first_neuron[1],first_neuron[2]]
+                theta2 = orientations4[second_neuron[0],second_neuron[1],second_neuron[2]]
+                energy = en.E(theta1,theta2,[x,y])
+                matrix[i,j] = energy
+                matrix[j,i] = energy
+    return matrix
 
 
 def calculateCoordinates(index,size_matrix):
