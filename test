@@ -1,3 +1,12 @@
 a="''"
 echo $a
 mkdir $(echo $a$@$a)
+
+
+# HonorsProject - extending holoviews
+        if (self.xticks is not None and self.yticks is not None and self.zticks is not None):
+            ranges['x'] = (min(self.xticks)-self.zticks/2.0,max(self.xticks)+self.zticks/2.0)
+            ranges['y'] = (min(self.yticks)-self.zticks/2.0,max(self.yticks)+self.zticks/2.0)
+
+
+holoviews/plotting/mpl/element
