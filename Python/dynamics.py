@@ -48,7 +48,7 @@ def mises_curve(a,k,angle,neuron=32):
     return curve
 
 
-def plotbar(x,y,th,color='k',width=2,l=1, aspect=1):
+def plotbar(x,y,th,color='k',width=2,l=0.9, box_length=1, aspect=1, fix_scale=False):
     ''' 
     Plot a single bar 
     x,y: location middle of bar
@@ -58,6 +58,7 @@ def plotbar(x,y,th,color='k',width=2,l=1, aspect=1):
     l:     line length (default = 1)
     Returns a holoviews curve object
     '''
+    
     th = np.asarray(th)
     th = th + np.pi/2 # so that the orientation is relative to the vertical
     hl = l/2 # half length bar
@@ -66,10 +67,30 @@ def plotbar(x,y,th,color='k',width=2,l=1, aspect=1):
     X = [x-pl.sin(th)*hl,x+pl.sin(th)*hl]
     Y = [y-pl.cos(th)*hl,y+pl.cos(th)*hl]
     
+    
+    if (type(x) == type(list())):
+        min_x = min(x)
+        max_x = max(x)
+        min_y = min(y)
+        max_y = max(y)
+    elif (not (type(x) == type(int()) or type(x) == type(float()))):
+        min_x = x.min()
+        max_x = x.max()
+        min_y = y.min()
+        max_y = y.max()
+    else:
+        min_x = x
+        max_x = x
+        min_y = y
+        max_y = y
+    ys = np.arange(min_y-0.5,max_y+0.5,0.01)
+    xs = np.arange(min_x-0.5,max_x+0.5,0.01)
+    curve1 = hv.Curve(zip(np.tile(x, len(ys)),ys))
+    curve2 = hv.Curve(zip(xs,np.tile(y, len(xs))))
+
     # return holoviews curve
     curve = hv.Curve(zip(X,Y))
-    #return curve(plot={'xticks':x, 'yticks':y, 'zticks':l, 'aspect':aspect})(style={'alpha':0.4, 'linewidth':width})    
-    return curve(plot={'xaxis':None, 'yaxis':None, 'xticks':x, 'yticks':y, 'zticks':0.9, 'aspect':aspect})
+    return curve1(style={'visible':False})(plot={'xaxis':None, 'yaxis':None})*curve2(style={'visible':False})(plot={'xaxis':None, 'yaxis':None})*curve(plot={'xaxis':None, 'yaxis':None, 'aspect':aspect})(style={'alpha':0.4, 'linewidth':width})
 
 
 
@@ -160,7 +181,7 @@ def populationVector(orientations, r, nosn, timesteps):
 
 # Visualization of presented stimulus
 
-def visualField(orientations, aspect=1):
+def visualField(orientations, aspect=1, fix_scale=False):
     renderer = hv.Store.renderers['matplotlib'].instance(fig='svg', holomap='gif')
     if len(orientations.shape)==2 :
         x_ind = []
@@ -173,10 +194,15 @@ def visualField(orientations, aspect=1):
                 theta.append(orientations[i,j])
                 #y_ind.append(orientations.shape[1]-1-j)
                 #theta.append(orientations[j,i])
-        bars = plotbar(x_ind, y_ind, theta, l=0.9, width=7, aspect=aspect)
+        bars = plotbar(x_ind, y_ind, theta, l=0.9, width=7, aspect=aspect, fix_scale=fix_scale)
     else:
-        bars = plotbar(0,0,orientations,l=0.9, width=7, aspect=aspect)
-    return bars
+        bars = plotbar(0,0,orientations,l=0.9, width=7, aspect=aspect, fix_scale=fix_scale)
+
+    renderer = hv.Store.renderers['matplotlib'].instance(fig='png', holomap='gif')
+    renderer.save(bars, 'example_I')
+    parrot = RGB.load_image('example_I.png', array=True)
+    rgb_parrot = RGB(parrot)
+    return rgb_parrot(plot={'xaxis':None, 'yaxis':None, 'aspect':aspect})
 
 
 # Visualization of orientation selective neurons
@@ -201,7 +227,7 @@ def visualFieldColors(orientations):
 
 # Visualization of decoded stimulus
 
-def visualFieldMagnitude(orientations, magnitude, aspect=1):
+def visualFieldMagnitude(orientations, magnitude, aspect=1, fix_scale=False):
     #oneColor()
     renderer = hv.Store.renderers['matplotlib'].instance(fig='png', holomap='gif')
     if len(orientations.shape)==2:
@@ -214,10 +240,10 @@ def visualFieldMagnitude(orientations, magnitude, aspect=1):
     #renderer.save(bars, 'orientations')
 
     #bars1 = SVG(filename='orientations.svg')
-    renderer.save(bars(plot={'xaxis':None, 'yaxis':None, 'xticks':[0,orientations.shape[0]-1], 'yticks':[0,orientations.shape[1]-1], 'zticks':0.9, 'aspect':aspect}), 'example_I')
+    renderer.save(bars, 'example_I')
     parrot = RGB.load_image('example_I.png', array=True)
     rgb_parrot = RGB(parrot)
-    return rgb_parrot(plot={'xaxis':None, 'yaxis':None, 'xticks':[0,orientations.shape[0]-2], 'yticks':[0,orientations.shape[1]-1], 'zticks':0.9, 'aspect':aspect})
+    return rgb_parrot(plot={'xaxis':None, 'yaxis':None, 'aspect':aspect})
 
 
 
