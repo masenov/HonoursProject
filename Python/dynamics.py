@@ -255,8 +255,8 @@ def covarianceMatrix(m, n, nosn, distance_factor, orientation_factor):
     for i in range(vector_length):
         for j in range(vector_length):
             # Calculate the coordinates of the two neurons (x,y,preferred_orientation)
-            first_neuron = calculateCoordinates(i, (m, n, nosn))
-            second_neuron = calculateCoordinates(j, (m, n, nosn))
+            first_neuron = calculateCoordinatesNew(i, (m, n, nosn))
+            second_neuron = calculateCoordinatesNew(j, (m, n, nosn))
             # If the neurons respond to the same part of the visual field, don't have any connection between them
             if (first_neuron[0]==second_neuron[0] and first_neuron[1]==second_neuron[1]):
                 continue
@@ -286,8 +286,8 @@ def elasticaMatrix(m, n, nosn, el_factor=1):
     for i in range(vector_length):
             for j in range(vector_length):
                 # Calculate the coordinates of the two neurons (x,y,preferred_orientation)
-                first_neuron = calculateCoordinatesZ(i, orientations4.shape)
-                second_neuron = calculateCoordinatesZ(j, orientations4.shape)
+                first_neuron = calculateCoordinatesNew(i, orientations4.shape)
+                second_neuron = calculateCoordinatesNew(j, orientations4.shape)
                 # If the neurons respond to the same part of the visual field, don't have any connection between them
                 if (first_neuron[0]==second_neuron[0] and first_neuron[1]==second_neuron[1]):
                     continue
