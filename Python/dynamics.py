@@ -15,7 +15,7 @@ import elastica as el
 import elastica_neurons as en
 from holoviews import RGB
 import inspect
-
+import os.path
 
 
 
@@ -48,7 +48,7 @@ def mises_curve(a,k,angle,neuron=32):
     return curve
 
 
-def plotbar(x,y,th,color='k',width=2,l=0.9, box_length=1, aspect=1, fix_scale=False):
+def plotbar(x,y,th,color='k',width=2,l=0.9, box_length=1, aspect=1):
     ''' 
     Plot a single bar 
     x,y: location middle of bar
@@ -194,15 +194,15 @@ def visualField(orientations, aspect=1, fix_scale=False):
                 theta.append(orientations[i,j])
                 #y_ind.append(orientations.shape[1]-1-j)
                 #theta.append(orientations[j,i])
-        bars = plotbar(x_ind, y_ind, theta, l=0.9, width=7, aspect=aspect, fix_scale=fix_scale)
+        bars = plotbar(x_ind, y_ind, theta, l=0.9, width=7, aspect=aspect)
     else:
-        bars = plotbar(0,0,orientations,l=0.9, width=7, aspect=aspect, fix_scale=fix_scale)
+        bars = plotbar(0,0,orientations,l=0.9, width=7, aspect=aspect)
 
     renderer = hv.Store.renderers['matplotlib'].instance(fig='png', holomap='gif')
     renderer.save(bars, 'example_I')
     parrot = RGB.load_image('example_I.png', array=True)
     rgb_parrot = RGB(parrot)
-    return rgb_parrot(plot={'xaxis':None, 'yaxis':None, 'aspect':aspect})
+    return bars(plot={'xaxis':None, 'yaxis':None, 'aspect':aspect})
 
 
 # Visualization of orientation selective neurons
@@ -249,21 +249,21 @@ def visualFieldMagnitude(orientations, magnitude, aspect=1, fix_scale=False):
 
 # Generate a weight matrix based on the difference in orientation and distance
 
-def covarianceMatrix(rate_matrix, distance_factor, orientation_factor):
-    vector_length = np.size(rate_matrix)
+def covarianceMatrix(m, n, nosn, distance_factor, orientation_factor):
+    vector_length = m*n*nosn
     matrix = np.zeros((vector_length, vector_length))
     for i in range(vector_length):
         for j in range(vector_length):
             # Calculate the coordinates of the two neurons (x,y,preferred_orientation)
-            first_neuron = calculateCoordinates(i, rate_matrix.shape)
-            second_neuron = calculateCoordinates(j, rate_matrix.shape)
+            first_neuron = calculateCoordinates(i, (m, n, nosn))
+            second_neuron = calculateCoordinates(j, (m, n, nosn))
             # If the neurons respond to the same part of the visual field, don't have any connection between them
             if (first_neuron[0]==second_neuron[0] and first_neuron[1]==second_neuron[1]):
                 continue
             # Model their connection based on distance and difference in orientation between them
             distance = np.sqrt(np.power(first_neuron[0]-second_neuron[0],2)+np.power(first_neuron[1]-second_neuron[1],2))
-            angle_diff = min(np.mod(first_neuron[2]-second_neuron[2],rate_matrix.shape[2]), 
-                             np.mod(second_neuron[2]-first_neuron[2],rate_matrix.shape[2]))
+            angle_diff = min(np.mod(first_neuron[2]-second_neuron[2],nosn), 
+                             np.mod(second_neuron[2]-first_neuron[2],nosn))
             matrix[i,j] = min(distance_factor, distance_factor*(1/exp(distance)))+\
                           min(orientation_factor, orientation_factor*(1/exp(angle_diff)))
             matrix[j,i] = matrix[i,j]
@@ -272,7 +272,7 @@ def covarianceMatrix(rate_matrix, distance_factor, orientation_factor):
 
 # Generate a weight matrix based on the elastica principle
 
-def elasticaMatrix(m, n, nosn):
+def elasticaMatrix(m, n, nosn, el_factor=1):
     # replicate a vector with different orientation of length nosn to an m x n x nosn matrix
     orientations = np.arange(0, np.pi, np.pi/nosn)
     orientations2 = np.expand_dims(orientations, axis=1)
@@ -297,7 +297,7 @@ def elasticaMatrix(m, n, nosn):
                 energy = en.E(theta1,theta2,[x,y])
                 matrix[i,j] = energy
                 matrix[j,i] = energy
-    return matrix
+    return matrix*el_factor
 
 
 def calculateCoordinates(index,size_matrix):
@@ -314,3 +314,30 @@ def calculateCoordinatesZ(index,size_matrix):
     y_size = np.fix(remainder/size_matrix[2])
     z_size = np.mod(remainder,size_matrix[2])
     return np.array((x_size,y_size,z_size))
+
+# Generate an elastica or simple distance/orientation dependant matrix based on give paramenters
+# If a file already exists for the matrix, just load it
+def generateWeightMatrix(type='el',m=1,n=2,nosn=9,distance_factor=0.01,orientation_factor=0.01,el_factor=0.001):
+    if type=='my':
+        filename = 'weight_matrices/my'+str(m)+'x'+str(n)+'x'+str(nosn)+','+str(distance_factor)+','+str(orientation_factor)+'.npy'
+        if os.path.isfile(filename):
+            matrix = np.load(filename)
+        else:
+            matrix = covarianceMatrix(m,n,nosn,distance_factor,orientation_factor)
+            np.save(filename, matrix)
+    elif type=='el':
+        filename = 'weight_matrices/el'+str(m)+'x'+str(n)+'x'+str(nosn)+','+str(el_factor)+'.npy'
+        if os.path.isfile(filename):
+            matrix = np.load(filename)
+        else:
+            matrix = elasticaMatrix(m,n,nosn,el_factor)
+            np.save(filename, matrix)
+    else:
+        raise ValueError('Type of matrix not recognized!')
+    return matrix
+
+
+def showWeights(matrix, fig_size=20):
+    plt.figure(figsize=[fig_size, fig_size])
+    plt.imshow(matrix)
+    plt.colorbar()
