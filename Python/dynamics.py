@@ -278,6 +278,8 @@ def elasticaMatrix(m, n, nosn, el_factor=1):
     orientations2 = np.expand_dims(orientations, axis=1)
     orientations3 = np.expand_dims(orientations2, axis=2)
     orientations4 = np.tile(orientations3, (1, m, n))
+    orientations4 = np.swapaxes(orientations4,0,1)
+    orientations4 = np.swapaxes(orientations4,1,2)
     vector_length = np.size(orientations4.ravel())
     matrix = np.zeros((vector_length, vector_length))
     unrolled_vector = orientations4.ravel()
@@ -290,8 +292,8 @@ def elasticaMatrix(m, n, nosn, el_factor=1):
                 if (first_neuron[0]==second_neuron[0] and first_neuron[1]==second_neuron[1]):
                     continue
                 # Model the connection of the neurons according to the elastica principle
-                x = first_neuron[1]-second_neuron[1]
-                y = first_neuron[2]-second_neuron[2]
+                x = first_neuron[0]-second_neuron[0]
+                y = first_neuron[1]-second_neuron[1]
                 theta1 = orientations4[first_neuron[0],first_neuron[1],first_neuron[2]]
                 theta2 = orientations4[second_neuron[0],second_neuron[1],second_neuron[2]]
                 energy = en.E(theta1,theta2,[x,y])
