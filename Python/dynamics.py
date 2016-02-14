@@ -303,10 +303,17 @@ def elasticaMatrix(m, n, nosn, el_factor=1):
 
 
 def calculateCoordinates(index,size_matrix):
-    z_size = np.fix(index/(size_matrix[0]*size_matrix[1]))
+    z_size = np.mod(index/size_matrix[2])
     remainder = np.mod(index,(size_matrix[0]*size_matrix[1]))
     y_size = np.fix(remainder/size_matrix[0])
     x_size = np.mod(remainder,size_matrix[0])
+    return np.array((x_size,y_size,z_size))
+
+
+def calculateCoordinatesNew(index,size_matrix):
+    z_size = np.mod(index,size_matrix[2])
+    y_size = np.fix(index/(size_matrix[0]*size_matrix[2]))
+    x_size = np.fix(np.mod(index,(size_matrix[0]*size_matrix[2]))/size_matrix[2])
     return np.array((x_size,y_size,z_size))
 
 

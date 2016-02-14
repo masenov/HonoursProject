@@ -18,5 +18,6 @@ from dynamics import *
 
 
 
-a = generateWeightMatrix(type='el')
-print (a)
+#a = generateWeightMatrix(type='el')
+for i in range(18):
+    calculateCoordinatesNew(i,(2,3,4))
