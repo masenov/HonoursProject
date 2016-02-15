@@ -297,8 +297,9 @@ def elasticaMatrix(m, n, nosn, el_factor=1):
                 theta1 = orientations4[first_neuron[0],first_neuron[1],first_neuron[2]]
                 theta2 = orientations4[second_neuron[0],second_neuron[1],second_neuron[2]]
                 energy = en.E(theta1,theta2,[x,y])
-                matrix[i,j] = energy
-                matrix[j,i] = energy
+                distance = np.sqrt(np.power(x,2) + np.power(y,2))
+                matrix[i,j] = energy/distance
+                matrix[j,i] = energy/distance
     return matrix*el_factor
 
 
