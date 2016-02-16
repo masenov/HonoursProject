@@ -42,10 +42,10 @@ def mises_curve(a,k,angle):
 '''
 
 def mises_curve(a,k,angle,neuron=32):
-    points = [i for i in np.arange(0, pi, pi/(neuron+1))]
+    points = [i for i in np.arange(0, pi, pi/neuron)]
     points_mises = [ mises(k,a,points[i],angle) for i in range(len(points))]
     curve = hv.Curve(zip(points,points_mises))
-    return curve
+    return curve, points, points_mises
 
 
 def plotbar(x,y,th,color='k',width=2,l=0.9, box_length=1, aspect=1):
