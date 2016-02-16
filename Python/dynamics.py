@@ -202,7 +202,7 @@ def visualField(orientations, aspect=1, fix_scale=False):
     renderer.save(bars, 'example_I')
     parrot = RGB.load_image('example_I.png', array=True)
     rgb_parrot = RGB(parrot)
-    return bars(plot={'xaxis':None, 'yaxis':None, 'aspect':aspect})
+    return rgb_parrot(plot={'xaxis':None, 'yaxis':None, 'aspect':aspect})
 
 
 # Visualization of orientation selective neurons
@@ -351,3 +351,36 @@ def showWeights(matrix, fig_size=20):
     plt.figure(figsize=[fig_size, fig_size])
     plt.imshow(matrix)
     plt.colorbar()
+
+
+def runExperiment(model,m,n,nosn,ac_orient,timesteps,tau,vis=True,k=0.25,A=3,distance_factor=0.01,orientation_factor=0.01,el_factor=0.001):
+    setNumberOfColors(nosn)
+
+    orientations = np.arange(0, np.pi, np.pi/nosn)
+    #ac_orient = np.random.rand(m,n)
+    responses = np.zeros((nosn, timesteps))
+    t = np.arange(0,timesteps,1)
+
+    spikes_ = vonMises(A,k,ac_orient,orientations)
+    spikes = spikes_.ravel()
+    r = np.zeros(len(spikes))
+    drdt = spikes/tau
+    rs = np.zeros(spikes.shape + (len(t),))
+    matrix = generateWeightMatrix(type=model, m=m,n=n,nosn=nosn,distance_factor=distance_factor,orientation_factor=orientation_factor,el_factor=el_factor)
+    for s in range(len(t)):
+        r = r + drdt
+        drdt = (-r + spikes)/tau + np.dot(matrix,r)
+        rs[:,s] = r
+
+    rs = np.reshape(rs, spikes_.shape + (len(t),))
+    (direction, magnitude) = populationVector(orientations, rs, nosn, timesteps)
+    dimensions = ['T']
+    keys = [i for i in range(timesteps)]
+    oneColor()
+    if vis:
+        r_first_neuron_hm = [(k, visualField(direction[:,:,k], aspect=m/float(n), fix_scale=True)) for k in keys]
+        results = hv.HoloMap(r_first_neuron_hm, kdims=dimensions)
+    else:
+        results = 1
+
+    return results, rs, direction, magnitude
