@@ -272,7 +272,7 @@ def covarianceMatrix(m, n, nosn, distance_factor, orientation_factor):
 
 # Generate a weight matrix based on the elastica principle
 
-def elasticaMatrix(m, n, nosn, el_factor=1):
+def elasticaMatrix(m, n, nosn):
     # replicate a vector with different orientation of length nosn to an m x n x nosn matrix
     orientations = np.arange(0, np.pi, np.pi/nosn)
     orientations2 = np.expand_dims(orientations, axis=1)
@@ -300,7 +300,7 @@ def elasticaMatrix(m, n, nosn, el_factor=1):
                 distance = np.sqrt(np.power(x,2) + np.power(y,2))
                 matrix[i,j] = energy/distance
                 matrix[j,i] = energy/distance
-    return matrix*el_factor
+    return matrix
 
 
 def calculateCoordinates(index,size_matrix):
@@ -336,11 +336,12 @@ def generateWeightMatrix(type='el',m=1,n=2,nosn=9,distance_factor=0.01,orientati
             matrix = covarianceMatrix(m,n,nosn,distance_factor,orientation_factor)
             np.save(filename, matrix)
     elif type=='el':
-        filename = 'weight_matrices/el'+str(m)+'x'+str(n)+'x'+str(nosn)+','+str(el_factor)+'.npy'
+        filename = 'weight_matrices/el'+str(m)+'x'+str(n)+'x'+str(nosn)+'.npy'
         if os.path.isfile(filename):
             matrix = np.load(filename)
+            matrix = matrix*el_factor
         else:
-            matrix = elasticaMatrix(m,n,nosn,el_factor)
+            matrix = elasticaMatrix(m,n,nosn)
             np.save(filename, matrix)
     else:
         raise ValueError('Type of matrix not recognized!')
@@ -384,3 +385,4 @@ def runExperiment(model,m,n,nosn,ac_orient,timesteps,tau,vis=True,k=0.25,A=3,dis
         results = 1
 
     return results, rs, direction, magnitude
+
