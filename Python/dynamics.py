@@ -272,7 +272,7 @@ def covarianceMatrix(m, n, nosn, distance_factor, orientation_factor):
 
 # Generate a weight matrix based on the elastica principle
 
-def elasticaMatrix(m, n, nosn):
+def elasticaMatrix(m, n, nosn, E0=0):
     # replicate a vector with different orientation of length nosn to an m x n x nosn matrix
     orientations = np.arange(0, np.pi, np.pi/nosn)
     orientations2 = np.expand_dims(orientations, axis=1)
@@ -298,8 +298,8 @@ def elasticaMatrix(m, n, nosn):
                 theta2 = orientations4[second_neuron[0],second_neuron[1],second_neuron[2]]
                 energy = en.E(theta1,theta2,[x,y])
                 distance = np.sqrt(np.power(x,2) + np.power(y,2))
-                matrix[i,j] = energy/distance
-                matrix[j,i] = energy/distance
+                matrix[i,j] = (energy-E0)/distance
+                matrix[j,i] = matrix[i,j]
     return matrix
 
 
@@ -313,8 +313,8 @@ def calculateCoordinates(index,size_matrix):
 
 def calculateCoordinatesNew(index,size_matrix):
     z_size = np.mod(index,size_matrix[2])
-    y_size = np.fix(index/(size_matrix[0]*size_matrix[2]))
-    x_size = np.fix(np.mod(index,(size_matrix[0]*size_matrix[2]))/size_matrix[2])
+    x_size = np.fix(index/(size_matrix[1]*size_matrix[2]))
+    y_size = np.fix(np.mod(index,(size_matrix[1]*size_matrix[2]))/size_matrix[2])
     return np.array((x_size,y_size,z_size))
 
 
@@ -327,7 +327,7 @@ def calculateCoordinatesZ(index,size_matrix):
 
 # Generate an elastica or simple distance/orientation dependant matrix based on give paramenters
 # If a file already exists for the matrix, just load it
-def generateWeightMatrix(type='el',m=1,n=2,nosn=9,distance_factor=0.01,orientation_factor=0.01,el_factor=0.001):
+def generateWeightMatrix(type='el',m=1,n=2,nosn=9,distance_factor=0.01,orientation_factor=0.01,el_factor=0.001,E0=0):
     if type=='my':
         filename = 'weight_matrices/my'+str(m)+'x'+str(n)+'x'+str(nosn)+','+str(distance_factor)+','+str(orientation_factor)+'.npy'
         if os.path.isfile(filename):
@@ -336,15 +336,16 @@ def generateWeightMatrix(type='el',m=1,n=2,nosn=9,distance_factor=0.01,orientati
             matrix = covarianceMatrix(m,n,nosn,distance_factor,orientation_factor)
             np.save(filename, matrix)
     elif type=='el':
-        filename = 'weight_matrices/el'+str(m)+'x'+str(n)+'x'+str(nosn)+'.npy'
+        filename = 'weight_matrices/el'+str(m)+'x'+str(n)+'x'+str(nosn)+','+str(E0)+'.npy'
         if os.path.isfile(filename):
             matrix = np.load(filename)
             matrix = matrix*el_factor
         else:
-            matrix = elasticaMatrix(m,n,nosn)
+            matrix = elasticaMatrix(m,n,nosn,E0)
             np.save(filename, matrix)
     else:
         raise ValueError('Type of matrix not recognized!')
+    np.save('test.npy', matrix)
     return matrix
 
 
@@ -354,7 +355,7 @@ def showWeights(matrix, fig_size=20):
     plt.colorbar()
 
 
-def runExperiment(model,m,n,nosn,ac_orient,timesteps,tau,vis=True,k=0.25,A=3,distance_factor=0.01,orientation_factor=0.01,el_factor=0.001):
+def runExperiment(model,m,n,nosn,ac_orient,timesteps,tau,vis=True,k=0.25,A=3,distance_factor=0.01,orientation_factor=0.01,el_factor=0.001,E0=0):
     setNumberOfColors(nosn)
 
     orientations = np.arange(0, np.pi, np.pi/nosn)
@@ -367,10 +368,10 @@ def runExperiment(model,m,n,nosn,ac_orient,timesteps,tau,vis=True,k=0.25,A=3,dis
     r = np.zeros(len(spikes))
     drdt = spikes/tau
     rs = np.zeros(spikes.shape + (len(t),))
-    matrix = generateWeightMatrix(type=model, m=m,n=n,nosn=nosn,distance_factor=distance_factor,orientation_factor=orientation_factor,el_factor=el_factor)
+    matrix = generateWeightMatrix(type=model, m=m,n=n,nosn=nosn,distance_factor=distance_factor,orientation_factor=orientation_factor,el_factor=el_factor,E0=E0)
     for s in range(len(t)):
         r = r + drdt
-        drdt = (-r + spikes)/tau + np.dot(matrix,r)
+        drdt = (-r + (spikes + np.dot(matrix,r)).clip(min=0))/tau
         rs[:,s] = r
 
     rs = np.reshape(rs, spikes_.shape + (len(t),))
@@ -386,3 +387,9 @@ def runExperiment(model,m,n,nosn,ac_orient,timesteps,tau,vis=True,k=0.25,A=3,dis
 
     return results, rs, direction, magnitude
 
+
+def showWeightsFile(filename, fig_size=20):
+    matrix = np.load('weight_matrices/'+filename)
+    plt.figure(figsize=[fig_size, fig_size])
+    plt.imshow(matrix)
+    plt.colorbar()
