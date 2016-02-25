@@ -380,7 +380,7 @@ def runExperiment(model,m,n,nosn,ac_orient,timesteps,tau,vis=True,k=0.25,A=3,dis
     keys = [i for i in range(timesteps)]
     oneColor()
     if vis:
-        r_first_neuron_hm = [(k, visualField(direction[:,:,k], aspect=m/float(n), fix_scale=True)) for k in keys]
+        r_first_neuron_hm = [(k, visualField(direction[:,:,k], aspect=n/float(m), fix_scale=True)) for k in keys]
         results = hv.HoloMap(r_first_neuron_hm, kdims=dimensions)
     else:
         results = 1
