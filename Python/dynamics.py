@@ -292,8 +292,8 @@ def elasticaMatrix(m, n, nosn, E0=0):
                 if (first_neuron[0]==second_neuron[0] and first_neuron[1]==second_neuron[1]):
                     continue
                 # Model the connection of the neurons according to the elastica principle
-                x = first_neuron[0]-second_neuron[0]
-                y = first_neuron[1]-second_neuron[1]
+                y = first_neuron[0]-second_neuron[0]
+                x = first_neuron[1]-second_neuron[1]
                 theta1 = orientations4[first_neuron[0],first_neuron[1],first_neuron[2]]
                 theta2 = orientations4[second_neuron[0],second_neuron[1],second_neuron[2]]
                 energy = en.E(theta1,theta2,[x,y])

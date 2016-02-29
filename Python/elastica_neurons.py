@@ -64,6 +64,8 @@ def E(c,f,X):
         length = 1        
     
     # find D candiates across all directions
+    c = c - pi/2
+    f = f - pi/2
     E = pl.zeros((length,4))  
     E[:,0] = findE(c,f,X)
     E[:,1] = findE(c+pi,f,X)
