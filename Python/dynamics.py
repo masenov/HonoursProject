@@ -364,7 +364,7 @@ def runExperiment(model,m,n,nosn,ac_orient,timesteps,tau,vis=True,k=0.25,A=3,dis
     t = np.arange(0,timesteps,1)
 
     spikes_ = vonMises(A,k,ac_orient,orientations)
-    spikes = spikes_.ravel()
+    spikes = spikes_.ravel(order='F')
     r = np.zeros(len(spikes))
     drdt = spikes/tau
     rs = np.zeros(spikes.shape + (len(t),))
@@ -374,7 +374,7 @@ def runExperiment(model,m,n,nosn,ac_orient,timesteps,tau,vis=True,k=0.25,A=3,dis
         drdt = (-r + (spikes + np.dot(matrix,r)).clip(min=0))/tau
         rs[:,s] = r
 
-    rs = np.reshape(rs, spikes_.shape + (len(t),))
+    rs = np.reshape(rs, spikes_.shape + (len(t),), order='F')
     (direction, magnitude) = populationVector(orientations, rs, nosn, timesteps)
     dimensions = ['T']
     keys = [i for i in range(timesteps)]
