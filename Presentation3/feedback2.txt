@@ -1,0 +1,9 @@
+Introduction - it's a bit better
+explain my problem well - not just reproducing Sander's paper- make really clear what the problem that I am working on - write an introduction
+very careful with the language I used and the definitions I use - make sure you use the correct definitions. make sure you understand all the terms
+don't skip slides
+little very well, rather than showing a lot of results badly
+spend time on the simple cases - this extends well to bigger systems
+don't rush, properly explain everything
+passively modeled illusions using elastica - not really clear how they work in a dynamical systems - that's what my project is about
+
