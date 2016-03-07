@@ -393,3 +393,60 @@ def showWeightsFile(filename, fig_size=20):
     plt.figure(figsize=[fig_size, fig_size])
     plt.imshow(matrix)
     plt.colorbar()
+
+
+def runExperimentFig5(matrix):
+    number_of_experiments = 25
+    setNumberOfColors(number_of_experiments)
+    timesteps = 150
+    tau = 6
+    orientations = np.arange(0, np.pi, np.pi/nosn)
+
+    flanker_orientation = pl.linspace(0,pl.pi/2,number_of_experiments)
+    flankers = np.zeros((timesteps,number_of_experiments))
+    centers = np.zeros((timesteps,number_of_experiments))
+
+    theta = np.linspace(0, np.pi/2, 25)
+    r = np.sqrt(0.6)
+    # compute x1 and x2
+    x1 = r*np.cos(theta)
+    y1 = r*np.sin(theta)
+
+    for i in range(number_of_experiments):
+        #ac_orient = np.random.rand(m,n)
+        responses = np.zeros((nosn, timesteps))
+        t = np.arange(0,timesteps,1)
+        ac_orient = np.array([[center],[orientations[i]],[orientations[i]],[orientations[i]],[orientations[i]],[orientations[i]],[orientations[i]]])
+        spikes_ = vonMises(A,k,ac_orient,orientations)
+        spikes = spikes_.ravel(order='F')
+        matrix = 10*matrix2
+        r = np.zeros(len(spikes))
+        drdt = spikes/tau
+        rs = np.zeros(spikes.shape + (len(t),))
+        for s in range(len(t)):
+            r = r + drdt
+            drdt = (-r + (spikes + np.dot(matrix,r)).clip(min=0))/tau
+            rs[:,s] = r
+        rs = np.reshape(rs, spikes_.shape + (len(t),), order='F')
+        (direction, magnitude) = populationVector(orientations, rs, nosn, timesteps)
+        flankers[:,i] = direction[0,0,:]
+        centers[:,i] = direction[1,0,:]
+
+
+def popvec(X,N):
+        ''' Population vector for the set of responses X, with each value in 
+        the vector X corresponding to an angle in self.ang
+        X is a 1D vector of length len(self.ang)
+        Returns the angle of the population vector.
+        '''
+        # define vector coordinates
+        ang = np.arange(0, np.pi, np.pi/N)
+        v = pl.zeros((2,N))
+        v[0,:] = cos(2*ang)
+        v[1,:] = sin(2*ang)
+
+        # find population vector
+        vest0 = pl.sum(((X-min(X))/max(X))*v,1)
+        
+        # return the angle of the population vector
+        return 0.5*pl.arctan2(vest0[1],vest0[0])
