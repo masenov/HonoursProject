@@ -272,7 +272,7 @@ def covarianceMatrix(m, n, nosn, distance_factor, orientation_factor):
 
 # Generate a weight matrix based on the elastica principle
 
-def elasticaMatrix(m, n, nosn, E0=0):
+def elasticaMatrix(m, n, nosn, E0=0, torus=False):
     # replicate a vector with different orientation of length nosn to an m x n x nosn matrix
     orientations = np.arange(0, np.pi, np.pi/nosn)
     orientations2 = np.expand_dims(orientations, axis=1)
@@ -282,6 +282,7 @@ def elasticaMatrix(m, n, nosn, E0=0):
     orientations4 = np.swapaxes(orientations4,1,2)
     vector_length = np.size(orientations4.ravel())
     matrix = np.zeros((vector_length, vector_length))
+    distances = np.zeros((m, n))
     unrolled_vector = orientations4.ravel()
     for i in range(vector_length):
             for j in range(vector_length):
@@ -289,7 +290,7 @@ def elasticaMatrix(m, n, nosn, E0=0):
                 first_neuron = calculateCoordinatesNew(i, orientations4.shape)
                 second_neuron = calculateCoordinatesNew(j, orientations4.shape)
                 # If the neurons respond to the same part of the visual field, don't have any connection between them
-                if (first_neuron[0]==second_neuron[0] and first_neuron[1]==second_neuron[1]):
+                if ((first_neuron[0]==second_neuron[0] and first_neuron[1]==second_neuron[1]) or matrix[i,j]!=0):
                     continue
                 # Model the connection of the neurons according to the elastica principle
                 y = first_neuron[0]-second_neuron[0]
@@ -297,10 +298,21 @@ def elasticaMatrix(m, n, nosn, E0=0):
                 theta1 = orientations4[first_neuron[0],first_neuron[1],first_neuron[2]]
                 theta2 = orientations4[second_neuron[0],second_neuron[1],second_neuron[2]]
                 energy = en.E(theta1,theta2,[x,y])
-                distance = np.sqrt(np.power(x,2) + np.power(y,2))
-                matrix[i,j] = (energy-E0)/distance
-                matrix[j,i] = matrix[i,j]
-    return matrix
+                if (torus):
+                    xy = np.array(([x,y],[x,y-m],[x,y+m],[x-n,y],[x-n,y-m],[x-n,y+m],[x+n,y],[x+n,y-m],[x+n,y+m]))
+                    energies = np.zeros(9)
+                    for k in range(9):
+                        distance = np.sqrt(np.power(xy[k][0],2) + np.power(xy[k][1],2))
+                        energy = en.E(theta1,theta2,[xy[k][0],xy[k][1]])
+                        energies[k] = (energy-E0)/distance
+                    matrix[i,j] = min(energies)
+                    matrix[j,i] = matrix[i,j]
+                else:
+                    distance = np.sqrt(np.power(x,2) + np.power(y,2))
+                    distances[first_neuron[0],first_neuron[1]] += distance
+                    matrix[i,j] = (energy-E0)/distance
+                    matrix[j,i] = matrix[i,j]
+    return matrix, distances
 
 
 def calculateCoordinates(index,size_matrix):
@@ -327,21 +339,24 @@ def calculateCoordinatesZ(index,size_matrix):
 
 # Generate an elastica or simple distance/orientation dependant matrix based on give paramenters
 # If a file already exists for the matrix, just load it
-def generateWeightMatrix(type='el',m=1,n=2,nosn=9,distance_factor=0.01,orientation_factor=0.01,el_factor=0.001,E0=0):
+def generateWeightMatrix(type='el',m=1,n=2,nosn=9,distance_factor=0.01,orientation_factor=0.01,el_factor=0.001,E0=0,torus=False):
     if type=='my':
         filename = 'weight_matrices/my'+str(m)+'x'+str(n)+'x'+str(nosn)+','+str(distance_factor)+','+str(orientation_factor)+'.npy'
         if os.path.isfile(filename):
             matrix = np.load(filename)
         else:
-            matrix = covarianceMatrix(m,n,nosn,distance_factor,orientation_factor)
+            matrix = covarianceMatrix(m,n,nosn,distance_factor,orientation_factor,torus=torus)
             np.save(filename, matrix)
     elif type=='el':
-        filename = 'weight_matrices/el'+str(m)+'x'+str(n)+'x'+str(nosn)+','+str(E0)+'.npy'
+        filename = 'weight_matrices/el'+str(m)+'x'+str(n)+'x'+str(nosn)+','+str(E0)
+        if (torus):
+            filename += '_torus'
+        filename += '.npy'
         if os.path.isfile(filename):
             matrix = np.load(filename)
             matrix = matrix*el_factor
         else:
-            matrix = elasticaMatrix(m,n,nosn,E0)
+            matrix,dis = elasticaMatrix(m,n,nosn,E0,torus=torus)
             np.save(filename, matrix)
     else:
         raise ValueError('Type of matrix not recognized!')
@@ -355,7 +370,7 @@ def showWeights(matrix, fig_size=20):
     plt.colorbar()
 
 
-def runExperiment(model,m,n,nosn,ac_orient,timesteps,tau,vis=True,k=0.25,A=3,distance_factor=0.01,orientation_factor=0.01,el_factor=0.001,E0=0):
+def runExperiment(model,m,n,nosn,ac_orient,timesteps,tau,vis=True,k=0.25,A=3,distance_factor=0.01,orientation_factor=0.01,el_factor=0.001,E0=0,torus=False):
     setNumberOfColors(nosn)
 
     orientations = np.arange(0, np.pi, np.pi/nosn)
@@ -368,7 +383,7 @@ def runExperiment(model,m,n,nosn,ac_orient,timesteps,tau,vis=True,k=0.25,A=3,dis
     r = np.zeros(len(spikes))
     drdt = spikes/tau
     rs = np.zeros(spikes.shape + (len(t),))
-    matrix = generateWeightMatrix(type=model, m=m,n=n,nosn=nosn,distance_factor=distance_factor,orientation_factor=orientation_factor,el_factor=el_factor,E0=E0)
+    matrix = generateWeightMatrix(type=model, m=m,n=n,nosn=nosn,distance_factor=distance_factor,orientation_factor=orientation_factor,el_factor=el_factor,E0=E0,torus=torus)
     for s in range(len(t)):
         r = r + drdt
         drdt = (-r + (spikes + np.dot(matrix,r)).clip(min=0))/tau
