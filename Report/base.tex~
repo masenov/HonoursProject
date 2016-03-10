@@ -1,13 +1,16 @@
-
-
 % to choose your degree
 % please un-comment just one of the following
-\documentclass[bsc,frontabs,singlespacing,parskip,deptreport]{infthesis}     % for BSc, BEng etc.
+
+\documentclass[bsc,frontabs,twoside,singlespacing,parskip,deptreport,logo]{infthesis}     % for BSc, BEng etc.
 % \documentclass[minf,frontabs,twoside,singlespacing,parskip,deptreport]{infthesis}  % for MInf
 
 
-\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{timeline}
 
+
+\usepackage{graphicx}
+\usepackage{url}
 \usepackage{amsmath}
 \usepackage{caption}
 \usepackage{subcaption}
@@ -15,7 +18,7 @@
 \usepackage[capposition=top]{floatrow}
 
 
-\graphicspath{ {Pictures/background/}{Pictures/models/}{Pictures/elastica/} }
+\graphicspath{ {Pictures/background/}{Pictures/models/}{Pictures/elastica/}{Pictures/illusions/} }
 
 
 
@@ -38,6 +41,24 @@
 }
 
 
+\newcommand{\plottwofiguresS}[4]{
+\begin{figure}[H]
+\caption{}
+\begin{subfigure}{.5\textwidth}
+  \caption{}
+  \centering
+  \includegraphics[width=#4\linewidth]{#1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \caption{}
+  \centering
+  \includegraphics[width=#4\linewidth]{#2}
+\end{subfigure}
+\label{#1}
+\floatfoot{#3}
+\end{figure}
+}
+
 
 \newcommand{\plotfigure}[2]{
 \begin{figure}[H]
@@ -45,7 +66,9 @@
 \centering
 \includegraphics[width=.8\linewidth]{#1}
 \label{#1}
+\begin{center}
 \floatfoot{#2}
+\end{center}
 \end{figure}
 }
 
@@ -57,6 +80,29 @@
 \includegraphics[width=#3\linewidth]{#1}
 \label{#1}
 \floatfoot{#2}
+\end{figure}
+}
+
+\newcommand{\plotthreefigures}[4]{
+\begin{figure}[H]
+\caption{}
+\begin{subfigure}{.5\textwidth}
+  \caption{}
+  \centering
+  \includegraphics[width=1\linewidth]{#1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \caption{}
+  \centering
+  \includegraphics[width=1\linewidth]{#2}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \caption{}
+  \centering
+  \includegraphics[width=1\linewidth]{#3}
+\end{subfigure}%
+\label{#1}
+\floatfoot{#4}
 \end{figure}
 }
 
@@ -157,6 +203,11 @@
 \floatfoot{#7}
 \end{figure}
 }
+
+\newcommand{\bt}[1]{
+\textbf{#1}
+}
+
 \newcommand{\eq}[1]{
 \begin{equation}
   {#1}

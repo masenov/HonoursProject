@@ -1,5 +1,6 @@
 % to choose your degree
 % please un-comment just one of the following
+
 \documentclass[bsc,frontabs,singlespacing,parskip,deptreport,logo]{infthesis}     % for BSc, BEng etc.
 % \documentclass[minf,frontabs,twoside,singlespacing,parskip,deptreport]{infthesis}  % for MInf
 
@@ -7,13 +8,14 @@
 \usepackage{tikz}
 \usetikzlibrary{timeline}
 
+
 \usepackage{graphicx}
 \usepackage{url}
 \usepackage{amsmath}
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{gensymb}
-\usepackage[capposition=top]{floatrow}
+%\usepackage[capposition=top]{floatrow}
 
 
 \graphicspath{ {Pictures/background/}{Pictures/models/}{Pictures/elastica/}{Pictures/illusions/} }
@@ -21,7 +23,7 @@
 
 
 \newcommand{\plottwofigures}[3]{
-\begin{figure}[H]
+\begin{figure}[]
 \caption{}
 \begin{subfigure}{.5\textwidth}
   \caption{}
@@ -40,7 +42,7 @@
 
 
 \newcommand{\plottwofiguresS}[4]{
-\begin{figure}[H]
+\begin{figure}[]
 \caption{}
 \begin{subfigure}{.5\textwidth}
   \caption{}
@@ -59,7 +61,7 @@
 
 
 \newcommand{\plotfigure}[2]{
-\begin{figure}[H]
+\begin{figure}[]
 \caption{}
 \centering
 \includegraphics[width=.8\linewidth]{#1}
@@ -72,7 +74,7 @@
 
 
 \newcommand{\plotfigureS}[3]{
-\begin{figure}[H]
+\begin{figure}[]
 \caption{}
 \centering
 \includegraphics[width=#3\linewidth]{#1}
@@ -82,7 +84,7 @@
 }
 
 \newcommand{\plotthreefigures}[4]{
-\begin{figure}[H]
+\begin{figure}[]
 \caption{}
 \begin{subfigure}{.5\textwidth}
   \caption{}
@@ -105,7 +107,7 @@
 }
 
 \newcommand{\plotfigures}[5]{
-\begin{figure}[H]
+\begin{figure}[]
 \caption{}
 \begin{subfigure}{.5\textwidth}
   \caption{}
@@ -133,7 +135,7 @@
 }
 
 \newcommand{\plotfiguresix}[8]{
-\begin{figure}[H]
+\begin{figure}[]
 \caption{}
 \begin{subfigure}{.5\textwidth}
   \caption{}
@@ -171,7 +173,7 @@
 }
 
 \newcommand{\plotfiguresixn}[7]{
-\begin{figure}[H]
+\begin{figure}[]
 \caption{}
 \begin{subfigure}{.5\textwidth}
   \centering

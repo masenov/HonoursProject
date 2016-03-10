@@ -32,10 +32,13 @@
 
 \date{\today}
 
-\abstract{
-Human vision has been extensively studied both at a single cell level as well as on a higher cortical level, using different techniques like EEG, fMRI, Extracellular and Intracellular recordings as well as optical imaging. A lot of work has been done in analyzing edge detection and representation of a line in our visual cortex. Different neurons are tuned for specific orientations and specific parts of our visual field. Based on those neurons we get multiple responses for those parts of our visual field, which combined together give us our perception of tilt.
 
-Models have been developed, which explain variety of visual illusions we experience connected with this part of our vision processing, including pop-out and tilt illusions. However usually these models calculate the perceived orientation in a static model, depending only on the current orientations in our visual field. The effect on those connections has not been tested in a full dynamic model, where groups of neurons keep acting on each other. This paper aims to explore a dynamic model, what effects does it have on our overall perception of tilt, and verify the validity of existing models.  
+\abstract{
+We experience different tilt illusions and pop out effects. This is often explained by the line's representation in the visual cortex. A group of neurons is responsible for detecting different orientations in different parts of our visual field. A neuron tuned for a specific orientation spikes more, when its preferred orientation is presented, and less the more different the orientations is, forming an bell shaped curve activity. We have multiple neurons for every part of our visual field, tuned for different orientations. Combining their responses we get an accurate response of the actual orientation, despite their noisy spiking.
+
+However neurons responsible for different part of our visual field are also connected to each other. This modulation explains some of the effect we are experiencing, orientations in our visual fields are influenced by nearby ones. However those interaction have only been explored statically, calculating the modulation only ones. In a full dynamic a change in an orientation, can lead to a change in another orientation, and so on. It's unclear if existing models change in a dynamic setting, does the system settles down to a stable state, or it keeps fluctuating.
+
+In this report, we explore an already existing passive model of the above mentioned neurons and build a dynamic model. We explore the differences between the two to check if in a dynamic setting, we still experience the same effects.
 }
 
 \maketitle
@@ -44,6 +47,8 @@ Models have been developed, which explain variety of visual illusions we experie
 Acknowledgements go here. 
 
 \tableofcontents
+\listoffigures
+%\listoftables
 
 %\pagenumbering{arabic}
 
@@ -55,6 +60,33 @@ In processing visual information, our brain seems to favor continuity and priori
 This paper develops a model, based and built upon the one described in the recent elastica paper \cite{keemink2015unified}. Although there are models explaining similar phenomena, illusions and effects separately, the neural model described claims to have all of those properties, unifying them in one model. However all the results obtained were obtained statically with only one pass through the model. As mentioned in further development, adding dynamics to some of the already presented illusions could lead to some interesting behavior.
 
 
+\begin{figure}
+  \centering
+  \begin{subfigure}[b]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{elastica1}
+    \caption{Tom and Jerry}
+    \label{fig:TomJerry}   
+  \end{subfigure}             
+  \begin{subfigure}[b]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{elastica2}
+    \caption{Wall-E}
+    \label{fig:WallE}
+  \end{subfigure}             
+  \begin{subfigure}[b]{0.3\textwidth}
+    \includegraphics[width=\textwidth]{elastica3}
+    \caption{Minions}
+    \label{fig:Minnion}
+  \end{subfigure}
+  \caption{Best Animations}
+  \label{fig:animations}
+\end{figure}
+
+\begin{figure}[htbp!] 
+\centering    
+\includegraphics[width=1.0\textwidth]{elastica1}
+\caption[Minion]{This is just a long figure caption for the minion in Despicable Me from Pixar}
+\label{fig:elastica1}
+\end{figure}
 
 
 \plotfigure{illusion1}{\bt{Visual illusion 1.}The orientations of the small circles inside seem tilted. \cite{baggott2010investigating}}

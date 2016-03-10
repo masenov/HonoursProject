@@ -1,0 +1,12 @@
+Introduction
+Background - visual fields, recepetive fiels, tuning curves, population coding
+Visual illusions and previous work?
+Design - decision
+Implementation - Matlab and Python(Holoviews)
+Experiments - recurrent neural network, passive model, dynamic model for different orientation (two neurons, two bars, without recurrent, with recurrent connections, three/six bars, multiple bars)
+Evaluation
+Timeline - put numbers and then legend at the bottom
+Conclusions
+
+substract the flanker orientation (biases not absolute value)
+figures about elastica - neuron in the middle and how it connects to other neurons

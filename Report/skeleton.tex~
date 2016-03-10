@@ -32,6 +32,7 @@
 
 \date{\today}
 
+
 \abstract{
 Human vision has been extensively studied both at a single cell level as well as on a higher cortical level, using different techniques like EEG, fMRI, Extracellular and Intracellular recordings as well as optical imaging. A lot of work has been done in analyzing edge detection and representation of a line in our visual cortex. Different neurons are tuned for specific orientations and specific parts of our visual field. Based on those neurons we get multiple responses for those parts of our visual field, which combined together give us our perception of tilt.
 
