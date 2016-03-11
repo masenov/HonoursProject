@@ -38,7 +38,7 @@ We experience different tilt illusions and pop out effects. This is often explai
 
 However neurons responsible for different part of our visual field are also connected to each other. This modulation explains some of the effect we are experiencing, orientations in our visual fields are influenced by nearby ones. However those interaction have only been explored statically, calculating the modulation only ones. In a full dynamic a change in an orientation, can lead to a change in another orientation, and so on. It's unclear if existing models change in a dynamic setting, does the system settles down to a stable state, or it keeps fluctuating.
 
-In this report, we explore an already existing passive model of the above mentioned neurons and build a dynamic model. We explore the differences between the two to check if in a dynamic setting, we still experience the same effects.
+In this report, we explore an already existing passive model of the above mentioned neurons and build a dynamic model. We explore the differences between the two to check if in a dynamic setting, we still experience the same effects. 
 }
 
 \maketitle
@@ -55,87 +55,69 @@ Acknowledgements go here.
 
 \chapter{Introduction}
 
-In processing visual information, our brain seems to favor continuity and prioritize the greater whole, rather than individual details. Sometimes this ability serves us well, ex. when trying to find a pattern among random noise, or a discontinuity in a certain pattern. However in other cases this leads to various illusions (fig.\ref{illusion1}, fig.\ref{illusion2}). The project aims to explore the relevance of V1 and its orientation selectivity neurons in the context of those effects. 
+In processing visual information, our brain seems to favor continuity and prioritize the greater whole, rather than individual details. Sometimes this ability serves us well, ex. when trying to find a pattern among random noise, or a discontinuity in a certain pattern. However in other cases this leads to various illusions (fig.\ref{illusion1}, fig.\ref{illusion2}) as well as pop out effects (fig.\ref{popout}). The project aims to explore the relevance of V1 and its orientation selectivity neurons in the context of those effects. Fig.\ref{illusion1} and fig.\ref{popout} are particularly relevant to this project.
 
-This paper develops a model, based and built upon the one described in the recent elastica paper \cite{keemink2015unified}. Although there are models explaining similar phenomena, illusions and effects separately, the neural model described claims to have all of those properties, unifying them in one model. However all the results obtained were obtained statically with only one pass through the model. As mentioned in further development, adding dynamics to some of the already presented illusions could lead to some interesting behavior.
+This paper develops a model, based and built upon the one described in the recent elastica paper \cite{keemink2015unified}. The elastica principle defines the strength of the connections between different orientation selective neurons. It favors continuity, the smoother too bars are connected to each other, the stronger the modulation connection between them. Although there are other models explaining similar phenomena, illusions and effects separately, the neural model described claims to have all of those properties, unifying them in one model. 
 
-
-\begin{figure}
-  \centering
-  \begin{subfigure}[b]{0.3\textwidth}
-    \includegraphics[width=\textwidth]{elastica1}
-    \caption{Tom and Jerry}
-    \label{fig:TomJerry}   
-  \end{subfigure}             
-  \begin{subfigure}[b]{0.3\textwidth}
-    \includegraphics[width=\textwidth]{elastica2}
-    \caption{Wall-E}
-    \label{fig:WallE}
-  \end{subfigure}             
-  \begin{subfigure}[b]{0.3\textwidth}
-    \includegraphics[width=\textwidth]{elastica3}
-    \caption{Minions}
-    \label{fig:Minnion}
-  \end{subfigure}
-  \caption{Best Animations}
-  \label{fig:animations}
-\end{figure}
-
-\begin{figure}[htbp!] 
-\centering    
-\includegraphics[width=1.0\textwidth]{elastica1}
-\caption[Minion]{This is just a long figure caption for the minion in Despicable Me from Pixar}
-\label{fig:elastica1}
-\end{figure}
+However all the results obtained were obtained statically with only one pass through the model. As mentioned in further development, adding dynamics to some of the already presented illusions could lead to some interesting behavior. We build a recurrent neural network of the orientation selective neurons in the V1 cortex. We set the strength of the connections between them (weights in the network), based on the elastica principle. We perform baseline experiments with the static model and compare the results in full dynamic setting.
 
 
-\plotfigure{illusion1}{\bt{Visual illusion 1.}The orientations of the small circles inside seem tilted. \cite{baggott2010investigating}}
-\plotfigure{illusion2}{\bt{Visual illusion 2.}The lines do not seem parallel, when it reality they are. \cite{vision-computation}}
 
+
+\plotfigure{illusion1}{The orientations of the small circles inside seem tilted \cite{baggott2010investigating}}{Tilt illusion}
+\plotfigureS{illusion2}{The lines do not seem parallel, when it reality they are \cite{vision-computation}}{Parallel illusion}{.5}
+\plotfigureS{popout}{The central bar is easily detected by our vision system, due to the difference from the nearby orientations}{Pop out effect}{.3}
 
 
 \chapter{Background}
 
-In explaining the model setup, it is important to first introduce some neuroscience terminology, used in the developed model. As one can imagine the visual cortex is utterly complex. We are focusing on the V1 cortex, analyzing the orientation selective neurons. Even though we are focusing on a specific neurons in only a part of our visual processing pipeline, we make even more simplifications in order to be able to analyze specific features of those neurons. 
+In explaining the model setup and performed experiments, it is important to first introduce some neuroscience terminology. As one can imagine the visual cortex is utterly complex. We are focusing on the V1 cortex, analyzing a specific type of orientation selective neurons. Even though we are focusing on a specific neurons in only a part of our visual processing pipeline, we make even more simplifications in order to be able to analyze specific features of those neurons. We also briefly introduce recurrent neural networks and how they are used in the project.
 
-\section{Visual field}
+\section{Neuroscience background}
+\subsection{Visual field}
 
+Visual field is the area we can see with our eyes. The first few processing steps are illustrated in fig.\ref{visual_fields}. The initial information we receive is changes in light from our retina. This then gets processed by the lateral geniculate nucleus (LGN). The LGN cells  and passed down to the Primary visual cortex (V1). V1 receives information about orientation information about the different parts of our visual field. 
 
-
-
-
-Visual field is the area we can see with our eyes. The first few processing steps are illustrated in fig.\ref{visual_fields}. The initial information we receive is changes in light from our retina. This then gets processed by the lateral geniculate nucleus (LGN) and passed down to the Primary visual cortex (V1). V1 receives information about orientation information about the different parts of our visual field. 
-
-\plotfigure{visual_fields}{\bt{Information processing from retina, LGN cells and V1 orientation selective cells.}\cite{receptive-fields}}
+\plotfigureS{visual_fields}{Perceiving a line from the retina to LGN cells and then by V1 orientation selective cells.\cite{receptive-fields}}{Visual Field}{.5}
 
 Precisely how this information is processed in the main interest of this project. While at a retinal and LGN level, most of the transformations are low-level, V1 starts to extract some patterns useful for the high level visual processing happening in V2, V3, V4, V5 and V6. 
 
-Finally it is also worth mentioning that we see in different details in different parts of our visual fields. Most of the information we perceive is close to the central or foveal vision, which could lead to interesting behavior \cite{knight2008drastically}. However we will ignore this details in our experiments.
+Finally it is also worth mentioning that we see in different details in different parts of our visual fields. Most of the information we perceive is close to the central or foveal vision, which could lead to interesting behavior \cite{knight2008drastically}. A small part of our retina, known as 'blind spot', does not have any photoreceptors. Our brain compensates the lack of information by fulfilling details from nearby observations. Both of those details could lead to change in behavior in our model, however we will ignore this details in our experiments.
 
-\plotfigure{RetinotopicMapping}{\bt{Central and peripheral vision}\cite{retinotopic-mapping} Substantial number of the cells in the retina are devoted to only a small part of our visual field, or central vision. Although relevant to the project, we will ignore this detail, for the benefit of simpler model}
+\plotfigure{RetinotopicMapping}{\bt{Central and peripheral vision}\cite{retinotopic-mapping} Substantial number of the cells in the retina are devoted to only a small part of our visual field, or central vision. Although relevant to the project, we will ignore this detail, for the benefit of simpler model}{Central and peripheral vision}
 
-\section{Receptive fields}
+\subsection{Receptive fields}
 
 In general, a receptive field is defined as a region of the sensory space, which can stimulate a given sensory neuron. In our context we can define the receptive field of a neuron, as the part of visual field, which affects it \cite{Hartline700}. The above two definition are known as classical receptive fields.
 
 It was later discovered that time plays a role as well, making the definition more complicated \cite{deangelis1995receptive}. In our model, described later, we focus on the spatial and ignore the temporal separation of receptive fields. Moreover because neurons are connected to each other, the notion of receptive field can get a bit vague. Because of those connection a neuron, can get excited or inhibited from parts of the visual field, that the neuron is not directly connected to (fig.\ref{F4large}).
 
-To avoid confusion we will stick to the definition of classical receptive fields, and use context modulation for the effects described above.
+To avoid confusion we will stick to the definition of classical receptive fields, and distinguish between the input a neuron receives because of its tuned orientation and modulation from nearby neurons.
 
-\plotfigure{F4large}{\bt{Effect of the context on receptive field on a neuron}\cite{cavanaugh2002nature} The firing of neurons is indirectly modulated and their response shifted, based on the stimuli just outside of their receptive field. This leads to some of the complications of explaining receptive field. Even though a certain neuron is tuned for only a certain part of our vision field, for certain orientation, it can be affected by nearby neurons. If we take this to the extreme, then a receptive field is based on all the sensory input we receive.}
+\plotfigureS{F4large}{\bt{Effect of the context on receptive field on a neuron}\cite{cavanaugh2002nature} The firing of neurons is indirectly modulated and their response shifted, based on the stimuli just outside of their receptive field. This leads to some of the complications of explaining receptive field. Even though a certain neuron is tuned for only a certain part of our vision field, for certain orientation, it can be affected by nearby neurons. If we take this to the extreme, then a receptive field is based on all the sensory input we receive.}{Effect of the context on receptive field on a neuron}{.5}
 
-\section{Tuning curves}
+\subsection{Tuning curves}
 
-Different orientation selective neurons are tuned for different orientation at a specific part of the visual field, defined by their receptive field. However they spike not only when the preferred orientation is presented, but also on similar to its preferred orientation. The intensity of spiking, when different orientations are presented, forms a bell shaped curve with a peak the preferred orientation of the neuron. 
+Different orientation selective neurons are tuned for different orientation at a specific part of the visual field, defined by their receptive field. In other words neurons like specific orientation place at a specific place. However they spike not only when the preferred orientation is presented, but also on similar to its preferred orientation. The intensity of spiking, when different orientations are presented, forms a bell shaped curve with a peak the preferred orientation of the neuron. 
 
-\plotfigure{HubelWiesel}{\bt{Tuning curves}\cite{hubel1968receptive} Different orientation bars are presented in a certain part of the visual field(on the left), and the response of the neuron tuned for this specific part of the visual field and $0\degree$. Even though the neuron is tuned for $0\degree$, its spikes when similar orientations are presented. The closer the orientation is to its preferred one, the stronger the response.}
+\plotfigure{HubelWiesel}{\bt{Tuning curves}\cite{hubel1968receptive} Different orientation bars are presented in a certain part of the visual field(on the left), and the response of the neuron tuned for this specific part of the visual field and $0\degree$. Even though the neuron is tuned for $0\degree$, its spikes when similar orientations are presented. The closer the orientation is to its preferred one, the stronger the response.}{Tuning curves}
 
 
-\section{Population coding}
+\subsection{Population coding}
 
-Our final perception of the orientation in a specific part of our visual field is based on the all the spiking of the neurons with that receptive field. Their directions and magnitude form vectors, which when added together give the final perceived orientation.
+We have multiple orientation selective neurons per part of our receptive field. They all spike with different intensity defined by their tuning curves. Our final perception of the orientation in that part of the visual field is based on the all the spiking of the neurons. Their preferred orientation and magnitude can form a vector, with direction based on the preferred orientation and length based on the magnitude. When the vectors are added together, we get the final perceived orientation, with magnitude, as before, the length of the vector and perceived orientation - the direction of the vector.
 
-\plotfigure{populationCoding}{\bt{Population coding in the motor cortex}\cite{amirikian2000directional} Although the above picture illustrates population coding in a different part of the brain, it still illustrates the idea very well. Different orientation selective neurons respond with certain intensity (black bars) and their response are combined to show the final perceived perception(red bars).}  
+\plotfigure{populationCoding}{\bt{Population coding in the motor cortex}\cite{amirikian2000directional} Although the above picture illustrates population coding in a different part of the brain, it still good illustration of population coding. Different orientation selective neurons respond with certain intensity (black bars) and their response are combined to show the final perceived perception(red bars).}{Population Coding}
+
+\section{Elastica principle}
+
+The elastica principle defines the strength of modulation between two neurons. We find the smoothest curve connecting the two bars. The elastica energy is then defined by the length of the curve. The smoother curve they form, the more strongly they should be connected. The principle is illustrated in fig.\ref{elastica1}.
+
+\plotfiguresix{elastica1}{elastica5}{elastica3}{elastica4}{elastica2}{elastica6}{\bt{Elastica principle} a) Elastica energy is 0, the curves are really strongly connected}{.7}{Elastica principle}
+
+\section{Recurrent Neural Networks}
+
+A recurrent neural network (RNN) is a type of neural network with two way connections between its neurons. The benefit compared to a standard feedforward architecture is that can model dynamic behavior, where the responses of neurons change with respect to time. The network settles in a stable state, periodic or chaotic behavior. Two problems with RNNs are training and the expensive simulation of small timesteps. However they are not an issue as we set the weights based on the elastica principle and the experiments we run are on relatively small visual fields.
 
 \chapter{Design}
 
@@ -195,7 +177,7 @@ Next we extend the model, so we can have any number of orientations (fig.\ref{ne
 \end{equation}
 
  
-\plotfigureS{neuron1}{\bt{Any number of orientations, with limited connectivity between neurons} *The connections for only one neuron are shown.}{0.7}
+%\plotfigureS{neuron1}{\bt{Any number of orientations, with limited connectivity between neurons} *The connections for only one neuron are shown.}{0.7}
 
 The final modification we do, on single neuron level, is to add full connectivity between all the neurons. We set the weights depending on the closeness of the neurons to each other, as well as the similarity of their preferred orientation. To explain how we setup the weights, let use an example. Let's have a $10x10$ visual field with different orientations, as in fig.\ref{input_random} and $9$ orientations selective neurons. Unrolling the $10x10x9$ matrix, we have a vector of $900$ neurons all together. We can setup $900x900$ weight matrix defining the connections between the neurons. 
 
@@ -228,7 +210,7 @@ The strength of the connection between every two neurons $l$ and $m$ is the same
 
 The final part is implementing the elastica principle into the model (still to be done).
 
-\plotfiguresix{elastica1}{elastica2}{elastica3}{elastica4}{elastica5}{elastica6}{\bt{Elastica principle}\\}{.7}
+
 
 
 

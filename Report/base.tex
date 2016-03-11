@@ -1,7 +1,7 @@
 % to choose your degree
 % please un-comment just one of the following
 
-\documentclass[bsc,frontabs,singlespacing,parskip,deptreport,logo]{infthesis}     % for BSc, BEng etc.
+\documentclass[bsc,frontabs,twoside,singlespacing,parskip,deptreport,logo]{infthesis}     % for BSc, BEng etc.
 % \documentclass[minf,frontabs,twoside,singlespacing,parskip,deptreport]{infthesis}  % for MInf
 
 
@@ -15,7 +15,7 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{gensymb}
-\usepackage[capposition=top]{floatrow}
+\usepackage[capposition=bottom]{floatrow}
 
 
 \graphicspath{ {Pictures/background/}{Pictures/models/}{Pictures/elastica/}{Pictures/illusions/} }
@@ -60,26 +60,22 @@
 }
 
 
-\newcommand{\plotfigure}[2]{
+\newcommand{\plotfigure}[3]{
 \begin{figure}[H]
-\caption{}
 \centering
 \includegraphics[width=.8\linewidth]{#1}
+\caption[#3]{#2}
 \label{#1}
-\begin{center}
-\floatfoot{#2}
-\end{center}
 \end{figure}
 }
 
 
-\newcommand{\plotfigureS}[3]{
+\newcommand{\plotfigureS}[4]{
 \begin{figure}[H]
-\caption{}
 \centering
-\includegraphics[width=#3\linewidth]{#1}
+\includegraphics[width=#4\linewidth]{#1}
+\caption[#3]{#2}
 \label{#1}
-\floatfoot{#2}
 \end{figure}
 }
 
@@ -134,9 +130,9 @@
 \end{figure}
 }
 
-\newcommand{\plotfiguresix}[8]{
+\newcommand{\plotfiguresix}[9]{
 \begin{figure}[H]
-\caption{}
+\centering
 \begin{subfigure}{.5\textwidth}
   \caption{}
   \centering
@@ -167,8 +163,8 @@
   \centering
   \includegraphics[width=#8\linewidth]{#6}
 \end{subfigure}
+\caption[#9]{#7}
 \label{#1}
-\floatfoot{#7}
 \end{figure}
 }
 

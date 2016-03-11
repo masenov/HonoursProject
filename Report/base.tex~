@@ -1,7 +1,7 @@
 % to choose your degree
 % please un-comment just one of the following
 
-\documentclass[bsc,frontabs,twoside,singlespacing,parskip,deptreport,logo]{infthesis}     % for BSc, BEng etc.
+\documentclass[bsc,frontabs,singlespacing,parskip,deptreport,logo]{infthesis}     % for BSc, BEng etc.
 % \documentclass[minf,frontabs,twoside,singlespacing,parskip,deptreport]{infthesis}  % for MInf
 
 
@@ -15,7 +15,7 @@
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{gensymb}
-\usepackage[capposition=top]{floatrow}
+\usepackage[capposition=bottom]{floatrow}
 
 
 \graphicspath{ {Pictures/background/}{Pictures/models/}{Pictures/elastica/}{Pictures/illusions/} }
@@ -62,13 +62,10 @@
 
 \newcommand{\plotfigure}[2]{
 \begin{figure}[H]
-\caption{}
 \centering
 \includegraphics[width=.8\linewidth]{#1}
-\label{#1}
-\begin{center}
-\floatfoot{#2}
-\end{center}
+\caption[#1]{#2}
+\label{fig:#1}
 \end{figure}
 }
 
