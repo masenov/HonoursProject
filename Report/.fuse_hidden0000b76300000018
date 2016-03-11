@@ -258,8 +258,6 @@ So every time step the change in the rate of the neuron is:
 
 $\frac{dr(t)}{dt}=\cfrac{-r(t)+in}{\tau_{syn}}$
 
-\plotfigureS{simple}{The lines do not seem parallel, when it reality they are \cite{vision-computation}}{Simple RNN}{.5}
-
 Go in more details and show the first few steps of calculations of $\frac{dr(t)}{dt}$. $\tau_{syn}$ changes how fast the neuron goes to the stable state.
 
 

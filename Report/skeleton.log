@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.11.16)  11 MAR 2016 10:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.11.16)  11 MAR 2016 19:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -874,6 +874,12 @@ res/elastica/elastica5.png> <./Pictures/elastica/elastica3.png> <./Pictures/ela
 stica/elastica4.png> <./Pictures/elastica/elastica2.png> <./Pictures/elastica/e
 lastica6.png>] [18]
 Chapter 3.
+
+Overfull \hbox (1.93478pt too wide) in paragraph at lines 124--125
+\OT1/ptm/m/n/12 This pa-per im-ple-ments sim-pli-fied ver-sions of vi-sual fiel
+d, re-cep-tive fields, tun-ing curves
+ []
+
 <Pictures/models/input_random.png, id=94, 1027.84pt x 1027.84pt>
 File: Pictures/models/input_random.png Graphic file (type png)
 
@@ -889,12 +895,6 @@ File: Pictures/models/input_structure.png Graphic file (type png)
 Package pdftex.def Info: Pictures/models/input_structure.png used on input line
  129.
 (pdftex.def)             Requested size: 165.02661pt x 165.02237pt.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 129.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 129.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 129.
  [19
 
  <./Pictures/models/input_random.png> <./Pictures/models/input_structure.png>]
@@ -903,7 +903,7 @@ File: Pictures/models/stacked_neurons3.png Graphic file (type png)
 
 <use Pictures/models/stacked_neurons3.png>
 Package pdftex.def Info: Pictures/models/stacked_neurons3.png used on input lin
-e 138.
+e 139.
 (pdftex.def)             Requested size: 165.02661pt x 182.74115pt.
 
 <Pictures/models/stacked_neurons2.png, id=104, 1047.915pt x 1174.3875pt>
@@ -911,7 +911,7 @@ File: Pictures/models/stacked_neurons2.png Graphic file (type png)
 
 <use Pictures/models/stacked_neurons2.png>
 Package pdftex.def Info: Pictures/models/stacked_neurons2.png used on input lin
-e 138.
+e 139.
 (pdftex.def)             Requested size: 165.02661pt x 184.93117pt.
 
 <Pictures/models/stacked_neurons.png, id=105, 169.63374pt x 347.2975pt>
@@ -919,61 +919,49 @@ File: Pictures/models/stacked_neurons.png Graphic file (type png)
 
 <use Pictures/models/stacked_neurons.png>
 Package pdftex.def Info: Pictures/models/stacked_neurons.png used on input line
- 140.
+ 141.
 (pdftex.def)             Requested size: 61.88536pt x 126.69629pt.
 
 <Pictures/models/neuron2.png, id=106, 250.9375pt x 250.9375pt>
 File: Pictures/models/neuron2.png Graphic file (type png)
 
 <use Pictures/models/neuron2.png>
-Package pdftex.def Info: Pictures/models/neuron2.png used on input line 140.
+Package pdftex.def Info: Pictures/models/neuron2.png used on input line 141.
 (pdftex.def)             Requested size: 61.88536pt x 61.88417pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [20 <./Pictures/models/stacked_neurons3.png> <./Pictures/models/stacked_neuron
 s2.png>]
+
+LaTeX Warning: Reference `neuron5' on page 21 undefined on input line 154.
+
 [21 <./Pictures/models/stacked_neurons.png> <./Pictures/models/neuron2.png>]
-<Pictures/models/neuron5.png, id=119, 503.8825pt x 250.9375pt>
-File: Pictures/models/neuron5.png Graphic file (type png)
 
-<use Pictures/models/neuron5.png>
-Package pdftex.def Info: Pictures/models/neuron5.png used on input line 171.
-(pdftex.def)             Requested size: 165.02661pt x 82.1855pt.
-
-<Pictures/models/neuron3.png, id=120, 503.8825pt x 313.17pt>
-File: Pictures/models/neuron3.png Graphic file (type png)
-
-<use Pictures/models/neuron3.png>
-Package pdftex.def Info: Pictures/models/neuron3.png used on input line 171.
-(pdftex.def)             Requested size: 165.02661pt x 102.5675pt.
+LaTeX Warning: Reference `neuron1' on page 22 undefined on input line 181.
 
 
-LaTeX Warning: Reference `neuron1' on page 22 undefined on input line 173.
+LaTeX Warning: Reference `neuron1' on page 22 undefined on input line 181.
 
-
-LaTeX Warning: Reference `neuron1' on page 22 undefined on input line 173.
-
-[22 <./Pictures/models/neuron5.png> <./Pictures/models/neuron3.png>]
-<Pictures/models/weight1.jpg, id=127, 4015.0pt x 3011.25pt>
+[22] <Pictures/models/weight1.jpg, id=122, 4015.0pt x 3011.25pt>
 File: Pictures/models/weight1.jpg Graphic file (type jpg)
 
 <use Pictures/models/weight1.jpg>
-Package pdftex.def Info: Pictures/models/weight1.jpg used on input line 209.
+Package pdftex.def Info: Pictures/models/weight1.jpg used on input line 218.
 (pdftex.def)             Requested size: 206.28249pt x 154.70663pt.
 
-<Pictures/models/weight2.jpg, id=128, 4015.0pt x 3011.25pt>
+<Pictures/models/weight2.jpg, id=123, 4015.0pt x 3011.25pt>
 File: Pictures/models/weight2.jpg Graphic file (type jpg)
 
 <use Pictures/models/weight2.jpg>
-Package pdftex.def Info: Pictures/models/weight2.jpg used on input line 209.
+Package pdftex.def Info: Pictures/models/weight2.jpg used on input line 218.
 (pdftex.def)             Requested size: 206.28249pt x 154.70663pt.
 
-<Pictures/models/weight3.jpg, id=129, 4015.0pt x 3011.25pt>
+<Pictures/models/weight3.jpg, id=124, 4015.0pt x 3011.25pt>
 File: Pictures/models/weight3.jpg Graphic file (type jpg)
 
 <use Pictures/models/weight3.jpg>
-Package pdftex.def Info: Pictures/models/weight3.jpg used on input line 209.
+Package pdftex.def Info: Pictures/models/weight3.jpg used on input line 218.
 (pdftex.def)             Requested size: 206.28249pt x 154.70663pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -988,34 +976,47 @@ Chapter 4.
 
 ]
 Chapter 5.
+<Pictures/experiments/rnn/simple.png, id=139, 394.95555pt x 267.76035pt>
+File: Pictures/experiments/rnn/simple.png Graphic file (type png)
 
-Overfull \hbox (23.95245pt too wide) in paragraph at lines 291--294
- [][] 
- []
+<use Pictures/experiments/rnn/simple.png>
+Package pdftex.def Info: Pictures/experiments/rnn/simple.png used on input line
+ 261.
+(pdftex.def)             Requested size: 206.28249pt x 139.84901pt.
+ [27 <./Pictures/experiments/rnn/simple.png>] [28
 
-[27] [28]
+]
 Chapter 6.
-[29
-
-] [30
+[29] [30
 
 ]
 Chapter 7.
-(./skeleton.bbl [31] [32
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 325.
 
-]) [33] (./skeleton.aux)
+Overfull \hbox (23.95245pt too wide) in paragraph at lines 323--326
+ [][] 
+ []
+
+[31] [32]
+Chapter 8.
+(./skeleton.bbl [33
+
+] [34
+
+]) [35] (./skeleton.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 15567 strings out of 493054
- 298341 string characters out of 6140585
- 351521 words of memory out of 5000000
- 18719 multiletter control sequences out of 15000+600000
- 58646 words of font info for 108 fonts, out of 8000000 for 9000
+ 15538 strings out of 493054
+ 297929 string characters out of 6140585
+ 351491 words of memory out of 5000000
+ 18697 multiletter control sequences out of 15000+600000
+ 47156 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,9n,63p,758b,756s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 57i,9n,63p,781b,756s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/publi
 c/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
@@ -1026,10 +1027,10 @@ ic/uhvr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/helvetic/uhvro8a.pfb></usr
 /share/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texmf-dist/fonts/
 type1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.
 pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on skeleton.pdf (33 pages, 4190212 bytes).
+Output written on skeleton.pdf (35 pages, 4198099 bytes).
 PDF statistics:
- 211 PDF objects out of 1000 (max. 8388607)
- 117 compressed objects within 2 object streams
+ 215 PDF objects out of 1000 (max. 8388607)
+ 121 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 150 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 145 words of extra memory for PDF output out of 10000 (max. 10000000)
 

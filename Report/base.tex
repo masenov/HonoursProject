@@ -18,13 +18,13 @@
 \usepackage[capposition=bottom]{floatrow}
 
 
-\graphicspath{ {Pictures/background/}{Pictures/models/}{Pictures/elastica/}{Pictures/illusions/} }
+\graphicspath{ {Pictures/background/}{Pictures/models/}{Pictures/elastica/}{Pictures/illusions/}{Pictures/experiments/rnn/} }
 
 
 
-\newcommand{\plottwofigures}[3]{
+\newcommand{\plottwofigures}[4]{
 \begin{figure}[H]
-\caption{}
+\centering
 \begin{subfigure}{.5\textwidth}
   \caption{}
   \centering
@@ -35,27 +35,27 @@
   \centering
   \includegraphics[width=.8\linewidth]{#2}
 \end{subfigure}
+\caption[#4]{#3}
 \label{#1}
-\floatfoot{#3}
 \end{figure}
 }
 
 
-\newcommand{\plottwofiguresS}[4]{
+\newcommand{\plottwofiguresS}[5]{
 \begin{figure}[H]
-\caption{}
+\centering
 \begin{subfigure}{.5\textwidth}
   \caption{}
   \centering
-  \includegraphics[width=#4\linewidth]{#1}
+  \includegraphics[width=#5\linewidth]{#1}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \caption{}
   \centering
-  \includegraphics[width=#4\linewidth]{#2}
+  \includegraphics[width=#5\linewidth]{#2}
 \end{subfigure}
+\caption[#4]{#3}
 \label{#1}
-\floatfoot{#3}
 \end{figure}
 }
 

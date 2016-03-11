@@ -8,8 +8,15 @@
 \contentsline {section}{\numberline {2.2}Elastica principle}{16}
 \contentsline {section}{\numberline {2.3}Recurrent Neural Networks}{17}
 \contentsline {chapter}{\numberline {3}Design}{19}
+\contentsline {section}{\numberline {3.1}Single orientation}{21}
+\contentsline {section}{\numberline {3.2}Two orientations}{21}
+\contentsline {section}{\numberline {3.3}Multiple orientations, limited connectivity}{22}
+\contentsline {section}{\numberline {3.4}Multiple orientations, full connectivity}{22}
+\contentsline {section}{\numberline {3.5}Elastica principle}{24}
 \contentsline {chapter}{\numberline {4}Implementation}{25}
-\contentsline {chapter}{\numberline {5}Timeline}{27}
+\contentsline {chapter}{\numberline {5}Experiments}{27}
+\contentsline {section}{\numberline {5.1}Recurrent Neural Network}{27}
 \contentsline {chapter}{\numberline {6}Evaluation}{29}
-\contentsline {chapter}{\numberline {7}Conclusions}{31}
-\contentsline {chapter}{Bibliography}{33}
+\contentsline {chapter}{\numberline {7}Timeline}{31}
+\contentsline {chapter}{\numberline {8}Conclusions}{33}
+\contentsline {chapter}{Bibliography}{35}
