@@ -1,6 +1,4 @@
 \input{base.tex}
-
-
 \begin{document}
 
 \title{Visual illusions and interactions in biologically inspired neural networks. Analyzing perception of tilt}
@@ -187,7 +185,7 @@ Next we extend the model, so we can have any number of orientations (fig.\ref{ne
  
 %\plotfigureS{neuron1}{\bt{Any number of orientations, with limited connectivity between neurons} *The connections for only one neuron are shown.}{0.7}
 
-\section{Multiple orientations, full connectivity}
+\section{Multiple orientations, full connectivity} \label{mult_model}
 The next modification we do, on single neuron level, is to add full connectivity between all the neurons. We set the weights depending on the closeness of the neurons to each other, as well as the similarity of their preferred orientation. To explain how we setup the weights, let use an example. Let's have a $10x10$ visual field with different orientations, as in fig.\ref{input_random} and $9$ orientations selective neurons. Unrolling the $10x10x9$ matrix, we have a vector of $900$ neurons all together. We can setup $900x900$ weight matrix defining the connections between the neurons. 
 
 Having some distance and the orientation constants as $\kappa_{distance}$ and $\kappa_{orientation}$, for every two neurons $l$ and $m$, we model the strength of the connection between them as:
@@ -196,7 +194,7 @@ Having some distance and the orientation constants as $\kappa_{distance}$ and $\
 
 \eq{\delta=min(mod(\alpha_{l}-\alpha_{m},1),mod(\alpha_{m}-\alpha_{l},1))}
 
-\eq{w_{i,j}=w_{j,i}=\kappa_{distance}\cfrac{1}{exp(d)} + \kappa_{orientation}\cfrac{1}{exp(\delta)}}
+\eql{w_{i,j}=w_{j,i}=\kappa_{distance}\cfrac{1}{exp(d)} + \kappa_{orientation}\cfrac{1}{exp(\delta)}}{mult_model_formula}
 
 
 Based on the above equations we have the updating of the network as:
@@ -219,7 +217,7 @@ The strength of the connection between every two neurons $l$ and $m$ is the same
 
 \section{Elastica principle}
 
-The final part is implementing the elastica principle into the model. The only modification we have to do in comparison to the 
+The final part is implementing the elastica principle into the model. The only modification we have to do in comparison to the full connectivity model (sec.\ref{mult_model}) is change the equation calculating the weights, or the strength between respective neurons. In the previous model, we were setting based on the difference of the preferred orientations of the two neurons and the distance between them (eq.\ref{mult_model_formula}).
 
 
 
@@ -252,11 +250,11 @@ https://github.com/cfiandra/timeline
 
 First we explore a simple network with only one neuron. The neuron receives a certain excitation ($in$). The speed with which the neuron changes it's response, depends on the contant $\tau_{syn}$ (the smaller $\tau_{syn}$, the slower the change). We setup the simple recurrent neural network below.
 
-$\tau_{syn}\frac{dr(t)}{dt}=-r(t)+in$
+\eq{\tau_{syn}\frac{dr(t)}{dt}=-r(t)+in}
 
 So every time step the change in the rate of the neuron is:
 
-$\frac{dr(t)}{dt}=\cfrac{-r(t)+in}{\tau_{syn}}$
+\eq{\frac{dr(t)}{dt}=\cfrac{-r(t)+in}{\tau_{syn}}}
 
 \plotfigureS{simple}{The lines do not seem parallel, when it reality they are \cite{vision-computation}}{Simple RNN}{.5}
 
