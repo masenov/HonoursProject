@@ -32,9 +32,9 @@
 
 
 \abstract{
-We experience different tilt illusions and pop out effects. This is often explained by the line's representation in the visual cortex. A group of neurons is responsible for detecting different orientations in different parts of our visual field. A neuron tuned for a specific orientation spikes more, when its preferred orientation is presented, and less the more different the orientations is, forming an bell shaped curve activity. We have multiple neurons for every part of our visual field, tuned for different orientations. Combining their responses we get an accurate response of the actual orientation, despite their noisy spiking.
+We experience different tilt illusions and pop out effects. This is often explained by the line's representation in the visual cortex. A group of neurons is responsible for detecting different orientations in different parts of our visual field. A neuron tuned for a specific orientation spikes more, when its preferred orientation is presented, and less the more different the orientations is, forming a bell shaped curve of activity. We have multiple neurons for every part of our visual field, tuned for different orientations. Combining their responses we get an accurate response of the actual orientation, despite their noisy spiking.
 
-However neurons responsible for different part of our visual field are also connected to each other. This modulation explains some of the effect we are experiencing, orientations in our visual fields are influenced by nearby ones. However those interaction have only been explored statically, calculating the modulation only ones. In a full dynamic a change in an orientation, can lead to a change in another orientation, and so on. It's unclear if existing models change in a dynamic setting, does the system settles down to a stable state, or it keeps fluctuating.
+However neurons responsible for different part of our visual field are also connected to each other. This modulation explains some of the effect we are experiencing, as orientations in our visual fields are influenced by nearby ones. However those interaction have only been explored statically, calculating the modulation only once. In a full dynamic a change in an orientation, can lead to a change in another orientation, and so on. It's unclear if existing models change in a dynamic setting, does the system settles down to a stable state, or it keeps fluctuating.
 
 In this report, we explore an already existing passive model of the above mentioned neurons and build a dynamic model. We explore the differences between the two to check if in a dynamic setting, we still experience the same effects. 
 }
@@ -53,12 +53,22 @@ Acknowledgements go here.
 
 \chapter{Introduction}
 
-In processing visual information, our brain seems to favor continuity and prioritize the greater whole, rather than individual details. Sometimes this ability serves us well, ex. when trying to find a pattern among random noise, or a discontinuity in a certain pattern. However in other cases this leads to various illusions (fig.\ref{illusion1}, fig.\ref{illusion2}) as well as pop out effects (fig.\ref{popout}). The project aims to explore the relevance of V1 and its orientation selectivity neurons in the context of those effects. Fig.\ref{illusion1} and fig.\ref{popout} are particularly relevant to this project.
+In processing visual information, our brain seems to favor continuity and prioritize the greater whole, rather than individual details. Sometimes this ability serves us well, ex. when trying to find a pattern among random noise, or a discontinuity in a certain pattern (fig.\ref{popout}). However in other cases this leads to various illusions (fig.\ref{illusion1}, fig.\ref{illusion2}). The project aims to explore the relevance of V1 and its orientation selectivity neurons in the context of those effects. Fig.\ref{illusion1} and fig.\ref{popout} are particularly relevant to this project.
 
 This paper develops a model, based and built upon the one described in the recent elastica paper \cite{keemink2015unified}. The elastica principle defines the strength of the connections between different orientation selective neurons. It favors continuity, the smoother too bars are connected to each other, the stronger the modulation connection between them. Although there are other models explaining similar phenomena, illusions and effects separately, the neural model described claims to have all of those properties, unifying them in one model. 
 
 However all the results obtained were obtained statically with only one pass through the model. As mentioned in further development, adding dynamics to some of the already presented illusions could lead to some interesting behavior. We build a recurrent neural network of the orientation selective neurons in the V1 cortex. We set the strength of the connections between them (weights in the network), based on the elastica principle. We perform baseline experiments with the static model and compare the results in full dynamic setting.
 
+The different parts of the project are discussed below in the report.
+\begin{itemize}
+  \item Background - gives some necessary neuroscience terminology and information about the problem and concepts we are going to use. We also briefly discuss recurrent neural networks, as they are the model used for simulating experiments.
+  \item Design - discuss the design of the experiments and the evolution of the model, before the final version used for running experiments.
+  \item Implementation - choice of programming languages and libraries, why they are important to the project and how they influence both the speed and ease of running experiments, but also the workflow of conducting research.
+  \item Experiments - in depth description of experiments ran
+  \item Evaluation - comparing the results gathered from experiments
+  \item Timeline - timeline of the work done through the project.
+  \item Conclusions - final conclusions
+\end{itemize}
 
 
 
@@ -92,7 +102,7 @@ It was later discovered that time plays a role as well, making the definition mo
 
 To avoid confusion we will stick to the definition of classical receptive fields, and distinguish between the input a neuron receives because of its tuned orientation and modulation from nearby neurons.
 
-\plotfigureS{F4large}{\bt{Effect of the context on receptive field on a neuron}\cite{cavanaugh2002nature} The firing of neurons is indirectly modulated and their response shifted, based on the stimuli just outside of their receptive field. This leads to some of the complications of explaining receptive field. Even though a certain neuron is tuned for only a certain part of our vision field, for certain orientation, it can be affected by nearby neurons. If we take this to the extreme, then a receptive field is based on all the sensory input we receive.}{Effect of the context on receptive field on a neuron}{.5}
+\plotfigureS{F4large}{\bt{Effect of the context on receptive field on a neuron}\cite{cavanaugh2002nature} The firing of neurons is indirectly modulated and their response shifted, based on the stimuli just outside of their receptive field. This leads to some of the complications of explaining receptive field. Even though a certain neuron is tuned for only a certain part of our vision field, for certain orientation, it can be affected by nearby neurons. If we take this to the extreme, then a receptive field is based on all the sensory input we receive, since one neuron excites a nearby one, which excites its nearby neurons, etc.}{Effect of the context on receptive field on a neuron}{.5}
 
 \subsection{Tuning curves}
 
@@ -111,7 +121,7 @@ We have multiple orientation selective neurons per part of our receptive field. 
 
 The elastica principle defines the strength of modulation between two neurons. We find the smoothest curve connecting the two bars. The elastica energy is then defined by the length of the curve. The smoother curve they form, the more strongly they should be connected. The principle is illustrated in fig.\ref{elastica1}.
 
-\plotfiguresix{elastica1}{elastica5}{elastica3}{elastica4}{elastica2}{elastica6}{\bt{Elastica principle} a) Elastica energy is 0, the curves are really strongly connected}{.7}{Elastica principle}
+\plotfiguresix{elastica1}{elastica5}{elastica3}{elastica4}{elastica2}{elastica6}{\bt{Elastica principle} (to include energies for all curves) a) 0 b) ...}{.7}{Elastica principle}
 
 \section{Recurrent Neural Networks}
 
@@ -170,6 +180,10 @@ where $\tau_{syn}$ is a constant, $\cfrac{dr_{1/2}(t)}{dt}$ is the change of the
 
 
 The different values of $A$ and $k$ are again described in \cite{keemink2015unified}, but ultimately the function with the correct set of parameters gives us the similarly looking tuning curves as in fig.\ref{HubelWiesel}.
+
+Finally to calculate the perceived orientations in the visual field by adding all responses from each part of the visual field as vectors. The direction of a vector is the preferred orientation of the given neuron, and the length is the magnitude of the response. Since the preferred orientation are direction independent, they vary from $0$ to $\pi$. As described in \cite{keemink2015unified}, to ensure circularity, we multiply all the responses by $2$, add them together and divide them by $2$ at the end.
+
+\eq{\alpha_{perceived}=\cfrac{1}{2}\sum_{i}2\vec{r}_{i}}
 
 
 %\plottwofigures{neuron5}{neuron3}{\bt{Two orientations, with limited connectivity between neurons}}

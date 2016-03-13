@@ -1,0 +1,27 @@
+Questions for Sander.
+
+Here is my plan for the report:
+
+Introduction - finished
+
+Bacground - finished
+
+Design - mostly finished, still have to explain the elastica principle in more details and the final work I did with setting orientation at variable places, rather than in a matrix. In the design section I mostly talk about the different stages I went through development. I just want to sketch the interative approach I've taken. I've mentioned that those don't really describe different models that I am going to make experiments with, but rather the steps I have taken towards building the final model. Do you think it's ok to describe everything, if I would use it in the experiment section afterwards.
+
+Implementation - I plan to talk about why I started with Matlab, why I transitioned to Python and Holoviews, how and why I extended my model, some optimizations I've done, etc, etc.
+
+Experiments - I started writing some simple experiments for RNNs. I want to at least give some intuituion what they are about. It will probably be cool to show an example of the three states they can be in - stable, periodic and chaotic. I will see if I can come with simple examples of the last two. I plan to talk about the following experiments afterwards:
+
+Elastica energies for different positions/orientations of two neurons
+
+One way modulation of a flanker to a central bar - difference between additive and multiplicative model. This is where I have another question. How can I better explain that the why it doesn't make that much difference that I am using additive model, instead of multiplicative as in your paper. Most of the time the curves look similar, but is there any more scientific way to measure how big of a difference it makes to use one or the other?
+
+Passive/Dynamic model of a flanker and central bar
+
+A,B,C,D,F from fig.5 - passive/dynamic
+
+fig.7
+
+Evaluation/Conclusions - Briefly summarize the results from the dynamic model and if they differ from the static model. I am wondering if I should have both and if yes how to split the information.
+
+Timeline

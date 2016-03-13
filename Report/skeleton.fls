@@ -167,8 +167,8 @@ INPUT /usr/share/texmf-dist/tex/latex/caption/subcaption.sty
 INPUT /usr/share/texmf-dist/tex/latex/caption/subcaption.sty
 INPUT /usr/share/texmf-dist/tex/latex/was/gensymb.sty
 INPUT /usr/share/texmf-dist/tex/latex/was/gensymb.sty
-INPUT /usr/share/texmf-dist/tex/latex/floatrow/floatrow.sty
-INPUT /usr/share/texmf-dist/tex/latex/floatrow/floatrow.sty
+INPUT floatrow.sty
+INPUT floatrow.sty
 INPUT /usr/share/texmf-dist/tex/latex/rotating/rotating.sty
 INPUT skeleton.aux
 INPUT skeleton.aux
@@ -258,6 +258,10 @@ INPUT /usr/share/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT skeleton.lof
 INPUT skeleton.lof
 OUTPUT skeleton.lof
+INPUT /usr/share/texmf-dist/fonts/vf/adobe/times/zpzccmry.vf
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi8r.tfm
 INPUT Pictures/illusions/illusion1.png
 INPUT ./Pictures/illusions/illusion1.png
 INPUT ./Pictures/illusions/illusion1.png
@@ -291,7 +295,6 @@ INPUT populationCoding.png
 INPUT ./populationCoding.png
 INPUT ./populationCoding.png
 INPUT /usr/share/texmf-dist/fonts/vf/adobe/times/zptmcmr.vf
-INPUT /usr/share/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/adobe/times/zpzccmry.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
@@ -325,9 +328,6 @@ INPUT ./Pictures/models/input_random.png
 INPUT Pictures/models/input_structure.png
 INPUT ./Pictures/models/input_structure.png
 INPUT ./Pictures/models/input_structure.png
-INPUT /usr/share/texmf-dist/fonts/vf/adobe/times/zpzccmry.vf
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi8r.tfm
 INPUT /usr/share/texmf-dist/fonts/vf/adobe/times/zptmcmrm.vf
 INPUT /usr/share/texmf-dist/fonts/tfm/adobe/times/ptmri8r.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
