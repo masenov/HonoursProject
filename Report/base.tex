@@ -18,7 +18,7 @@
 \usepackage[capposition=bottom]{floatrow}
 
 
-\graphicspath{ {Pictures/background/}{Pictures/models/}{Pictures/elastica/}{Pictures/illusions/}{Pictures/experiments/rnn/} }
+\graphicspath{ {Pictures/background/}{Pictures/models/}{Pictures/elastica/}{Pictures/illusions/}{Pictures/experiments/rnn/} {Pictures/experiments/exp1_fig2/}}
 
 
 
@@ -133,35 +133,40 @@
 \newcommand{\plotfiguresix}[9]{
 \begin{figure}[H]
 \centering
-\begin{subfigure}{.5\textwidth}
-  \caption{}
+\begin{subfigure}[b]{#8\textwidth}
   \centering
-  \includegraphics[width=#8\linewidth]{#1}
-\end{subfigure}%
-\begin{subfigure}{.5\textwidth}
+  \includegraphics[width=\textwidth]{#1}
   \caption{}
-  \centering
-  \includegraphics[width=#8\linewidth]{#2}
 \end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \caption{}
+\hfill
+\begin{subfigure}[b]{#8\textwidth}
   \centering
-  \includegraphics[width=#8\linewidth]{#3}
-\end{subfigure}%
-\begin{subfigure}{.5\textwidth}
+  \includegraphics[width=\textwidth]{#2}
   \caption{}
-  \centering
-  \includegraphics[width=#8\linewidth]{#4}
 \end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \caption{}
+\hfill
+\begin{subfigure}[b]{#8\textwidth}
   \centering
-  \includegraphics[width=#8\linewidth]{#5}
-\end{subfigure}%
-\begin{subfigure}{.5\textwidth}
+  \includegraphics[width=\textwidth]{#3}
   \caption{}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{#8\textwidth}
   \centering
-  \includegraphics[width=#8\linewidth]{#6}
+  \includegraphics[width=\textwidth]{#4}
+  \caption{}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{#8\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{#5}
+  \caption{}
+\end{subfigure}
+\hfill
+\begin{subfigure}[b]{#8\textwidth}
+  \centering
+  \includegraphics[width=\textwidth]{#6}
+  \caption{}
 \end{subfigure}
 \caption[#9]{#7}
 \label{#1}

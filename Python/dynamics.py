@@ -452,6 +452,7 @@ def popvec(X,N):
         ''' Population vector for the set of responses X, with each value in 
         the vector X corresponding to an angle in self.ang
         X is a 1D vector of length len(self.ang)
+        N is number of neurons per location
         Returns the angle of the population vector.
         '''
         # define vector coordinates
