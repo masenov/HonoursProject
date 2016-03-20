@@ -16,7 +16,8 @@
 \contentsline {chapter}{\numberline {4}Implementation}{27}
 \contentsline {section}{\numberline {4.1}Initial choice of programming language}{27}
 \contentsline {section}{\numberline {4.2}Model implementation}{27}
-\contentsline {section}{\numberline {4.3}Improving workflow of implementing features, conducting experiments and documenting}{28}
+\contentsline {section}{\numberline {4.3}Change of development tools}{28}
+\contentsline {section}{\numberline {4.4}Final model changes}{29}
 \contentsline {chapter}{\numberline {5}Experiments}{31}
 \contentsline {section}{\numberline {5.1}Recurrent Neural Network}{31}
 \contentsline {section}{\numberline {5.2}Elastica energy}{32}

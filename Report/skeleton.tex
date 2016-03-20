@@ -257,30 +257,46 @@ My first choice of programming language was Matlab. Matlab is a high-level scrip
 I implemented versions of visual stimuli orientations selective neurons in V1 receive, tuning curves and population coding. The visual stimuli was implemented as a field of different bars (or edges, lines) of particular orientation, so a matrix with numbers from $0$ to $\pi$. The tuning curve of a particular neuron is defined as the spike activity when a particular orientation is presented, as a function of its preferred orientation. As mentioned in the previous section most of the functions in Matlab accept numbers, vectors and matrices as their arguments. This makes in particularly useful, as the function can be implemented for a single neuron, tested for expected output, and then the function can be used for vectors or matrices, when running more complicated experiments. As mentioned in the background section, we receive output from different orientation selective neurons  about a particular bar of orientation. We use population coding to add their responses to get the final, perceived orientation. We implement population coding by transforming the output of the neurons in vectors. The preferred orientation of every neuron is the direction of the vector, the magnitude of its spiking is the length of the vector. We add all the vectors together to get a new vector, which represents the perceived orientation. The final vector's length and direction represent respectively the magnitude orientation of the final perceived response. As the orientation bars vary from $0$ to $\pi$, we multiply by $2$ the direction of all the neurons, and divide the final direction by $2$, to ensure circularity.
 We gradually extended the form on the input from a single orientation bar, to two and multiple ones in a form of matrix. We also extend the modulation connections between different neurons. Along different implementations we take advantage of the optimized linear operations in Matlab, and we keep our code vectorized, rather than for loops (with the exception of simulating different time steps of interactions between neurons, as the next state depends on the previous one).
 
-\section{Improving workflow of implementing features, conducting experiments and documenting}
+\section{Change of development tools}
 As the work progressed it became clear that Matlab, may not be the best choice of programming language for the project. After running some initial experiments, issues started coming up, which lead to transition to different set of programming tools, which we used for the final experiments. In our model we have different orientations bars, with a group of orientation selective neurons spiking for each bar and influencing the spiking of nearby neurons. It is a high dimensional data, hard to visualize. Moreover as we have dynamic interactions, implement by a recurrent neural network, we have the above mentioned data for every time step of our simulation. As the project grew bigger, some of the disadvantages of the weak code organization of Matlab became apparent, making hard to keep all the code base well structured.
 
-After careful consideration I decide to rewrite the work I've done in Python taking advantage of libraries like Holoviews\cite{stevens2010holoviews}, Matplotlib\cite{hunter2007matplotlib} and Numpy. I also started using  Although the process took a couple of weeks, it yield 
- 
+After careful consideration I decide to rewrite the work I've done in Python taking advantage of libraries like Holoviews\cite{stevens2010holoviews}, Matplotlib\cite{hunter2007matplotlib} and Numpy. I also started using IPython notebooks\cite{shen2014interactive}. Although the transition process took a couple of weeks, it yield number of advantages outlined below.
 
+\textbf{Python}
+\begin{itemize}
+  \item Scalability - every function can be easily extended, by adding a new parameter and setting a default value, so it does not change the previous behaviour of the function
+  \item Compatibility - Python is compatible with number of useful libraries, some of which used are described below
+  \item Link to previous work - I took advantage of some of the code base of \cite{keemink2015unified}. In particular I used the methods for calculating and visualizing the elastica energy.
+\end{itemize}
 
-(Notes)
+\textbf{Holoviews}
+\begin{itemize}
+	\item Interactive visualizations - building complex interactive visualization, with respect to any number of parameters. In case of our problem, we used it for visualization of perceived orientation with respect to time
+\end{itemize}
 
-Since the model is recursive and changes with respect to time, the output is not only $1$ matrix, but $\cfrac{t}{ts}$ number of matrices, where $t$ is the simulation time and $ts$ is the length of the time step.
+\textbf{Matplotlib}
+\begin{itemize}
+	\item Main tool for static plots - although Holoviews provides some really advanced plotting capabilities, its API is sometimes complicated and tedious to use. Matplotlib is much widely used libraries with rich documentations and examples online.
+\end{itemize}
 
-(Libraries and Languages Used)
+\textbf{Numpy}
+\begin{itemize}
+	\item Numerical operations - Numpy provides number of mathematical operations as well as functions for matrices and vectors manipulation. In addition its syntax is almost identical to Matlab, speeding up the transition process.
+\end{itemize}
 
-Matlab - http://uk.mathworks.com/products/matlab/
+\textbf{IPython Notebook}
+\begin{itemize}
+	\item Reproducible research - experiments can be specified and ran in a notebook. Results are shown under every experiment, also giving the option to run part or all of them again.
+	\item Documenting - support from markdown cells (in addition to the code cells for the experiments) with rich formatting, including support for LaTeX.
+\end{itemize}
 
-Python 2 - https://www.python.org/download/releases/2.7.2/
+Using the above stack of software tools greatly improved not only the development process, but also conducting and documenting experiments.
 
-Holoviews - http://ioam.github.io/holoviews/
+\section{Final model changes}
+After transitioning to Python I incorporated the elastica principle in my model. Give two orientations selective neurons, the elastica principle defines how strongly they should be connected, by calculating their elastica energy.
 
-IPython Notebook
+I also extended my model to custom positions of the neurons, rather than the fixed matrix grid. Rather than calculating the locations of the orientations, based on their position in the matrix, one can use a $1xN$ vector to represent all the neurons orientations together with $2xN$ matrix to represent their locations. This allows us to reproduce most of the experiments in \cite{keemink2015unified}, in the dynamic setting of the model. For some of the bigger experiments we run, we also implement a torus for the connections between the neurons.
 
-(LaTeX)
-
-https://github.com/cfiandra/timeline
 
 \chapter{Experiments}
 
