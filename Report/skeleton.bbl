@@ -48,6 +48,11 @@ David~H Hubel and Torsten~N Wiesel.
   cortex.
 \newblock {\em The Journal of physiology}, 195(1):215--243, 1968.
 
+\bibitem{hunter2007matplotlib}
+John~D Hunter et~al.
+\newblock Matplotlib: A 2d graphics environment.
+\newblock {\em Computing in science and engineering}, 9(3):90--95, 2007.
+
 \bibitem{keemink2015unified}
 Sander~W Keemink and Mark~CW van Rossum.
 \newblock A unified account of tilt illusions, association fields, and contour
@@ -67,5 +72,11 @@ Ashish Ranpura.
   \url{http://brainconnection.brainhq.com/2004/03/06/overview-of-receptive-fields/},
   2016.
 \newblock [Online; accessed 19-January-2016].
+
+\bibitem{stevens2010holoviews}
+Jean-Luc~R Stevens, Philipp Rudiger, and James~A Bednar.
+\newblock Holoviews: Building complex visualizations easily for reproducible
+  science.
+\newblock 2010.
 
 \end{thebibliography}

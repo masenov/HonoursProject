@@ -14,18 +14,21 @@
 \contentsline {section}{\numberline {3.4}Multiple orientations, full connectivity}{25}
 \contentsline {section}{\numberline {3.5}Elastica principle}{26}
 \contentsline {chapter}{\numberline {4}Implementation}{27}
-\contentsline {chapter}{\numberline {5}Experiments}{29}
-\contentsline {section}{\numberline {5.1}Recurrent Neural Network}{29}
-\contentsline {section}{\numberline {5.2}Elastica energy}{30}
-\contentsline {section}{\numberline {5.3}Additive and Multiplicative model}{30}
-\contentsline {section}{\numberline {5.4}Passive vs Dynamic models}{32}
-\contentsline {section}{\numberline {5.5}Tilt effects}{32}
-\contentsline {subsection}{\numberline {5.5.1}Tilt effect 1}{32}
-\contentsline {subsection}{\numberline {5.5.2}Tilt effect 2}{33}
-\contentsline {subsection}{\numberline {5.5.3}Tilt effect 3}{34}
-\contentsline {subsection}{\numberline {5.5.4}Tilt effect 4}{34}
-\contentsline {section}{\numberline {5.6}Pop out effects}{35}
-\contentsline {chapter}{\numberline {6}Evaluation}{37}
-\contentsline {chapter}{\numberline {7}Timeline}{39}
-\contentsline {chapter}{\numberline {8}Conclusions}{41}
-\contentsline {chapter}{Bibliography}{43}
+\contentsline {section}{\numberline {4.1}Initial choice of programming language}{27}
+\contentsline {section}{\numberline {4.2}Model implementation}{27}
+\contentsline {section}{\numberline {4.3}Improving workflow of implementing features, conducting experiments and documenting}{28}
+\contentsline {chapter}{\numberline {5}Experiments}{31}
+\contentsline {section}{\numberline {5.1}Recurrent Neural Network}{31}
+\contentsline {section}{\numberline {5.2}Elastica energy}{32}
+\contentsline {section}{\numberline {5.3}Additive and Multiplicative model}{32}
+\contentsline {section}{\numberline {5.4}Passive vs Dynamic models}{34}
+\contentsline {section}{\numberline {5.5}Tilt effects}{34}
+\contentsline {subsection}{\numberline {5.5.1}Tilt effect 1}{34}
+\contentsline {subsection}{\numberline {5.5.2}Tilt effect 2}{35}
+\contentsline {subsection}{\numberline {5.5.3}Tilt effect 3}{36}
+\contentsline {subsection}{\numberline {5.5.4}Tilt effect 4}{36}
+\contentsline {section}{\numberline {5.6}Pop out effects}{37}
+\contentsline {chapter}{\numberline {6}Evaluation}{39}
+\contentsline {chapter}{\numberline {7}Timeline}{41}
+\contentsline {chapter}{\numberline {8}Conclusions}{43}
+\contentsline {chapter}{Bibliography}{45}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2015.9.10)  20 MAR 2016 13:48
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2015.9.10)  20 MAR 2016 16:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -721,14 +721,19 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
- [5
+
+Overfull \hbox (2.96834pt too wide) in paragraph at lines 19--19
+ [][] []\OT1/ptm/m/n/12 Improving work-flow of im-ple-ment-ing fea-tures, con-d
+uct-ing ex-per-i-ments 
+ []
+
+[5
 
 ])
 \tf@toc=\write4
 \openout4 = `skeleton.toc'.
 
- [6]
-(./skeleton.lof)
+ [6] (./skeleton.lof)
 \tf@lof=\write5
 \openout5 = `skeleton.lof'.
 
@@ -738,6 +743,10 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 
 ]
 Chapter 1.
+
+LaTeX Warning: Citation `keemink2015unified' on page 9 undefined on input line 
+57.
+
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
 (Font)              Font shape `OMS/pzccm/m/n' tried instead on input line 63.
 [9] <Pictures/illusions/illusion1.png, id=41, 2025.5675pt x 1003.75pt>
@@ -748,6 +757,14 @@ Package pdftex.def Info: Pictures/illusions/illusion1.png used on input line 74
 .
 (pdftex.def)             Requested size: 330.05322pt x 163.54395pt.
 
+
+LaTeX Warning: Citation `baggott2010investigating' on page 10 undefined on inpu
+t line 74.
+
+
+LaTeX Warning: Citation `baggott2010investigating' on page 10 undefined on inpu
+t line 74.
+
 <Pictures/illusions/illusion2.png, id=43, 1008.76875pt x 1003.75pt>
 File: Pictures/illusions/illusion2.png Graphic file (type png)
 
@@ -755,6 +772,14 @@ File: Pictures/illusions/illusion2.png Graphic file (type png)
 Package pdftex.def Info: Pictures/illusions/illusion2.png used on input line 75
 .
 (pdftex.def)             Requested size: 206.28249pt x 205.24934pt.
+
+
+LaTeX Warning: Citation `vision-computation' on page 10 undefined on input line
+ 75.
+
+
+LaTeX Warning: Citation `vision-computation' on page 10 undefined on input line
+ 75.
 
 <Pictures/illusions/popout.png, id=44, 215.80624pt x 215.80624pt>
 File: Pictures/illusions/popout.png Graphic file (type png)
@@ -784,9 +809,22 @@ Package pdftex.def Info: Pictures/background/visual_fields.png used on input li
 ne 88.
 (pdftex.def)             Requested size: 206.28249pt x 143.99617pt.
 
+
+LaTeX Warning: Citation `receptive-fields' on page 13 undefined on input line 8
+8.
+
+
+LaTeX Warning: Citation `receptive-fields' on page 13 undefined on input line 8
+8.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [13]
+
+LaTeX Warning: Citation `knight2008drastically' on page 14 undefined on input l
+ine 97.
+
 <Pictures/background/RetinotopicMapping.png, id=62, 439.6425pt x 525.46312pt>
 File: Pictures/background/RetinotopicMapping.png Graphic file (type png)
 
@@ -795,17 +833,41 @@ Package pdftex.def Info: Pictures/background/RetinotopicMapping.png used on inp
 ut line 99.
 (pdftex.def)             Requested size: 330.05322pt x 394.48924pt.
 
+
+LaTeX Warning: Citation `retinotopic-mapping' on page 14 undefined on input lin
+e 99.
+
+
+LaTeX Warning: Citation `retinotopic-mapping' on page 14 undefined on input lin
+e 99.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [14 <./Pictures/background/visual_fields.png>] [15 <./Pictures/background/Reti
-notopicMapping.png>] <Pictures/background/F4large.jpg, id=70, 1716.4125pt x 180
-6.75pt>
+ [14 <./Pictures/background/visual_fields.png>]
+
+LaTeX Warning: Citation `Hartline700' on page 15 undefined on input line 103.
+
+
+LaTeX Warning: Citation `deangelis1995receptive' on page 15 undefined on input 
+line 105.
+
+[15 <./Pictures/background/RetinotopicMapping.png>]
+<Pictures/background/F4large.jpg, id=70, 1716.4125pt x 1806.75pt>
 File: Pictures/background/F4large.jpg Graphic file (type jpg)
 
 <use Pictures/background/F4large.jpg>
 Package pdftex.def Info: Pictures/background/F4large.jpg used on input line 109
 .
 (pdftex.def)             Requested size: 206.28249pt x 217.13147pt.
+
+
+LaTeX Warning: Citation `cavanaugh2002nature' on page 16 undefined on input lin
+e 109.
+
+
+LaTeX Warning: Citation `cavanaugh2002nature' on page 16 undefined on input lin
+e 109.
 
 <Pictures/background/HubelWiesel.jpg, id=71, 722.7pt x 542.025pt>
 File: Pictures/background/HubelWiesel.jpg Graphic file (type jpg)
@@ -815,6 +877,15 @@ Package pdftex.def Info: Pictures/background/HubelWiesel.jpg used on input line
  115.
 (pdftex.def)             Requested size: 330.05322pt x 247.5398pt.
 
+
+LaTeX Warning: Citation `hubel1968receptive' on page 16 undefined on input line
+ 115.
+
+
+LaTeX Warning: Citation `hubel1968receptive' on page 16 undefined on input line
+ 115.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [16 <./Pictures/background/F4large.jpg>]
@@ -823,6 +894,15 @@ File: populationCoding.png Graphic file (type png)
  <use populationCoding.png>
 Package pdftex.def Info: populationCoding.png used on input line 122.
 (pdftex.def)             Requested size: 330.05322pt x 319.48724pt.
+
+
+LaTeX Warning: Citation `amirikian2000directional' on page 17 undefined on inpu
+t line 122.
+
+
+LaTeX Warning: Citation `amirikian2000directional' on page 17 undefined on inpu
+t line 122.
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -945,9 +1025,25 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [22 <./Pictures/models/stacked_neurons3.png> <./Pictures/models/stacked_neuron
 s2.png>]
 
+LaTeX Warning: Citation `keemink2015unified' on page 23 undefined on input line
+ 163.
+
+
 LaTeX Warning: Reference `neuron5' on page 23 undefined on input line 169.
 
 [23 <./Pictures/models/stacked_neurons.png> <./Pictures/models/neuron2.png>]
+
+LaTeX Warning: Citation `keemink2015unified' on page 24 undefined on input line
+ 184.
+
+
+LaTeX Warning: Citation `keemink2015unified' on page 24 undefined on input line
+ 189.
+
+
+LaTeX Warning: Citation `keemink2015unified' on page 24 undefined on input line
+ 191.
+
 <Pictures/models/neuron1.png, id=123, 756.8275pt x 754.82pt>
 File: Pictures/models/neuron1.png Graphic file (type png)
 
@@ -980,261 +1076,293 @@ s/models/weight3.jpg>]
 Chapter 4.
 [27
 
-] [28
+]
+
+LaTeX Warning: Citation `stevens2010holoviews' on page 28 undefined on input li
+ne 263.
+
+
+LaTeX Warning: Citation `hunter2007matplotlib' on page 28 undefined on input li
+ne 263.
+
+[28]
+Overfull \hbox (36.30954pt too wide) has occurred while \output is active
+\OT1/phv/m/sl/12 4.3.  Improving workflow of implementing features, conducting 
+experiments and documenting \OT1/phv/m/n/12 29
+ []
+
+[29] [30
 
 ]
 Chapter 5.
-<Pictures/experiments/rnn/simple.png, id=147, 444.4605pt x 295.22295pt>
+<Pictures/experiments/rnn/simple.png, id=153, 444.4605pt x 295.22295pt>
 File: Pictures/experiments/rnn/simple.png Graphic file (type png)
 
 <use Pictures/experiments/rnn/simple.png>
 Package pdftex.def Info: Pictures/experiments/rnn/simple.png used on input line
- 285.
+ 297.
 (pdftex.def)             Requested size: 206.28249pt x 137.01596pt.
- [29 <./Pictures/experiments/rnn/simple.png>]
-<Pictures/experiments/exp1_fig2/2bars.png, id=152, 317.185pt x 317.185pt>
+
+
+LaTeX Warning: Citation `vision-computation' on page 31 undefined on input line
+ 297.
+
+
+LaTeX Warning: Citation `vision-computation' on page 31 undefined on input line
+ 297.
+
+[31 <./Pictures/experiments/rnn/simple.png>]
+<Pictures/experiments/exp1_fig2/2bars.png, id=159, 317.185pt x 317.185pt>
 File: Pictures/experiments/exp1_fig2/2bars.png Graphic file (type png)
 
 <use Pictures/experiments/exp1_fig2/2bars.png>
 Package pdftex.def Info: Pictures/experiments/exp1_fig2/2bars.png used on input
- line 295.
+ line 307.
 (pdftex.def)             Requested size: 206.28249pt x 206.28879pt.
 
-<Pictures/experiments/exp1_fig2/el_ener.png, id=153, 400.3758pt x 288.71864pt>
+<Pictures/experiments/exp1_fig2/el_ener.png, id=160, 400.3758pt x 288.71864pt>
 File: Pictures/experiments/exp1_fig2/el_ener.png Graphic file (type png)
 
 <use Pictures/experiments/exp1_fig2/el_ener.png>
 Package pdftex.def Info: Pictures/experiments/exp1_fig2/el_ener.png used on inp
-ut line 296.
+ut line 308.
 (pdftex.def)             Requested size: 202.15909pt x 145.78633pt.
 
-<Pictures/experiments/exp1_fig2/h_add.png, id=154, 403.62794pt x 288.71864pt>
+<Pictures/experiments/exp1_fig2/h_add.png, id=161, 403.62794pt x 288.71864pt>
 File: Pictures/experiments/exp1_fig2/h_add.png Graphic file (type png)
 
 <use Pictures/experiments/exp1_fig2/h_add.png>
 Package pdftex.def Info: Pictures/experiments/exp1_fig2/h_add.png used on input
- line 296.
+ line 308.
 (pdftex.def)             Requested size: 202.15909pt x 144.60567pt.
 
-<Pictures/experiments/exp1_fig2/h_mul.png, id=155, 403.62794pt x 288.71864pt>
+<Pictures/experiments/exp1_fig2/h_mul.png, id=162, 403.62794pt x 288.71864pt>
 File: Pictures/experiments/exp1_fig2/h_mul.png Graphic file (type png)
 
 <use Pictures/experiments/exp1_fig2/h_mul.png>
 Package pdftex.def Info: Pictures/experiments/exp1_fig2/h_mul.png used on input
- line 296.
+ line 308.
 (pdftex.def)             Requested size: 202.15909pt x 144.60567pt.
 
-<Pictures/experiments/exp1_fig2/cen.png, id=156, 390.258pt x 288.71864pt>
+<Pictures/experiments/exp1_fig2/cen.png, id=163, 390.258pt x 288.71864pt>
 File: Pictures/experiments/exp1_fig2/cen.png Graphic file (type png)
 
 <use Pictures/experiments/exp1_fig2/cen.png>
 Package pdftex.def Info: Pictures/experiments/exp1_fig2/cen.png used on input l
-ine 296.
+ine 308.
 (pdftex.def)             Requested size: 202.15909pt x 149.56183pt.
 
-<Pictures/experiments/exp1_fig2/ad_comb.png, id=157, 403.62794pt x 288.71864pt>
+<Pictures/experiments/exp1_fig2/ad_comb.png, id=164, 403.62794pt x 288.71864pt>
 File: Pictures/experiments/exp1_fig2/ad_comb.png Graphic file (type png)
 <use Pictures/experiments/exp1_fig2/ad_comb.png>
 Package pdftex.def Info: Pictures/experiments/exp1_fig2/ad_comb.png used on inp
-ut line 296.
+ut line 308.
 (pdftex.def)             Requested size: 202.15909pt x 144.60567pt.
 
-<Pictures/experiments/exp1_fig2/mul_comb.png, id=158, 390.258pt x 288.71864pt>
+<Pictures/experiments/exp1_fig2/mul_comb.png, id=165, 390.258pt x 288.71864pt>
 File: Pictures/experiments/exp1_fig2/mul_comb.png Graphic file (type png)
 
 <use Pictures/experiments/exp1_fig2/mul_comb.png>
 Package pdftex.def Info: Pictures/experiments/exp1_fig2/mul_comb.png used on in
-put line 296.
+put line 308.
 (pdftex.def)             Requested size: 202.15909pt x 149.56183pt.
 
-<Pictures/experiments/exp1_fig2/ADD_vs_MULT.png, id=159, 411.939pt x 278.9622pt
+<Pictures/experiments/exp1_fig2/ADD_vs_MULT.png, id=166, 411.939pt x 278.9622pt
 >
 File: Pictures/experiments/exp1_fig2/ADD_vs_MULT.png Graphic file (type png)
  <use Pictures/experiments/exp1_fig2/ADD_vs_MULT.png>
 Package pdftex.def Info: Pictures/experiments/exp1_fig2/ADD_vs_MULT.png used on
- input line 297.
+ input line 309.
 (pdftex.def)             Requested size: 330.05322pt x 223.50633pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [30 <./Pictures/experiments/exp1_fig2/2bars.png>]
+ [32 <./Pictures/experiments/exp1_fig2/2bars.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31 <./Pictures/experiments/exp1_fig2/el_ener.png> <./Pictures/experiments/exp
+ [33 <./Pictures/experiments/exp1_fig2/el_ener.png> <./Pictures/experiments/exp
 1_fig2/h_add.png> <./Pictures/experiments/exp1_fig2/h_mul.png> <./Pictures/expe
 riments/exp1_fig2/cen.png> <./Pictures/experiments/exp1_fig2/ad_comb.png> <./Pi
 ctures/experiments/exp1_fig2/mul_comb.png>]
-<Pictures/experiments/fig5/fig5_B.png, id=174, 317.185pt x 317.185pt>
+<Pictures/experiments/fig5/fig5_B.png, id=180, 317.185pt x 317.185pt>
 File: Pictures/experiments/fig5/fig5_B.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/fig5_B.png>
 Package pdftex.def Info: Pictures/experiments/fig5/fig5_B.png used on input lin
-e 302.
+e 314.
 (pdftex.def)             Requested size: 123.77074pt x 123.7694pt.
 
-<Pictures/experiments/fig5/matrix.png, id=175, 1294.71706pt x 946.0143pt>
+<Pictures/experiments/fig5/matrix.png, id=181, 1294.71706pt x 946.0143pt>
 File: Pictures/experiments/fig5/matrix.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/matrix.png>
 Package pdftex.def Info: Pictures/experiments/fig5/matrix.png used on input lin
-e 303.
+e 315.
 (pdftex.def)             Requested size: 206.28249pt x 150.7158pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [32 <./Pictures/experiments/exp1_fig2/ADD_vs_MULT.png> <./Pictures/experiments
+ [34 <./Pictures/experiments/exp1_fig2/ADD_vs_MULT.png> <./Pictures/experiments
 /fig5/fig5_B.png>]
-<Pictures/experiments/fig5/p_cen.png, id=181, 451.32616pt x 288.71864pt>
+<Pictures/experiments/fig5/p_cen.png, id=187, 451.32616pt x 288.71864pt>
 File: Pictures/experiments/fig5/p_cen.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/p_cen.png>
 Package pdftex.def Info: Pictures/experiments/fig5/p_cen.png used on input line
- 305.
+ 317.
 (pdftex.def)             Requested size: 136.14719pt x 87.09645pt.
 
-<Pictures/experiments/fig5/d_cen.png, id=182, 451.32616pt x 288.71864pt>
+<Pictures/experiments/fig5/d_cen.png, id=188, 451.32616pt x 288.71864pt>
 File: Pictures/experiments/fig5/d_cen.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/d_cen.png>
 Package pdftex.def Info: Pictures/experiments/fig5/d_cen.png used on input line
- 305.
+ 317.
 (pdftex.def)             Requested size: 136.14719pt x 87.09645pt.
 
-<Pictures/experiments/fig5/d_flan.png, id=183, 451.32616pt x 288.71864pt>
+<Pictures/experiments/fig5/d_flan.png, id=189, 451.32616pt x 288.71864pt>
 File: Pictures/experiments/fig5/d_flan.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/d_flan.png>
 Package pdftex.def Info: Pictures/experiments/fig5/d_flan.png used on input lin
-e 305.
+e 317.
 (pdftex.def)             Requested size: 136.14719pt x 87.09645pt.
 
-<Pictures/experiments/fig5/fig5_C.png, id=184, 317.185pt x 317.185pt>
+
+LaTeX Warning: Citation `keemink2015unified' on page 35 undefined on input line
+ 317.
+
+
+LaTeX Warning: Citation `keemink2015unified' on page 35 undefined on input line
+ 317.
+
+<Pictures/experiments/fig5/fig5_C.png, id=190, 317.185pt x 317.185pt>
 File: Pictures/experiments/fig5/fig5_C.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/fig5_C.png>
 Package pdftex.def Info: Pictures/experiments/fig5/fig5_C.png used on input lin
-e 307.
+e 319.
 (pdftex.def)             Requested size: 123.77074pt x 123.7694pt.
 
-<Pictures/experiments/fig5/fig5_D.png, id=185, 317.185pt x 317.185pt>
+<Pictures/experiments/fig5/fig5_D.png, id=191, 317.185pt x 317.185pt>
 File: Pictures/experiments/fig5/fig5_D.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/fig5_D.png>
 Package pdftex.def Info: Pictures/experiments/fig5/fig5_D.png used on input lin
-e 309.
+e 321.
 (pdftex.def)             Requested size: 123.77074pt x 123.7694pt.
- [33 <./Pictures/experiments/fig5/matrix.png> <./Pictures/experiments/fig5/p_ce
+ [35 <./Pictures/experiments/fig5/matrix.png> <./Pictures/experiments/fig5/p_ce
 n.png> <./Pictures/experiments/fig5/d_cen.png> <./Pictures/experiments/fig5/d_f
 lan.png> <./Pictures/experiments/fig5/fig5_C.png>]
-<Pictures/experiments/fig5/fig5_F.png, id=194, 317.185pt x 317.185pt>
+<Pictures/experiments/fig5/fig5_F.png, id=200, 317.185pt x 317.185pt>
 File: Pictures/experiments/fig5/fig5_F.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/fig5_F.png>
 Package pdftex.def Info: Pictures/experiments/fig5/fig5_F.png used on input lin
-e 311.
+e 323.
 (pdftex.def)             Requested size: 123.77074pt x 123.7694pt.
 
-<Pictures/experiments/fig5/bar.png, id=195, 215.80624pt x 215.80624pt>
+<Pictures/experiments/fig5/bar.png, id=201, 215.80624pt x 215.80624pt>
 File: Pictures/experiments/fig5/bar.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/bar.png>
 Package pdftex.def Info: Pictures/experiments/fig5/bar.png used on input line 3
-20.
+32.
 (pdftex.def)             Requested size: 136.14719pt x 136.14963pt.
 
-<Pictures/experiments/fig5/bar_without.png, id=196, 215.80624pt x 215.80624pt>
+<Pictures/experiments/fig5/bar_without.png, id=202, 215.80624pt x 215.80624pt>
 File: Pictures/experiments/fig5/bar_without.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/bar_without.png>
 Package pdftex.def Info: Pictures/experiments/fig5/bar_without.png used on inpu
-t line 325.
+t line 337.
 (pdftex.def)             Requested size: 136.14719pt x 136.14963pt.
 
-<Pictures/experiments/fig5/bar_torus.png, id=197, 215.80624pt x 215.80624pt>
+<Pictures/experiments/fig5/bar_torus.png, id=203, 215.80624pt x 215.80624pt>
 File: Pictures/experiments/fig5/bar_torus.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/bar_torus.png>
 Package pdftex.def Info: Pictures/experiments/fig5/bar_torus.png used on input 
-line 330.
+line 342.
 (pdftex.def)             Requested size: 136.14719pt x 136.14963pt.
 
-<Pictures/experiments/fig5/line.png, id=198, 215.80624pt x 215.80624pt>
+<Pictures/experiments/fig5/line.png, id=204, 215.80624pt x 215.80624pt>
 File: Pictures/experiments/fig5/line.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/line.png>
 Package pdftex.def Info: Pictures/experiments/fig5/line.png used on input line 
-335.
+347.
 (pdftex.def)             Requested size: 136.14719pt x 136.14963pt.
 
-<Pictures/experiments/fig5/line_without.png, id=199, 215.80624pt x 215.80624pt>
+<Pictures/experiments/fig5/line_without.png, id=205, 215.80624pt x 215.80624pt>
 File: Pictures/experiments/fig5/line_without.png Graphic file (type png)
 <use Pictures/experiments/fig5/line_without.png>
 Package pdftex.def Info: Pictures/experiments/fig5/line_without.png used on inp
-ut line 340.
+ut line 352.
 (pdftex.def)             Requested size: 136.14719pt x 136.14963pt.
 
-<Pictures/experiments/fig5/line_torus.png, id=200, 215.80624pt x 215.80624pt>
+<Pictures/experiments/fig5/line_torus.png, id=206, 215.80624pt x 215.80624pt>
 File: Pictures/experiments/fig5/line_torus.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/line_torus.png>
 Package pdftex.def Info: Pictures/experiments/fig5/line_torus.png used on input
- line 345.
+ line 357.
 (pdftex.def)             Requested size: 136.14719pt x 136.14963pt.
 
-<Pictures/experiments/fig5/random.png, id=201, 215.80624pt x 215.80624pt>
+<Pictures/experiments/fig5/random.png, id=207, 215.80624pt x 215.80624pt>
 File: Pictures/experiments/fig5/random.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/random.png>
 Package pdftex.def Info: Pictures/experiments/fig5/random.png used on input lin
-e 350.
+e 362.
 (pdftex.def)             Requested size: 136.14719pt x 136.14963pt.
 
-<Pictures/experiments/fig5/random_without.png, id=202, 215.80624pt x 215.80624p
+<Pictures/experiments/fig5/random_without.png, id=208, 215.80624pt x 215.80624p
 t>
 File: Pictures/experiments/fig5/random_without.png Graphic file (type png)
  <use Pictures/experiments/fig5/random_without.png>
 Package pdftex.def Info: Pictures/experiments/fig5/random_without.png used on i
-nput line 355.
+nput line 367.
 (pdftex.def)             Requested size: 136.14719pt x 136.14963pt.
 
-<Pictures/experiments/fig5/random_torus.png, id=203, 215.80624pt x 215.80624pt>
+<Pictures/experiments/fig5/random_torus.png, id=209, 215.80624pt x 215.80624pt>
 File: Pictures/experiments/fig5/random_torus.png Graphic file (type png)
 <use Pictures/experiments/fig5/random_torus.png>
 Package pdftex.def Info: Pictures/experiments/fig5/random_torus.png used on inp
-ut line 360.
+ut line 372.
 (pdftex.def)             Requested size: 136.14719pt x 136.14963pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [34 <./Pictures/experiments/fig5/fig5_D.png> <./Pictures/experiments/fig5/fig5
+ [36 <./Pictures/experiments/fig5/fig5_D.png> <./Pictures/experiments/fig5/fig5
 _F.png>]
-[35 <./Pictures/experiments/fig5/bar.png> <./Pictures/experiments/fig5/bar_with
+[37 <./Pictures/experiments/fig5/bar.png> <./Pictures/experiments/fig5/bar_with
 out.png> <./Pictures/experiments/fig5/bar_torus.png> <./Pictures/experiments/fi
 g5/line.png> <./Pictures/experiments/fig5/line_without.png> <./Pictures/experim
 ents/fig5/line_torus.png> <./Pictures/experiments/fig5/random.png> <./Pictures/
 experiments/fig5/random_without.png> <./Pictures/experiments/fig5/random_torus.
-png>] [36
+png>] [38
 
 ]
 Chapter 6.
-[37] [38
+[39] [40
 
 ]
 Chapter 7.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 422.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 434.
 
-Overfull \hbox (23.95245pt too wide) in paragraph at lines 420--423
+Overfull \hbox (23.95245pt too wide) in paragraph at lines 432--435
  [][] 
  []
 
-[39] [40]
+[41] [42]
 Chapter 8.
-(./skeleton.bbl [41
+(./skeleton.bbl [43
 
-] [42
+] [44
 
-]) [43] (./skeleton.aux)
+] [45]) [46] (./skeleton.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1243,13 +1371,13 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 13989 strings out of 495063
- 257740 string characters out of 3182201
- 308173 words of memory out of 3000000
- 16793 multiletter control sequences out of 15000+200000
+ 13991 strings out of 495063
+ 257784 string characters out of 3182201
+ 308138 words of memory out of 3000000
+ 16795 multiletter control sequences out of 15000+200000
  47156 words of font info for 85 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 58i,9n,61p,781b,722s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 58i,9n,61p,1630b,722s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -1262,10 +1390,10 @@ texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri
 8a.pfb>
-Output written on skeleton.pdf (43 pages, 7704546 bytes).
+Output written on skeleton.pdf (46 pages, 7709891 bytes).
 PDF statistics:
- 295 PDF objects out of 1000 (max. 8388607)
- 141 compressed objects within 2 object streams
+ 304 PDF objects out of 1000 (max. 8388607)
+ 147 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  275 words of extra memory for PDF output out of 10000 (max. 10000000)
 
