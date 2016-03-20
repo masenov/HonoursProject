@@ -18,7 +18,7 @@
 \usepackage[capposition=bottom]{floatrow}
 
 
-\graphicspath{ {Pictures/background/}{Pictures/models/}{Pictures/elastica/}{Pictures/illusions/}{Pictures/experiments/rnn/} {Pictures/experiments/exp1_fig2/}}
+\graphicspath{ {Pictures/background/}{Pictures/models/}{Pictures/elastica/}{Pictures/illusions/}{Pictures/experiments/rnn/} {Pictures/experiments/exp1_fig2/} {Pictures/experiments/fig5/} {Pictures/experiments/fig5/figB}}
 
 
 
@@ -79,26 +79,27 @@
 \end{figure}
 }
 
-\newcommand{\plotthreefigures}[4]{
+\newcommand{\plotthreefigures}[6]{
 \begin{figure}[H]
-\caption{}
-\begin{subfigure}{.5\textwidth}
-  \caption{}
+\begin{subfigure}{.33\textwidth}
   \centering
-  \includegraphics[width=1\linewidth]{#1}
+  \includegraphics[width=#6\linewidth]{#1}
+  \caption{}
 \end{subfigure}%
-\begin{subfigure}{.5\textwidth}
-  \caption{}
+\hfill
+\begin{subfigure}{.33\textwidth}
   \centering
-  \includegraphics[width=1\linewidth]{#2}
+  \includegraphics[width=#6\linewidth]{#2}
+  \caption{}
 \end{subfigure}
-\begin{subfigure}{.5\textwidth}
-  \caption{}
+\hfill
+\begin{subfigure}{.33\textwidth}
   \centering
-  \includegraphics[width=1\linewidth]{#3}
+  \includegraphics[width=#6\linewidth]{#3}
+  \caption{}
 \end{subfigure}%
 \label{#1}
-\floatfoot{#4}
+\caption[#5]{#4}
 \end{figure}
 }
 

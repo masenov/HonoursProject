@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2015.9.10)  13 MAR 2016 20:02
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2015.9.10)  20 MAR 2016 13:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -721,26 +721,26 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 3.
-)
+ [5
+
+])
 \tf@toc=\write4
 \openout4 = `skeleton.toc'.
 
- [5
-
-] [6
-
-]
+ [6]
 (./skeleton.lof)
 \tf@lof=\write5
 \openout5 = `skeleton.lof'.
 
- [7] [8
+ [7
+
+] [8
 
 ]
 Chapter 1.
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
 (Font)              Font shape `OMS/pzccm/m/n' tried instead on input line 63.
-[9] <Pictures/illusions/illusion1.png, id=40, 2025.5675pt x 1003.75pt>
+[9] <Pictures/illusions/illusion1.png, id=41, 2025.5675pt x 1003.75pt>
 File: Pictures/illusions/illusion1.png Graphic file (type png)
 
 <use Pictures/illusions/illusion1.png>
@@ -748,7 +748,7 @@ Package pdftex.def Info: Pictures/illusions/illusion1.png used on input line 74
 .
 (pdftex.def)             Requested size: 330.05322pt x 163.54395pt.
 
-<Pictures/illusions/illusion2.png, id=42, 1008.76875pt x 1003.75pt>
+<Pictures/illusions/illusion2.png, id=43, 1008.76875pt x 1003.75pt>
 File: Pictures/illusions/illusion2.png Graphic file (type png)
 
 <use Pictures/illusions/illusion2.png>
@@ -756,7 +756,7 @@ Package pdftex.def Info: Pictures/illusions/illusion2.png used on input line 75
 .
 (pdftex.def)             Requested size: 206.28249pt x 205.24934pt.
 
-<Pictures/illusions/popout.png, id=43, 215.80624pt x 215.80624pt>
+<Pictures/illusions/popout.png, id=44, 215.80624pt x 215.80624pt>
 File: Pictures/illusions/popout.png Graphic file (type png)
 
 <use Pictures/illusions/popout.png>
@@ -792,7 +792,7 @@ File: Pictures/background/RetinotopicMapping.png Graphic file (type png)
 
 <use Pictures/background/RetinotopicMapping.png>
 Package pdftex.def Info: Pictures/background/RetinotopicMapping.png used on inp
-ut line 94.
+ut line 99.
 (pdftex.def)             Requested size: 330.05322pt x 394.48924pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -803,7 +803,7 @@ notopicMapping.png>] <Pictures/background/F4large.jpg, id=70, 1716.4125pt x 180
 File: Pictures/background/F4large.jpg Graphic file (type jpg)
 
 <use Pictures/background/F4large.jpg>
-Package pdftex.def Info: Pictures/background/F4large.jpg used on input line 104
+Package pdftex.def Info: Pictures/background/F4large.jpg used on input line 109
 .
 (pdftex.def)             Requested size: 206.28249pt x 217.13147pt.
 
@@ -812,7 +812,7 @@ File: Pictures/background/HubelWiesel.jpg Graphic file (type jpg)
 
 <use Pictures/background/HubelWiesel.jpg>
 Package pdftex.def Info: Pictures/background/HubelWiesel.jpg used on input line
- 110.
+ 115.
 (pdftex.def)             Requested size: 330.05322pt x 247.5398pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -821,7 +821,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <populationCoding.png, id=75, 626.34pt x 606.265pt>
 File: populationCoding.png Graphic file (type png)
  <use populationCoding.png>
-Package pdftex.def Info: populationCoding.png used on input line 117.
+Package pdftex.def Info: populationCoding.png used on input line 122.
 (pdftex.def)             Requested size: 330.05322pt x 319.48724pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -831,17 +831,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: Pictures/elastica/elastica1.png Graphic file (type png)
 
 <use Pictures/elastica/elastica1.png>
-Package pdftex.def Info: Pictures/elastica/elastica1.png used on input line 123
+Package pdftex.def Info: Pictures/elastica/elastica1.png used on input line 128
 .
 (pdftex.def)             Requested size: 123.77074pt x 123.76852pt.
 LaTeX Font Info:    Font shape `OT1/phv/m/n' will be
-(Font)              scaled to size 9.85492pt on input line 123.
+(Font)              scaled to size 9.85492pt on input line 128.
 
 <Pictures/elastica/elastica5.png, id=80, 610.28pt x 610.28pt>
 File: Pictures/elastica/elastica5.png Graphic file (type png)
 
 <use Pictures/elastica/elastica5.png>
-Package pdftex.def Info: Pictures/elastica/elastica5.png used on input line 123
+Package pdftex.def Info: Pictures/elastica/elastica5.png used on input line 128
 .
 (pdftex.def)             Requested size: 123.77074pt x 123.76726pt.
 
@@ -849,7 +849,7 @@ Package pdftex.def Info: Pictures/elastica/elastica5.png used on input line 123
 File: Pictures/elastica/elastica3.png Graphic file (type png)
 
 <use Pictures/elastica/elastica3.png>
-Package pdftex.def Info: Pictures/elastica/elastica3.png used on input line 123
+Package pdftex.def Info: Pictures/elastica/elastica3.png used on input line 128
 .
 (pdftex.def)             Requested size: 123.77074pt x 123.76726pt.
 
@@ -857,7 +857,7 @@ Package pdftex.def Info: Pictures/elastica/elastica3.png used on input line 123
 File: Pictures/elastica/elastica4.png Graphic file (type png)
 
 <use Pictures/elastica/elastica4.png>
-Package pdftex.def Info: Pictures/elastica/elastica4.png used on input line 123
+Package pdftex.def Info: Pictures/elastica/elastica4.png used on input line 128
 .
 (pdftex.def)             Requested size: 123.77074pt x 124.1744pt.
 
@@ -865,7 +865,7 @@ Package pdftex.def Info: Pictures/elastica/elastica4.png used on input line 123
 File: Pictures/elastica/elastica2.png Graphic file (type png)
 
 <use Pictures/elastica/elastica2.png>
-Package pdftex.def Info: Pictures/elastica/elastica2.png used on input line 123
+Package pdftex.def Info: Pictures/elastica/elastica2.png used on input line 128
 .
 (pdftex.def)             Requested size: 123.77074pt x 124.58546pt.
 
@@ -873,7 +873,7 @@ Package pdftex.def Info: Pictures/elastica/elastica2.png used on input line 123
 File: Pictures/elastica/elastica6.png Graphic file (type png)
 
 <use Pictures/elastica/elastica6.png>
-Package pdftex.def Info: Pictures/elastica/elastica6.png used on input line 123
+Package pdftex.def Info: Pictures/elastica/elastica6.png used on input line 128
 .
 (pdftex.def)             Requested size: 123.77074pt x 124.17699pt.
 
@@ -887,7 +887,7 @@ lastica6.png>] [20
 ]
 Chapter 3.
 
-Overfull \hbox (1.93478pt too wide) in paragraph at lines 134--135
+Overfull \hbox (1.93478pt too wide) in paragraph at lines 139--140
 \OT1/ptm/m/n/12 This pa-per im-ple-ments sim-pli-fied ver-sions of vi-sual fiel
 d, re-cep-tive fields, tun-ing curves
  []
@@ -896,8 +896,8 @@ d, re-cep-tive fields, tun-ing curves
 File: Pictures/models/input_random.png Graphic file (type png)
 
 <use Pictures/models/input_random.png>
-Package pdftex.def Info: Pictures/models/input_random.png used on input line 13
-9.
+Package pdftex.def Info: Pictures/models/input_random.png used on input line 14
+4.
 (pdftex.def)             Requested size: 165.02661pt x 165.02237pt.
 
 <Pictures/models/input_structure.png, id=102, 1027.84pt x 1027.84pt>
@@ -905,7 +905,7 @@ File: Pictures/models/input_structure.png Graphic file (type png)
 
 <use Pictures/models/input_structure.png>
 Package pdftex.def Info: Pictures/models/input_structure.png used on input line
- 139.
+ 144.
 (pdftex.def)             Requested size: 165.02661pt x 165.02237pt.
  [21 <./Pictures/models/input_random.png> <./Pictures/models/input_structure.pn
 g>]
@@ -914,7 +914,7 @@ File: Pictures/models/stacked_neurons3.png Graphic file (type png)
 
 <use Pictures/models/stacked_neurons3.png>
 Package pdftex.def Info: Pictures/models/stacked_neurons3.png used on input lin
-e 149.
+e 154.
 (pdftex.def)             Requested size: 165.02661pt x 182.74115pt.
 
 <Pictures/models/stacked_neurons2.png, id=110, 1047.915pt x 1174.3875pt>
@@ -922,7 +922,7 @@ File: Pictures/models/stacked_neurons2.png Graphic file (type png)
 
 <use Pictures/models/stacked_neurons2.png>
 Package pdftex.def Info: Pictures/models/stacked_neurons2.png used on input lin
-e 149.
+e 154.
 (pdftex.def)             Requested size: 165.02661pt x 184.93117pt.
 
 <Pictures/models/stacked_neurons.png, id=111, 169.63374pt x 347.2975pt>
@@ -930,14 +930,14 @@ File: Pictures/models/stacked_neurons.png Graphic file (type png)
 
 <use Pictures/models/stacked_neurons.png>
 Package pdftex.def Info: Pictures/models/stacked_neurons.png used on input line
- 151.
+ 156.
 (pdftex.def)             Requested size: 61.88536pt x 126.69629pt.
 
 <Pictures/models/neuron2.png, id=112, 250.9375pt x 250.9375pt>
 File: Pictures/models/neuron2.png Graphic file (type png)
 
 <use Pictures/models/neuron2.png>
-Package pdftex.def Info: Pictures/models/neuron2.png used on input line 151.
+Package pdftex.def Info: Pictures/models/neuron2.png used on input line 156.
 (pdftex.def)             Requested size: 61.88536pt x 61.88417pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -945,37 +945,38 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [22 <./Pictures/models/stacked_neurons3.png> <./Pictures/models/stacked_neuron
 s2.png>]
 
-LaTeX Warning: Reference `neuron5' on page 23 undefined on input line 164.
+LaTeX Warning: Reference `neuron5' on page 23 undefined on input line 169.
 
 [23 <./Pictures/models/stacked_neurons.png> <./Pictures/models/neuron2.png>]
+<Pictures/models/neuron1.png, id=123, 756.8275pt x 754.82pt>
+File: Pictures/models/neuron1.png Graphic file (type png)
 
-LaTeX Warning: Reference `neuron1' on page 24 undefined on input line 195.
-
-
-LaTeX Warning: Reference `neuron1' on page 24 undefined on input line 195.
-
-[24] <Pictures/models/weight1.jpg, id=128, 4015.0pt x 3011.25pt>
+<use Pictures/models/neuron1.png>
+Package pdftex.def Info: Pictures/models/neuron1.png used on input line 207.
+(pdftex.def)             Requested size: 288.79422pt x 288.03241pt.
+ [24] [25 <./Pictures/models/neuron1.png>]
+<Pictures/models/weight1.jpg, id=135, 4015.0pt x 3011.25pt>
 File: Pictures/models/weight1.jpg Graphic file (type jpg)
 
 <use Pictures/models/weight1.jpg>
-Package pdftex.def Info: Pictures/models/weight1.jpg used on input line 232.
-(pdftex.def)             Requested size: 206.28249pt x 154.70663pt.
+Package pdftex.def Info: Pictures/models/weight1.jpg used on input line 237.
+(pdftex.def)             Requested size: 136.14719pt x 102.09627pt.
 
-<Pictures/models/weight2.jpg, id=129, 4015.0pt x 3011.25pt>
+<Pictures/models/weight2.jpg, id=136, 4015.0pt x 3011.25pt>
 File: Pictures/models/weight2.jpg Graphic file (type jpg)
 
 <use Pictures/models/weight2.jpg>
-Package pdftex.def Info: Pictures/models/weight2.jpg used on input line 232.
-(pdftex.def)             Requested size: 206.28249pt x 154.70663pt.
+Package pdftex.def Info: Pictures/models/weight2.jpg used on input line 237.
+(pdftex.def)             Requested size: 136.14719pt x 102.09627pt.
 
-<Pictures/models/weight3.jpg, id=130, 4015.0pt x 3011.25pt>
+<Pictures/models/weight3.jpg, id=137, 4015.0pt x 3011.25pt>
 File: Pictures/models/weight3.jpg Graphic file (type jpg)
 
 <use Pictures/models/weight3.jpg>
-Package pdftex.def Info: Pictures/models/weight3.jpg used on input line 232.
-(pdftex.def)             Requested size: 206.28249pt x 154.70663pt.
- [25] [26 <./Pictures/models/weight1.jpg> <./Pictures/models/weight2.jpg> <./Pi
-ctures/models/weight3.jpg>]
+Package pdftex.def Info: Pictures/models/weight3.jpg used on input line 237.
+(pdftex.def)             Requested size: 136.14719pt x 102.09627pt.
+ [26 <./Pictures/models/weight1.jpg> <./Pictures/models/weight2.jpg> <./Picture
+s/models/weight3.jpg>]
 Chapter 4.
 [27
 
@@ -983,96 +984,257 @@ Chapter 4.
 
 ]
 Chapter 5.
-<Pictures/experiments/rnn/simple.png, id=145, 444.4605pt x 295.22295pt>
+<Pictures/experiments/rnn/simple.png, id=147, 444.4605pt x 295.22295pt>
 File: Pictures/experiments/rnn/simple.png Graphic file (type png)
 
 <use Pictures/experiments/rnn/simple.png>
 Package pdftex.def Info: Pictures/experiments/rnn/simple.png used on input line
- 275.
+ 285.
 (pdftex.def)             Requested size: 206.28249pt x 137.01596pt.
  [29 <./Pictures/experiments/rnn/simple.png>]
-<Pictures/experiments/exp1_fig2/el_ener.png, id=150, 400.3758pt x 288.71864pt>
+<Pictures/experiments/exp1_fig2/2bars.png, id=152, 317.185pt x 317.185pt>
+File: Pictures/experiments/exp1_fig2/2bars.png Graphic file (type png)
+
+<use Pictures/experiments/exp1_fig2/2bars.png>
+Package pdftex.def Info: Pictures/experiments/exp1_fig2/2bars.png used on input
+ line 295.
+(pdftex.def)             Requested size: 206.28249pt x 206.28879pt.
+
+<Pictures/experiments/exp1_fig2/el_ener.png, id=153, 400.3758pt x 288.71864pt>
 File: Pictures/experiments/exp1_fig2/el_ener.png Graphic file (type png)
 
 <use Pictures/experiments/exp1_fig2/el_ener.png>
 Package pdftex.def Info: Pictures/experiments/exp1_fig2/el_ener.png used on inp
-ut line 285.
+ut line 296.
 (pdftex.def)             Requested size: 202.15909pt x 145.78633pt.
 
-<Pictures/experiments/exp1_fig2/h_add.png, id=151, 403.62794pt x 288.71864pt>
+<Pictures/experiments/exp1_fig2/h_add.png, id=154, 403.62794pt x 288.71864pt>
 File: Pictures/experiments/exp1_fig2/h_add.png Graphic file (type png)
 
 <use Pictures/experiments/exp1_fig2/h_add.png>
 Package pdftex.def Info: Pictures/experiments/exp1_fig2/h_add.png used on input
- line 285.
+ line 296.
 (pdftex.def)             Requested size: 202.15909pt x 144.60567pt.
 
-<Pictures/experiments/exp1_fig2/h_mul.png, id=152, 403.62794pt x 288.71864pt>
+<Pictures/experiments/exp1_fig2/h_mul.png, id=155, 403.62794pt x 288.71864pt>
 File: Pictures/experiments/exp1_fig2/h_mul.png Graphic file (type png)
 
 <use Pictures/experiments/exp1_fig2/h_mul.png>
 Package pdftex.def Info: Pictures/experiments/exp1_fig2/h_mul.png used on input
- line 285.
+ line 296.
 (pdftex.def)             Requested size: 202.15909pt x 144.60567pt.
 
-<Pictures/experiments/exp1_fig2/cen.png, id=153, 390.258pt x 288.71864pt>
+<Pictures/experiments/exp1_fig2/cen.png, id=156, 390.258pt x 288.71864pt>
 File: Pictures/experiments/exp1_fig2/cen.png Graphic file (type png)
 
 <use Pictures/experiments/exp1_fig2/cen.png>
 Package pdftex.def Info: Pictures/experiments/exp1_fig2/cen.png used on input l
-ine 285.
+ine 296.
 (pdftex.def)             Requested size: 202.15909pt x 149.56183pt.
 
-<Pictures/experiments/exp1_fig2/ad_comb.png, id=154, 383.031pt x 288.71864pt>
+<Pictures/experiments/exp1_fig2/ad_comb.png, id=157, 403.62794pt x 288.71864pt>
 File: Pictures/experiments/exp1_fig2/ad_comb.png Graphic file (type png)
-
 <use Pictures/experiments/exp1_fig2/ad_comb.png>
 Package pdftex.def Info: Pictures/experiments/exp1_fig2/ad_comb.png used on inp
-ut line 285.
-(pdftex.def)             Requested size: 202.15909pt x 152.38576pt.
+ut line 296.
+(pdftex.def)             Requested size: 202.15909pt x 144.60567pt.
 
-<Pictures/experiments/exp1_fig2/mul_comb.png, id=155, 369.66106pt x 288.71864pt
->
+<Pictures/experiments/exp1_fig2/mul_comb.png, id=158, 390.258pt x 288.71864pt>
 File: Pictures/experiments/exp1_fig2/mul_comb.png Graphic file (type png)
- <use Pictures/experiments/exp1_fig2/mul_comb.png>
-Package pdftex.def Info: Pictures/experiments/exp1_fig2/mul_comb.png used on in
-put line 285.
-(pdftex.def)             Requested size: 202.15909pt x 157.89261pt.
 
-<Pictures/experiments/exp1_fig2/ADD_vs_MULT.png, id=156, 411.939pt x 278.9622pt
+<use Pictures/experiments/exp1_fig2/mul_comb.png>
+Package pdftex.def Info: Pictures/experiments/exp1_fig2/mul_comb.png used on in
+put line 296.
+(pdftex.def)             Requested size: 202.15909pt x 149.56183pt.
+
+<Pictures/experiments/exp1_fig2/ADD_vs_MULT.png, id=159, 411.939pt x 278.9622pt
 >
 File: Pictures/experiments/exp1_fig2/ADD_vs_MULT.png Graphic file (type png)
  <use Pictures/experiments/exp1_fig2/ADD_vs_MULT.png>
 Package pdftex.def Info: Pictures/experiments/exp1_fig2/ADD_vs_MULT.png used on
- input line 286.
+ input line 297.
 (pdftex.def)             Requested size: 330.05322pt x 223.50633pt.
- [30 <./Pictures/experiments/exp1_fig2/el_ener.png> <./Pictures/experiments/exp
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [30 <./Pictures/experiments/exp1_fig2/2bars.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [31 <./Pictures/experiments/exp1_fig2/el_ener.png> <./Pictures/experiments/exp
 1_fig2/h_add.png> <./Pictures/experiments/exp1_fig2/h_mul.png> <./Pictures/expe
 riments/exp1_fig2/cen.png> <./Pictures/experiments/exp1_fig2/ad_comb.png> <./Pi
-ctures/experiments/exp1_fig2/mul_comb.png>] [31 <./Pictures/experiments/exp1_fi
-g2/ADD_vs_MULT.png>]
-[32
+ctures/experiments/exp1_fig2/mul_comb.png>]
+<Pictures/experiments/fig5/fig5_B.png, id=174, 317.185pt x 317.185pt>
+File: Pictures/experiments/fig5/fig5_B.png Graphic file (type png)
+
+<use Pictures/experiments/fig5/fig5_B.png>
+Package pdftex.def Info: Pictures/experiments/fig5/fig5_B.png used on input lin
+e 302.
+(pdftex.def)             Requested size: 123.77074pt x 123.7694pt.
+
+<Pictures/experiments/fig5/matrix.png, id=175, 1294.71706pt x 946.0143pt>
+File: Pictures/experiments/fig5/matrix.png Graphic file (type png)
+
+<use Pictures/experiments/fig5/matrix.png>
+Package pdftex.def Info: Pictures/experiments/fig5/matrix.png used on input lin
+e 303.
+(pdftex.def)             Requested size: 206.28249pt x 150.7158pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [32 <./Pictures/experiments/exp1_fig2/ADD_vs_MULT.png> <./Pictures/experiments
+/fig5/fig5_B.png>]
+<Pictures/experiments/fig5/p_cen.png, id=181, 451.32616pt x 288.71864pt>
+File: Pictures/experiments/fig5/p_cen.png Graphic file (type png)
+
+<use Pictures/experiments/fig5/p_cen.png>
+Package pdftex.def Info: Pictures/experiments/fig5/p_cen.png used on input line
+ 305.
+(pdftex.def)             Requested size: 136.14719pt x 87.09645pt.
+
+<Pictures/experiments/fig5/d_cen.png, id=182, 451.32616pt x 288.71864pt>
+File: Pictures/experiments/fig5/d_cen.png Graphic file (type png)
+
+<use Pictures/experiments/fig5/d_cen.png>
+Package pdftex.def Info: Pictures/experiments/fig5/d_cen.png used on input line
+ 305.
+(pdftex.def)             Requested size: 136.14719pt x 87.09645pt.
+
+<Pictures/experiments/fig5/d_flan.png, id=183, 451.32616pt x 288.71864pt>
+File: Pictures/experiments/fig5/d_flan.png Graphic file (type png)
+
+<use Pictures/experiments/fig5/d_flan.png>
+Package pdftex.def Info: Pictures/experiments/fig5/d_flan.png used on input lin
+e 305.
+(pdftex.def)             Requested size: 136.14719pt x 87.09645pt.
+
+<Pictures/experiments/fig5/fig5_C.png, id=184, 317.185pt x 317.185pt>
+File: Pictures/experiments/fig5/fig5_C.png Graphic file (type png)
+
+<use Pictures/experiments/fig5/fig5_C.png>
+Package pdftex.def Info: Pictures/experiments/fig5/fig5_C.png used on input lin
+e 307.
+(pdftex.def)             Requested size: 123.77074pt x 123.7694pt.
+
+<Pictures/experiments/fig5/fig5_D.png, id=185, 317.185pt x 317.185pt>
+File: Pictures/experiments/fig5/fig5_D.png Graphic file (type png)
+
+<use Pictures/experiments/fig5/fig5_D.png>
+Package pdftex.def Info: Pictures/experiments/fig5/fig5_D.png used on input lin
+e 309.
+(pdftex.def)             Requested size: 123.77074pt x 123.7694pt.
+ [33 <./Pictures/experiments/fig5/matrix.png> <./Pictures/experiments/fig5/p_ce
+n.png> <./Pictures/experiments/fig5/d_cen.png> <./Pictures/experiments/fig5/d_f
+lan.png> <./Pictures/experiments/fig5/fig5_C.png>]
+<Pictures/experiments/fig5/fig5_F.png, id=194, 317.185pt x 317.185pt>
+File: Pictures/experiments/fig5/fig5_F.png Graphic file (type png)
+
+<use Pictures/experiments/fig5/fig5_F.png>
+Package pdftex.def Info: Pictures/experiments/fig5/fig5_F.png used on input lin
+e 311.
+(pdftex.def)             Requested size: 123.77074pt x 123.7694pt.
+
+<Pictures/experiments/fig5/bar.png, id=195, 215.80624pt x 215.80624pt>
+File: Pictures/experiments/fig5/bar.png Graphic file (type png)
+
+<use Pictures/experiments/fig5/bar.png>
+Package pdftex.def Info: Pictures/experiments/fig5/bar.png used on input line 3
+20.
+(pdftex.def)             Requested size: 136.14719pt x 136.14963pt.
+
+<Pictures/experiments/fig5/bar_without.png, id=196, 215.80624pt x 215.80624pt>
+File: Pictures/experiments/fig5/bar_without.png Graphic file (type png)
+
+<use Pictures/experiments/fig5/bar_without.png>
+Package pdftex.def Info: Pictures/experiments/fig5/bar_without.png used on inpu
+t line 325.
+(pdftex.def)             Requested size: 136.14719pt x 136.14963pt.
+
+<Pictures/experiments/fig5/bar_torus.png, id=197, 215.80624pt x 215.80624pt>
+File: Pictures/experiments/fig5/bar_torus.png Graphic file (type png)
+
+<use Pictures/experiments/fig5/bar_torus.png>
+Package pdftex.def Info: Pictures/experiments/fig5/bar_torus.png used on input 
+line 330.
+(pdftex.def)             Requested size: 136.14719pt x 136.14963pt.
+
+<Pictures/experiments/fig5/line.png, id=198, 215.80624pt x 215.80624pt>
+File: Pictures/experiments/fig5/line.png Graphic file (type png)
+
+<use Pictures/experiments/fig5/line.png>
+Package pdftex.def Info: Pictures/experiments/fig5/line.png used on input line 
+335.
+(pdftex.def)             Requested size: 136.14719pt x 136.14963pt.
+
+<Pictures/experiments/fig5/line_without.png, id=199, 215.80624pt x 215.80624pt>
+File: Pictures/experiments/fig5/line_without.png Graphic file (type png)
+<use Pictures/experiments/fig5/line_without.png>
+Package pdftex.def Info: Pictures/experiments/fig5/line_without.png used on inp
+ut line 340.
+(pdftex.def)             Requested size: 136.14719pt x 136.14963pt.
+
+<Pictures/experiments/fig5/line_torus.png, id=200, 215.80624pt x 215.80624pt>
+File: Pictures/experiments/fig5/line_torus.png Graphic file (type png)
+
+<use Pictures/experiments/fig5/line_torus.png>
+Package pdftex.def Info: Pictures/experiments/fig5/line_torus.png used on input
+ line 345.
+(pdftex.def)             Requested size: 136.14719pt x 136.14963pt.
+
+<Pictures/experiments/fig5/random.png, id=201, 215.80624pt x 215.80624pt>
+File: Pictures/experiments/fig5/random.png Graphic file (type png)
+
+<use Pictures/experiments/fig5/random.png>
+Package pdftex.def Info: Pictures/experiments/fig5/random.png used on input lin
+e 350.
+(pdftex.def)             Requested size: 136.14719pt x 136.14963pt.
+
+<Pictures/experiments/fig5/random_without.png, id=202, 215.80624pt x 215.80624p
+t>
+File: Pictures/experiments/fig5/random_without.png Graphic file (type png)
+ <use Pictures/experiments/fig5/random_without.png>
+Package pdftex.def Info: Pictures/experiments/fig5/random_without.png used on i
+nput line 355.
+(pdftex.def)             Requested size: 136.14719pt x 136.14963pt.
+
+<Pictures/experiments/fig5/random_torus.png, id=203, 215.80624pt x 215.80624pt>
+File: Pictures/experiments/fig5/random_torus.png Graphic file (type png)
+<use Pictures/experiments/fig5/random_torus.png>
+Package pdftex.def Info: Pictures/experiments/fig5/random_torus.png used on inp
+ut line 360.
+(pdftex.def)             Requested size: 136.14719pt x 136.14963pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [34 <./Pictures/experiments/fig5/fig5_D.png> <./Pictures/experiments/fig5/fig5
+_F.png>]
+[35 <./Pictures/experiments/fig5/bar.png> <./Pictures/experiments/fig5/bar_with
+out.png> <./Pictures/experiments/fig5/bar_torus.png> <./Pictures/experiments/fi
+g5/line.png> <./Pictures/experiments/fig5/line_without.png> <./Pictures/experim
+ents/fig5/line_torus.png> <./Pictures/experiments/fig5/random.png> <./Pictures/
+experiments/fig5/random_without.png> <./Pictures/experiments/fig5/random_torus.
+png>] [36
 
 ]
 Chapter 6.
-[33] [34
+[37] [38
 
 ]
 Chapter 7.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 349.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 422.
 
-Overfull \hbox (23.95245pt too wide) in paragraph at lines 347--350
+Overfull \hbox (23.95245pt too wide) in paragraph at lines 420--423
  [][] 
  []
 
-[35] [36]
+[39] [40]
 Chapter 8.
-(./skeleton.bbl [37
+(./skeleton.bbl [41
 
-] [38
+] [42
 
-]) [39] (./skeleton.aux)
+]) [43] (./skeleton.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1081,10 +1243,10 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 13884 strings out of 495063
- 254222 string characters out of 3182201
- 306907 words of memory out of 3000000
- 16710 multiletter control sequences out of 15000+200000
+ 13989 strings out of 495063
+ 257740 string characters out of 3182201
+ 308173 words of memory out of 3000000
+ 16793 multiletter control sequences out of 15000+200000
  47156 words of font info for 85 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  58i,9n,61p,781b,722s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1100,10 +1262,10 @@ texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-di
 st/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri
 8a.pfb>
-Output written on skeleton.pdf (39 pages, 4515364 bytes).
+Output written on skeleton.pdf (43 pages, 7704546 bytes).
 PDF statistics:
- 244 PDF objects out of 1000 (max. 8388607)
- 132 compressed objects within 2 object streams
+ 295 PDF objects out of 1000 (max. 8388607)
+ 141 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 180 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 275 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -90,7 +90,7 @@ def plotbar(x,y,th,color='k',width=2,l=0.9, box_length=1, aspect=1):
 
     # return holoviews curve
     curve = hv.Curve(zip(X,Y))
-    return curve1(style={'visible':False})(plot={'xaxis':None, 'yaxis':None})*curve2(style={'visible':False})(plot={'xaxis':None, 'yaxis':None})*curve(plot={'xaxis':None, 'yaxis':None, 'aspect':aspect})(style={'alpha':0.4, 'linewidth':width})
+    return curve1(style={'visible':False})(plot={'xaxis':None, 'yaxis':None})*curve2(style={'visible':False})(plot={'xaxis':None, 'yaxis':None})*curve(plot={'xaxis':None, 'yaxis':None, 'aspect':aspect})(style={'alpha':width/2, 'linewidth':2})
 
 
 
@@ -234,9 +234,9 @@ def visualFieldMagnitude(orientations, magnitude, aspect=1, fix_scale=False):
         for i in range(orientations.shape[0]):
             for j in range(orientations.shape[1]):
                 if (i==0 and j==0):
-                    bars = plotbar(i,j,orientations[i,j], l=0.9, width=magnitude[i,j]*3)
+                    bars = plotbar(i,j,orientations[i,j], l=0.9, width=magnitude[i,j])
                 else:
-                    bars *= plotbar(i, j, orientations[i,j], l=0.9, width=magnitude[i,j]*3)
+                    bars *= plotbar(i, j, orientations[i,j], l=0.9, width=magnitude[i,j])
     #renderer.save(bars, 'orientations')
 
     #bars1 = SVG(filename='orientations.svg')
@@ -300,12 +300,14 @@ def elasticaMatrix(m, n, nosn, E0=0, torus=False):
                 energy = en.E(theta1,theta2,[x,y])
                 if (torus):
                     xy = np.array(([x,y],[x,y-m],[x,y+m],[x-n,y],[x-n,y-m],[x-n,y+m],[x+n,y],[x+n,y-m],[x+n,y+m]))
-                    energies = np.zeros(9)
+                    min_distance = 100000000
+                    min_xy = [x,y]
                     for k in range(9):
                         distance = np.sqrt(np.power(xy[k][0],2) + np.power(xy[k][1],2))
-                        energy = en.E(theta1,theta2,[xy[k][0],xy[k][1]])
-                        energies[k] = (energy-E0)/distance
-                    matrix[i,j] = min(energies)
+                        if (distance < min_distance):
+                            min_distance = distance
+                            min_xy = xy[k]
+                    matrix[i,j] = en.E(theta1,theta2,[min_xy[0],min_xy[1]])/min_distance
                     matrix[j,i] = matrix[i,j]
                 else:
                     distance = np.sqrt(np.power(x,2) + np.power(y,2))

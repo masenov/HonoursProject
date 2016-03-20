@@ -81,13 +81,18 @@ The different parts of the project are discussed below in the report.
 In explaining the model setup and performed experiments, it is important to first introduce some neuroscience terminology. As one can imagine the visual cortex is utterly complex. We are focusing on the V1 cortex, analyzing a specific type of orientation selective neurons. Even though we are focusing on a specific neurons in only a part of our visual processing pipeline, we make even more simplifications in order to be able to analyze specific features of those neurons. We also briefly introduce recurrent neural networks and how they are used in the project.
 
 \section{Neuroscience background}
-\subsection{Visual field}
+\subsection{Visual field and visual stimuli}
 
-Visual field is the area we can see with our eyes. The first few processing steps are illustrated in fig.\ref{visual_fields}. The initial information we receive is changes in light from our retina. This then gets processed by the lateral geniculate nucleus (LGN). The LGN cells  and passed down to the Primary visual cortex (V1). V1 receives information about orientation information about the different parts of our visual field. 
+Visual field is the area we can see with our eyes. The information undergo a variety of transformations in the different parts of our visual cortex. The first few processing steps are illustrated in fig.\ref{visual_fields}. The initial information we receive is changes in light from our retina. This then gets processed by the lateral geniculate nucleus (LGN). The LGN cells  and passed down to the Primary visual cortex (V1). V1 extract information about edges and orientations in the different parts of our visual field. 
 
 \plotfigureS{visual_fields}{Perceiving a line from the retina to LGN cells and then by V1 orientation selective cells.\cite{receptive-fields}}{Visual Field}{.5}
 
-Precisely how this information is processed in the main interest of this project. While at a retinal and LGN level, most of the transformations are low-level, V1 starts to extract some patterns useful for the high level visual processing happening in V2, V3, V4, V5 and V6. 
+Precisely how this information is processed is the main interest of this project. While at a retinal and LGN level, most of the transformations are low-level, V1 starts to extract some patterns. We don't only detect single orientations for different parts of our visual field. Nearby orientations can influence each other. 
+
+(to rewrite)
+Nearby orientations of the orientations useful for the high level visual processing happening in V2, V3, V4, V5 and V6. 
+
+mention visual stimuli
 
 Finally it is also worth mentioning that we see in different details in different parts of our visual fields. Most of the information we perceive is close to the central or foveal vision, which could lead to interesting behavior \cite{knight2008drastically}. A small part of our retina, known as 'blind spot', does not have any photoreceptors. Our brain compensates the lack of information by fulfilling details from nearby observations. Both of those details could lead to change in behavior in our model, however we will ignore this details in our experiments.
 
@@ -178,7 +183,7 @@ The firing rate of the pairs of same orientation selective neurons in the two vi
 
 where $\tau_{syn}$ is a constant, $\cfrac{dr_{1/2}(t)}{dt}$ is the change of the firing rate with respect to time, $r_{1/2}(t)$ is the current firing rate, $w_{12/21}$ is the strength between the neurons. $in_{1/2}$ is calculated from the tuning curve of the specific neuron for the  presented orientation. In our model we will use the von Mises function as in \cite{keemink2015unified}. The von Mises function has the following formula:
 
-\eq{A\exp(k\cos(2\alpha_{pref} - \alpha_{actual}))}
+\eq{A\exp(k\cos2(\alpha_{pref} - \alpha_{actual}))}
 
 
 The different values of $A$ and $k$ are again described in \cite{keemink2015unified}, but ultimately the function with the correct set of parameters gives us the similarly looking tuning curves as in fig.\ref{HubelWiesel}.
@@ -199,7 +204,7 @@ Next we extend the model, so we can have any number of orientations (fig.\ref{ne
 \end{equation}
 
  
-%\plotfigureS{neuron1}{\bt{Any number of orientations, with limited connectivity between neurons} *The connections for only one neuron are shown.}{0.7}
+\plotfigureS{neuron1}{\bt{Any number of orientations, with limited connectivity between neurons} *The connections for only one neuron are shown.}{Limited connectivity}{0.7}
 
 \section{Multiple orientations, full connectivity} \label{mult_model}
 The next modification we do, on single neuron level, is to add full connectivity between all the neurons. We set the weights depending on the closeness of the neurons to each other, as well as the similarity of their preferred orientation. To explain how we setup the weights, let use an example. Let's have a $10x10$ visual field with different orientations, as in fig.\ref{input_random} and $9$ orientations selective neurons. Unrolling the $10x10x9$ matrix, we have a vector of $900$ neurons all together. We can setup $900x900$ weight matrix defining the connections between the neurons. 
@@ -229,7 +234,7 @@ The strength of the connection between every two neurons $l$ and $m$ is the same
 
 
 
-\plotthreefigures{weight1}{weight2}{weight3}{Weight matrix for a full connectivity model. (A) Full weight matrix. (B) First 100 neurons. (C) First 10 neurons. (D) Scale of the values.}
+\plotthreefigures{weight1}{weight2}{weight3}{Weight matrix for a full connectivity model. (A) Full weight matrix. (B) First 100 neurons. (C) First 10 neurons. (D) Scale of the values.}{Sample weight matrix}{1}
 
 \section{Elastica principle}
 
@@ -241,6 +246,11 @@ The final part is implementing the elastica principle into the model. The only m
 
 
 \chapter{Implementation}
+
+This sections discusses the choice of programming languages and libraries, the benefits and challenges of using them and how they were addressed. During the implementations stages, I went through variety of changes, depending on the current stage of the project. First versions of visual fields, receptive fields, tuning curves and population coding were implemented. Next we implement a model of the input the orientation selective neurons in our V1 cortex receive and how the neurons respond to it. We gradually extend our model, to include more options for changing the connections between two neurons, as well as the form on the input. We use different tools for visualization and address some performance issues of simulating the model.
+
+
+Initial choice of programming language
 
 (Notes)
 
@@ -282,12 +292,75 @@ Go in more details and show the first few steps of calculations of $\frac{dr(t)}
 Simple experiments, matrix form
 
 \section{Additive and Multiplicative model}
-\plotfiguresix{el_ener}{h_add}{h_mul}{cen}{ad_comb}{mul_comb}{\bt{Elastica principle} (to include energies for all curves) a) 0 b) ...}{.49}{Elastica principle}
-\plotfigure{ADD_vs_MULT}{Additive vs Multiplicative model}{AdMp}
+\plotfigureS{2bars}{Experiment setup. Left red bar - center, right red bar - flanker, black bars - orientation selective neurons, blue curves - elastica curves. The position of the center bar is encoded by n orientation selective neurons. The modulation from the flanker is directly calculated from the orientation of the flanker bar, rather than through encoding it with orientation selective neurons. The more saturated the color, the stronger the connection between the orientation selective neuron and the flanker (not dependant on the presented center orientation). The wider the curve, the stronger the response of that neuron (dependent on the presented center orientation.}{Two bars setup}{0.5}
+\plotfiguresix{el_ener}{h_add}{h_mul}{cen}{ad_comb}{mul_comb}{\bt{Additive and Multiplicative model} (a) Elastica energy (b) h, additive (c) h, multiplicative (d) Central drive (e) Final response for additive model (f) Final response for multiplicative model}{.49}{Additive and Multiplicative mode}
+\plotfigure{ADD_vs_MULT}{Additive vs Multiplicative model. Although the tilt effects happen at different orientations and the strength of modulation is different, the change in the effect as we vary the flanker orientation is similar.}{AdMp}
 \section{Passive vs Dynamic models}
-\subsection{Central and flanker bar}
-\subsection{Tilt effects}
-\subsection{Pop out effects}
+%\subsection{Center and flanker bar}
+\section{Tilt effects}
+\subsection{Tilt effect 1}
+\plotfigureS{fig5_B}{Tilt Effect 1}{Tilt Effect 1}{0.3}
+\plotfigureS{matrix}{Weight matrix}{Weight Matrix 1}{0.5}
+(fix legend)
+\plotthreefigures{p_cen}{d_cen}{d_flan}{Experienced tilt illusions for different modulation constants. (a) Tilt illusion of the center bar for different flaker orientations. The experiment reproduced is from \cite{keemink2015unified}, fig.5, B (b) Tilt illusion of the center bar for different flanker orientations, in the dynamic mode. (c) Tilt illusion of the flanker bars for different flanker orientations, in a dynamic model}{Experienced tilt illusions}{1}
+\subsection{Tilt effect 2}
+\plotfigureS{fig5_C}{Tilt Effect 2}{Tilt Effect 2}{0.3}
+\subsection{Tilt effect 3}
+\plotfigureS{fig5_D}{Tilt Effect 3}{Tilt Effect 3}{0.3}
+\subsection{Tilt effect 4}
+\plotfigureS{fig5_F}{Tilt Effect 4}{Tilt Effect 4}{0.3}
+
+\section{Pop out effects}
+
+
+\begin{figure}[H]
+\caption{}
+\begin{subfigure}{.33\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{bar}
+\end{subfigure}%
+\hfill
+\begin{subfigure}{.33\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{bar_without}
+\end{subfigure}
+\hfill
+\begin{subfigure}{.33\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{bar_torus}
+\end{subfigure}%
+\hfill
+\begin{subfigure}{.33\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{line}
+\end{subfigure}
+\hfill
+\begin{subfigure}{.33\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{line_without}
+\end{subfigure}%
+\hfill
+\begin{subfigure}{.33\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{line_torus}
+\end{subfigure}
+\hfill
+\begin{subfigure}{.33\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{random}
+\end{subfigure}%
+\hfill
+\begin{subfigure}{.33\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{random_without}
+\end{subfigure}%
+\hfill
+\begin{subfigure}{.33\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{random_torus}
+\end{subfigure}
+\floatfoot{Pop out effect. First column input, second column connections without torus, third column torus}
+\end{figure}
 
 \chapter{Evaluation}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2015.9.10)  13 MAR 2016 19:52
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2015.9.10)  17 MAR 2016 07:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -542,7 +542,7 @@ Package floatrow Info: Modified rotfloat package code loaded on input line 473.
 Here is how much of TeX's memory you used:
  12543 strings out of 495063
  229387 string characters out of 3182201
- 277460 words of memory out of 3000000
+ 277459 words of memory out of 3000000
  15512 multiletter control sequences out of 15000+200000
  4445 words of font info for 16 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
