@@ -320,12 +320,68 @@ Go in more details and show the first few steps of calculations of $\frac{dr(t)}
 Simple experiments, matrix form
 
 \section{Additive and Multiplicative model}
+
+\begin{figure}[H]
+\caption{}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{2bars3}
+\end{subfigure}%
+\hfill
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{2bars_2}
+\end{subfigure}
+\hfill
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{2bars_1}
+\end{subfigure}%
+\hfill
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{2bars}
+\end{subfigure}
+\floatfoot{(Still figuring out how to make the plot clearer. Pop out effect. First column input, second column connections without torus, third column torus}
+\end{figure}
+
 \plotfigureS{2bars}{Experiment setup. Left red bar - center, right red bar - flanker, black bars - orientation selective neurons, blue curves - elastica curves. The position of the center bar is encoded by n orientation selective neurons. The modulation from the flanker is directly calculated from the orientation of the flanker bar, rather than through encoding it with orientation selective neurons. The more saturated the color, the stronger the connection between the orientation selective neuron and the flanker (not dependant on the presented center orientation). The wider the curve, the stronger the response of that neuron (dependent on the presented center orientation.}{Two bars setup}{0.5}
 \plotfiguresix{el_ener}{h_add}{h_mul}{cen}{ad_comb}{mul_comb}{\bt{Additive and Multiplicative model} (a) Elastica energy (b) h, additive (c) h, multiplicative (d) Central drive (e) Final response for additive model (f) Final response for multiplicative model}{.49}{Additive and Multiplicative mode}
 \plotfigure{ADD_vs_MULT}{Additive vs Multiplicative model. Although the tilt effects happen at different orientations and the strength of modulation is different, the change in the effect as we vary the flanker orientation is similar.}{AdMp}
 \section{Passive vs Dynamic models}
 %\subsection{Center and flanker bar}
 \section{Tilt effects}
+
+In this section we explore variety of tilt effects. In all of the experiments we have a center bar and a number of flanker bars around it. We experiment with different number of flankers, vary their position and orientation around the center bar.
+
+\begin{figure}[H]
+\caption{}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{fig5_B}
+  \caption{}
+\end{subfigure}%
+\hfill
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{fig5_C}
+  \caption{}
+\end{subfigure}
+\hfill
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{fig5_D}
+  \caption{}
+\end{subfigure}%
+\hfill
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{fig5_F}
+  \caption{}
+\end{subfigure}
+\floatfoot{Pop out effect. First column input, second column connections without torus, third column torus}
+\end{figure}
+
 \subsection{Tilt effect 1}
 \plotfigureS{fig5_B}{Tilt Effect 1}{Tilt Effect 1}{0.3}
 \plotfigureS{matrix}{Weight matrix}{Weight Matrix 1}{0.5}

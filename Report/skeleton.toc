@@ -22,14 +22,14 @@
 \contentsline {section}{\numberline {5.1}Recurrent Neural Network}{31}
 \contentsline {section}{\numberline {5.2}Elastica energy}{32}
 \contentsline {section}{\numberline {5.3}Additive and Multiplicative model}{32}
-\contentsline {section}{\numberline {5.4}Passive vs Dynamic models}{34}
-\contentsline {section}{\numberline {5.5}Tilt effects}{34}
-\contentsline {subsection}{\numberline {5.5.1}Tilt effect 1}{34}
-\contentsline {subsection}{\numberline {5.5.2}Tilt effect 2}{35}
-\contentsline {subsection}{\numberline {5.5.3}Tilt effect 3}{36}
-\contentsline {subsection}{\numberline {5.5.4}Tilt effect 4}{36}
-\contentsline {section}{\numberline {5.6}Pop out effects}{37}
-\contentsline {chapter}{\numberline {6}Evaluation}{39}
-\contentsline {chapter}{\numberline {7}Timeline}{41}
-\contentsline {chapter}{\numberline {8}Conclusions}{43}
-\contentsline {chapter}{Bibliography}{45}
+\contentsline {section}{\numberline {5.4}Passive vs Dynamic models}{35}
+\contentsline {section}{\numberline {5.5}Tilt effects}{35}
+\contentsline {subsection}{\numberline {5.5.1}Tilt effect 1}{36}
+\contentsline {subsection}{\numberline {5.5.2}Tilt effect 2}{37}
+\contentsline {subsection}{\numberline {5.5.3}Tilt effect 3}{38}
+\contentsline {subsection}{\numberline {5.5.4}Tilt effect 4}{38}
+\contentsline {section}{\numberline {5.6}Pop out effects}{39}
+\contentsline {chapter}{\numberline {6}Evaluation}{41}
+\contentsline {chapter}{\numberline {7}Timeline}{43}
+\contentsline {chapter}{\numberline {8}Conclusions}{45}
+\contentsline {chapter}{Bibliography}{47}
