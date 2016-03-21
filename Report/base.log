@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2015.9.10)  17 MAR 2016 07:56
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2015.9.10)  21 MAR 2016 13:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -7,7 +7,11 @@ entering extended mode
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, lo
 aded.
-(./infthesis.cls
+(./styles/infthesis.cls
+
+LaTeX Warning: You have requested document class `styles/infthesis',
+               but the document class provides `infthesis'.
+
 Document Class: infthesis 2011/02/02 v3.5 School of Informatics Thesis Class
 (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
@@ -67,11 +71,15 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
-) (./eushield.sty
+)
+(./styles/logos/eushield.sty
+
+LaTeX Warning: You have requested package `styles/logos/eushield',
+               but the package provides `eushield'.
+
 Package: eushield 2006/08/28\ v1.1\ Commands for including the EU shield graphi
 c
-)
-(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
+) (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
@@ -88,41 +96,6 @@ File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen110
-)
-(/usr/share/texlive/texmf-dist/tex/latex/pslatex/pslatex.sty
-Package: pslatex 1996/07/24 v1.2 pslatex emulation (DPC)
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 65.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/ptmcm/m/n on input line 65.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/ptmcm/m/n on input line 65.
-LaTeX Font Info:    Redeclaring symbol font `letters' on input line 66.
-LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
-(Font)                  OML/cmm/m/it --> OML/ptmcm/m/it on input line 66.
-LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
-(Font)                  OML/cmm/b/it --> OML/ptmcm/m/it on input line 66.
-LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 67.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
-(Font)                  OMS/cmsy/m/n --> OMS/pzccm/m/n on input line 67.
-LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
-(Font)                  OMS/cmsy/b/n --> OMS/pzccm/m/n on input line 67.
-LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 68.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
-(Font)                  OMX/cmex/m/n --> OMX/psycm/m/n on input line 68.
-LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
-(Font)                  OMX/cmex/m/n --> OMX/psycm/m/n on input line 68.
-\symbold=\mathgroup4
-\symitalic=\mathgroup5
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 74.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 74.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 74.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 75.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/ptm/m/it on input line 75.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 75.
 )
 (/usr/share/texlive/texmf-dist/tex/latex/sectsty/sectsty.sty
 Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading sty
@@ -540,11 +513,11 @@ Package floatrow Info: Modified rotfloat package code loaded on input line 473.
 
  
 Here is how much of TeX's memory you used:
- 12543 strings out of 495063
- 229387 string characters out of 3182201
- 277459 words of memory out of 3000000
- 15512 multiletter control sequences out of 15000+200000
- 4445 words of font info for 16 fonts, out of 3000000 for 9000
+ 12353 strings out of 495063
+ 227018 string characters out of 3182201
+ 277081 words of memory out of 3000000
+ 15325 multiletter control sequences out of 15000+200000
+ 3938 words of font info for 15 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 56i,0n,55p,419b,186s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 56i,0n,55p,419b,83s stack positions out of 5000i,500n,10000p,200000b,50000s
 !  ==> Fatal error occurred, no output PDF file produced!

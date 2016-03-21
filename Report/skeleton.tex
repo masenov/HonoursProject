@@ -35,7 +35,7 @@ We experience different tilt illusions and pop out effects. This is often explai
 
 However neurons responsible for different part of our visual field are also connected to each other. This modulation explains some of the effect we are experiencing, as orientations in our visual fields are influenced by nearby ones. However those interaction have only been explored statically, calculating the modulation only once. In a full dynamic a change in an orientation, can lead to a change in another orientation, and so on. It's unclear if existing models change in a dynamic setting, does the system settles down to a stable state, or it keeps fluctuating.
 
-In this report, we explore an already existing passive model of the above mentioned neurons and build a dynamic model. We explore the differences between the two to check if in a dynamic setting, we still experience the same effects. 
+In this report, we explore an already existing static model of the above mentioned neurons and build a dynamic model. We explore the differences between the two to check if in a dynamic setting, we still experience the same effects. 
 }
 
 \maketitle
@@ -52,11 +52,11 @@ Acknowledgements go here.
 
 \chapter{Introduction}
 
-In processing visual information, our brain seems to favor continuity and prioritize the greater whole, rather than individual details. Sometimes this ability serves us well, ex. when trying to find a pattern among random noise, or a discontinuity in a certain pattern (fig.\ref{popout}). However in other cases this leads to various illusions (fig.\ref{illusion1}, fig.\ref{illusion2}). The project aims to explore the relevance of V1 and its orientation selectivity neurons in the context of those effects. Fig.\ref{illusion1} and fig.\ref{popout} are particularly relevant to this project.
+In processing visual information, our brain seems to favor continuity and prioritize the greater whole, rather than individual details. Sometimes this ability serves us well, ex. when trying to find a pattern among random noise, or a discontinuity in a certain pattern (fig.\ref{popout}). However in other cases this leads to various illusions (fig.\ref{illusion1}, fig.\ref{illusion2}). The project aims to explore the relevance of V1 and its orientation selectivity neurons in the context of those effects. Fig.\ref{illusion1} and Fig.\ref{popout} are particularly relevant to this project.
 
-This paper develops a model, based and built upon the one described in the recent elastica paper \cite{keemink2015unified}. The elastica principle defines the strength of the connections between different orientation selective neurons. It favors continuity, the smoother too bars are connected to each other, the stronger the modulation connection between them. Although there are other models explaining similar phenomena, illusions and effects separately, the neural model described claims to have all of those properties, unifying them in one model. 
+This paper develops a model, based and built upon the one described in the recent elastica paper \cite{keemink2015unified}. The elastica principle defines the strength of the connections between different orientation selective neurons. It favours continuity, the smoother too bars are connected to each other, the stronger the modulation connection between them. Although there are other models explaining similar phenomena, illusions and effects separately, the neural model described claims to have all of those properties, unifying them in one model. 
 
-However all the results obtained were obtained statically with only one pass through the model. As mentioned in further development, adding dynamics to some of the already presented illusions could lead to some interesting behavior. We build a recurrent neural network of the orientation selective neurons in the V1 cortex. We set the strength of the connections between them (weights in the network), based on the elastica principle. We perform baseline experiments with the static model and compare the results in full dynamic setting.
+However all the results in the paper were obtained by neurons getting a passive input based on the orientations in an image. We extend the model so neurons are directly connected to each other. As mentioned in \cite{keemink2015unified} in further development, adding dynamics to some of the already presented illusions could lead to some interesting behavior. The details of the illusions might depend on the static nature of the original model, and it is crucial that we understand how they come to be in a dynamical mode. We build a recurrent neural network of the orientation selective neurons in the V1 cortex. We set the strength of the connections between them (weights in the network), based on the elastica principle. We perform baseline experiments with the static model and compare the results in full dynamic setting.
 
 The different parts of the project are discussed below in the report.
 \begin{itemize}
@@ -123,7 +123,7 @@ We have multiple orientation selective neurons per part of our receptive field. 
 
 \section{Elastica principle}
 
-The elastica principle defines the strength of modulation between two neurons. We find the smoothest curve connecting the two bars. The elastica energy is then defined by the length of the curve. The smoother curve they form, the more strongly they should be connected. The principle is illustrated in fig.\ref{elastica1}.
+The elastica principle defines the strength of modulation between two neurons. We find the smoothest curve connecting the two bars. The elastica energy is then defined by the total curvature. The smoother curve they form, the more strongly they should be connected. The principle is illustrated in fig.\ref{elastica1}.
 
 \plotfiguresix{elastica1}{elastica5}{elastica3}{elastica4}{elastica2}{elastica6}{\bt{Elastica principle} (to include energies for all curves) a) 0 b) ...}{.3}{Elastica principle}
 
@@ -300,55 +300,13 @@ I also extended my model to custom positions of the neurons, rather than the fix
 
 \chapter{Experiments}
 
-\section{Recurrent Neural Network}
-
-First we explore a simple network with only one neuron. The neuron receives a certain excitation ($in$). The speed with which the neuron changes it's response, depends on the contant $\tau_{syn}$ (the smaller $\tau_{syn}$, the slower the change). We setup the simple recurrent neural network below.
-
-\eq{\tau_{syn}\frac{dr(t)}{dt}=-r(t)+in}
-
-So every time step the change in the rate of the neuron is:
-
-\eq{\frac{dr(t)}{dt}=\cfrac{-r(t)+in}{\tau_{syn}}}
-
-\plotfigureS{simple}{The lines do not seem parallel, when it reality they are \cite{vision-computation}}{Simple RNN}{.5}
-
-Go in more details and show the first few steps of calculations of $\frac{dr(t)}{dt}$. $\tau_{syn}$ changes how fast the neuron goes to the stable state.
-
 
 \section{Elastica energy}
 
 Simple experiments, matrix form
 
-\section{Additive and Multiplicative model}
 
-\begin{figure}[H]
-\caption{}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=1\linewidth]{2bars3}
-\end{subfigure}%
-\hfill
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=1\linewidth]{2bars_2}
-\end{subfigure}
-\hfill
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=1\linewidth]{2bars_1}
-\end{subfigure}%
-\hfill
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=1\linewidth]{2bars}
-\end{subfigure}
-\floatfoot{(Still figuring out how to make the plot clearer. Pop out effect. First column input, second column connections without torus, third column torus}
-\end{figure}
-
-\plotfigureS{2bars}{Experiment setup. Left red bar - center, right red bar - flanker, black bars - orientation selective neurons, blue curves - elastica curves. The position of the center bar is encoded by n orientation selective neurons. The modulation from the flanker is directly calculated from the orientation of the flanker bar, rather than through encoding it with orientation selective neurons. The more saturated the color, the stronger the connection between the orientation selective neuron and the flanker (not dependant on the presented center orientation). The wider the curve, the stronger the response of that neuron (dependent on the presented center orientation.}{Two bars setup}{0.5}
-\plotfiguresix{el_ener}{h_add}{h_mul}{cen}{ad_comb}{mul_comb}{\bt{Additive and Multiplicative model} (a) Elastica energy (b) h, additive (c) h, multiplicative (d) Central drive (e) Final response for additive model (f) Final response for multiplicative model}{.49}{Additive and Multiplicative mode}
-\plotfigure{ADD_vs_MULT}{Additive vs Multiplicative model. Although the tilt effects happen at different orientations and the strength of modulation is different, the change in the effect as we vary the flanker orientation is similar.}{AdMp}
-\section{Passive vs Dynamic models}
+\section{Static vs Dynamic models}
 %\subsection{Center and flanker bar}
 \section{Tilt effects}
 
@@ -379,20 +337,23 @@ In this section we explore variety of tilt effects. In all of the experiments we
   \includegraphics[width=0.5\linewidth]{fig5_F}
   \caption{}
 \end{subfigure}
-\floatfoot{Pop out effect. First column input, second column connections without torus, third column torus}
+\floatfoot{Various tile experiments. a) Vary the orientations of two horizontal flankers. b) Rotate the two flankers around the center bar. c) Vary the orientation of two vertical flankers d) Vary the orientation }
 \end{figure}
 
 \subsection{Tilt effect 1}
 \plotfigureS{fig5_B}{Tilt Effect 1}{Tilt Effect 1}{0.3}
 \plotfigureS{matrix}{Weight matrix}{Weight Matrix 1}{0.5}
 (fix legend)
-\plotthreefigures{p_cen}{d_cen}{d_flan}{Experienced tilt illusions for different modulation constants. (a) Tilt illusion of the center bar for different flaker orientations. The experiment reproduced is from \cite{keemink2015unified}, fig.5, B (b) Tilt illusion of the center bar for different flanker orientations, in the dynamic mode. (c) Tilt illusion of the flanker bars for different flanker orientations, in a dynamic model}{Experienced tilt illusions}{1}
+\plotthreefigures{p_cen_b}{d_cen_b}{d_flan_b}{Experienced tilt illusions for different modulation constants. (a) Tilt illusion of the center bar for different flaker orientations. The experiment reproduced is from \cite{keemink2015unified}, fig.5, B (b) Tilt illusion of the center bar for different flanker orientations, in the dynamic mode. (c) Tilt illusion of the flanker bars for different flanker orientations, in a dynamic model}{Experienced tilt illusions}{1}
 \subsection{Tilt effect 2}
 \plotfigureS{fig5_C}{Tilt Effect 2}{Tilt Effect 2}{0.3}
+\plotthreefigures{p_cen_c}{d_cen_c}{d_flan_c}{Experienced tilt illusions for different modulation constants. (a) Tilt illusion of the center bar for different flaker orientations. The experiment reproduced is from \cite{keemink2015unified}, fig.5, C (b) Tilt illusion of the center bar for different flanker orientations, in the dynamic mode. (c) Tilt illusion of the flanker bars for different flanker orientations, in a dynamic model}{Experienced tilt illusions}{1}
 \subsection{Tilt effect 3}
 \plotfigureS{fig5_D}{Tilt Effect 3}{Tilt Effect 3}{0.3}
+\plotthreefigures{p_cen_d}{d_cen_d}{d_flan_d}{Experienced tilt illusions for different modulation constants. (a) Tilt illusion of the center bar for different flaker orientations. The experiment reproduced is from \cite{keemink2015unified}, fig.5, D (b) Tilt illusion of the center bar for different flanker orientations, in the dynamic mode. (c) Tilt illusion of the flanker bars for different flanker orientations, in a dynamic model}{Experienced tilt illusions}{1}
 \subsection{Tilt effect 4}
 \plotfigureS{fig5_F}{Tilt Effect 4}{Tilt Effect 4}{0.3}
+\plotthreefigures{p_cen_f}{d_cen_f}{d_flan_f}{Experienced tilt illusions for different modulation constants. (a) Tilt illusion of the center bar for different flaker orientations. The experiment reproduced is from \cite{keemink2015unified}, fig.5, F (b) Tilt illusion of the center bar for different flanker orientations, in the dynamic mode. (c) Tilt illusion of the flanker bars for different flanker orientations, in a dynamic model}{Experienced tilt illusions}{1}
 
 \section{Pop out effects}
 
@@ -445,6 +406,52 @@ In this section we explore variety of tilt effects. In all of the experiments we
 \end{subfigure}
 \floatfoot{Pop out effect. First column input, second column connections without torus, third column torus}
 \end{figure}
+
+
+
+\section{Additive and Multiplicative model}
+
+\begin{figure}[H]
+\caption{}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{2bars3}
+\end{subfigure}%
+\hfill
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{2bars_2}
+\end{subfigure}
+\hfill
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{2bars_1}
+\end{subfigure}%
+\hfill
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{2bars}
+\end{subfigure}
+\floatfoot{(Still figuring out how to make the plot clearer. Pop out effect. First column input, second column connections without torus, third column torus}
+\end{figure}
+
+\plotfigureS{2bars}{Experiment setup. Left red bar - center, right red bar - flanker, black bars - orientation selective neurons, blue curves - elastica curves. The position of the center bar is encoded by n orientation selective neurons. The modulation from the flanker is directly calculated from the orientation of the flanker bar, rather than through encoding it with orientation selective neurons. The more saturated the color, the stronger the connection between the orientation selective neuron and the flanker (not dependant on the presented center orientation). The wider the curve, the stronger the response of that neuron (dependent on the presented center orientation.}{Two bars setup}{0.5}
+\plotfiguresix{el_ener}{h_add}{h_mul}{cen}{ad_comb}{mul_comb}{\bt{Additive and Multiplicative model} (a) Elastica energy (b) h, additive (c) h, multiplicative (d) Central drive (e) Final response for additive model (f) Final response for multiplicative model}{.49}{Additive and Multiplicative mode}
+\plotfigure{ADD_vs_MULT}{Additive vs Multiplicative model. Although the tilt effects happen at different orientations and the strength of modulation is different, the change in the effect as we vary the flanker orientation is similar.}{AdMp}
+
+\section{Recurrent Neural Network}
+
+First we explore a simple network with only one neuron. The neuron receives a certain excitation ($in$). The speed with which the neuron changes it's response, depends on the contant $\tau_{syn}$ (the smaller $\tau_{syn}$, the slower the change). We setup the simple recurrent neural network below.
+
+\eq{\tau_{syn}\frac{dr(t)}{dt}=-r(t)+in}
+
+So every time step the change in the rate of the neuron is:
+
+\eq{\frac{dr(t)}{dt}=\cfrac{-r(t)+in}{\tau_{syn}}}
+
+\plotfigureS{simple}{The lines do not seem parallel, when it reality they are \cite{vision-computation}}{Simple RNN}{.5}
+
+Go in more details and show the first few steps of calculations of $\frac{dr(t)}{dt}$. $\tau_{syn}$ changes how fast the neuron goes to the stable state.
 
 \chapter{Evaluation}
 
