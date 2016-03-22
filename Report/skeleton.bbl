@@ -35,6 +35,12 @@ Gregory~C DeAngelis, Izumi Ohzawa, and Ralph~D Freeman.
 \newblock Receptive-field dynamics in the central visual pathways.
 \newblock {\em Trends in neurosciences}, 18(10):451--458, 1995.
 
+\bibitem{field1993contour}
+David~J Field, Anthony Hayes, and Robert~F Hess.
+\newblock Contour integration by the human visual system: evidence for a local
+  “association field”.
+\newblock {\em Vision research}, 33(2):173--193, 1993.
+
 \bibitem{Hartline700}
 H.~K. Hartline.
 \newblock The effects of spatial summation in the retina on the excitation of
@@ -53,6 +59,12 @@ John~D Hunter et~al.
 \newblock Matplotlib: A 2d graphics environment.
 \newblock {\em Computing in science and engineering}, 9(3):90--95, 2007.
 
+\bibitem{elastica-code}
+Sander Keemink.
+\newblock {Elastica code}.
+\newblock \url{https://github.com/swkeemink/elastica}, 2016.
+\newblock [Online; accessed 22-March-2016].
+
 \bibitem{keemink2015unified}
 Sander~W Keemink and Mark~CW van Rossum.
 \newblock A unified account of tilt illusions, association fields, and contour
@@ -64,6 +76,12 @@ Emily Knight, Arthur Shapiro, and Zhong-Lin Lu.
 \newblock Drastically different percepts of five illusions in foveal and
   peripheral vision reveal their differences in representing visual phase.
 \newblock {\em Journal of Vision}, 8(6):967--967, 2008.
+
+\bibitem{levien2008elastica}
+Raph Levien.
+\newblock The elastica: a mathematical history.
+\newblock {\em Electrical Engineering and Computer Sciences University of
+  California at Berkeley}, 2008.
 
 \bibitem{receptive-fields}
 Ashish Ranpura.
@@ -83,5 +101,10 @@ Jean-Luc~R Stevens, Philipp Rudiger, and James~A Bednar.
 \newblock Holoviews: Building complex visualizations easily for reproducible
   science.
 \newblock 2010.
+
+\bibitem{wilson2001encyclopedia}
+Robert~Andrew Wilson and Frank~C Keil.
+\newblock {\em The MIT encyclopedia of the cognitive sciences}.
+\newblock MIT press, 2001.
 
 \end{thebibliography}

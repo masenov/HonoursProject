@@ -1,48 +1,48 @@
-This is BibTeX, Version 0.99d (TeX Live 2015/Arch Linux)
+This is BibTeX, Version 0.99d (TeX Live 2013)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: skeleton.aux
 The style file: plain.bst
 Database file #1: mybib.bib
 Warning--empty journal in stevens2010holoviews
-You've used 14 entries,
+You've used 18 entries,
             2118 wiz_defined-function locations,
-            594 strings with 6670 characters,
-and the built_in function-call counts, 4312 in all, are:
-= -- 434
-> -- 198
+            615 strings with 7236 characters,
+and the built_in function-call counts, 5352 in all, are:
+= -- 535
+> -- 243
 < -- 0
-+ -- 79
-- -- 64
-* -- 304
-:= -- 743
-add.period$ -- 45
-call.type$ -- 14
-change.case$ -- 72
++ -- 99
+- -- 78
+* -- 361
+:= -- 924
+add.period$ -- 58
+call.type$ -- 18
+change.case$ -- 90
 chr.to.int$ -- 0
-cite$ -- 15
-duplicate$ -- 140
-empty$ -- 339
-format.name$ -- 64
-if$ -- 875
+cite$ -- 19
+duplicate$ -- 180
+empty$ -- 427
+format.name$ -- 78
+if$ -- 1090
 int.to.chr$ -- 0
-int.to.str$ -- 14
-missing$ -- 11
-newline$ -- 76
-num.names$ -- 28
-pop$ -- 68
+int.to.str$ -- 18
+missing$ -- 15
+newline$ -- 97
+num.names$ -- 36
+pop$ -- 93
 preamble$ -- 1
-purify$ -- 58
+purify$ -- 73
 quote$ -- 0
-skip$ -- 101
+skip$ -- 128
 stack$ -- 0
-substring$ -- 281
-swap$ -- 13
+substring$ -- 328
+swap$ -- 17
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 56
+type$ -- 70
 warning$ -- 1
-while$ -- 46
-width$ -- 16
-write$ -- 156
+while$ -- 56
+width$ -- 20
+write$ -- 199
 (There was 1 warning)

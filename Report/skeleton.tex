@@ -69,11 +69,15 @@ In processing visual information, our brain seems to treat the greater whole as 
 
 The Gestalt psychology suggest the law of good continuation. According to this, humans tend to group curves, bars, lines and edges with similar direction together. An example can be given even in the current words you are reading. The fact that they are all aligned, suggested the connectivity between them.
 
-The law of good continuation, seems to happen at earliest stages of our visual pipeline, with evidence pointing to the primary visual cortex(V1) \cite{field1993contour}. As suggested by  lead to the development of the "association fields" model. Association fields are defined as 
+The law of good continuation, seems to happen at earliest stages of our visual pipeline, with evidence pointing to the primary visual cortex(V1) \cite{field1993contour}. Our primary visual cortex is responsible for low level edge detection. We have neurons tuned and reacting when a bar with specific orientation is presented in a certain part of our field of view. We have neurons responsible for the same location, but different orientations. This 'stack' of neurons, responsible for a particular location, gives us a perception of the bar presented at that location. However, it is also believed that those stacks of neurons responding can also influence each other, rather than acting independently. It is believed that those interaction follow the law of good continuation, which has lead to the development of "association fields" models\cite{field1993contour}.  Association fields are govern by the rules of smooth curves, where the smoother the curve between two bars, the stronger they should be connected. The principle is illustrated in fig.\ref{associationfield}. 
 
 \plotfigure{associationfield}{Association fields a) Solid lines represent stronger connections, doted lines - weaker b) Relation to smooth continuation \cite{keemink2015unified}}{Association fields}
 
-It is suggested that the continuous understanding of the whole happens in the early stages of vision
+
+The smoothest curve connecting two bars can be described by the elastica principle(latin for 'thin strip'\cite{levien2008elastica}). Elastica has a long history dating back to as early as 13th century\cite{levien2008elastica}. Jordanus de Nemore posed the problem, but provided incorrect solution. A couple of centuries later after the necessary mathematical techniques were developed, the first solution was published by James Bernoulli in 1694. The elastica energy is then defined by the total curvature. The smoother curve they form, the more strongly they should be connected. The elatica curves with their respective energies are shown in fig.\ref{elastica1}.
+
+\plotfiguresix{elastica1}{elastica5}{elastica3}{elastica4}{elastica2}{elastica6}{\bt{Elastica energies} Elastica energies for bar orientations a) 0 b) 6.98 c) 6.97 d) 5.23 e) 4 f) 9.98 (plots generated using \cite{elastica-code})}{.3}{Elastica principle}
+
 
 
 
@@ -153,9 +157,7 @@ We have multiple orientation selective neurons per part of our receptive field. 
 
 \section{Elastica principle}
 
-The elastica principle defines the strength of modulation between two neurons. We find the smoothest curve connecting the two bars. The elastica energy is then defined by the total curvature. The smoother curve they form, the more strongly they should be connected. The principle is illustrated in fig.\ref{elastica1}.
 
-\plotfiguresix{elastica1}{elastica5}{elastica3}{elastica4}{elastica2}{elastica6}{\bt{Elastica principle} (to include energies for all curves) a) 0 b) ...}{.3}{Elastica principle}
 
 
 
@@ -515,7 +517,7 @@ Go in more details and show the first few steps of calculations of $\frac{dr(t)}
 \addmilestone{at=phase-0.270,direction=270:1cm,text={Sensory Systems (MIT OpenCourseWare)},text options={below}}
 
 \addmilestone{at=phase-1.130,direction=130:2cm,text={Literature review},text options={above}}
-\addmilestone{at=phase-1.230,direction=230:1cm,text={Neural Computation},text options={below}}
+\addmilestone{at=phase-1.230,direction=230:1.7cm,text={Neural Computation},text options={below}}
 \addmilestone{at=phase-1.290,direction=290:2cm,text={Machine Learning Practical},text options={below}}
 
 \addmilestone{at=phase-2.100,direction=100:3cm,text={More literature review},text options={above}}
