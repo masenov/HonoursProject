@@ -73,6 +73,11 @@ Ashish Ranpura.
   2016.
 \newblock [Online; accessed 19-January-2016].
 
+\bibitem{shen2014interactive}
+Helen Shen et~al.
+\newblock Interactive notebooks: Sharing the code.
+\newblock {\em Nature}, 515(7525):151--152, 2014.
+
 \bibitem{stevens2010holoviews}
 Jean-Luc~R Stevens, Philipp Rudiger, and James~A Bednar.
 \newblock Holoviews: Building complex visualizations easily for reproducible

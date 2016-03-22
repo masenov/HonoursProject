@@ -1,0 +1,28 @@
+Every chapter should be self sufficient - introduction and conclusion to every chapter
+To implement the model, we use ... say why you do everything, always give reasons for things that I am doing. It's better to be clear, repetive - refer to previous chapters. In order to implement ... ,we use .. in this chapter
+
+
+fig5.2 - maybe separate
+
+static, not passive
+
+stimulus -> network -> results
+
+pop out effect - put straight curve, without any variations
+
+show the dynamics before the stable state
+
+setting up the modulation - tune so that the effect is the same, and then quantitevely change and measure the responses
+
+discuss future work and why it hasn't be done
+
+implications of each result - critical discussion of the results I've got - but not under selling it
+
+mention where the elastica principle comes from - copy the figure
+
+people have used elastica for controur completion
+
+illusory contours
+
+thomas leung and jitendra malik contour continuity in region based segmentation
+

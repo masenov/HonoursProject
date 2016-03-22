@@ -1,39 +1,39 @@
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Tilt illusion}}{10}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Parallel illusion}}{11}
-\contentsline {figure}{\numberline {1.3}{\ignorespaces Pop out effect}}{11}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Tilt illusion}}{12}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Parallel illusion}}{13}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Pop out effect}}{13}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Visual Field}}{14}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Central and peripheral vision}}{15}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Effect of the context on receptive field on a neuron}}{16}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Tuning curves}}{17}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Population Coding}}{18}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Elastica principle}}{19}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Visual Field}}{16}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Central and peripheral vision}}{17}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Effect of the context on receptive field on a neuron}}{18}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Tuning curves}}{19}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Population Coding}}{20}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Elastica principle}}{21}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Sample input}}{22}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Overview of the model}}{23}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Stack of neurons}}{23}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Limited connectivity}}{26}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Sample weight matrix}}{27}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces \relax }}{34}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Tilt Effect 1}}{34}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Weight Matrix 1}}{35}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Experienced tilt illusions}}{35}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Tilt Effect 2}}{35}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Experienced tilt illusions}}{36}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Tilt Effect 3}}{36}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Experienced tilt illusions}}{36}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Tilt Effect 4}}{37}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Experienced tilt illusions}}{37}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces \relax }}{38}
-\contentsline {figure}{\numberline {5.14}{\ignorespaces \relax }}{39}
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Two bars setup}}{40}
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Additive and Multiplicative mode}}{41}
-\contentsline {figure}{\numberline {5.18}{\ignorespaces AdMp}}{42}
-\contentsline {figure}{\numberline {5.19}{\ignorespaces Simple RNN}}{43}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Sample input}}{24}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Overview of the model}}{25}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Stack of neurons}}{25}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Limited connectivity}}{28}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Sample weight matrix}}{29}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {7.1}{\ignorespaces \relax }}{48}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces \relax }}{36}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Tilt Effect 1}}{36}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Weight Matrix 1}}{37}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Experienced tilt illusions}}{37}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Tilt Effect 2}}{37}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Experienced tilt illusions}}{38}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Tilt Effect 3}}{38}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Experienced tilt illusions}}{38}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Tilt Effect 4}}{39}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Experienced tilt illusions}}{39}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces \relax }}{40}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces \relax }}{41}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Two bars setup}}{42}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Additive and Multiplicative mode}}{43}
+\contentsline {figure}{\numberline {5.18}{\ignorespaces AdMp}}{44}
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Simple RNN}}{45}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces \relax }}{50}
 \addvspace {10\p@ }

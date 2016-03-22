@@ -31,6 +31,18 @@
 
 
 \abstract{
+
+(Abstract new)
+
+Our vision system is a complex machinery, able to transform the light change we detect with our eyes, to meaningful objects, perception of depth and motion. The information undergoes multiple stages of transformations by different parts of our visual cortex. The primary visual cortex (V1) is responsible for one of the first stages of vision processing. One of its functions is edge detection, which is determined by group of interacting neurons. Some visual illusions and are believed to be caused in that specific part of V1. It is important to understand those illusions as they can give us an insight to how neural computation is done.
+
+Here we explore a model of the orientation selective neurons in our primary visual cortex. These neurons are responsible for detecting edges at different locations of what we see with our eyes. We have multiple neurons per location responding to different edge orientations. Their combined response forms our perception of the edge presented. Neurons for different locations are also connected to each other, influencing each other's responses. This can lead to change of the perceived orientations, leading to different visual illusions and effects. The connections between the neurons can be modeled using the elastica principle of smooth continuity - the smoother the curve connecting two neurons, the stronger they should be connected.
+
+Existing work already explores a static model of those connections. However the effect, or modulation, of nearby neurons to a specific neuron is calculated only once, without the neuron influencing back its modulators. Moreover the modulation is calculated directly from the orientations presented, rather than mediated through the group of neurons responsible for that location. This report addresses both of the issues. We implement a dynamic model of the orientation selective neurons, with connection between different neurons defined by the elastica principle. We explore the differences between the dynamic and static model, to check if in a dynamic setting, we still experience the same effects. We find that some cases the effect remains that same. However as we add more more edges to the scene, the two models start to differ.
+
+(Abstract old)
+
+
 We experience different tilt illusions and pop out effects. This is often explained by the line's representation in the visual cortex. A group of neurons is responsible for detecting different orientations in different parts of our visual field. A neuron tuned for a specific orientation spikes more, when its preferred orientation is presented, and less the more different the orientations is, forming a bell shaped curve of activity. We have multiple neurons for every part of our visual field, tuned for different orientations. Combining their responses we get an accurate response of the actual orientation, despite their noisy spiking.
 
 However neurons responsible for different part of our visual field are also connected to each other. This modulation explains some of the effect we are experiencing, as orientations in our visual fields are influenced by nearby ones. However those interaction have only been explored statically, calculating the modulation only once. In a full dynamic a change in an orientation, can lead to a change in another orientation, and so on. It's unclear if existing models change in a dynamic setting, does the system settles down to a stable state, or it keeps fluctuating.
@@ -44,7 +56,7 @@ In this report, we explore an already existing static model of the above mention
 Acknowledgements go here. 
 
 \tableofcontents
-\listoffigures
+%\listoffigures
 %\listoftables
 
 %\pagenumbering{arabic}
