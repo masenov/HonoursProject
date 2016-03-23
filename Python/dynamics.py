@@ -43,6 +43,12 @@ def mises_curve(a,k,angle):
 
 def mises_curve(a,k,angle,neuron=32):
     points = [i for i in np.arange(0, pi, pi/neuron)]
+    points_mises = [ mises(a,k,points[i],angle) for i in range(len(points))]
+    curve = hv.Curve(zip(points,points_mises))
+    return curve, points, points_mises
+
+def mises_curve2(a,k,angle,neuron=32):
+    points = [i for i in np.arange(0, pi, pi/neuron)]
     points_mises = [ mises(k,a,points[i],angle) for i in range(len(points))]
     curve = hv.Curve(zip(points,points_mises))
     return curve, points, points_mises

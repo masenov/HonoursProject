@@ -36,7 +36,7 @@
 
 Our vision system is a complex machinery, able to transform the light change we detect with our eyes, to meaningful objects, perception of depth and motion. The information undergoes multiple stages of transformations by different parts of our visual cortex. The primary visual cortex (V1) is responsible for one of the first stages of vision processing. One of its functions is edge detection, which is determined by group of interacting neurons. Some visual illusions and are believed to be caused in that specific part of V1. It is important to understand those illusions as they can give us an insight to how neural computation is done.
 
-Here we explore a model of the orientation selective neurons in our primary visual cortex. These neurons are responsible for detecting edges at different locations of what we see with our eyes. We have multiple neurons per location responding to different edge orientations. Their combined response forms our perception of the edge presented. Neurons for different locations are also connected to each other, influencing each other's responses. This can lead to change of the perceived orientations, leading to different visual illusions and effects. The connections between the neurons can be modeled using the elastica principle of smooth continuity - the smoother the curve connecting two neurons, the stronger they should be connected.
+Here(in this report) we explore a model of the orientation selective neurons in the primary visual cortex. These(Those) neurons are responsible for detecting edges at different locations of what we see with our eyes. We have multiple neurons per location responding to different edge orientations. Their combined response forms our perception of the edge presented. Neurons for different locations are also connected to each other, influencing each other's responses. This can lead to change of the perceived orientations, leading to different visual illusions and effects. The connections between the neurons can be modeled using the elastica principle of smooth continuity - the smoother the curve connecting two neurons, the stronger they should be connected.
 
 Existing work already explores a static model of those connections. However the effect, or modulation, of nearby neurons to a specific neuron is calculated only once, without the neuron influencing back its modulators. Moreover the modulation is calculated directly from the orientations presented, rather than mediated through the group of neurons responsible for that location. This report addresses both of the issues. We implement a dynamic model of the orientation selective neurons, with connection between different neurons defined by the elastica principle. We explore the differences between the dynamic and static model, to check if in a dynamic setting, we still experience the same effects. We find that some cases the effect remains that same. However as we add more more edges to the scene, the two models start to differ.
 
@@ -74,23 +74,19 @@ The law of good continuation, seems to happen at earliest stages of our visual p
 \plotfigure{associationfield}{Association fields a) Solid lines represent stronger connections, doted lines - weaker b) Relation to smooth continuation \cite{keemink2015unified}}{Association fields}
 
 
-The smoothest curve connecting two bars can be described by the elastica principle(latin for 'thin strip'\cite{levien2008elastica}). Elastica has a long history dating back to as early as 13th century\cite{levien2008elastica}. Jordanus de Nemore posed the problem, but provided incorrect solution. A couple of centuries later after the necessary mathematical techniques were developed, the first solution was published by James Bernoulli in 1694. The elastica energy is then defined by the total curvature. The smoother curve they form, the more strongly they should be connected. The elatica curves with their respective energies are shown in fig.\ref{elastica1}.
+The smoothest curve connecting two bars can be described by the elastica principle(latin for 'thin strip'\cite{levien2008elastica}). Elastica has a long history dating back to as early as 13th century\cite{levien2008elastica}. Jordanus de Nemore posed the problem, but provided incorrect solution. A couple of centuries later after the necessary mathematical techniques were developed, the first solution was published by James Bernoulli in 1694. The elastica energy is defined by the total curvature. The smoother curve two bars form, the more strongly they should be connected. The elatica curves with their respective energies are shown in fig.\ref{el1}. 
 
-\plotfiguresix{elastica1}{elastica5}{elastica3}{elastica4}{elastica2}{elastica6}{\bt{Elastica energies} Elastica energies for bar orientations a) 0 b) 6.98 c) 6.97 d) 5.23 e) 4 f) 9.98 (plots generated using \cite{elastica-code})}{.3}{Elastica principle}
+\plotfiguresix{el1}{el2}{el3}{el4}{el5}{el6}{\bt{Elastica energies} Elastica energies for different bar configurations}{.3}{Elastica principle}
 
+In this report we won't go into details how this energy as calculated. In our experiments we use the Sharon approximation\cite{sharon2000completion} (using already existing code\cite{elastica-code}), which is shown to be similar to the true elastica energy\cite{keemink2015unified}. Given positions of two bars and their orientations, we can calculate a number, quantitatively describing how smoothly connected the two bars are. The elastica curve and energy is distance independent, hence the missing scales on fig.\ref{el1}.
 
+Incorporating the elastica principle for modelling interactions between orientation selective neurons have been showed to explain number of visual effects\cite{keemink2015unified}. The model explains some tilt illusions, where the perceived orientation of a bar is different from the presented orientation, based on the orientation of nearby bars. Elastica also explains some pop out effects, where we can detect unique bar along bars with the same orientation. Finally it also explains contour extraction.
 
+However all the results in the paper were obtained by neurons getting a input based on the orientations in an image. We extend the model so neurons are directly connected to each other. The input is also passive, the influence, or modulation, between the neurons is calculated only once. The details of the illusions, pop out effects and contour extraction  described in \cite{keemink2015unified} might depend on the static nature of the original model, and it is crucial that we understand how they come to be in a dynamical mode. We build a dynamic model with the modelling the strength of the connections, again based on the elastica principle. We build a recurrent neural network of the orientation selective neurons in the V1 cortex. We set the strength of the connections between them (weights in the network), based on the elastica principle. We reproduce the experiments from  the static model, use them as a baseline, and compare the results in full dynamic setting.
 
+In order to perform our experiments we use a simple recurrent neural network. Given a single neuron we calculate its response by the formula. 
 
-
-
-\chapter{Introduction}
-
-In processing visual information, our brain seems to favor continuity and prioritize the greater whole, rather than individual details. Sometimes this ability serves us well, ex. when trying to find a pattern among random noise, or a discontinuity in a certain pattern (fig.\ref{popout}). However in other cases this leads to various illusions (fig.\ref{illusion1}, fig.\ref{illusion2}). The project aims to explore the relevance of V1 and its orientation selectivity neurons in the context of those effects. Fig.\ref{illusion1} and Fig.\ref{popout} are particularly relevant to this project.
-
-This paper develops a model, based and built upon the one described in the recent elastica paper \cite{keemink2015unified}. The elastica principle defines the strength of the connections between different orientation selective neurons. It favours continuity, the smoother too bars are connected to each other, the stronger the modulation connection between them. Although there are other models explaining similar phenomena, illusions and effects separately, the neural model described claims to have all of those properties, unifying them in one model. 
-
-However all the results in the paper were obtained by neurons getting a passive input based on the orientations in an image. We extend the model so neurons are directly connected to each other. As mentioned in \cite{keemink2015unified} in further development, adding dynamics to some of the already presented illusions could lead to some interesting behavior. The details of the illusions might depend on the static nature of the original model, and it is crucial that we understand how they come to be in a dynamical mode. We build a recurrent neural network of the orientation selective neurons in the V1 cortex. We set the strength of the connections between them (weights in the network), based on the elastica principle. We perform baseline experiments with the static model and compare the results in full dynamic setting.
+\eq{\cfrac{dr}{dt}=-r+in+mod}
 
 The different parts of the project are discussed below in the report.
 \begin{itemize}
@@ -102,6 +98,17 @@ The different parts of the project are discussed below in the report.
   \item Timeline - timeline of the work done through the project.
   \item Conclusions - final conclusions
 \end{itemize}
+
+
+\chapter{Introduction}
+
+In processing visual information, our brain seems to favor continuity and prioritize the greater whole, rather than individual details. Sometimes this ability serves us well, ex. when trying to find a pattern among random noise, or a discontinuity in a certain pattern (fig.\ref{popout}). However in other cases this leads to various illusions (fig.\ref{illusion1}, fig.\ref{illusion2}). The project aims to explore the relevance of V1 and its orientation selectivity neurons in the context of those effects. Fig.\ref{illusion1} and Fig.\ref{popout} are particularly relevant to this project.
+
+This paper develops a model, based and built upon the one described in the recent elastica paper \cite{keemink2015unified}. The elastica principle defines the strength of the connections between different orientation selective neurons. It favours continuity, the smoother too bars are connected to each other, the stronger the modulation connection between them. Although there are other models explaining similar phenomena, illusions and effects separately, the neural model described claims to have all of those properties, unifying them in one model. 
+
+
+
+
 
 
 
@@ -332,11 +339,14 @@ I also extended my model to custom positions of the neurons, rather than the fix
 
 \chapter{Experiments}
 
+In this section we discuss the performed experiments 	
+
 
 \section{Elastica energy}
 
 Simple experiments, matrix form
 
+\plotfigureS{angles}{The lines do not seem parallel, when it reality they are \cite{vision-computation}}{Parallel illusion}{.3}
 
 \section{Static vs Dynamic models}
 %\subsection{Center and flanker bar}
