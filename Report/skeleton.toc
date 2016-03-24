@@ -1,36 +1,36 @@
 \contentsline {chapter}{\numberline {1}New Introduction}{9}
-\contentsline {chapter}{\numberline {2}Introduction}{13}
-\contentsline {chapter}{\numberline {3}Background}{15}
-\contentsline {section}{\numberline {3.1}Neuroscience background}{15}
-\contentsline {subsection}{\numberline {3.1.1}Visual field and visual stimuli}{15}
-\contentsline {subsection}{\numberline {3.1.2}Receptive fields}{17}
-\contentsline {subsection}{\numberline {3.1.3}Tuning curves}{18}
-\contentsline {subsection}{\numberline {3.1.4}Population coding}{19}
-\contentsline {section}{\numberline {3.2}Elastica principle}{20}
-\contentsline {section}{\numberline {3.3}Recurrent Neural Networks}{20}
-\contentsline {chapter}{\numberline {4}Design}{23}
-\contentsline {section}{\numberline {4.1}Single orientation}{26}
-\contentsline {section}{\numberline {4.2}Two orientations}{26}
-\contentsline {section}{\numberline {4.3}Multiple orientations, limited connectivity}{27}
-\contentsline {section}{\numberline {4.4}Multiple orientations, full connectivity}{28}
-\contentsline {section}{\numberline {4.5}Elastica principle}{30}
-\contentsline {chapter}{\numberline {5}Implementation}{31}
-\contentsline {section}{\numberline {5.1}Initial choice of programming language}{31}
-\contentsline {section}{\numberline {5.2}Model implementation}{32}
-\contentsline {section}{\numberline {5.3}Change of development tools}{33}
-\contentsline {section}{\numberline {5.4}Final model changes}{34}
-\contentsline {chapter}{\numberline {6}Experiments}{35}
-\contentsline {section}{\numberline {6.1}Elastica energy}{35}
-\contentsline {section}{\numberline {6.2}Static vs Dynamic models}{36}
-\contentsline {section}{\numberline {6.3}Tilt effects}{36}
-\contentsline {subsection}{\numberline {6.3.1}Tilt effect 1}{37}
-\contentsline {subsection}{\numberline {6.3.2}Tilt effect 2}{38}
-\contentsline {subsection}{\numberline {6.3.3}Tilt effect 3}{38}
-\contentsline {subsection}{\numberline {6.3.4}Tilt effect 4}{39}
-\contentsline {section}{\numberline {6.4}Pop out effects}{40}
-\contentsline {section}{\numberline {6.5}Additive and Multiplicative model}{41}
-\contentsline {section}{\numberline {6.6}Recurrent Neural Network}{44}
-\contentsline {chapter}{\numberline {7}Evaluation}{47}
-\contentsline {chapter}{\numberline {8}Timeline}{49}
-\contentsline {chapter}{\numberline {9}Conclusions}{51}
-\contentsline {chapter}{Bibliography}{53}
+\contentsline {chapter}{\numberline {2}Introduction}{15}
+\contentsline {chapter}{\numberline {3}Background}{17}
+\contentsline {section}{\numberline {3.1}Neuroscience background}{17}
+\contentsline {subsection}{\numberline {3.1.1}Visual field and visual stimuli}{17}
+\contentsline {subsection}{\numberline {3.1.2}Receptive fields}{19}
+\contentsline {subsection}{\numberline {3.1.3}Tuning curves}{20}
+\contentsline {subsection}{\numberline {3.1.4}Population coding}{21}
+\contentsline {section}{\numberline {3.2}Elastica principle}{22}
+\contentsline {section}{\numberline {3.3}Recurrent Neural Networks}{22}
+\contentsline {chapter}{\numberline {4}Design}{25}
+\contentsline {section}{\numberline {4.1}Single orientation}{28}
+\contentsline {section}{\numberline {4.2}Two orientations}{28}
+\contentsline {section}{\numberline {4.3}Multiple orientations, limited connectivity}{29}
+\contentsline {section}{\numberline {4.4}Multiple orientations, full connectivity}{30}
+\contentsline {section}{\numberline {4.5}Elastica principle}{32}
+\contentsline {chapter}{\numberline {5}Implementation}{33}
+\contentsline {section}{\numberline {5.1}Initial choice of programming language}{33}
+\contentsline {section}{\numberline {5.2}Model implementation}{34}
+\contentsline {section}{\numberline {5.3}Change of development tools}{35}
+\contentsline {section}{\numberline {5.4}Final model changes}{36}
+\contentsline {chapter}{\numberline {6}Experiments}{37}
+\contentsline {section}{\numberline {6.1}Elastica energy}{37}
+\contentsline {section}{\numberline {6.2}Static vs Dynamic models}{38}
+\contentsline {section}{\numberline {6.3}Tilt effects}{38}
+\contentsline {subsection}{\numberline {6.3.1}Tilt effect 1}{39}
+\contentsline {subsection}{\numberline {6.3.2}Tilt effect 2}{40}
+\contentsline {subsection}{\numberline {6.3.3}Tilt effect 3}{41}
+\contentsline {subsection}{\numberline {6.3.4}Tilt effect 4}{42}
+\contentsline {section}{\numberline {6.4}Pop out effects}{43}
+\contentsline {section}{\numberline {6.5}Additive and Multiplicative model}{44}
+\contentsline {section}{\numberline {6.6}Recurrent Neural Network}{47}
+\contentsline {chapter}{\numberline {7}Evaluation}{49}
+\contentsline {chapter}{\numberline {8}Timeline}{51}
+\contentsline {chapter}{\numberline {9}Conclusions}{53}
+\contentsline {chapter}{Bibliography}{55}

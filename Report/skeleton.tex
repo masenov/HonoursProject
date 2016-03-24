@@ -74,7 +74,7 @@ The law of good continuation, seems to happen at earliest stages of our visual p
 \plotfigure{associationfield}{Association fields a) Solid lines represent stronger connections, doted lines - weaker b) Relation to smooth continuation \cite{keemink2015unified}}{Association fields}
 
 
-The smoothest curve connecting two bars can be described by the elastica principle(latin for 'thin strip'\cite{levien2008elastica}). Elastica has a long history dating back to as early as 13th century\cite{levien2008elastica}. Jordanus de Nemore posed the problem, but provided incorrect solution. A couple of centuries later after the necessary mathematical techniques were developed, the first solution was published by James Bernoulli in 1694. The elastica energy is defined by the total curvature. The smoother curve two bars form, the more strongly they should be connected. The elatica curves with their respective energies are shown in fig.\ref{el1}. 
+The smoothest curve connecting two bars can be described by the elastica principle(latin for 'thin strip'\cite{levien2008elastica}). Elastica has a long history dating back to as early as 13th century\cite{levien2008elastica}. Jordanus de Nemore posed the problem, but provided incorrect solution. A couple of centuries later after the necessary mathematical techniques were developed, the first solution was published by James Bernoulli in 1694. The elastica energy is defined by the total curvature. The smoother curve two bars form, the more strongly they should be connected. The elastica curves with their respective energies are shown in fig.\ref{el1}. 
 
 \plotfiguresix{el1}{el2}{el3}{el4}{el5}{el6}{\bt{Elastica energies} Elastica energies for different bar configurations}{.3}{Elastica principle}
 
@@ -84,11 +84,13 @@ Incorporating the elastica principle for modelling interactions between orientat
 
 However all the results in the paper were obtained by neurons getting a input based on the orientations in an image. We extend the model so neurons are directly connected to each other. The input is also passive, the influence, or modulation, between the neurons is calculated only once. The details of the illusions, pop out effects and contour extraction  described in \cite{keemink2015unified} might depend on the static nature of the original model, and it is crucial that we understand how they come to be in a dynamical mode. We build a dynamic model with the modelling the strength of the connections, again based on the elastica principle. We build a recurrent neural network of the orientation selective neurons in the V1 cortex. We set the strength of the connections between them (weights in the network), based on the elastica principle. We reproduce the experiments from  the static model, use them as a baseline, and compare the results in full dynamic setting.
 
-In order to perform our experiments we use a simple recurrent neural network. Given a single neuron we calculate its response by the formula. 
+In order to perform our experiments we use a simple recurrent neural network. Given a single neuron we calculate its response using eq.\ref{simplernn}, where $\tau$ is a time constant, $\cfrac{dr}{dt}$ is change of the firing of the neuron with respect to time, $r$ is the firing rate of the neuron, $in$ is the input it receives (based the preferred orientation of the neuron, and the orientation of the bar presented) and $mod$ is all the modulation from other neurons. We use the Euler's method to solve the equation (discussed in sec.\ref{rnnsection}). 
 
-\eq{\cfrac{dr}{dt}=-r+in+mod}
+\eql{\tau\cfrac{dr}{dt}=-r+in+mod}{simplernn}
 
-The different parts of the project are discussed below in the report.
+Eq.\ref{simplernn} is central to the simulations ran in this report. We model the $in$ according to the turning curve of a neuron(discussed in sec.\ref{tuningcurves}), and the $mod$ is calculated according to the law of smooth continuation, using the elastica principle. Using this equation, we simulate a dynamic model of the orientation selective neurons in the primary cortex, and compare the results in relation to different visual illusions achieved in a static model\cite{keemink2015unified}.
+
+Different parts of the problem and work conducted are discussed in the report.
 \begin{itemize}
   \item Background - gives some necessary neuroscience terminology and information about the problem and concepts we are going to use. We also briefly discuss recurrent neural networks, as they are the model used for simulating experiments.
   \item Design - discuss the design of the experiments and the evolution of the model, before the final version used for running experiments.
@@ -149,7 +151,7 @@ To avoid confusion we will stick to the definition of classical receptive fields
 
 \plotfigureS{F4large}{\bt{Effect of the context on receptive field on a neuron}\cite{cavanaugh2002nature} The firing of neurons is indirectly modulated and their response shifted, based on the stimuli just outside of their receptive field. This leads to some of the complications of explaining receptive field. Even though a certain neuron is tuned for only a certain part of our vision field, for certain orientation, it can be affected by nearby neurons. If we take this to the extreme, then a receptive field is based on all the sensory input we receive, since one neuron excites a nearby one, which excites its nearby neurons, etc.}{Effect of the context on receptive field on a neuron}{.5}
 
-\subsection{Tuning curves}
+\subsection{Tuning curves} \label{tuningcurves}
 
 Different orientation selective neurons are tuned for different orientation at a specific part of the visual field, defined by their receptive field. In other words neurons like specific orientation place at a specific place. However they spike not only when the preferred orientation is presented, but also on similar to its preferred orientation. The intensity of spiking, when different orientations are presented, forms a bell shaped curve with a peak the preferred orientation of the neuron. 
 
@@ -339,8 +341,17 @@ I also extended my model to custom positions of the neurons, rather than the fix
 
 \chapter{Experiments}
 
-In this section we discuss the performed experiments 	
+In this section we discuss some experiments we performed to compare the static and dynamic models of the orientation selective neurons in the primary visual cortex. We begin by briefly summarizing how we calculate the average firing rate of the neurons, and how we apply the modulation between them
 
+\eql{g(\phi_{i},\theta_{c})=A_{c}exp(k_{c}cos2[\phi_{i}-\theta_{c}])}{vonmiseseq}
+
+\eql{h_{exp}(\phi_{i},\theta_{f},\varphi_{f},r_{f})=exp[-\cfrac{a}{r_{f}}(E(\phi_{i},\theta_{f},\varphi_{f})-E_{0})]}{mulh}
+
+\eql{h_{add}(\phi_{i},\theta_{f},\varphi_{f},r_{f})=-\cfrac{a}{r_{f}}(E(\phi_{i},\theta_{f},\varphi_{f})-E_{0})}{addh}
+
+\eql{\tau\cfrac{dr_{k}(t)}{dt}=-r_{k}(t)+[g(k)+\sum_{j}h(i)*r_{i}]^{+}}{addm}
+
+\eql{\tau\cfrac{dr_{k}(t)}{dt}=-r_{k}(t)+g(k)*\prod_{j}h_mul_{j}(k)}{mulm}
 
 \section{Elastica energy}
 
@@ -481,7 +492,7 @@ In this section we explore variety of tilt effects. In all of the experiments we
 \plotfiguresix{el_ener}{h_add}{h_mul}{cen}{ad_comb}{mul_comb}{\bt{Additive and Multiplicative model} (a) Elastica energy (b) h, additive (c) h, multiplicative (d) Central drive (e) Final response for additive model (f) Final response for multiplicative model}{.49}{Additive and Multiplicative mode}
 \plotfigure{ADD_vs_MULT}{Additive vs Multiplicative model. Although the tilt effects happen at different orientations and the strength of modulation is different, the change in the effect as we vary the flanker orientation is similar.}{AdMp}
 
-\section{Recurrent Neural Network}
+\section{Recurrent Neural Network} \label{rnnsection}
 
 First we explore a simple network with only one neuron. The neuron receives a certain excitation ($in$). The speed with which the neuron changes it's response, depends on the contant $\tau_{syn}$ (the smaller $\tau_{syn}$, the slower the change). We setup the simple recurrent neural network below.
 
