@@ -28,9 +28,8 @@ def norm_plot(values):
 
 
 #----- Calculate matrix for fig. B-----
-def calculateMatrixB(nosn=100):
+def calculateMatrixB(nosn=100, E0=4):
 	# used to calculate the matrix
-	E0 = 4
 	m = 1
 	n = 3
 	orientations = np.arange(0, np.pi, np.pi/nosn)
@@ -60,6 +59,8 @@ def calculateMatrixB(nosn=100):
 			matrix[i,j] = -(energy-E0)/distance
 			matrix[j,i] = matrix[i,j]
 	#showWeights(matrix, fig_size=10)
+	matrix[0:nosn,:] = 0
+	matrix[2*nosn:3*nosn,:] = 0
 	return matrix
 
 
@@ -138,11 +139,10 @@ def calculateMatrixD(nosn=100):
 
 
 #----- Calculate matrix for fig. F -----
-def calculateMatrixF(locations, nosn=100):
+def calculateMatrixF(locations, nosn=100, E0=4):
 	m = 1
 	n = 7
 	nn = nosn
-	E0 = 4
 	orientations = np.arange(0, np.pi, np.pi/nosn)
 	orientations2 = np.expand_dims(orientations, axis=1)
 	orientations3 = np.expand_dims(orientations2, axis=2)
@@ -170,4 +170,5 @@ def calculateMatrixF(locations, nosn=100):
 			matrix[i,j] = -(energy-E0)/distance
 			matrix[j,i] = matrix[i,j]
 	showWeights(matrix, fig_size=10)
+	matrix[nosn:,:] = 0
 	return matrix

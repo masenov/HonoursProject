@@ -77,6 +77,11 @@ Emily Knight, Arthur Shapiro, and Zhong-Lin Lu.
   peripheral vision reveal their differences in representing visual phase.
 \newblock {\em Journal of Vision}, 8(6):967--967, 2008.
 
+\bibitem{leung1998contour}
+Thomas Leung and Jitendra Malik.
+\newblock Contour continuity in region based image segmentation.
+\newblock In {\em Computer Vision—ECCV'98}, pages 544--559. Springer, 1998.
+
 \bibitem{levien2008elastica}
 Raph Levien.
 \newblock The elastica: a mathematical history.

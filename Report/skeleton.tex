@@ -158,7 +158,7 @@ Different orientation selective neurons are tuned for different orientation at a
 \plotfigure{HubelWiesel}{\bt{Tuning curves}\cite{hubel1968receptive} Different orientation bars are presented in a certain part of the visual field(on the left), and the response of the neuron tuned for this specific part of the visual field and $0\degree$. Even though the neuron is tuned for $0\degree$, its spikes when similar orientations are presented. The closer the orientation is to its preferred one, the stronger the response.}{Tuning curves}
 
 
-\subsection{Population coding}
+\subsection{Population coding} \label{populationcoding}
 
 We have multiple orientation selective neurons per part of our receptive field. They all spike with different intensity defined by their tuning curves. Our final perception of the orientation in that part of the visual field is based on the all the spiking of the neurons. Their preferred orientation and magnitude can form a vector, with direction based on the preferred orientation and length based on the magnitude. When the vectors are added together, we get the final perceived orientation, with magnitude, as before, the length of the vector and perceived orientation - the direction of the vector.
 
@@ -205,7 +205,7 @@ As described in \cite{keemink2015unified}, we represent those responses as vecto
 
 Even at this small scale, some experiments (described later) can be run, which show the relation between number of orientation selective neurons used and the accuracy of the perceived orientation.
 
-\section{Two orientations}
+\section{Two orientations} \label{twoorientations}
 
 Next we extend the model so we can feed two orientations and we have orientation selective neurons for the two orientations. We add recurrent connection between the neurons with the same preferred orientations, as showed in fig.\ref{neuron5}, (A), (B). This adds contextual modulation, as the perceived orientation of a single orientation in the visual field is influenced by the other one.
 
@@ -354,37 +354,61 @@ Our model receives as an input a field of orientation bars and outputs the perce
 
 \plottwofigures{random_r}{random_r_torus}{\bt{Visualization of input and output of the model.} (a) Input of the model, a field of orientated bars. (B) Perceived bars, the more saturated the color, the stronger the response from the neurons for that particular bar. Some bars also may have different orientation from the input.}{Sample input}
 
-As discussed in sec. given a certain a neuron with preferred orientation $\phi_{i}$ and presented orientation $\theta_{c}$, we modelled the activity by von Mises equation (eq.\cite{vonmiseseq}), which leads to a bell shaped curve of activity as seen in fig.\cite{simpleMises}.
-\plotfigureS{simpleMises}{\bt{Tuning curve.} Activity of a neuron with a preferred orientation 90° for different presented orientations}{Parallel illusion}{.5}
+As discussed in sec.\ref{twoorientations} given a certain a neuron with preferred orientation $\phi_{i}$ and presented orientation $\theta_{c}$, we modelled the activity by von Mises equation (eq.\ref{vonmiseseq}), which leads to a bell shaped curve of activity as seen in fig.\ref{simpleMises}.
 
 \eql{g(\phi_{i},\theta_{c})=A_{c}exp(k_{c}cos2[\phi_{i}-\theta_{c}])}{vonmiseseq}
 
 
-\plotfigureS{angles}{Two bars and the corresponding angles between them used in different formulas}{Parallel illusion}{.3}
+\plotfigureS{simpleMises}{\bt{Tuning curve.} Activity of a neuron with a preferred orientation 90° for different presented orientations}{Parallel illusion}{.5}
 
-\eql{h_{exp}(\phi_{i},\theta_{f},\varphi_{f},r_{f})=exp[-\cfrac{a}{r_{f}}(E(\phi_{i},\theta_{f},\varphi_{f})-E_{0})]}{mulh}
+We have a stack of orientation selective neurons tuned for different orientations, for every bar of our input. Their combined response (adding them as vectors, see sec.\ref{populationcoding} and sec.\ref{twoorientations}) gives the perceived orientation of the bar and the strength of the response. Fig.\ref{misesNumberNeurons} shows the population coding when we use different number of orientation selective neurons.
+
+\plottwofigures{misesNumberNeurons}{misesNumberNeurons2}{\bt{Effect on the population activity, for different number of orientation selective neurons} (a) Presented orientation is $90\degree$. (b) Presented orientation is $45\degree$ In our experiments we are going to use 32 orientation selective neurons per bar of the input.}{Sample input}
+
+In our experiments we will use a population coding of $N=32$. We can see that using $N=16$ and $N=32$ give almost the same curve. Moreover population coding with 32 neurons per bar was used in \cite{keemink2015unified} as well, which we use as a baseline to compare our dynamic model with.
+
+Finally fig.\ref{misesNumberA} shows the effect on the tuning curve of a neuron, for different values for $A_{c}$ and $k_{c}$. In our experiments we use $A_{c}=1$ and $k_{c}=1$. We can use any value for $A_{c}$, without loss of generality, as the number just specifies the strength of single neuron response. We use the same number for all neurons, so the overall effect does not change. When $k_{c}=1$, we get similar looking curve as in fig.\ref{HubelWiesel}. \cite{keemink2015unified} again uses the same number, which helps comparing the results from this report and the results presented in the paper.
+
+\plottwofigures{misesNumberA}{misesNumberB}{\bt{Effect of $A_{c}$ and $k_{c}$ on von Mises function} (a) $A_{c}$ controls the strength of the response. (b) $k_{c}$ controls the variance.}{Sample input}
+
+
+
+So far we described the activity of a neuron, assuming no modulation from nearby neurons. We will use the setup in fig.\ref{angles} to describe how we calculate the elastica modulation between different neurons and finally how put everything together in a final model.
+
+\plotfigureS{angles}{\bt{Two bars} Two bars and the corresponding angles between them used in different formulas. We will refer to the orange bar as center and the blue line as flanker. \cite{keemink2015unified}}{Parallel illusion}{.3}
+
+To find the elastica energy between the two bars, we have to measure the total curvature. One way to measure the total curvature is to integrate over the entire length of the curve and measure the relative angle at each position. However this method is computationally expensive. In this report we are going to use an approximation mentioned used \cite{keemink2015unified}, discovered by \cite{sharon2000completion} and \cite{leung1998contour}.
+
+We define $\theta_{c}$ as the orientation of the center, $\theta_{f}$ as the orientation of the flanker, $\phi_{f}$ the angle between the flanker and a vertical bar, $r_{f}$ as the distance between the center and flanker bar, $\beta_{c}=\phi_{f}-\theta_{c}$ and $\beta_{f}=\theta_{f}-\phi_{f}$. Then we have the elastica energy calculated according to eq.\ref{elasticaapproximation}.
+
+\eql{E(\theta_{c},\theta_{f},\phi_{f})\approx4(\beta_{c}^{2}+\beta_{f}^{2}-\beta_{c}\beta_{f})}{elasticaapproximation}
+
+Next we calculate the modulation term for a given center and flanker bar, according to eq.\ref{addh}. $E_{0}$ controls the excitation and inhibition ration of the modulation. $r_{f}$ scales the modulation based on distance between the two bars. $a$ is a constant modifying the strength of the modulation.
+
+
 
 \eql{h_{add}(\phi_{i},\theta_{f},\varphi_{f},r_{f})=-\cfrac{a}{r_{f}}(E(\phi_{i},\theta_{f},\varphi_{f})-E_{0})}{addh}
 
-\eql{\tau\cfrac{dr_{k}(t)}{dt}=-r_{k}(t)+[g(k)+\sum_{j}h(i)*r_{i}]^{+}}{addm}
 
-\eql{\tau\cfrac{dr_{k}(t)}{dt}=-r_{k}(t)+g(k)*\prod_{j}h_mul_{j}(k)}{mulm}
+In our experiments we use an additive model, the modulation from nearby neurons is added to the response of the current neuron. In comparison in a multiplicative model we multiply the response of a neuron by all modulation terms. Since the passive model described in \cite{keemink2015unified} uses a multiplicative model, it is important to first distinguish the differences between the two different ways of applying modulation. Sec.\ref{addvsmultmodel} goes in details showing that despite the different way of applying modulation, they have similar effect.
 
-\plottwofigures{misesNumberNeurons}{misesNumberNeurons2}{\bt{Visualization of sample input(output) to the model} (A) Random orientations. (B) All orientations from $0\degree$ to $180\degree$, for every $1.8\degree$.}{Sample input}
+Finally, eq.\ref{addm} shows the full equation of updating the response rate of a neuron.
 
-\plottwofigures{misesNumberA}{misesNumberB}{\bt{Visualization of sample input(output) to the model} (A) Random orientations. (B) All orientations from $0\degree$ to $180\degree$, for every $1.8\degree$.}{Sample input}
+\eql{\tau\cfrac{dr_{i}(t)}{dt}=-r_{i}(t)+[g_{i}+\sum_{j}h_{add}(\phi_{i},\theta_{f}^{j},\varphi_{f}^{j},r_{f}^{j})r_{j}(t-1)]^{+}}{addm}
 
-\section{Elastica energy}
+The effect of the time constant $\tau$ as well as the update of the model for every time step are shown in sec.\ref{rnnsection}. In our experiments we use $\tau=6$. We take the positive value of $g_{i}+\sum_{j}h_{add}(\phi_{i},\theta_{f}^{j},\varphi_{f}^{j},r_{f}^{j})r_{j}(t-1)$ to prevent the response rate of a neuron below 0, which is impossible.
 
-Simple experiments, matrix form
+
 
 
 
 \section{Static vs Dynamic models}
-%\subsection{Center and flanker bar}
+
+In this section we compare the dynamic model developed in this report to the static model in \cite{keemink2015unified}, in the context of different tilt illusions, pop out effects and contour extraction.
+
 \section{Tilt effects}
 
-In this section we explore variety of tilt effects. In all of the experiments we have a center bar and a number of flanker bars around it. We experiment with different number of flankers, vary their position and orientation around the center bar.
+In this section we explore variety of tilt effects. In all of the experiments we have a similar setup of center bar and a number of flanker bars around it. We experiment with different number of flankers, vary their position and orientation around the center bar.
 
 \begin{figure}[H]
 \caption{}
@@ -495,7 +519,16 @@ In this section we explore variety of tilt effects. In all of the experiments we
 
 
 
-\section{Additive and Multiplicative model}
+\section{Additive and Multiplicative model} \label{addvsmultmodel}
+
+
+\eql{h_{mul}(\phi_{i},\theta_{f},\varphi_{f},r_{f})=exp[-\cfrac{a}{r_{f}}(E(\phi_{i},\theta_{f},\varphi_{f})-E_{0})]}{mulh}
+
+\eql{h_{add}(\phi_{i},\theta_{f},\varphi_{f},r_{f})=-\cfrac{a}{r_{f}}(E(\phi_{i},\theta_{f},\varphi_{f})-E_{0})}{addh}
+
+\eql{\tau\cfrac{dr_{i}(t)}{dt}=-r_{i}(t)+[g_{i}+\sum_{j}h_{add}(\phi_{i},\theta_{f}^{j},\varphi_{f}^{j},r_{f}^{j})r_{j}(t-1)]^{+}}{addm}
+
+\eql{\tau\cfrac{dr_{i}(t)}{dt}=-r_{i}(t)+g_{i}\prod_{j}h_{mul}(\phi_{i},\theta_{f}^{j},\varphi_{f}^{j},r_{f}^{j})r_{j}(t-1)}{mulm}
 
 \begin{figure}[H]
 \caption{}

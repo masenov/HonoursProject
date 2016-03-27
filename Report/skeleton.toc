@@ -21,17 +21,17 @@
 \contentsline {section}{\numberline {5.4}Final model changes}{36}
 \contentsline {chapter}{\numberline {6}Experiments}{37}
 \contentsline {section}{\numberline {6.1}Model setup}{37}
-\contentsline {section}{\numberline {6.2}Elastica energy}{40}
-\contentsline {section}{\numberline {6.3}Static vs Dynamic models}{40}
-\contentsline {section}{\numberline {6.4}Tilt effects}{40}
-\contentsline {subsection}{\numberline {6.4.1}Tilt effect 1}{41}
-\contentsline {subsection}{\numberline {6.4.2}Tilt effect 2}{42}
-\contentsline {subsection}{\numberline {6.4.3}Tilt effect 3}{43}
-\contentsline {subsection}{\numberline {6.4.4}Tilt effect 4}{44}
-\contentsline {section}{\numberline {6.5}Pop out effects}{51}
+\contentsline {section}{\numberline {6.2}Elastica energy}{41}
+\contentsline {section}{\numberline {6.3}Static vs Dynamic models}{42}
+\contentsline {section}{\numberline {6.4}Tilt effects}{42}
+\contentsline {subsection}{\numberline {6.4.1}Tilt effect 1}{43}
+\contentsline {subsection}{\numberline {6.4.2}Tilt effect 2}{44}
+\contentsline {subsection}{\numberline {6.4.3}Tilt effect 3}{44}
+\contentsline {subsection}{\numberline {6.4.4}Tilt effect 4}{45}
+\contentsline {section}{\numberline {6.5}Pop out effects}{52}
 \contentsline {section}{\numberline {6.6}Additive and Multiplicative model}{52}
-\contentsline {section}{\numberline {6.7}Recurrent Neural Network}{55}
-\contentsline {chapter}{\numberline {7}Evaluation}{57}
-\contentsline {chapter}{\numberline {8}Timeline}{59}
-\contentsline {chapter}{\numberline {9}Conclusions}{61}
-\contentsline {chapter}{Bibliography}{63}
+\contentsline {section}{\numberline {6.7}Recurrent Neural Network}{56}
+\contentsline {chapter}{\numberline {7}Evaluation}{59}
+\contentsline {chapter}{\numberline {8}Timeline}{61}
+\contentsline {chapter}{\numberline {9}Conclusions}{63}
+\contentsline {chapter}{Bibliography}{65}
