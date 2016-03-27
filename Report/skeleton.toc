@@ -1,0 +1,36 @@
+\contentsline {chapter}{\numberline {1}New Introduction}{9}
+\contentsline {chapter}{\numberline {2}Introduction}{15}
+\contentsline {chapter}{\numberline {3}Background}{17}
+\contentsline {section}{\numberline {3.1}Neuroscience background}{17}
+\contentsline {subsection}{\numberline {3.1.1}Visual field and visual stimuli}{17}
+\contentsline {subsection}{\numberline {3.1.2}Receptive fields}{19}
+\contentsline {subsection}{\numberline {3.1.3}Tuning curves}{20}
+\contentsline {subsection}{\numberline {3.1.4}Population coding}{21}
+\contentsline {section}{\numberline {3.2}Elastica principle}{22}
+\contentsline {section}{\numberline {3.3}Recurrent Neural Networks}{22}
+\contentsline {chapter}{\numberline {4}Design}{25}
+\contentsline {section}{\numberline {4.1}Single orientation}{28}
+\contentsline {section}{\numberline {4.2}Two orientations}{28}
+\contentsline {section}{\numberline {4.3}Multiple orientations, limited connectivity}{29}
+\contentsline {section}{\numberline {4.4}Multiple orientations, full connectivity}{30}
+\contentsline {section}{\numberline {4.5}Elastica principle}{32}
+\contentsline {chapter}{\numberline {5}Implementation}{33}
+\contentsline {section}{\numberline {5.1}Initial choice of programming language}{33}
+\contentsline {section}{\numberline {5.2}Model implementation}{34}
+\contentsline {section}{\numberline {5.3}Change of development tools}{35}
+\contentsline {section}{\numberline {5.4}Final model changes}{36}
+\contentsline {chapter}{\numberline {6}Experiments}{37}
+\contentsline {section}{\numberline {6.1}Model setup}{37}
+\contentsline {section}{\numberline {6.2}Static vs Dynamic models}{41}
+\contentsline {section}{\numberline {6.3}Tilt effects}{42}
+\contentsline {subsection}{\numberline {6.3.1}Tilt effect 1}{43}
+\contentsline {subsection}{\numberline {6.3.2}Tilt effect 2}{44}
+\contentsline {subsection}{\numberline {6.3.3}Tilt effect 3}{44}
+\contentsline {subsection}{\numberline {6.3.4}Tilt effect 4}{45}
+\contentsline {section}{\numberline {6.4}Pop out effects}{52}
+\contentsline {section}{\numberline {6.5}Additive and Multiplicative model}{52}
+\contentsline {section}{\numberline {6.6}Recurrent Neural Network}{56}
+\contentsline {chapter}{\numberline {7}Evaluation}{59}
+\contentsline {chapter}{\numberline {8}Timeline}{61}
+\contentsline {chapter}{\numberline {9}Conclusions}{63}
+\contentsline {chapter}{Bibliography}{65}
