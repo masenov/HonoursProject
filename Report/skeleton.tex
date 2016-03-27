@@ -34,7 +34,7 @@
 
 (Abstract new)
 
-Our vision system is a complex machinery, able to transform the light change we detect with our eyes, to meaningful objects, perception of depth and motion. The information undergoes multiple stages of transformations by different parts of our visual cortex. The primary visual cortex (V1) is responsible for one of the first stages of vision processing. One of its functions is edge detection, which is determined by group of interacting neurons. Some visual illusions and are believed to be caused in that specific part of V1. It is important to understand those illusions as they can give us an insight to how neural computation is done.
+Our vision system is a complex machinery, able to transform the light change we detect with our eyes, to meaningful objects, perception of depth and motion. The information undergoes multiple stages of transformations by different parts of our visual cortex. The primary visual cortex (V1) is responsible for one of the first stages of vision processing. One of its functions is edge detection, which is determined by group of interacting neurons. Some visual illusions are believed to be caused in that specific part of V1. It is important to understand those illusions as they can give us an insight to how neural computation is done.
 
 Here(in this report) we explore a model of the orientation selective neurons in the primary visual cortex. These(Those) neurons are responsible for detecting edges at different locations of what we see with our eyes. We have multiple neurons per location responding to different edge orientations. Their combined response forms our perception of the edge presented. Neurons for different locations are also connected to each other, influencing each other's responses. This can lead to change of the perceived orientations, leading to different visual illusions and effects. The connections between the neurons can be modeled using the elastica principle of smooth continuity - the smoother the curve connecting two neurons, the stronger they should be connected.
 
@@ -341,9 +341,26 @@ I also extended my model to custom positions of the neurons, rather than the fix
 
 \chapter{Experiments}
 
-In this section we discuss some experiments we performed to compare the static and dynamic models of the orientation selective neurons in the primary visual cortex. We begin by briefly summarizing how we calculate the average firing rate of the neurons, and how we apply the modulation between them
+
+
+
+
+
+In this section we discuss some experiments we performed to compare the static and dynamic models of the orientation selective neurons in the primary visual cortex. We begin by setting the equations of our network, explore the effect of different parameters, compare the results of the dynamic and passive model in different cases.
+
+\section{Model setup}
+
+Our model receives as an input a field of orientation bars and outputs the perceived orientations, as well as overall activity of the neurons for a given bar for every time step of the simulation. An example input and output(for the stable state of the network) can be in seen in fig.\ref{random_r}.
+
+\plottwofigures{random_r}{random_r_torus}{\bt{Visualization of input and output of the model.} (a) Input of the model, a field of orientated bars. (B) Perceived bars, the more saturated the color, the stronger the response from the neurons for that particular bar. Some bars also may have different orientation from the input.}{Sample input}
+
+As discussed in sec. given a certain a neuron with preferred orientation $\phi_{i}$ and presented orientation $\theta_{c}$, we modelled the activity by von Mises equation (eq.\cite{vonmiseseq}), which leads to a bell shaped curve of activity as seen in fig.\cite{simpleMises}.
+\plotfigureS{simpleMises}{\bt{Tuning curve.} Activity of a neuron with a preferred orientation 90° for different presented orientations}{Parallel illusion}{.5}
 
 \eql{g(\phi_{i},\theta_{c})=A_{c}exp(k_{c}cos2[\phi_{i}-\theta_{c}])}{vonmiseseq}
+
+
+\plotfigureS{angles}{Two bars and the corresponding angles between them used in different formulas}{Parallel illusion}{.3}
 
 \eql{h_{exp}(\phi_{i},\theta_{f},\varphi_{f},r_{f})=exp[-\cfrac{a}{r_{f}}(E(\phi_{i},\theta_{f},\varphi_{f})-E_{0})]}{mulh}
 
@@ -353,11 +370,15 @@ In this section we discuss some experiments we performed to compare the static a
 
 \eql{\tau\cfrac{dr_{k}(t)}{dt}=-r_{k}(t)+g(k)*\prod_{j}h_mul_{j}(k)}{mulm}
 
+\plottwofigures{misesNumberNeurons}{misesNumberNeurons2}{\bt{Visualization of sample input(output) to the model} (A) Random orientations. (B) All orientations from $0\degree$ to $180\degree$, for every $1.8\degree$.}{Sample input}
+
+\plottwofigures{misesNumberA}{misesNumberB}{\bt{Visualization of sample input(output) to the model} (A) Random orientations. (B) All orientations from $0\degree$ to $180\degree$, for every $1.8\degree$.}{Sample input}
+
 \section{Elastica energy}
 
 Simple experiments, matrix form
 
-\plotfigureS{angles}{The lines do not seem parallel, when it reality they are \cite{vision-computation}}{Parallel illusion}{.3}
+
 
 \section{Static vs Dynamic models}
 %\subsection{Center and flanker bar}
@@ -369,44 +390,56 @@ In this section we explore variety of tilt effects. In all of the experiments we
 \caption{}
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=0.5\linewidth]{fig5_B}
+  \includegraphics[width=0.5\linewidth]{fig5_B2}
   \caption{}
 \end{subfigure}%
 \hfill
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=0.5\linewidth]{fig5_C}
+  \includegraphics[width=0.5\linewidth]{fig5_C2}
   \caption{}
 \end{subfigure}
 \hfill
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=0.5\linewidth]{fig5_D}
+  \includegraphics[width=0.5\linewidth]{fig5_D2}
   \caption{}
 \end{subfigure}%
 \hfill
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=0.5\linewidth]{fig5_F}
+  \includegraphics[width=0.5\linewidth]{fig5_F2}
   \caption{}
 \end{subfigure}
 \floatfoot{Various tile experiments. a) Vary the orientations of two horizontal flankers. b) Rotate the two flankers around the center bar. c) Vary the orientation of two vertical flankers d) Vary the orientation }
 \end{figure}
 
 \subsection{Tilt effect 1}
-\plotfigureS{fig5_B}{Tilt Effect 1}{Tilt Effect 1}{0.3}
-\plotfigureS{matrix}{Weight matrix}{Weight Matrix 1}{0.5}
+\plotfigureS{fig5_B2}{Tilt Effect 1}{Tilt Effect 1}{0.3}
+\plotfigureS{matrix_b}{Weight matrix}{Weight Matrix 1}{0.5}
 (fix legend)
 \plotthreefigures{p_cen_b}{d_cen_b}{d_flan_b}{Experienced tilt illusions for different modulation constants. (a) Tilt illusion of the center bar for different flaker orientations. The experiment reproduced is from \cite{keemink2015unified}, fig.5, B (b) Tilt illusion of the center bar for different flanker orientations, in the dynamic mode. (c) Tilt illusion of the flanker bars for different flanker orientations, in a dynamic model}{Experienced tilt illusions}{1}
 \subsection{Tilt effect 2}
-\plotfigureS{fig5_C}{Tilt Effect 2}{Tilt Effect 2}{0.3}
-\plotthreefigures{p_cen_c}{d_cen_c}{d_flan_c}{Experienced tilt illusions for different modulation constants. (a) Tilt illusion of the center bar for different flaker orientations. The experiment reproduced is from \cite{keemink2015unified}, fig.5, C (b) Tilt illusion of the center bar for different flanker orientations, in the dynamic mode. (c) Tilt illusion of the flanker bars for different flanker orientations, in a dynamic model}{Experienced tilt illusions}{1}
+\plotfigureS{fig5_C2}{Tilt Effect 2}{Tilt Effect 2}{0.3}
+\plotthreefigures{p_cen_c}{d_cen_C}{d_flan_c}{Experienced tilt illusions for different modulation constants. (a) Tilt illusion of the center bar for different flaker orientations. The experiment reproduced is from \cite{keemink2015unified}, fig.5, C (b) Tilt illusion of the center bar for different flanker orientations, in the dynamic mode. (c) Tilt illusion of the flanker bars for different flanker orientations, in a dynamic model}{Experienced tilt illusions}{1}
 \subsection{Tilt effect 3}
-\plotfigureS{fig5_D}{Tilt Effect 3}{Tilt Effect 3}{0.3}
+\plotfigureS{fig5_D2}{Tilt Effect 3}{Tilt Effect 3}{0.3}
 \plotthreefigures{p_cen_d}{d_cen_d}{d_flan_d}{Experienced tilt illusions for different modulation constants. (a) Tilt illusion of the center bar for different flaker orientations. The experiment reproduced is from \cite{keemink2015unified}, fig.5, D (b) Tilt illusion of the center bar for different flanker orientations, in the dynamic mode. (c) Tilt illusion of the flanker bars for different flanker orientations, in a dynamic model}{Experienced tilt illusions}{1}
 \subsection{Tilt effect 4}
-\plotfigureS{fig5_F}{Tilt Effect 4}{Tilt Effect 4}{0.3}
-\plotthreefigures{p_cen_f}{d_cen_f}{d_flan_f}{Experienced tilt illusions for different modulation constants. (a) Tilt illusion of the center bar for different flaker orientations. The experiment reproduced is from \cite{keemink2015unified}, fig.5, F (b) Tilt illusion of the center bar for different flanker orientations, in the dynamic mode. (c) Tilt illusion of the flanker bars for different flanker orientations, in a dynamic model}{Experienced tilt illusions}{1}
+\plotfigureS{fig5_F2}{Tilt Effect 4}{Tilt Effect 4}{0.3}
+\plottwofigures{p_cen_f}{d_cen_f}{Experienced tilt illusions for different modulation constants. (a) Tilt illusion of the center bar for different flaker orientations. The experiment reproduced is from \cite{keemink2015unified}, fig.5, F (b) Tilt illusion of the center bar for different flanker orientations, in the dynamic mode. (c) Tilt illusion of the flanker bars for different flanker orientations, in a dynamic model}{Experienced tilt illusions}{1}
+
+\plotfiguresix{d_flan_f1}{d_flan_f2}{d_flan_f3}{d_flan_f4}{d_flan_f5}{d_flan_f6}{\bt{Additive and Multiplicative model} (a) Elastica energy (b) h, additive (c) h, multiplicative (d) Central drive (e) Final response for additive model (f) Final response for multiplicative model}{.49}{Additive and Multiplicative mode}
+
+\plottwofigures{p_cen_f3}{d_cen_f3}{Experienced tilt illusions for different modulation constants. (a) Tilt illusion of the center bar for different flaker orientations. The experiment reproduced is from \cite{keemink2015unified}, fig.5, F (b) Tilt illusion of the center bar for different flanker orientations, in the dynamic mode. (c) Tilt illusion of the flanker bars for different flanker orientations, in a dynamic model}{Experienced tilt illusions}{1}
+
+\plotfiguresix{d_flan_f13}{d_flan_f23}{d_flan_f33}{d_flan_f43}{d_flan_f53}{d_flan_f63}{\bt{Additive and Multiplicative model} (a) Elastica energy (b) h, additive (c) h, multiplicative (d) Central drive (e) Final response for additive model (f) Final response for multiplicative model}{.49}{Additive and Multiplicative mode}
+
+\plottwofigures{p_cen_f6}{d_cen_f6}{Experienced tilt illusions for different modulation constants. (a) Tilt illusion of the center bar for different flaker orientations. The experiment reproduced is from \cite{keemink2015unified}, fig.5, F (b) Tilt illusion of the center bar for different flanker orientations, in the dynamic mode. (c) Tilt illusion of the flanker bars for different flanker orientations, in a dynamic model}{Experienced tilt illusions}{1}
+
+\plotfiguresix{d_flan_f16}{d_flan_f26}{d_flan_f36}{d_flan_f46}{d_flan_f56}{d_flan_f66}{\bt{Additive and Multiplicative model} (a) Elastica energy (b) h, additive (c) h, multiplicative (d) Central drive (e) Final response for additive model (f) Final response for multiplicative model}{.49}{Additive and Multiplicative mode}
+
+
 
 \section{Pop out effects}
 
@@ -468,22 +501,22 @@ In this section we explore variety of tilt effects. In all of the experiments we
 \caption{}
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=1\linewidth]{2bars3}
+  \includegraphics[width=1\linewidth]{explainEl1}
 \end{subfigure}%
 \hfill
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=1\linewidth]{2bars_2}
+  \includegraphics[width=1\linewidth]{explainEl2}
 \end{subfigure}
 \hfill
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=1\linewidth]{2bars_1}
+  \includegraphics[width=1\linewidth]{explainEl3}
 \end{subfigure}%
 \hfill
 \begin{subfigure}{.5\textwidth}
   \centering
-  \includegraphics[width=1\linewidth]{2bars}
+  \includegraphics[width=1\linewidth]{explainEl4}
 \end{subfigure}
 \floatfoot{(Still figuring out how to make the plot clearer. Pop out effect. First column input, second column connections without torus, third column torus}
 \end{figure}

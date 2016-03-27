@@ -3,4 +3,5 @@ elastica/
 **/*.gz
 Python/holoviews-master/
 Python/IPython-notebook-extensions-master/
-Python/venv
+Python/venv/
+**/*.pyc

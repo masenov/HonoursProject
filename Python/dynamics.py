@@ -107,7 +107,7 @@ def printMatrix(testMatrix):
     
 
 def vonMises(a,k,angle,neuron):
-    points_mises = np.array([ mises(k,a,neuron[i],angle) for i in range(len(neuron))])
+    points_mises = np.array([ mises(a,k,neuron[i],angle) for i in range(len(neuron))])
     return points_mises
 
 def padwithzeros(vector, pad_width, iaxis, kwargs):
@@ -278,7 +278,7 @@ def covarianceMatrix(m, n, nosn, distance_factor, orientation_factor):
 
 # Generate a weight matrix based on the elastica principle
 
-def elasticaMatrix(m, n, nosn, E0=0, torus=False):
+def elasticaMatrix(m, n, nosn, E0=4, torus=False):
     # replicate a vector with different orientation of length nosn to an m x n x nosn matrix
     orientations = np.arange(0, np.pi, np.pi/nosn)
     orientations2 = np.expand_dims(orientations, axis=1)
@@ -313,7 +313,7 @@ def elasticaMatrix(m, n, nosn, E0=0, torus=False):
                         if (distance < min_distance):
                             min_distance = distance
                             min_xy = xy[k]
-                    matrix[i,j] = en.E(theta1,theta2,[min_xy[0],min_xy[1]])/min_distance
+                    matrix[i,j] = (en.E(theta1,theta2,[min_xy[0],min_xy[1]])-E0)/min_distance
                     matrix[j,i] = matrix[i,j]
                 else:
                     distance = np.sqrt(np.power(x,2) + np.power(y,2))
@@ -347,7 +347,7 @@ def calculateCoordinatesZ(index,size_matrix):
 
 # Generate an elastica or simple distance/orientation dependant matrix based on give paramenters
 # If a file already exists for the matrix, just load it
-def generateWeightMatrix(type='el',m=1,n=2,nosn=9,distance_factor=0.01,orientation_factor=0.01,el_factor=0.001,E0=0,torus=False):
+def generateWeightMatrix(type='el',m=1,n=2,nosn=9,distance_factor=0.01,orientation_factor=0.01,el_factor=0.001,E0=4,torus=False):
     if type=='my':
         filename = 'weight_matrices/my'+str(m)+'x'+str(n)+'x'+str(nosn)+','+str(distance_factor)+','+str(orientation_factor)+'.npy'
         if os.path.isfile(filename):
@@ -378,7 +378,7 @@ def showWeights(matrix, fig_size=20):
     plt.colorbar()
 
 
-def runExperiment(model,m,n,nosn,ac_orient,timesteps,tau,vis=True,k=0.25,A=3,distance_factor=0.01,orientation_factor=0.01,el_factor=0.001,E0=0,torus=False):
+def runExperiment(model,m,n,nosn,ac_orient,timesteps,tau,vis=True,k=1,A=1,distance_factor=0.01,orientation_factor=0.01,el_factor=0.001,E0=4,torus=False):
     setNumberOfColors(nosn)
 
     orientations = np.arange(0, np.pi, np.pi/nosn)
