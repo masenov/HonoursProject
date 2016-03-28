@@ -27,14 +27,14 @@
 \begin{figure}[H]
 \centering
 \begin{subfigure}{.5\textwidth}
-  \caption{}
   \centering
   \includegraphics[width=.8\linewidth]{#1}
+  \caption{}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
-  \caption{}
   \centering
   \includegraphics[width=.8\linewidth]{#2}
+  \caption{}
 \end{subfigure}
 \caption[#4]{#3}
 \label{#1}
@@ -99,8 +99,38 @@
   \includegraphics[width=#6\linewidth]{#3}
   \caption{}
 \end{subfigure}%
-\label{#1}
 \caption[#5]{#4}
+\label{#1}
+\end{figure}
+}
+
+\newcommand{\plotfourfigures}[6]{
+\begin{figure}[H]
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=#6\linewidth]{#1}
+  \caption{}
+\end{subfigure}%
+\hfill
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=#6\linewidth]{#2}
+  \caption{}
+\end{subfigure}
+\hfill
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=#6\linewidth]{#3}
+  \caption{}
+\end{subfigure}%
+\hfill
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=#6\linewidth]{#4}
+  \caption{}
+\end{subfigure}%
+\caption{#5}
+\label{#1}
 \end{figure}
 }
 
@@ -125,7 +155,7 @@
 \begin{subfigure}{.5\textwidth}
   \caption{}
   \centering
-  \includegraphics[width=.1\linewidth]{#4}
+  \includegraphics[width=1\linewidth]{#4}
 \end{subfigure}
 \label{#1}
 \floatfoot{#5}

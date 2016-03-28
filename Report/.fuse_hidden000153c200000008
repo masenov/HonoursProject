@@ -1,0 +1,637 @@
+\input{base.tex}
+\begin{document}
+
+\title{Visual illusions and interactions in biologically inspired neural networks. Analyzing perception of tilt}
+
+\author{Martin Andreev Asenov}
+
+% to choose your course
+% please un-comment just one of the following
+\course{Artificial Intelligence and Computer Science}
+%\course{Artificial Intelligence and Software Engineering}
+%\course{Artificial Intelligence and Mathematics}
+%\course{Artificial Intelligence and Psychology }   
+%\course{Artificial Intelligence with Psychology }   
+%\course{Linguistics and Artificial Intelligence}    
+%\course{Computer Science}
+%\course{Software Engineering}
+%\course{Computer Science and Electronics}    
+%\course{Electronics and Software Engineering}    
+%\course{Computer Science and Mathematics}
+%\course{Computer Science and Physics}  
+%\course{Computer Science and Statistics}    
+
+% to choose your report type
+% please un-comment just one of the following
+%\project{Undergraduate Dissertation} % CS&E, E&SE, AI&L
+%\project{Undergraduate Thesis} % AI%Psy
+\project{4th Year Project Report}
+
+\date{\today}
+
+
+\abstract{
+
+(Abstract new)
+
+Our vision system is a complex machinery, able to transform the light change we detect with our eyes, to meaningful objects, perception of depth and motion. The information undergoes multiple stages of transformations by different parts of our visual cortex. The primary visual cortex (V1) is responsible for one of the first stages of vision processing. One of its functions is edge detection, which is determined by group of interacting neurons. Some visual illusions are believed to be caused in that specific part of V1. It is important to understand those illusions as they can give us an insight to how neural computation is done.
+
+Here(in this report) we explore a model of the orientation selective neurons in the primary visual cortex. These(Those) neurons are responsible for detecting edges at different locations of what we see with our eyes. We have multiple neurons per location responding to different edge orientations. Their combined response forms our perception of the edge presented. Neurons for different locations are also connected to each other, influencing each other's responses. This can lead to change of the perceived orientations, leading to different visual illusions and effects. The connections between the neurons can be modeled using the elastica principle of smooth continuity - the smoother the curve connecting two neurons, the stronger they should be connected.
+
+Existing work already explores a static model of those connections. However the effect, or modulation, of nearby neurons to a specific neuron is calculated only once, without the neuron influencing back its modulators. Moreover the modulation is calculated directly from the orientations presented, rather than mediated through the group of neurons responsible for that location. This report addresses both of the issues. We implement a dynamic model of the orientation selective neurons, with connection between different neurons defined by the elastica principle. We explore the differences between the dynamic and static model, to check if in a dynamic setting, we still experience the same effects. We find that some cases the effect remains that same. However as we add more more edges to the scene, the two models start to differ.
+
+(Abstract old)
+
+
+We experience different tilt illusions and pop out effects. This is often explained by the line's representation in the visual cortex. A group of neurons is responsible for detecting different orientations in different parts of our visual field. A neuron tuned for a specific orientation spikes more, when its preferred orientation is presented, and less the more different the orientations is, forming a bell shaped curve of activity. We have multiple neurons for every part of our visual field, tuned for different orientations. Combining their responses we get an accurate response of the actual orientation, despite their noisy spiking.
+
+However neurons responsible for different part of our visual field are also connected to each other. This modulation explains some of the effect we are experiencing, as orientations in our visual fields are influenced by nearby ones. However those interaction have only been explored statically, calculating the modulation only once. In a full dynamic a change in an orientation, can lead to a change in another orientation, and so on. It's unclear if existing models change in a dynamic setting, does the system settles down to a stable state, or it keeps fluctuating.
+
+In this report, we explore an already existing static model of the above mentioned neurons and build a dynamic model. We explore the differences between the two to check if in a dynamic setting, we still experience the same effects. 
+}
+
+\maketitle
+
+\section*{Acknowledgements}
+Acknowledgements go here. 
+
+\tableofcontents
+%\listoffigures
+%\listoftables
+
+%\pagenumbering{arabic}
+
+\chapter{New Introduction}
+In processing visual information, our brain seems to treat the greater whole as importantly as individual details. This principle was explored by Gestalt psychologist, their work often being summarized with Kofka's famous statement "The whole is \textit{other} than the sum of the parts". There are various rules for grouping similar visual information. This includes, but not limited to, closely located objects, items with similar size or color, etc. Example of some of the rules can be seen in fig.\ref{gestaltgrouping}. 
+
+\plotfigure{gestaltgrouping}{Different groupings according to Gestalt psychology\cite{wilson2001encyclopedia}}{Gestalt}
+
+
+The Gestalt psychology suggest the law of good continuation. According to this, humans tend to group curves, bars, lines and edges with similar direction together. An example can be given even in the current words you are reading. The fact that they are all aligned, suggested the connectivity between them.
+
+The law of good continuation, seems to happen at earliest stages of our visual pipeline, with evidence pointing to the primary visual cortex(V1) \cite{field1993contour}. Our primary visual cortex is responsible for low level edge detection. We have neurons tuned and reacting when a bar with specific orientation is presented in a certain part of our field of view. We have neurons responsible for the same location, but different orientations. This 'stack' of neurons, responsible for a particular location, gives us a perception of the bar presented at that location. However, it is also believed that those stacks of neurons responding can also influence each other, rather than acting independently. It is believed that those interaction follow the law of good continuation, which has lead to the development of "association fields" models\cite{field1993contour}.  Association fields are govern by the rules of smooth curves, where the smoother the curve between two bars, the stronger they should be connected. The principle is illustrated in fig.\ref{associationfield}. 
+
+\plotfigure{associationfield}{Association fields a) Solid lines represent stronger connections, doted lines - weaker b) Relation to smooth continuation \cite{keemink2015unified}}{Association fields}
+
+
+The smoothest curve connecting two bars can be described by the elastica principle(latin for 'thin strip'\cite{levien2008elastica}). Elastica has a long history dating back to as early as 13th century\cite{levien2008elastica}. Jordanus de Nemore posed the problem, but provided incorrect solution. A couple of centuries later after the necessary mathematical techniques were developed, the first solution was published by James Bernoulli in 1694. The elastica energy is defined by the total curvature. The smoother curve two bars form, the more strongly they should be connected. The elastica curves with their respective energies are shown in fig.\ref{el1}. 
+
+\plotfiguresix{el1}{el2}{el3}{el4}{el5}{el6}{\bt{Elastica energies} Elastica energies for different bar configurations}{.3}{Elastica principle}
+
+In this report we won't go into details how this energy as calculated. In our experiments we use the Sharon approximation\cite{sharon2000completion} (using already existing code\cite{elastica-code}), which is shown to be similar to the true elastica energy\cite{keemink2015unified}. Given positions of two bars and their orientations, we can calculate a number, quantitatively describing how smoothly connected the two bars are. The elastica curve and energy is distance independent, hence the missing scales on fig.\ref{el1}.
+
+Incorporating the elastica principle for modelling interactions between orientation selective neurons have been showed to explain number of visual effects\cite{keemink2015unified}. The model explains some tilt illusions, where the perceived orientation of a bar is different from the presented orientation, based on the orientation of nearby bars. Elastica also explains some pop out effects, where we can detect unique bar along bars with the same orientation. Finally it also explains contour extraction.
+
+However all the results in the paper were obtained by neurons getting a input based on the orientations in an image. We extend the model so neurons are directly connected to each other. The input is also passive, the influence, or modulation, between the neurons is calculated only once. The details of the illusions, pop out effects and contour extraction  described in \cite{keemink2015unified} might depend on the static nature of the original model, and it is crucial that we understand how they come to be in a dynamical mode. We build a dynamic model with the modelling the strength of the connections, again based on the elastica principle. We build a recurrent neural network of the orientation selective neurons in the V1 cortex. We set the strength of the connections between them (weights in the network), based on the elastica principle. We reproduce the experiments from  the static model, use them as a baseline, and compare the results in full dynamic setting.
+
+In order to perform our experiments we use a simple recurrent neural network. Given a single neuron we calculate its response using eq.\ref{simplernn}, where $\tau$ is a time constant, $\cfrac{dr}{dt}$ is change of the firing of the neuron with respect to time, $r$ is the firing rate of the neuron, $in$ is the input it receives (based the preferred orientation of the neuron, and the orientation of the bar presented) and $mod$ is all the modulation from other neurons. We use the Euler's method to solve the equation (discussed in sec.\ref{rnnsection}). 
+
+\eql{\tau\cfrac{dr}{dt}=-r+in+mod}{simplernn}
+
+Eq.\ref{simplernn} is central to the simulations ran in this report. We model the $in$ according to the turning curve of a neuron(discussed in sec.\ref{tuningcurves}), and the $mod$ is calculated according to the law of smooth continuation, using the elastica principle. Using this equation, we simulate a dynamic model of the orientation selective neurons in the primary cortex, and compare the results in relation to different visual illusions achieved in a static model\cite{keemink2015unified}.
+
+Different parts of the problem and work conducted are discussed in the report.
+\begin{itemize}
+  \item Background - gives some necessary neuroscience terminology and information about the problem and concepts we are going to use. We also briefly discuss recurrent neural networks, as they are the model used for simulating experiments.
+  \item Design - discuss the design of the experiments and the evolution of the model, before the final version used for running experiments.
+  \item Implementation - choice of programming languages and libraries, why they are important to the project and how they influence both the speed and ease of running experiments, but also the workflow of conducting research.
+  \item Experiments - in depth description of experiments ran
+  \item Evaluation - comparing the results gathered from experiments
+  \item Timeline - timeline of the work done through the project.
+  \item Conclusions - final conclusions
+\end{itemize}
+
+
+\chapter{Introduction}
+
+In processing visual information, our brain seems to favor continuity and prioritize the greater whole, rather than individual details. Sometimes this ability serves us well, ex. when trying to find a pattern among random noise, or a discontinuity in a certain pattern (fig.\ref{popout}). However in other cases this leads to various illusions (fig.\ref{illusion1}, fig.\ref{illusion2}). The project aims to explore the relevance of V1 and its orientation selectivity neurons in the context of those effects. Fig.\ref{illusion1} and Fig.\ref{popout} are particularly relevant to this project.
+
+This paper develops a model, based and built upon the one described in the recent elastica paper \cite{keemink2015unified}. The elastica principle defines the strength of the connections between different orientation selective neurons. It favours continuity, the smoother too bars are connected to each other, the stronger the modulation connection between them. Although there are other models explaining similar phenomena, illusions and effects separately, the neural model described claims to have all of those properties, unifying them in one model. 
+
+
+
+
+
+
+
+\plotfigure{illusion1}{The orientations of the small circles inside seem tilted \cite{baggott2010investigating}}{Tilt illusion}
+\plotfigureS{illusion2}{The lines do not seem parallel, when it reality they are \cite{vision-computation}}{Parallel illusion}{.5}
+\plotfigureS{popout}{The central bar is easily detected by our vision system, due to the difference from the nearby orientations}{Pop out effect}{.3}
+
+
+\chapter{Background}
+
+In explaining the model setup and performed experiments, it is important to first introduce some neuroscience terminology. As one can imagine the visual cortex is utterly complex. We are focusing on the V1 cortex, analyzing a specific type of orientation selective neurons. Even though we are focusing on a specific neurons in only a part of our visual processing pipeline, we make even more simplifications in order to be able to analyze specific features of those neurons. We also briefly introduce recurrent neural networks and how they are used in the project.
+
+\section{Neuroscience background}
+\subsection{Visual field and visual stimuli}
+
+Visual field is the area we can see with our eyes. The information undergo a variety of transformations in the different parts of our visual cortex. The first few processing steps are illustrated in fig.\ref{visual_fields}. The initial information we receive is changes in light from our retina. This then gets processed by the lateral geniculate nucleus (LGN). The LGN cells  and passed down to the Primary visual cortex (V1). V1 extract information about edges and orientations in the different parts of our visual field. 
+
+\plotfigureS{visual_fields}{Perceiving a line from the retina to LGN cells and then by V1 orientation selective cells.\cite{receptive-fields}}{Visual Field}{.5}
+
+Precisely how this information is processed is the main interest of this project. While at a retinal and LGN level, most of the transformations are low-level, V1 starts to extract some patterns. We don't only detect single orientations for different parts of our visual field. Nearby orientations can influence each other. 
+
+(to rewrite)
+Nearby orientations of the orientations useful for the high level visual processing happening in V2, V3, V4, V5 and V6. 
+
+mention visual stimuli
+
+Finally it is also worth mentioning that we see in different details in different parts of our visual fields. Most of the information we perceive is close to the central or foveal vision, which could lead to interesting behavior \cite{knight2008drastically}. A small part of our retina, known as 'blind spot', does not have any photoreceptors. Our brain compensates the lack of information by fulfilling details from nearby observations. Both of those details could lead to change in behavior in our model, however we will ignore this details in our experiments.
+
+\plotfigure{RetinotopicMapping}{\bt{Central and peripheral vision}\cite{retinotopic-mapping} Substantial number of the cells in the retina are devoted to only a small part of our visual field, or central vision. Although relevant to the project, we will ignore this detail, for the benefit of simpler model}{Central and peripheral vision}
+
+\subsection{Receptive fields}
+
+In general, a receptive field is defined as a region of the sensory space, which can stimulate a given sensory neuron. In our context we can define the receptive field of a neuron, as the part of visual field, which affects it \cite{Hartline700}. The above two definition are known as classical receptive fields.
+
+It was later discovered that time plays a role as well, making the definition more complicated \cite{deangelis1995receptive}. In our model, described later, we focus on the spatial and ignore the temporal separation of receptive fields. Moreover because neurons are connected to each other, the notion of receptive field can get a bit vague. Because of those connection a neuron, can get excited or inhibited from parts of the visual field, that the neuron is not directly connected to (fig.\ref{F4large}).
+
+To avoid confusion we will stick to the definition of classical receptive fields, and distinguish between the input a neuron receives because of its tuned orientation and modulation from nearby neurons.
+
+\plotfigureS{F4large}{\bt{Effect of the context on receptive field on a neuron}\cite{cavanaugh2002nature} The firing of neurons is indirectly modulated and their response shifted, based on the stimuli just outside of their receptive field. This leads to some of the complications of explaining receptive field. Even though a certain neuron is tuned for only a certain part of our vision field, for certain orientation, it can be affected by nearby neurons. If we take this to the extreme, then a receptive field is based on all the sensory input we receive, since one neuron excites a nearby one, which excites its nearby neurons, etc.}{Effect of the context on receptive field on a neuron}{.5}
+
+\subsection{Tuning curves} \label{tuningcurves}
+
+Different orientation selective neurons are tuned for different orientation at a specific part of the visual field, defined by their receptive field. In other words neurons like specific orientation place at a specific place. However they spike not only when the preferred orientation is presented, but also on similar to its preferred orientation. The intensity of spiking, when different orientations are presented, forms a bell shaped curve with a peak the preferred orientation of the neuron. 
+
+\plotfigure{HubelWiesel}{\bt{Tuning curves}\cite{hubel1968receptive} Different orientation bars are presented in a certain part of the visual field(on the left), and the response of the neuron tuned for this specific part of the visual field and $0\degree$. Even though the neuron is tuned for $0\degree$, its spikes when similar orientations are presented. The closer the orientation is to its preferred one, the stronger the response.}{Tuning curves}
+
+
+\subsection{Population coding} \label{populationcoding}
+
+We have multiple orientation selective neurons per part of our receptive field. They all spike with different intensity defined by their tuning curves. Our final perception of the orientation in that part of the visual field is based on the all the spiking of the neurons. Their preferred orientation and magnitude can form a vector, with direction based on the preferred orientation and length based on the magnitude. When the vectors are added together, we get the final perceived orientation, with magnitude, as before, the length of the vector and perceived orientation - the direction of the vector.
+
+\plotfigure{populationCoding}{\bt{Population coding in the motor cortex}\cite{amirikian2000directional} Although the above picture illustrates population coding in a different part of the brain, it still good illustration of population coding. Different orientation selective neurons respond with certain intensity (black bars) and their response are combined to show the final perceived perception(red bars).}{Population Coding}
+
+\section{Elastica principle}
+
+
+
+
+
+
+\section{Recurrent Neural Networks}
+
+A recurrent neural network (RNN) is a type of neural network with two way connections between its neurons. The benefit compared to a standard feedforward architecture is that can model dynamic behavior, where the responses of neurons change with respect to time. The network settles in a stable state, periodic or chaotic behavior. Two problems with RNNs are training and the expensive simulation of small timesteps. However they are not an issue as we set the weights based on the elastica principle and the experiments we run are on relatively small visual fields.
+
+\chapter{Design}
+
+This paper implements simplified versions of visual field, receptive fields, tuning curves and population coding in a recurrent neural network with orientation selective neurons. We start with a simple model with one receptive field, extend the model to multiple receptive fields, define limited and full connectivity and finally implement the elastica principle as well. In this section the different models are described in detail. In designing the model, I decided to use iterative and incremental development. The simplest models were mostly used for validity checks, rather than any meaningful experiments. Most of the experiments were based on the final version of the model, with full connectivity with weights setup according to the elastica principle.  
+
+The input our model receives is a matrix of numbers from the interval $0-1$, representing different orientation from $0\degree$ to $180\degree$. The output has the same form and represents what orientations the model perceives. Fig.\ref{input_random} shows a visualization of a sample input to the model. It's important to note that the model returns not only a single matrix with perceived orientations, but multiple ones, representing the state at different timesteps.
+
+
+\plottwofigures{input_random}{input_structure}{\bt{Visualization of sample input(output) to the model} (A) Random orientations. (B) All orientations from $0\degree$ to $180\degree$, for every $1.8\degree$.}{Sample input}
+
+For every orientation of the input (every bar in fig.\ref{input_random}), we have a stack of neurons tuned for different orientations. Fig.\ref{stacked_neurons3} illustrates this. The perceived orientation is affected from two factors. 
+
+First of all to detect a specific orientation, we have a stack of different neurons tuned for different orientations (fig.\ref{stacked_neurons3}, (A)). They all spike with different intensities and their collective response, forms the perceived orientation. 
+
+Secondly, every single orientation orientation in our visual field, has its own stack of neurons (fig.\ref{stacked_neurons3}, (B)). Based on all those neurons, we can get accurate information about all the orientations (the higher the number of neurons used, the more accurate the perceived orientation is).
+
+The complexity comes from the fact that the different 'stacks of neurons' are connected with the nearby stacks. Those connections and how they influence the perceived orientation in a dynamic setting is the main focus of experiments ran.
+
+\plottwofigures{stacked_neurons3}{stacked_neurons2}{\bt{Visualization of the orientation selective neurons and their relationship with the presented input.} (A) Presented orientation(left) and responses of the orientation selective neurons(right). The more saturated the color, the stronger the response is. The neurons will spike with higher intensity, depending on the difference of the presented orientation and their preferred orientations. All the responses are combined, giving the final perceived orientation. (B) Schematic representation of the input and orientation selective neurons. Every orientation bar has its own stack of orientation selective neurons (only the first few are shown).}{Overview of the model}
+
+\plottwofiguresS{stacked_neurons}{neuron2}{\bt{Two different visualizations of orientation selective neurons} A) Visualization of 6 neurons in a stack form B) 9 orientations in unrolled form. Both of the visualization are for purely illustrative purposes. Visualization A) is used to explain the general model, while visualization B) better explains the connections between the neurons.}{Stack of neurons}{.3}
+
+
+\section{Single orientation}
+
+First we implement a visual field with a single orientation. We have a couple of neurons responsible for detecting the orientation (fig.\ref{stacked_neurons}).
+
+As described in \cite{keemink2015unified}, we represent those responses as vectors, with direction their preferred orientation and magnitude, the strength of the response with respect to the stimuli. Summing those vectors gives us the perceived orientation. Although used for recording responses from different types of neurons, fig.\ref{populationCoding} shows how population coding works. Black vectors are neural activity from specific neurons, and the red vector is the sum of all those responses.
+
+Even at this small scale, some experiments (described later) can be run, which show the relation between number of orientation selective neurons used and the accuracy of the perceived orientation.
+
+\section{Two orientations} \label{twoorientations}
+
+Next we extend the model so we can feed two orientations and we have orientation selective neurons for the two orientations. We add recurrent connection between the neurons with the same preferred orientations, as showed in fig.\ref{neuron5}, (A), (B). This adds contextual modulation, as the perceived orientation of a single orientation in the visual field is influenced by the other one.
+
+The firing rate of the pairs of same orientation selective neurons in the two visual fields is calculated by the differential equations:
+
+\begin{equation}
+\label{model11}
+\tau_{syn}\cfrac{dr_{1}(t)}{dt}=-r_{1}(t)+in_{1}+w_{12}r_{2}
+\end{equation}
+
+
+\begin{equation}
+\label{model12}
+\tau_{syn}\cfrac{dr_{2}(t)}{dt}=-r_{2}(t)+in_{2}+w_{21}r_{1}
+\end{equation}
+
+where $\tau_{syn}$ is a constant, $\cfrac{dr_{1/2}(t)}{dt}$ is the change of the firing rate with respect to time, $r_{1/2}(t)$ is the current firing rate, $w_{12/21}$ is the strength between the neurons. $in_{1/2}$ is calculated from the tuning curve of the specific neuron for the  presented orientation. In our model we will use the von Mises function as in \cite{keemink2015unified}. The von Mises function has the following formula:
+
+\eq{A\exp(k\cos2(\alpha_{pref} - \alpha_{actual}))}
+
+
+The different values of $A$ and $k$ are again described in \cite{keemink2015unified}, but ultimately the function with the correct set of parameters gives us the similarly looking tuning curves as in fig.\ref{HubelWiesel}.
+
+Finally to calculate the perceived orientations in the visual field by adding all responses from each part of the visual field as vectors. The direction of a vector is the preferred orientation of the given neuron, and the length is the magnitude of the response. Since the preferred orientation are direction independent, they vary from $0$ to $\pi$. As described in \cite{keemink2015unified}, to ensure circularity, we multiply all the responses by $2$, add them together and divide them by $2$ at the end.
+
+\eq{\alpha_{perceived}=\cfrac{1}{2}\sum_{i}2\vec{r}_{i}}
+
+
+%\plottwofigures{neuron5}{neuron3}{\bt{Two orientations, with limited connectivity between neurons}}
+
+\section{Multiple orientations, limited connectivity}
+
+Next we extend the model, so we can have any number of orientations (fig.\ref{neuron1}). Every neuron (except the ones at the end at the visual field) is connected with the eight closest neurons, which have the same preferred orientation as his (fig.\ref{neuron1}). We can extend the formulas \ref{model11} and \ref{model12} to:
+
+\begin{equation}
+\tau_{syn}\cfrac{dr_{i}(t)}{dt}=-r_{i}(t)+in+\sum_{j} w_{ij}r_{j}
+\end{equation}
+
+ 
+\plotfigureS{neuron1}{\bt{Any number of orientations, with limited connectivity between neurons} *The connections for only one neuron are shown.}{Limited connectivity}{0.7}
+
+\section{Multiple orientations, full connectivity} \label{mult_model}
+The next modification we do, on single neuron level, is to add full connectivity between all the neurons. We set the weights depending on the closeness of the neurons to each other, as well as the similarity of their preferred orientation. To explain how we setup the weights, let use an example. Let's have a $10x10$ visual field with different orientations, as in fig.\ref{input_random} and $9$ orientations selective neurons. Unrolling the $10x10x9$ matrix, we have a vector of $900$ neurons all together. We can setup $900x900$ weight matrix defining the connections between the neurons. 
+
+Having some distance and the orientation constants as $\kappa_{distance}$ and $\kappa_{orientation}$, for every two neurons $l$ and $m$, we model the strength of the connection between them as:
+
+\eq{d=\sqrt{{(i_{l}-i_{m})}^{2}+{{(j_{l}-j_{m})}^{2}}}}
+
+\eq{\delta=min(mod(\alpha_{l}-\alpha_{m},1),mod(\alpha_{m}-\alpha_{l},1))}
+
+\eql{w_{i,j}=w_{j,i}=\kappa_{distance}\cfrac{1}{exp(d)} + \kappa_{orientation}\cfrac{1}{exp(\delta)}}{mult_model_formula}
+
+
+Based on the above equations we have the updating of the network as:
+
+\begin{equation}
+\tau_{syn}\cfrac{dr_{i}(t)}{dt}=-r_{i}(t)+in+\sum_{j=0}^{\#neurons}w_{ij}r_{j}
+\end{equation}
+
+We can vectorize our equation (and code), so we have:
+
+\begin{equation}
+\tau_{syn}\cfrac{dr_{i}(t)}{dt}=-r_{i}(t)+in+Wr
+\end{equation}
+
+The strength of the connection between every two neurons $l$ and $m$ is the same as the recurrent connection between $l$ and $m$, so the matrix is symmetric with respect to the main diagonal. The values along the main diagonals are $0$ (a neuron does not have a connection with itself). We can also notice the general trend of having highest values along the main diagonal and then smaller values the further away we go. This is true for different scales of our matrix - the full matrix (a), the first $100x100$ square (b) as well as the first $10x10$ square (c). The three different scales represent the change in orientation, horizontal and vertical position.
+
+
+
+\plotthreefigures{weight1}{weight2}{weight3}{Weight matrix for a full connectivity model. (A) Full weight matrix. (B) First 100 neurons. (C) First 10 neurons. (D) Scale of the values.}{Sample weight matrix}{1}
+
+\section{Elastica principle}
+
+The final part is implementing the elastica principle into the model. The only modification we have to do in comparison to the full connectivity model (sec.\ref{mult_model}) is change the equation calculating the weights, or the strength between respective neurons. In the previous model, we were setting based on the difference of the preferred orientations of the two neurons and the distance between them (eq.\ref{mult_model_formula}).
+
+
+
+
+
+
+\chapter{Implementation}
+
+This sections discusses the choice of programming languages and libraries, the benefits and challenges of using them and how they were addressed. During the implementations stages, I went through variety of changes, depending on the current stage of the project. First versions of visual fields, receptive fields, tuning curves and population coding were implemented. Next we implement a model of the input the orientation selective neurons in our V1 cortex receive and how the neurons respond to it. We gradually extend our model, to include more options for changing the connections between two neurons, as well as the form on the input. We use different tools for visualization and address some performance issues of simulating the model and running different experiments.
+
+
+\section{Initial choice of programming language}
+My first choice of programming language was Matlab. Matlab is a high-level scripting language, highly optimised for linear algebra operations. It is a well suited language for the purposes as it takes a lot of the complexity of memory management, parameter passing, multiple memory spaces, etc, of language like C++ has for example. As matrices and vectors additions and multiplications were the main bottle neck in this project, Matlab provided the necessary performance, while being simple and convenient to use. Moreover as most of the functions in Matlab can receive as an input a single number, vector or matrix, the model we built can be easily extended and tested for different configurations. Their integrated IDE with interpreter, standard debugging tools (breakpoints, continue, step in/out, etc.), workspace of current variables in scope, provided additional convenience in the initial stage of development.
+
+\section{Model implementation}
+I implemented versions of visual stimuli orientations selective neurons in V1 receive, tuning curves and population coding. The visual stimuli was implemented as a field of different bars (or edges, lines) of particular orientation, so a matrix with numbers from $0$ to $\pi$. The tuning curve of a particular neuron is defined as the spike activity when a particular orientation is presented, as a function of its preferred orientation. As mentioned in the previous section most of the functions in Matlab accept numbers, vectors and matrices as their arguments. This makes in particularly useful, as the function can be implemented for a single neuron, tested for expected output, and then the function can be used for vectors or matrices, when running more complicated experiments. As mentioned in the background section, we receive output from different orientation selective neurons  about a particular bar of orientation. We use population coding to add their responses to get the final, perceived orientation. We implement population coding by transforming the output of the neurons in vectors. The preferred orientation of every neuron is the direction of the vector, the magnitude of its spiking is the length of the vector. We add all the vectors together to get a new vector, which represents the perceived orientation. The final vector's length and direction represent respectively the magnitude orientation of the final perceived response. As the orientation bars vary from $0$ to $\pi$, we multiply by $2$ the direction of all the neurons, and divide the final direction by $2$, to ensure circularity.
+We gradually extended the form on the input from a single orientation bar, to two and multiple ones in a form of matrix. We also extend the modulation connections between different neurons. Along different implementations we take advantage of the optimized linear operations in Matlab, and we keep our code vectorized, rather than for loops (with the exception of simulating different time steps of interactions between neurons, as the next state depends on the previous one).
+
+\section{Change of development tools}
+As the work progressed it became clear that Matlab, may not be the best choice of programming language for the project. After running some initial experiments, issues started coming up, which lead to transition to different set of programming tools, which we used for the final experiments. In our model we have different orientations bars, with a group of orientation selective neurons spiking for each bar and influencing the spiking of nearby neurons. It is a high dimensional data, hard to visualize. Moreover as we have dynamic interactions, implement by a recurrent neural network, we have the above mentioned data for every time step of our simulation. As the project grew bigger, some of the disadvantages of the weak code organization of Matlab became apparent, making hard to keep all the code base well structured.
+
+After careful consideration I decide to rewrite the work I've done in Python taking advantage of libraries like Holoviews\cite{stevens2010holoviews}, Matplotlib\cite{hunter2007matplotlib} and Numpy. I also started using IPython notebooks\cite{shen2014interactive}. Although the transition process took a couple of weeks, it yield number of advantages outlined below.
+
+\textbf{Python}
+\begin{itemize}
+  \item Scalability - every function can be easily extended, by adding a new parameter and setting a default value, so it does not change the previous behaviour of the function
+  \item Compatibility - Python is compatible with number of useful libraries, some of which used are described below
+  \item Link to previous work - I took advantage of some of the code base of \cite{keemink2015unified}. In particular I used the methods for calculating and visualizing the elastica energy.
+\end{itemize}
+
+\textbf{Holoviews}
+\begin{itemize}
+	\item Interactive visualizations - building complex interactive visualization, with respect to any number of parameters. In case of our problem, we used it for visualization of perceived orientation with respect to time
+\end{itemize}
+
+\textbf{Matplotlib}
+\begin{itemize}
+	\item Main tool for static plots - although Holoviews provides some really advanced plotting capabilities, its API is sometimes complicated and tedious to use. Matplotlib is much widely used libraries with rich documentations and examples online.
+\end{itemize}
+
+\textbf{Numpy}
+\begin{itemize}
+	\item Numerical operations - Numpy provides number of mathematical operations as well as functions for matrices and vectors manipulation. In addition its syntax is almost identical to Matlab, speeding up the transition process.
+\end{itemize}
+
+\textbf{IPython Notebook}
+\begin{itemize}
+	\item Reproducible research - experiments can be specified and ran in a notebook. Results are shown under every experiment, also giving the option to run part or all of them again.
+	\item Documenting - support from markdown cells (in addition to the code cells for the experiments) with rich formatting, including support for LaTeX.
+\end{itemize}
+
+Using the above stack of software tools greatly improved not only the development process, but also conducting and documenting experiments.
+
+\section{Final model changes}
+After transitioning to Python I incorporated the elastica principle in my model. Give two orientations selective neurons, the elastica principle defines how strongly they should be connected, by calculating their elastica energy.
+
+I also extended my model to custom positions of the neurons, rather than the fixed matrix grid. Rather than calculating the locations of the orientations, based on their position in the matrix, one can use a $1xN$ vector to represent all the neurons orientations together with $2xN$ matrix to represent their locations. This allows us to reproduce most of the experiments in \cite{keemink2015unified}, in the dynamic setting of the model. For some of the bigger experiments we run, we also implement a torus for the connections between the neurons.
+
+
+\chapter{Experiments}
+
+
+
+
+
+
+In this section we discuss some experiments we performed to compare the static and dynamic models of the orientation selective neurons in the primary visual cortex. We begin by setting the equations of our network, explore the effect of different parameters, compare the results of the dynamic and passive model in different cases.
+
+\section{Model setup}
+
+Our model receives as an input a field of orientation bars and outputs the perceived orientations, as well as overall activity of the neurons for a given bar for every time step of the simulation. An example input and output(for the stable state of the network) can be in seen in fig.\ref{random_r}.
+
+\plottwofigures{random_r}{random_r_torus}{\bt{Visualization of input and output of the model.} (a) Input of the model, a field of orientated bars. (B) Perceived bars, the more saturated the color, the stronger the response from the neurons for that particular bar. Some bars also may have different orientation from the input.}{Sample input}
+
+As discussed in sec.\ref{twoorientations} given a certain a neuron with preferred orientation $\phi_{i}$ and presented orientation $\theta_{c}$, we modelled the activity by von Mises equation (eq.\ref{vonmiseseq}), which leads to a bell shaped curve of activity as seen in fig.\ref{simpleMises}.
+
+\eql{g(\phi_{i},\theta_{c})=A_{c}exp(k_{c}cos2[\phi_{i}-\theta_{c}])}{vonmiseseq}
+
+
+\plotfigureS{simpleMises}{\bt{Tuning curve.} Activity of a neuron with a preferred orientation 90° for different presented orientations}{Parallel illusion}{.5}
+
+We have a stack of orientation selective neurons tuned for different orientations, for every bar of our input. Their combined response (adding them as vectors, see sec.\ref{populationcoding} and sec.\ref{twoorientations}) gives the perceived orientation of the bar and the strength of the response. Fig.\ref{misesNumberNeurons} shows the population coding when we use different number of orientation selective neurons.
+
+\plottwofigures{misesNumberNeurons}{misesNumberNeurons2}{\bt{Effect on the population activity, for different number of orientation selective neurons} (a) Presented orientation is $90\degree$. (b) Presented orientation is $45\degree$ In our experiments we are going to use 32 orientation selective neurons per bar of the input.}{Sample input}
+
+In our experiments we will use a population coding of $N=32$. We can see that using $N=16$ and $N=32$ give almost the same curve. Moreover population coding with 32 neurons per bar was used in \cite{keemink2015unified} as well, which we use as a baseline to compare our dynamic model with.
+
+Finally fig.\ref{misesNumberA} shows the effect on the tuning curve of a neuron, for different values for $A_{c}$ and $k_{c}$. In our experiments we use $A_{c}=1$ and $k_{c}=1$. We can use any value for $A_{c}$, without loss of generality, as the number just specifies the strength of single neuron response. We use the same number for all neurons, so the overall effect does not change. When $k_{c}=1$, we get similar looking curve as in fig.\ref{HubelWiesel}. \cite{keemink2015unified} again uses the same number, which helps comparing the results from this report and the results presented in the paper.
+
+\plottwofigures{misesNumberA}{misesNumberB}{\bt{Effect of $A_{c}$ and $k_{c}$ on von Mises function} (a) $A_{c}$ controls the strength of the response. (b) $k_{c}$ controls the variance.}{Sample input}
+
+
+
+So far we described the activity of a neuron, assuming no modulation from nearby neurons. We will use the setup in fig.\ref{angles} to describe how we calculate the elastica modulation between different neurons and finally how put everything together in a final model.
+
+\plotfigureS{angles}{\bt{Two bars} Two bars and the corresponding angles between them used in different formulas. We will refer to the orange bar as center and the blue line as flanker. \cite{keemink2015unified}}{Parallel illusion}{.3}
+
+To find the elastica energy between the two bars, we have to measure the total curvature. One way to measure the total curvature is to integrate over the entire length of the curve and measure the relative angle at each position. However this method is computationally expensive. In this report we are going to use an approximation mentioned used \cite{keemink2015unified}, discovered by \cite{sharon2000completion} and \cite{leung1998contour}.
+
+We define $\theta_{c}$ as the orientation of the center, $\theta_{f}$ as the orientation of the flanker, $\phi_{f}$ the angle between the flanker and a vertical bar, $r_{f}$ as the distance between the center and flanker bar, $\beta_{c}=\phi_{f}-\theta_{c}$ and $\beta_{f}=\theta_{f}-\phi_{f}$. Then we have the elastica energy calculated according to eq.\ref{elasticaapproximation}.
+
+\eql{E(\theta_{c},\theta_{f},\phi_{f})\approx4(\beta_{c}^{2}+\beta_{f}^{2}-\beta_{c}\beta_{f})}{elasticaapproximation}
+
+Next we calculate the modulation term for a given center and flanker bar, according to eq.\ref{addh}. $E_{0}$ controls the excitation and inhibition ration of the modulation. $r_{f}$ scales the modulation based on distance between the two bars. $a$ is a constant modifying the strength of the modulation.
+
+
+
+\eql{h_{add}(\phi_{i},\theta_{f},\varphi_{f},r_{f})=-\cfrac{a}{r_{f}}(E(\phi_{i},\theta_{f},\varphi_{f})-E_{0})}{addh}
+
+
+In our experiments we use an additive model, the modulation from nearby neurons is added to the response of the current neuron. In comparison in a multiplicative model we multiply the response of a neuron by all modulation terms. Since the passive model described in \cite{keemink2015unified} uses a multiplicative model, it is important to first distinguish the differences between the two different ways of applying modulation. Sec.\ref{addvsmultmodel} goes in details showing that despite the different way of applying modulation, they have similar effect.
+
+Finally, eq.\ref{addm} shows the full equation of updating the response rate of a neuron.
+
+\eql{\tau\cfrac{dr_{i}(t)}{dt}=-r_{i}(t)+[g_{i}+\sum_{j}h_{add}(\phi_{i},\theta_{f}^{j},\varphi_{f}^{j},r_{f}^{j})r_{j}(t-1)]^{+}}{addm}
+
+The effect of the time constant $\tau$ as well as the update of the model for every time step are shown in sec.\ref{rnnsection}. In our experiments we use $\tau=6$. We take the positive value of $g_{i}+\sum_{j}h_{add}(\phi_{i},\theta_{f}^{j},\varphi_{f}^{j},r_{f}^{j})r_{j}(t-1)$ to prevent the response rate of a neuron below 0, which is impossible in a real neuron.
+
+
+
+Fig.\ref{explainEl1} gives further intuition about how the modulation between neurons works. In the first subfigure we visualize the full stack of orientation selective neurons for one location, and the orientation selective neuron for horizontal position for another location. The blue connections between the neurons show how strongly connected they are, based on the elastica principle. The more saturated the color the stronger connected they are. It's important to note that the strength of the connection is independent of the bars presented at the two locations.
+
+\plotfourfigures{explainEl1}{explainEl2}{explainEl3}{explainEl4}{\bt{Elastica principle, intuition for static and dynamic model} (a) Strength of the connection between a stack of neurons and nearby neuron tuned for horizontal position (the more saturated the color the stronger the connection) (b) Strength of the spiking of the stack when a bar is presented on the left (the thicker the bar, the stronger the spike) (c) Combined a and b (d) We have a stack of neurons for every bar in our model.}{1}
+
+In subfigure (b) we add bar stimulus for each location (center on the left and flanker on the right). We focus our attention to the bar on the left with its stack of neurons. The thicker a blue curve is, the stronger the response of a neuron is for the presented bar. This is defined by the already discussed von Mises function.
+
+Subfigure (c) combines the two concepts. The more saturated the curve, the stronger the connection between two neurons. The thicker the curve, the stronger the response rate of the neuron of the left. The plot gives us intuition which neurons influence each other the strongest, based on both the strength of the connection between them, but also their current firing rate. 
+
+Subfigures (a), (b) and (c) represent $h_{add}$, $r_{j}(t-1)$ and $h_{add}r_{j}(t-1)$ respectively in eq.\ref{addh}.
+
+Subfigure (d) illustrates the extension of our model in comparison to the model developed in \cite{keemink2015unified}. Instead of calculating the modulation directly from the presented bar, all the flankers bars have their own stack of neurons from which we calculate the effect. Moreover we let the flankers receive modulation themselves and leave the whole system to interact with respect to time.
+
+
+\section{Tilt effects}
+
+In this section we explore variety of tilt effects. In all of the experiments we have a similar setup of center bar and a number of flanker bars around it (fig.\ref{tiltexperiments}). The central bar (orange) stays fixed while we rotate and/or move the flankers (blue) around the center. We experiment with different number of flankers, vary their position and orientation around the center bar.
+
+\begin{figure}[H] \label{tiltexperiments}
+\caption{}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{fig5_B2}
+  \caption{}
+\end{subfigure}%
+\hfill
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{fig5_C2}
+  \caption{}
+\end{subfigure}
+\hfill
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{fig5_D2}
+  \caption{}
+\end{subfigure}%
+\hfill
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=0.5\linewidth]{fig5_F2}
+  \caption{}
+\end{subfigure}
+\floatfoot{Various tilt experiments. a) Vary the orientations of two horizontal flankers. b) Rotate the two flankers around the center bar. c) Vary the orientation of two vertical flankers d) Vary the orientation of six flanker arranged in a hexagon shape around a center bar}
+\end{figure}
+
+\subsection{Tilt effect 1}
+In this experiment we have a fixed center bar and two flankers, one on the left and one of the right of the center, varying their orientations. We examine the effect the two flankers have on the center bar, for different flanker orientations. The experiment setup can be seen in fig.\ref{fig5_B2}.
+\plotfigureS{fig5_B2}{Tilt Effect 1}{Tilt Effect 1}{0.3}
+\plotfigureS{matrix_b}{Weight matrix}{Weight Matrix 1}{0.5}
+(fix legend)
+\plotthreefigures{p_cen_b}{d_cen_b}{d_flan_b}{Experienced tilt illusions for different modulation constants. (a) Tilt illusion of the center bar for different flaker orientations. The experiment reproduced is from \cite{keemink2015unified}, fig.5, B (b) Tilt illusion of the center bar for different flanker orientations, in the dynamic model. (c) Tilt illusion of the flanker bars for different flanker orientations, in a dynamic model}{Experienced tilt illusions}{1}
+\subsection{Tilt effect 2}
+\plotfigureS{fig5_C2}{Tilt Effect 2}{Tilt Effect 2}{0.3}
+\plotthreefigures{p_cen_c}{d_cen_C}{d_flan_c}{Experienced tilt illusions for different modulation constants. (a) Tilt illusion of the center bar for different flaker orientations. The experiment reproduced is from \cite{keemink2015unified}, fig.5, C (b) Tilt illusion of the center bar for different flanker orientations, in the dynamic mode. (c) Tilt illusion of the flanker bars for different flanker orientations, in a dynamic model}{Experienced tilt illusions}{1}
+\subsection{Tilt effect 3}
+\plotfigureS{fig5_D2}{Tilt Effect 3}{Tilt Effect 3}{0.3}
+\plotthreefigures{p_cen_d}{d_cen_d}{d_flan_d}{Experienced tilt illusions for different modulation constants. (a) Tilt illusion of the center bar for different flaker orientations. The experiment reproduced is from \cite{keemink2015unified}, fig.5, D (b) Tilt illusion of the center bar for different flanker orientations, in the dynamic mode. (c) Tilt illusion of the flanker bars for different flanker orientations, in a dynamic model}{Experienced tilt illusions}{1}
+\subsection{Tilt effect 4}
+\plotfigureS{fig5_F2}{Tilt Effect 4}{Tilt Effect 4}{0.3}
+\plottwofigures{p_cen_f}{d_cen_f}{Experienced tilt illusions for different modulation constants. (a) Tilt illusion of the center bar for different flaker orientations. The experiment reproduced is from \cite{keemink2015unified}, fig.5, F (b) Tilt illusion of the center bar for different flanker orientations, in the dynamic mode. (c) Tilt illusion of the flanker bars for different flanker orientations, in a dynamic model}{Experienced tilt illusions}{1}
+
+\plotfiguresix{d_flan_f1}{d_flan_f2}{d_flan_f3}{d_flan_f4}{d_flan_f5}{d_flan_f6}{\bt{Additive and Multiplicative model} (a) Elastica energy (b) h, additive (c) h, multiplicative (d) Central drive (e) Final response for additive model (f) Final response for multiplicative model}{.49}{Additive and Multiplicative mode}
+
+\plottwofigures{p_cen_f3}{d_cen_f3}{Experienced tilt illusions for different modulation constants. (a) Tilt illusion of the center bar for different flaker orientations. The experiment reproduced is from \cite{keemink2015unified}, fig.5, F (b) Tilt illusion of the center bar for different flanker orientations, in the dynamic mode. (c) Tilt illusion of the flanker bars for different flanker orientations, in a dynamic model}{Experienced tilt illusions}{1}
+
+\plotfiguresix{d_flan_f13}{d_flan_f23}{d_flan_f33}{d_flan_f43}{d_flan_f53}{d_flan_f63}{\bt{Additive and Multiplicative model} (a) Elastica energy (b) h, additive (c) h, multiplicative (d) Central drive (e) Final response for additive model (f) Final response for multiplicative model}{.49}{Additive and Multiplicative mode}
+
+\plottwofigures{p_cen_f6}{d_cen_f6}{Experienced tilt illusions for different modulation constants. (a) Tilt illusion of the center bar for different flaker orientations. The experiment reproduced is from \cite{keemink2015unified}, fig.5, F (b) Tilt illusion of the center bar for different flanker orientations, in the dynamic mode. (c) Tilt illusion of the flanker bars for different flanker orientations, in a dynamic model}{Experienced tilt illusions}{1}
+
+\plotfiguresix{d_flan_f16}{d_flan_f26}{d_flan_f36}{d_flan_f46}{d_flan_f56}{d_flan_f66}{\bt{Additive and Multiplicative model} (a) Elastica energy (b) h, additive (c) h, multiplicative (d) Central drive (e) Final response for additive model (f) Final response for multiplicative model}{.49}{Additive and Multiplicative mode}
+
+
+
+\section{Pop out effects}
+
+
+\begin{figure}[H]
+\caption{}
+\begin{subfigure}{.33\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{bar}
+\end{subfigure}%
+\hfill
+\begin{subfigure}{.33\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{bar_without}
+\end{subfigure}
+\hfill
+\begin{subfigure}{.33\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{bar_torus}
+\end{subfigure}%
+\hfill
+\begin{subfigure}{.33\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{line}
+\end{subfigure}
+\hfill
+\begin{subfigure}{.33\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{line_without}
+\end{subfigure}%
+\hfill
+\begin{subfigure}{.33\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{line_torus}
+\end{subfigure}
+\hfill
+\begin{subfigure}{.33\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{random}
+\end{subfigure}%
+\hfill
+\begin{subfigure}{.33\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{random_without}
+\end{subfigure}%
+\hfill
+\begin{subfigure}{.33\textwidth}
+  \centering
+  \includegraphics[width=1\linewidth]{random_torus}
+\end{subfigure}
+\floatfoot{Pop out effect. First column input, second column connections without torus, third column torus}
+\end{figure}
+
+
+
+\section{Additive and Multiplicative model} \label{addvsmultmodel}
+
+
+\eql{h_{mul}(\phi_{i},\theta_{f},\varphi_{f},r_{f})=exp[-\cfrac{a}{r_{f}}(E(\phi_{i},\theta_{f},\varphi_{f})-E_{0})]}{mulh}
+
+\eql{h_{add}(\phi_{i},\theta_{f},\varphi_{f},r_{f})=-\cfrac{a}{r_{f}}(E(\phi_{i},\theta_{f},\varphi_{f})-E_{0})}{addh}
+
+\eql{\tau\cfrac{dr_{i}(t)}{dt}=-r_{i}(t)+[g_{i}+\sum_{j}h_{add}(\phi_{i},\theta_{f}^{j},\varphi_{f}^{j},r_{f}^{j})r_{j}(t-1)]^{+}}{addm}
+
+\eql{\tau\cfrac{dr_{i}(t)}{dt}=-r_{i}(t)+g_{i}\prod_{j}h_{mul}(\phi_{i},\theta_{f}^{j},\varphi_{f}^{j},r_{f}^{j})r_{j}(t-1)}{mulm}
+
+
+
+
+
+\plotfigureS{2bars}{Experiment setup. Left red bar - center, right red bar - flanker, black bars - orientation selective neurons, blue curves - elastica curves. The position of the center bar is encoded by n orientation selective neurons. The modulation from the flanker is directly calculated from the orientation of the flanker bar, rather than through encoding it with orientation selective neurons. The more saturated the color, the stronger the connection between the orientation selective neuron and the flanker (not dependant on the presented center orientation). The wider the curve, the stronger the response of that neuron (dependent on the presented center orientation.}{Two bars setup}{0.5}
+\plotfiguresix{el_ener}{h_add}{h_mul}{cen}{ad_comb}{mul_comb}{\bt{Additive and Multiplicative model} (a) Elastica energy (b) h, additive (c) h, multiplicative (d) Central drive (e) Final response for additive model (f) Final response for multiplicative model}{.49}{Additive and Multiplicative mode}
+\plotfigure{ADD_vs_MULT}{Additive vs Multiplicative model. Although the tilt effects happen at different orientations and the strength of modulation is different, the change in the effect as we vary the flanker orientation is similar.}{AdMp}
+
+\section{Recurrent Neural Network} \label{rnnsection}
+
+First we explore a simple network with only one neuron. The neuron receives a certain excitation ($in$). The speed with which the neuron changes it's response, depends on the contant $\tau_{syn}$ (the smaller $\tau_{syn}$, the slower the change). We setup the simple recurrent neural network below.
+
+\eq{\tau_{syn}\frac{dr(t)}{dt}=-r(t)+in}
+
+So every time step the change in the rate of the neuron is:
+
+\eq{\frac{dr(t)}{dt}=\cfrac{-r(t)+in}{\tau_{syn}}}
+
+\plotfigureS{simple}{The lines do not seem parallel, when it reality they are \cite{vision-computation}}{Simple RNN}{.5}
+
+Go in more details and show the first few steps of calculations of $\frac{dr(t)}{dt}$. $\tau_{syn}$ changes how fast the neuron goes to the stable state.
+
+\chapter{Evaluation}
+
+\chapter{Timeline}
+\begin{figure}
+\caption{}
+\begin{tikzpicture}[timespan={}]
+
+
+% timespan={Day} -> now we have days as reference
+% timespan={}    -> no label is displayed for the timespan
+% default timespan is 'Week'%
+
+\timeline[custom interval=true]{May, Jun, Jul, Aug, Sep, Nov, Oct, Dec, Jan, Feb, Mar}
+% \timeline[custom interval=true]{3,...,9} -> i.e., from Day 3 to Day 9
+% \timeline{8} -> i.e., from Week 1 to Week 8
+
+
+% put here the phases
+\begin{phases}
+\initialphase{involvement degree=4.75cm,phase color=black}
+\phase{between week=5 and 7 in 0.7,involvement degree=4cm, phase color=black}
+\phase{between week=7 and 9 in 0.7,involvement degree=2cm, phase color=black}
+\phase{between week=5 and 9 in 0.7,involvement degree=4cm, phase color=green}
+\phase{between week=9 and 11 in 0.1,involvement degree=2.25cm}
+\phase{between week=8 and 11 in 0.7,involvement degree=2.25cm ,phase color=blue!80!cyan}
+\end{phases}
+
+% put here the milestones
+\addmilestone{at=phase-0.180,direction=90:1cm,text={Project allocation},text options={above}}
+\addmilestone{at=phase-0.270,direction=270:1cm,text={Sensory Systems (MIT OpenCourseWare)},text options={below}}
+
+\addmilestone{at=phase-1.130,direction=130:2cm,text={Literature review},text options={above}}
+\addmilestone{at=phase-1.230,direction=230:1.7cm,text={Neural Computation},text options={below}}
+\addmilestone{at=phase-1.290,direction=290:2cm,text={Machine Learning Practical},text options={below}}
+
+\addmilestone{at=phase-2.100,direction=100:3cm,text={More literature review},text options={above}}
+\addmilestone{at=phase-2.310,direction=310:3cm,text={Neural Information Processing},text options={below}}
+
+\addmilestone{at=phase-3.170,direction=170:1cm,text={Started working on Matlab implementation},text options={above}}
+\addmilestone{at=phase-3.140,direction=140:1cm,text={Visual fields},text options={above}}
+\addmilestone{at=phase-3.120,direction=120:1cm,text={Tuning curves},text options={above}}
+\addmilestone{at=phase-3.90,direction=90:1cm,text={Population coding},text options={above}}
+\addmilestone{at=phase-3.60,direction=60:1cm,text={Simple Dynamics},text options={above}}
+\addmilestone{at=phase-3.30,direction=30:1.5cm,text={Dynamics with weight matrix},text options={above}}
+\addmilestone{at=phase-3.270,direction=270:0.5cm,text={Python implementation},text options={below}}
+\addmilestone{at=phase-3.300,direction=300:0.5cm,text={Elastica principle},text options={below}}
+
+\addmilestone{at=phase-4.120,direction=120:0.3cm,text={Matlab experiments},text options={above}}
+\addmilestone{at=phase-4.310,direction=310:0.3cm,text={Python experiments},text options={below}}
+
+\addmilestone{at=phase-5.140,direction=140:0.34cm,text={Interim report},text options={above}}
+\addmilestone{at=phase-5.50,direction=50:0.34cm,text={Write},text options={above}}
+\addmilestone{at=phase-5.330,direction=330:0.34cm,text={Write},text options={below}}
+\addmilestone{at=phase-5.20,direction=20:1cm,text={Final write up},text options={above}}
+
+\end{tikzpicture}
+\label{timeline}
+\floatfoot{\bt{Timeline of the project}\\\textcolor{gray}{Research}\\\textcolor{green}{Implementation}\\\textcolor{yellow}{Experiments}\\\textcolor{blue}{Write up}}
+\end{figure}
+
+Fig.\ref{timeline} illustrates the work I have done so far and my plan until end of march, when the final deadline for the report is. After the project was allocated to me, I spend some time during the summer watching online courses on neuroscience and sensory systems.
+
+Beginning of the year, I took Neural Computation to get even more background. I started implementing all the necessary parts, in order to simulate the model - visual fields, tuning curves, population coding, etc. Afterwards I started implementing dynamics in the system, gradually extending the model. In my final model, I assume full connectivity between all the neurons. The connection at first are modeled based on the distance and difference in preferred orientations between them. My next goal is to incorporate the elastica principle into my model. 
+
+At first I opted to use Matlab, as I had some experience with it. However with time, as I added some complexity to my model, I realized Matlab is not the base choice for the project. I decided to switch to Python, using Notebooks and Holoviews. Notebooks are a lot better way for structuring the code and write up at the same time. Holoviews was the other main reason, as it provides advanced plotting capabilities on multidimensional data, which is really viable when visualizing the output of recurrent neural networks for different time steps.
+
+
+\chapter{Conclusions}
+
+% use the following and \cite{} as above if you use BibTeX
+% otherwise generate bibtem entries
+\bibliographystyle{plain}
+\bibliography{mybib}
+
+\end{document}

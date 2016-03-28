@@ -1,7 +1,7 @@
 \input{base.tex}
 \begin{document}
 
-\title{Visual illusions and interactions in biologically inspired neural networks. Analyzing perception of tilt}
+\title{Dynamic model of interactions of orientation selective neurons in primary visual cortex}
 
 \author{Martin Andreev Asenov}
 
@@ -130,14 +130,11 @@ Visual field is the area we can see with our eyes. The information undergo a var
 
 \plotfigureS{visual_fields}{Perceiving a line from the retina to LGN cells and then by V1 orientation selective cells.\cite{receptive-fields}}{Visual Field}{.5}
 
-Precisely how this information is processed is the main interest of this project. While at a retinal and LGN level, most of the transformations are low-level, V1 starts to extract some patterns. We don't only detect single orientations for different parts of our visual field. Nearby orientations can influence each other. 
-
-(to rewrite)
-Nearby orientations of the orientations useful for the high level visual processing happening in V2, V3, V4, V5 and V6. 
+Precisely how this information is processed is the main interest of this project. While at a retinal and LGN level, most of the transformations are local, V1 starts to extract some patterns. We don't only detect single orientations for different parts of our visual field. Closely located bars with similar angles can influence each other. These extracted patterns are useful for the high level visual processing happening in V2, V3, V4, V5 and V6. 
 
 mention visual stimuli
 
-Finally it is also worth mentioning that we see in different details in different parts of our visual fields. Most of the information we perceive is close to the central or foveal vision, which could lead to interesting behavior \cite{knight2008drastically}. A small part of our retina, known as 'blind spot', does not have any photoreceptors. Our brain compensates the lack of information by fulfilling details from nearby observations. Both of those details could lead to change in behavior in our model, however we will ignore this details in our experiments.
+Finally it is also worth mentioning that we see in different details in different parts of our visual fields. More neural activity is dedicated to foveal (central vision) than ourside fovea, which could lead to interesting behavior \cite{knight2008drastically}. A small part of our retina, known as 'blind spot', does not have any photoreceptors. Our brain compensates the lack of information by fulfill in details from nearby observations. Both of those details could change behavior in our model, however we will ignore this details in our experiments.
 
 \plotfigure{RetinotopicMapping}{\bt{Central and peripheral vision}\cite{retinotopic-mapping} Substantial number of the cells in the retina are devoted to only a small part of our visual field, or central vision. Although relevant to the project, we will ignore this detail, for the benefit of simpler model}{Central and peripheral vision}
 
@@ -396,21 +393,36 @@ Finally, eq.\ref{addm} shows the full equation of updating the response rate of 
 
 \eql{\tau\cfrac{dr_{i}(t)}{dt}=-r_{i}(t)+[g_{i}+\sum_{j}h_{add}(\phi_{i},\theta_{f}^{j},\varphi_{f}^{j},r_{f}^{j})r_{j}(t-1)]^{+}}{addm}
 
-The effect of the time constant $\tau$ as well as the update of the model for every time step are shown in sec.\ref{rnnsection}. In our experiments we use $\tau=6$. We take the positive value of $g_{i}+\sum_{j}h_{add}(\phi_{i},\theta_{f}^{j},\varphi_{f}^{j},r_{f}^{j})r_{j}(t-1)$ to prevent the response rate of a neuron below 0, which is impossible.
+The effect of the time constant $\tau$ as well as the update of the model for every time step are shown in sec.\ref{rnnsection}. In our experiments we use $\tau=6$. We take the positive value of $g_{i}+\sum_{j}h_{add}(\phi_{i},\theta_{f}^{j},\varphi_{f}^{j},r_{f}^{j})r_{j}(t-1)$ to prevent the response rate of a neuron below 0, which is impossible in a real neuron.
 
 
 
+Fig.\ref{explainEl1} gives further intuition about how the modulation between neurons works. In the first subfigure we visualize the full stack of orientation selective neurons for one location, and the orientation selective neuron for horizontal position for another location. The blue connections between the neurons show how strongly connected they are, based on the elastica principle. The more saturated the color the stronger connected they are. It's important to note that the strength of the connection is independent of the bars presented at the two locations.
 
+\plotfourfigures{explainEl1}{explainEl2}{explainEl3}{explainEl4}{\bt{Elastica principle, intuition for static and dynamic model} (a) Strength of the connection between a stack of neurons and nearby neuron tuned for horizontal position (the more saturated the color the stronger the connection) (b) Strength of the spiking of the stack when a bar is presented on the left (the thicker the bar, the stronger the spike) (c) Combined a and b (d) We have a stack of neurons for every bar in our model.}{1}
 
-\section{Static vs Dynamic models}
+In subfigure (b) we add bar stimulus for each location (center on the left and flanker on the right). We focus our attention to the bar on the left with its stack of neurons. The thicker a blue curve is, the stronger the response of a neuron is for the presented bar. This is defined by the already discussed von Mises function.
 
-In this section we compare the dynamic model developed in this report to the static model in \cite{keemink2015unified}, in the context of different tilt illusions, pop out effects and contour extraction.
+Subfigure (c) combines the two concepts. The more saturated the curve, the stronger the connection between two neurons. The thicker the curve, the stronger the response rate of the neuron of the left. The plot gives us intuition which neurons influence each other the strongest, based on both the strength of the connection between them, but also their current firing rate. 
 
-\section{Tilt effects}
+Subfigures (a), (b) and (c) represent $h_{add}$, $r_{j}(t-1)$ and $h_{add}r_{j}(t-1)$ respectively in eq.\ref{addh}.
 
-In this section we explore variety of tilt effects. In all of the experiments we have a similar setup of center bar and a number of flanker bars around it. We experiment with different number of flankers, vary their position and orientation around the center bar.
+Subfigure (d) illustrates the extension of our model in comparison to the model developed in \cite{keemink2015unified}. Instead of calculating the modulation directly from the presented bar, all the flankers bars have their own stack of neurons from which we calculate the effect. Moreover we let the flankers receive modulation themselves and leave the whole system to interact with respect to time.
 
-\begin{figure}[H]
+Finally it is important to note the effect on different values of different parameters. Although the additive model is not linear (eq.\ref{addh}), the non linearity has little quantitative effect. The sum of the central drive and all modulation from nearby flankers, usually does not go below $0$. For the purpose of exploring the behavior of the model for smaller set of varying parameters, we will assume a linear system. 
+
+The elastica modulation $h_{add}$ has two free parameters, $E0$ (excitation/inhibition ratio) and $a$ (strength of the modulation). As described in \cite{keemink2015unified} $E0$ has no effect on the tilt illusions, pop out effects and contour extraction as we measure only relative changes in the response of the neurons. 
+
+The central drive of a neuron, modeled by the von Mises function (eq.\ref{vonmiseseq}), has two free parameters as well, $k_{c}$ (variance) and $A_{c}$ (strength of the response). Similarly $A_{c}$ has no relative effect on the effect on the experiments we perform below.
+
+Finally changing the number of orientation selective neurons per bar has no qualitative effect. The central drive and modulation is distributed over more neurons, but overall flow of activity remains the same.
+
+In our experiments we will focus on how the strength of the modulation and the variance of the central drive affect the experienced effects.
+\section{Tilt illusions}
+
+In this section we explore variety of tilt effects. In all of the experiments we have a similar setup of center bar and a number of flanker bars around it (fig.\ref{tiltexperiments}). The central bar (orange) stays fixed while we rotate and/or move the flankers (blue) around the center. We experiment with different number of flankers, vary their position and orientation around the center bar.
+
+\begin{figure}[H] \label{tiltexperiments}
 \caption{}
 \begin{subfigure}{.5\textwidth}
   \centering
@@ -435,14 +447,41 @@ In this section we explore variety of tilt effects. In all of the experiments we
   \includegraphics[width=0.5\linewidth]{fig5_F2}
   \caption{}
 \end{subfigure}
-\floatfoot{Various tile experiments. a) Vary the orientations of two horizontal flankers. b) Rotate the two flankers around the center bar. c) Vary the orientation of two vertical flankers d) Vary the orientation }
+\floatfoot{Various tilt experiments. a) Vary the orientations of two horizontal flankers. b) Rotate the two flankers around the center bar. c) Vary the orientation of two vertical flankers d) Vary the orientation of six flanker arranged in a hexagon shape around a center bar}
 \end{figure}
 
 \subsection{Tilt effect 1}
+In this experiment we have a fixed center bar and two flankers, one on the left and one of the right of the center, varying their orientations. We examine the effect the two flankers have on the center bar, for different flanker orientations. The experiment setup can be seen in fig.\ref{fig5_B2}.
 \plotfigureS{fig5_B2}{Tilt Effect 1}{Tilt Effect 1}{0.3}
-\plotfigureS{matrix_b}{Weight matrix}{Weight Matrix 1}{0.5}
-(fix legend)
-\plotthreefigures{p_cen_b}{d_cen_b}{d_flan_b}{Experienced tilt illusions for different modulation constants. (a) Tilt illusion of the center bar for different flaker orientations. The experiment reproduced is from \cite{keemink2015unified}, fig.5, B (b) Tilt illusion of the center bar for different flanker orientations, in the dynamic mode. (c) Tilt illusion of the flanker bars for different flanker orientations, in a dynamic model}{Experienced tilt illusions}{1}
+
+Visualizing the weight matrix of the strength of connections between different neurons gives further intuition of modulation between different locations. The matrix specifies the connectivity between every orientation selective neuron tuned for different orientation ($0\degree to 180\degree$) and location (left flanker, center bar, right flanker). The connectivity can be seen in fig.\ref{matrix_b}.
+
+\plotfigureS{matrix_b}{\bt{Weight matrix}}{Weight Matrix 1}{0.5}
+
+We note a couple of things. First of all we don't have any connections between orientation selective neurons responsible for the same location. The two flankers are overall more weakly connected due to the bigger distance between them.
+
+We perform experiments with two variations of the weight matrix. We can ignore the feedback connection from the center bar back to the flankers, as well as the connections between the flankers themselves. In the second variation, we still assume full connectivity between the neurons, but we strongly connect the two flankers as well. The result matrices can be seen in fig.\ref{matrix_b_nomod}.
+
+\plottwofigures{matrix_b_nomod}{matrix_b_torus}{\bt{Variations of the weight matrix} (a) No recurrent connections back to the flankers (b) Assuming the three bars line on a circle rather than on a line, then the distance between any of them is the same}{1}
+
+
+The first experiment we run we set the variance of the tuning curve of every neuron, $k_{c}$, to $1$ and the strength of the modulation to $1$. We also set $E0=4$, population coding of $N=32$ neurons, strength of the response $A_{c}=1$, but as already discussed those values have little or no effect on our model.
+
+We vary the orientations of the two flankers (the two of them always keep the same orientation, we vary them simultaneously). We plot the results as a function of different flanker orientations and we run multiple experiments for different distances between the bars (we change the $r_{f}$ parameter). The results can be seen in fig.\ref{p_cen_b}.
+
+\plotthreefigures{p_cen_b}{d_cen_b}{d_flan_b}{\bt{Experienced tilt illusions for different flanker orientations} (a) Tilt illusion of the center bar. The experiment is reproduced based on \cite{keemink2015unified}. (b) Tilt illusion of the center bar, in the dynamic model. (c) Tilt illusion of the flanker bars, in a dynamic model.}{Experienced tilt illusions}{1}
+
+Here again we note a couple of things. First of all due to the different nature of the models (calculating the modulation directly from the nearby bar, or through it's orientation selective neurons), we can't have the same value for the strength of the modulation. Instead what we do, is set the modulation strength in the passive model, we vary the modulation in the dynamic model, until the strength of the response is similar. In this particular experiment we use $a=0.1$ for the passive model and $a=\cfrac{0.1}{16}$ for the dynamic one.
+
+The dynamic model we described here, changes with respect to time. What we have showed is the stable state that the system eventually settle into (after $50$ time steps). Since we have full connectivity we can also see the experienced effect in the flankers, hence the extra sub plot for the dynamic model. Since our model is direction independent, the two flankers experience the same effect.
+
+
+It is useful to also explore the dynamics of the system, how the response of the neurons vary with respect to time. In fig.\ref{responseB} we show the change of the orientation selective neurons for center bar, magnitude of the overall activity and change in orientation with respect to time. We notice the gradual change of the magnitude of the neurons' responses, as well as the gradual shift in their response, based on nearby modulation. 
+
+\plotthreefigures{responseB}{tilt_time_b}{mag_time_b}{\bt{Change in perceived orientation and magnitude of the response, with respect to time.} (For this particular experiment both flankers have orientation $135\degree$, $r_{f}=6$) (a) Population coding of the center bar for different time steps. (b) Change in perceived orientation. (c) Change in the magnitude of the response.}{Experienced tilt illusions}{1}
+
+(more experiments for with the different weight matrices, values of $a$
+
 \subsection{Tilt effect 2}
 \plotfigureS{fig5_C2}{Tilt Effect 2}{Tilt Effect 2}{0.3}
 \plotthreefigures{p_cen_c}{d_cen_C}{d_flan_c}{Experienced tilt illusions for different modulation constants. (a) Tilt illusion of the center bar for different flaker orientations. The experiment reproduced is from \cite{keemink2015unified}, fig.5, C (b) Tilt illusion of the center bar for different flanker orientations, in the dynamic mode. (c) Tilt illusion of the flanker bars for different flanker orientations, in a dynamic model}{Experienced tilt illusions}{1}
@@ -465,7 +504,7 @@ In this section we explore variety of tilt effects. In all of the experiments we
 
 
 
-\section{Pop out effects}
+\section{Pop out effects and contour extraction}
 
 
 \begin{figure}[H]
@@ -519,44 +558,35 @@ In this section we explore variety of tilt effects. In all of the experiments we
 
 
 
-\section{Additive and Multiplicative model} \label{addvsmultmodel}
+\section{Additive and Multiplicative rules} \label{addvsmultmodel}
 
-
-\eql{h_{mul}(\phi_{i},\theta_{f},\varphi_{f},r_{f})=exp[-\cfrac{a}{r_{f}}(E(\phi_{i},\theta_{f},\varphi_{f})-E_{0})]}{mulh}
+In this section we compare two models of applying modulation from nearby neurons. Using additive rile, we add all the modulation terms to the central drive of the neuron as seen in eq.\ref{addh} and eq.\ref{addm}. 
 
 \eql{h_{add}(\phi_{i},\theta_{f},\varphi_{f},r_{f})=-\cfrac{a}{r_{f}}(E(\phi_{i},\theta_{f},\varphi_{f})-E_{0})}{addh}
 
 \eql{\tau\cfrac{dr_{i}(t)}{dt}=-r_{i}(t)+[g_{i}+\sum_{j}h_{add}(\phi_{i},\theta_{f}^{j},\varphi_{f}^{j},r_{f}^{j})r_{j}(t-1)]^{+}}{addm}
 
+Using multiplicative rule, we multiply the central drive by all modulation terms.
+
+\eql{h_{mul}(\phi_{i},\theta_{f},\varphi_{f},r_{f})=exp[-\cfrac{a}{r_{f}}(E(\phi_{i},\theta_{f},\varphi_{f})-E_{0})]}{mulh}
+
 \eql{\tau\cfrac{dr_{i}(t)}{dt}=-r_{i}(t)+g_{i}\prod_{j}h_{mul}(\phi_{i},\theta_{f}^{j},\varphi_{f}^{j},r_{f}^{j})r_{j}(t-1)}{mulm}
 
-\begin{figure}[H]
-\caption{}
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=1\linewidth]{explainEl1}
-\end{subfigure}%
-\hfill
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=1\linewidth]{explainEl2}
-\end{subfigure}
-\hfill
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=1\linewidth]{explainEl3}
-\end{subfigure}%
-\hfill
-\begin{subfigure}{.5\textwidth}
-  \centering
-  \includegraphics[width=1\linewidth]{explainEl4}
-\end{subfigure}
-\floatfoot{(Still figuring out how to make the plot clearer. Pop out effect. First column input, second column connections without torus, third column torus}
-\end{figure}
+It is important to analyze the differences between the two as this report implements the additive rule and we compare our results with \cite{keemink2015unified}, which uses multiplicative rule. We use the setup shown in fig.\ref{2bars} to compare the two models. We have a center bar (on the left), which orientation is encoded by number of orientation selective neurons. We also have a flanker bar (on the right) which affects the center bar. In this experiment we calculate the modulation between the flanker and center bar, directly rather than using neurons for the flanker bar as well. We also don't use a dynamic model. 
 
-\plotfigureS{2bars}{Experiment setup. Left red bar - center, right red bar - flanker, black bars - orientation selective neurons, blue curves - elastica curves. The position of the center bar is encoded by n orientation selective neurons. The modulation from the flanker is directly calculated from the orientation of the flanker bar, rather than through encoding it with orientation selective neurons. The more saturated the color, the stronger the connection between the orientation selective neuron and the flanker (not dependant on the presented center orientation). The wider the curve, the stronger the response of that neuron (dependent on the presented center orientation.}{Two bars setup}{0.5}
-\plotfiguresix{el_ener}{h_add}{h_mul}{cen}{ad_comb}{mul_comb}{\bt{Additive and Multiplicative model} (a) Elastica energy (b) h, additive (c) h, multiplicative (d) Central drive (e) Final response for additive model (f) Final response for multiplicative model}{.49}{Additive and Multiplicative mode}
-\plotfigure{ADD_vs_MULT}{Additive vs Multiplicative model. Although the tilt effects happen at different orientations and the strength of modulation is different, the change in the effect as we vary the flanker orientation is similar.}{AdMp}
+
+
+\plotfigureS{2bars}{\bt{Experiment setup.} Left red bar - center, right red bar - flanker, black bars - orientation selective neurons, blue curves - elastica curves. The position of the center bar is encoded by n orientation selective neurons. The modulation from the flanker is directly calculated from the orientation of the flanker bar, rather than through encoding it with orientation selective neurons. The more saturated the color, the stronger the connection between the orientation selective neuron and the flanker (not dependant on the presented center orientation). The wider the curve, the stronger the response of that neuron (dependent on the presented center orientation).}{Two bars setup}{0.5}
+
+Fig.\ref{el_ener} shows the different steps of calculating the modulation for the additive and multiplicative rules. We noticed that the final curves of neurons activity look quite different. However we also notice that the shift in response overall similar - the curve has shifted up and to the left. The population coding of the neurons actually will show similar tilt in the perceived orientation. 
+
+\plotfiguresix{el_ener}{h_add}{h_mul}{cen}{ad_comb}{mul_comb}{\bt{Additive and Multiplicative model} (center bar orientation is $\cfrac{\pi}{4}$, flanker bar orientation is $\cfrac{\pi}{2}$) (a) Elastica energy (b) h, additive (c) h, multiplicative (d) Central drive (e) Final response for additive model (f) Final response for multiplicative model}{.49}{Additive and Multiplicative mode}
+
+Finally to measure the differences between the two rules as we vary the orientation of the flanker bar. We record the change in the perceived orientation after we do population coding, compared to the presented one. The results are summarized in fig.\ref{ADD_vs_MULT}.
+
+\plotfigure{ADD_vs_MULT}{\bt{Additive vs Multiplicative rules for different flanker orientations.} (center bar orientation is $\cfrac{\pi}{4}$) Although the tilt effects happen at different orientations and the strength of modulation is different, the change in the effect as we vary the flanker orientation is similar.}{AdMp}
+
+As we can see the models (at least in a static model) are not that different. This helped us compare the dynamic and passive models. We opted to use the additive rule, as it is easier to be implemented efficiently in a dynamic model. However the combined responses, of the central drive and modulation, still look quite differently. The two rules had almost the same effect in a passive model. However as we use orientation selective neurons for every bar, and let the neurons interact dynamically, the difference in the shifted tuning curves, could lead to significant changes.
 
 \section{Recurrent Neural Network} \label{rnnsection}
 

@@ -1,34 +1,33 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2015.9.10)  27 MAR 2016 20:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Arch Linux) (preloaded format=pdflatex 2015.11.16)  28 MAR 2016 14:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **skeleton.tex
 (./skeleton.tex
-LaTeX2e <2011/06/27>
-Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, lo
-aded.
+LaTeX2e <2015/10/01> patch level 2
+Babel <3.9m> and hyphenation patterns for 79 languages loaded.
 (./base.tex (./styles/infthesis.cls
 
 LaTeX Warning: You have requested document class `styles/infthesis',
                but the document class provides `infthesis'.
 
 Document Class: infthesis 2011/02/02 v3.5 School of Informatics Thesis Class
-(/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/share/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/ifvtex.sty
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+(/usr/share/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \Gm@cnth=\count79
@@ -44,45 +43,44 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen109
 \Gm@dimlist=\toks15
 )
-(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+(/usr/share/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+(/usr/share/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+(/usr/share/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+(/usr/share/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: pdftex.def on input line 91.
+Package graphics Info: Driver file: pdftex.def on input line 94.
 
-(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/share/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count82
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
-Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
-)
-(./styles/logos/eushield.sty
+(/usr/share/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+) (./styles/logos/eushield.sty
 
 LaTeX Warning: You have requested package `styles/logos/eushield',
                but the package provides `eushield'.
 
 Package: eushield 2006/08/28\ v1.1\ Commands for including the EU shield graphi
 c
-) (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
-Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+) (/usr/share/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count83
 \c@chapter=\count84
@@ -97,15 +95,16 @@ File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen110
 )
-(/usr/share/texlive/texmf-dist/tex/latex/sectsty/sectsty.sty
+(/usr/share/texmf-dist/tex/latex/sectsty/sectsty.sty
 Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading sty
 les
 )
-(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2013/02/03 v3.3-65 Customizing captions (AR)
+(/usr/share/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2015/09/17 v3.3-111 Customizing captions (AR)
 
-(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2013/02/03 v1.5-62 caption3 kernel (AR)
+(/usr/share/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2015/09/20 v1.7-115 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
 \captionmargin=\dimen111
 \captionmargin@=\dimen112
 \captionwidth=\dimen113
@@ -116,83 +115,87 @@ Package: caption3 2013/02/03 v1.5-62 caption3 kernel (AR)
 )
 \c@ContinuedFloat=\count92
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
+(/usr/share/texmf-dist/tex/latex/parskip/parskip.sty
 Package: parskip 2001/04/09 non-zero parskip adjustments
 )
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+(/usr/share/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
 \pgfutil@everybye=\toks16
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@tempdima=\dimen118
+\pgfutil@tempdimb=\dimen119
+
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex))
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
 \pgfutil@abb=\box26
 
-(/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
+(/usr/share/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
-Package: pgfrcs 2010/10/25 v2.10 (rcs-revision 1.24)
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
 ))
-Package: pgf 2008/01/15 v2.10 (rcs-revision 1.12)
+Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
 
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
-\Gin@req@height=\dimen118
-\Gin@req@width=\dimen119
+(/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+\Gin@req@height=\dimen120
+\Gin@req@width=\dimen121
 )
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
-Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
+(/usr/share/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
 
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
 \pgfkeys@pathtoks=\toks17
 \pgfkeys@temptoks=\toks18
 
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
-ex
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
 \pgfkeys@tmptoks=\toks19
 ))
-\pgf@x=\dimen120
-\pgf@y=\dimen121
-\pgf@xa=\dimen122
-\pgf@ya=\dimen123
-\pgf@xb=\dimen124
-\pgf@yb=\dimen125
-\pgf@xc=\dimen126
-\pgf@yc=\dimen127
+\pgf@x=\dimen122
+\pgf@y=\dimen123
+\pgf@xa=\dimen124
+\pgf@ya=\dimen125
+\pgf@xb=\dimen126
+\pgf@yb=\dimen127
+\pgf@xc=\dimen128
+\pgf@yc=\dimen129
 \w@pgf@writea=\write3
 \r@pgf@reada=\read1
 \c@pgf@counta=\count93
 \c@pgf@countb=\count94
 \c@pgf@countc=\count95
 \c@pgf@countd=\count96
- (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+\t@pgf@toka=\toks20
+\t@pgf@tokb=\toks21
+\t@pgf@tokc=\toks22
+
+(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
 )
-Package pgfsys Info: Driver file for pgf: pgfsys-pdftex.def on input line 900.
+Driver file for pgf: pgfsys-pdftex.def
 
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
-File: pgfsys-pdftex.def 2009/05/22  (rcs-revision 1.26)
+(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2014/10/11  (rcs-revision 1.35)
 
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
-f
-File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
+(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 )))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
-tex
-File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
+(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
 \pgfsyssoftpath@smallbuffer@items=\count97
 \pgfsyssoftpath@bigbuffer@items=\count98
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
-tex
+(/usr/share/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
-)) (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+))
+(/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+(/usr/share/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -206,221 +209,205 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
-Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
 
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen128
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen130
 \pgfmath@count=\count99
 \pgfmath@box=\box27
-\pgfmath@toks=\toks20
-\pgfmath@stack@operand=\toks21
-\pgfmath@stack@operation=\toks22
+\pgfmath@toks=\toks23
+\pgfmath@stack@operand=\toks24
+\pgfmath@stack@operation=\toks25
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code
 .tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
-ric.code.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
-e.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
-.code.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
-tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
-.tex)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
-tex)))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.te
+x) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics
+.code.tex))) (/usr/share/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count100
-))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
-x
-File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
-\pgf@picminx=\dimen129
-\pgf@picmaxx=\dimen130
-\pgf@picminy=\dimen131
-\pgf@picmaxy=\dimen132
-\pgf@pathminx=\dimen133
-\pgf@pathmaxx=\dimen134
-\pgf@pathminy=\dimen135
-\pgf@pathmaxy=\dimen136
-\pgf@xx=\dimen137
-\pgf@xy=\dimen138
-\pgf@yx=\dimen139
-\pgf@yy=\dimen140
-\pgf@zx=\dimen141
-\pgf@zy=\dimen142
+)) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
+\pgf@picminx=\dimen131
+\pgf@picmaxx=\dimen132
+\pgf@picminy=\dimen133
+\pgf@picmaxy=\dimen134
+\pgf@pathminx=\dimen135
+\pgf@pathmaxx=\dimen136
+\pgf@pathminy=\dimen137
+\pgf@pathmaxy=\dimen138
+\pgf@xx=\dimen139
+\pgf@xy=\dimen140
+\pgf@yx=\dimen141
+\pgf@yy=\dimen142
+\pgf@zx=\dimen143
+\pgf@zy=\dimen144
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
-code.tex
-File: pgfcorepathconstruct.code.tex 2010/08/03  (rcs-revision 1.24)
-\pgf@path@lastx=\dimen143
-\pgf@path@lasty=\dimen144
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
+\pgf@path@lastx=\dimen145
+\pgf@path@lasty=\dimen146
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
+\pgf@shorten@end@additional=\dimen147
+\pgf@shorten@start@additional=\dimen148
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
-.tex
-File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
-\pgf@shorten@end@additional=\dimen145
-\pgf@shorten@start@additional=\dimen146
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
-x
-File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
 \pgfpic=\box28
 \pgf@hbox=\box29
 \pgf@layerbox@main=\box30
 \pgf@picture@serial@count=\count101
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
-ode.tex
-File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
-\pgflinewidth=\dimen147
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
+\pgflinewidth=\dimen149
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
-s.code.tex
-File: pgfcoretransformations.code.tex 2009/06/10  (rcs-revision 1.11)
-\pgf@pt@x=\dimen148
-\pgf@pt@y=\dimen149
-\pgf@pt@temp=\dimen150
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.t
+ex
+File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
+\pgf@pt@x=\dimen150
+\pgf@pt@y=\dimen151
+\pgf@pt@temp=\dimen152
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
-ex
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
 File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
-.code.tex
-File: pgfcorepathprocessing.code.tex 2008/10/09  (rcs-revision 1.8)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.te
 x
-File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
+File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
+\pgfarrowsep=\dimen153
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
-File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
-\pgf@max=\dimen151
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
+\pgf@max=\dimen154
 \pgf@sys@shading@range@num=\count102
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
-File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
 
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
-tex
-File: pgfcoreexternal.code.tex 2010/09/01  (rcs-revision 1.17)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
 \pgfexternal@startupbox=\box31
 ))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
-x
-File: pgfcorelayers.code.tex 2010/08/27  (rcs-revision 1.2)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
-ode.tex
-File: pgfcoretransparency.code.tex 2008/01/17  (rcs-revision 1.2)
-)
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
-tex
-File: pgfcorepatterns.code.tex 2009/07/02  (rcs-revision 1.3)
+(/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
+) (/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
 )))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
-File: pgfmoduleshapes.code.tex 2010/09/09  (rcs-revision 1.13)
+(/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
 \pgfnodeparttextbox=\box32
-) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
-File: pgfmoduleplot.code.tex 2010/10/22  (rcs-revision 1.8)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
-.sty
-Package: pgfcomp-version-0-65 2007/07/03 v2.10 (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen152
-\pgf@nodesepend=\dimen153
+(/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
-.sty
-Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
-)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
-(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
-Package: pgffor 2010/03/23 v2.10 (rcs-revision 1.18)
-\pgffor@iter=\dimen154
-\pgffor@skip=\dimen155
-\pgffor@stack=\toks23
-\pgffor@toks=\toks24
+(/usr/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen155
+\pgf@nodesepend=\dimen156
+)
+(/usr/share/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
 ))
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
-Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
+(/usr/share/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/share/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
 
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
-.code.tex
-File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
+(/usr/share/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen157
+\pgffor@skip=\dimen158
+\pgffor@stack=\toks26
+\pgffor@toks=\toks27
+))
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
+
+(/usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.te
+x
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \pgf@plot@mark@count=\count103
-\pgfplotmarksize=\dimen156
+\pgfplotmarksize=\dimen159
 )
-\tikz@lastx=\dimen157
-\tikz@lasty=\dimen158
-\tikz@lastxsaved=\dimen159
-\tikz@lastysaved=\dimen160
-\tikzleveldistance=\dimen161
-\tikzsiblingdistance=\dimen162
+\tikz@lastx=\dimen160
+\tikz@lasty=\dimen161
+\tikz@lastxsaved=\dimen162
+\tikz@lastysaved=\dimen163
+\tikzleveldistance=\dimen164
+\tikzsiblingdistance=\dimen165
 \tikz@figbox=\box33
-\tikz@tempbox=\box34
+\tikz@figbox@bg=\box34
+\tikz@tempbox=\box35
+\tikz@tempbox@bg=\box36
 \tikztreelevel=\count104
 \tikznumberofchildren=\count105
 \tikznumberofcurrentchild=\count106
 \tikz@fig@count=\count107
-
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
-File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
+ (/usr/share/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
 \pgfmatrixcurrentrow=\count108
 \pgfmatrixcurrentcolumn=\count109
 \pgf@matrix@numberofcolumns=\count110
 )
 \tikz@expandcount=\count111
 
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
-zlibrarytopaths.code.tex
-File: tikzlibrarytopaths.code.tex 2008/06/17 v2.10 (rcs-revision 1.2)
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+topaths.code.tex
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
 ))) (./tikzlibrarytimeline.code.tex
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
-zlibrarybackgrounds.code.tex
-File: tikzlibrarybackgrounds.code.tex 2010/02/08 v2.10 (rcs-revision 1.2)
-\pgf@layerbox@background=\box35
-\pgf@layerboxsaved@background=\box36
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+backgrounds.code.tex
+File: tikzlibrarybackgrounds.code.tex 2013/07/18 v3.0.1a (rcs-revision 1.3)
+\pgf@layerbox@background=\box37
+\pgf@layerboxsaved@background=\box38
 )
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
-zlibrarycalc.code.tex
-File: tikzlibrarycalc.code.tex 2009/09/04 v2.10 (rcs-revision 1.6)
+(/usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary
+calc.code.tex
+File: tikzlibrarycalc.code.tex 2013/07/15 v3.0.1a (rcs-revision 1.9)
 )
 \c@involv=\count112
+) (/usr/share/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-(/usr/share/texlive/texmf-local/texmf-compat/tex/latex/latex2html/url.sty
-Package: url 1999/03/02  ver 1.4  Verb mode for urls, email addresses, and file
- names
-)
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+(/usr/share/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+(/usr/share/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks25
-\ex@=\dimen163
+\@emptytoks=\toks28
+\ex@=\dimen166
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+(/usr/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
-\pmbraise@=\dimen164
+\pmbraise@=\dimen167
 )
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+(/usr/share/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count113
@@ -433,55 +420,55 @@ LaTeX Info: Redefining \overline on input line 306.
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
-\Mathstrutbox@=\box37
-\strutbox@=\box38
-\big@size=\dimen165
+\Mathstrutbox@=\box39
+\strutbox@=\box40
+\big@size=\dimen168
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \macc@depth=\count118
 \c@MaxMatrixCols=\count119
-\dotsspace@=\muskip10
+\dotsspace@=\muskip11
 \c@parentequation=\count120
 \dspbrk@lvl=\count121
-\tag@help=\toks26
+\tag@help=\toks29
 \row@=\count122
 \column@=\count123
 \maxfields@=\count124
-\andhelp@=\toks27
-\eqnshift@=\dimen166
-\alignsep@=\dimen167
-\tagshift@=\dimen168
-\tagwidth@=\dimen169
-\totwidth@=\dimen170
-\lineht@=\dimen171
-\@envbody=\toks28
+\andhelp@=\toks30
+\eqnshift@=\dimen169
+\alignsep@=\dimen170
+\tagshift@=\dimen171
+\tagwidth@=\dimen172
+\totwidth@=\dimen173
+\lineht@=\dimen174
+\@envbody=\toks31
 \multlinegap=\skip44
 \multlinetaggap=\skip45
-\mathdisplay@stack=\toks29
+\mathdisplay@stack=\toks32
 LaTeX Info: Redefining \[ on input line 2665.
 LaTeX Info: Redefining \] on input line 2666.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
-Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
+(/usr/share/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2015/09/15 v1.1-100 Sub-captions (AR)
 \c@subfigure=\count125
 \c@subtable=\count126
 )
-(/usr/share/texlive/texmf-dist/tex/latex/was/gensymb.sty
+(/usr/share/texmf-dist/tex/latex/was/gensymb.sty
 Package: gensymb 2003/07/02 v1.0 (WaS)
 ) (./floatrow.sty
 Package: floatrow 2008/08/02 v0.3b floatrow: float package extension
 \c@float@type=\count127
-\float@exts=\toks30
-\float@box=\box39
-\@floatcapt=\box40
+\float@exts=\toks33
+\float@box=\box41
+\@floatcapt=\box42
 Package floatrow Info: Modified float package code loaded on input line 455.
 Package floatrow Info: Modified rotfloat package code loaded on input line 473.
 
-\FR@everyfloat=\toks31
-\flrow@foot=\insert233
-\FB@wd=\dimen172
-\FBo@wd=\dimen173
-\FBc@wd=\dimen174
+\FR@everyfloat=\toks34
+\flrow@foot=\insert199
+\FB@wd=\dimen175
+\FBo@wd=\dimen176
+\FBc@wd=\dimen177
 \FBo@ht=\skip46
 \FBc@ht=\skip47
 \FBf@ht=\skip48
@@ -496,15 +483,15 @@ Package floatrow Info: Modified rotfloat package code loaded on input line 473.
 \sXhsize=\skip53
 \Zhsize=\skip54
 \sZhsize=\skip55
-\flrow@rowbox=\box41
-\FR@Zunitlength=\dimen175
+\flrow@rowbox=\box43
+\FR@Zunitlength=\dimen178
 \c@FBcnt=\count132
 \FPOScnt=\count133
 \LTleft=\skip56
 \LTright=\skip57
 \LTleft=\skip58
 \LTright=\skip59
-\flrow@types=\toks32
+\flrow@types=\toks35
 ))
 (./skeleton.aux
 
@@ -563,24 +550,24 @@ LaTeX Font Info:    ... okay on input line 2.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+(/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count134
-\scratchdimen=\dimen176
-\scratchbox=\box42
+\scratchdimen=\dimen179
+\scratchbox=\box44
 \nofMPsegments=\count135
 \nofMParguments=\count136
-\everyMPshowfont=\toks33
+\everyMPshowfont=\toks36
 \MPscratchCnt=\count137
-\MPscratchDim=\dimen177
+\MPscratchDim=\dimen180
 \MPnumerator=\count138
 \makeMPintoPDFobject=\count139
-\everyMPtoPDFconversion=\toks34
-) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+\everyMPtoPDFconversion=\toks37
+) (/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
@@ -589,22 +576,22 @@ Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(/usr/share/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+(/usr/share/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
 Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+(/usr/share/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
 Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/etexcmds.sty
 Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
@@ -616,11 +603,12 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
 
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+(/usr/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: floatrow package is loaded.
 Package caption Info: float package is loaded.
 Package caption Info: floatrow package is loaded.
 Package caption Info: End \AtBeginDocument code.
@@ -646,8 +634,8 @@ Package pdftex.def Info: styles/logos/eushield-normal.pdf used on input line 53
 (pdftex.def)             Requested size: 369.37909pt x 373.39409pt.
  [1
 
-{/usr/share/texlive/texmf/fonts/map/pdftex/updmap/pdftex.map} <./styles/logos/e
-ushield-normal.pdf>] [2
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./styles/logos/eushield-no
+rmal.pdf>] [2
 
 ]
 Underfull \vbox (badness 1721) has occurred while \output is active []
@@ -725,8 +713,8 @@ elasticap/el3.png> <./Pictures/elasticap/el4.png> <./Pictures/elasticap/el5.png
 > <./Pictures/elasticap/el6.png>]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 95.
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+(/usr/share/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 95.
@@ -780,7 +768,7 @@ File: Pictures/background/RetinotopicMapping.png Graphic file (type png)
 
 <use Pictures/background/RetinotopicMapping.png>
 Package pdftex.def Info: Pictures/background/RetinotopicMapping.png used on inp
-ut line 142.
+ut line 139.
 (pdftex.def)             Requested size: 330.05322pt x 394.48924pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -791,7 +779,7 @@ notopicMapping.png>] <Pictures/background/F4large.jpg, id=99, 1716.4125pt x 180
 File: Pictures/background/F4large.jpg Graphic file (type jpg)
 
 <use Pictures/background/F4large.jpg>
-Package pdftex.def Info: Pictures/background/F4large.jpg used on input line 152
+Package pdftex.def Info: Pictures/background/F4large.jpg used on input line 149
 .
 (pdftex.def)             Requested size: 206.28249pt x 217.13147pt.
  [20 <./Pictures/background/F4large.jpg>]
@@ -800,14 +788,14 @@ File: Pictures/background/HubelWiesel.jpg Graphic file (type jpg)
 
 <use Pictures/background/HubelWiesel.jpg>
 Package pdftex.def Info: Pictures/background/HubelWiesel.jpg used on input line
- 158.
+ 155.
 (pdftex.def)             Requested size: 330.05322pt x 247.5398pt.
 
 <populationCoding.png, id=104, 626.34pt x 606.265pt>
 File: populationCoding.png Graphic file (type png)
 
 <use populationCoding.png>
-Package pdftex.def Info: populationCoding.png used on input line 165.
+Package pdftex.def Info: populationCoding.png used on input line 162.
 (pdftex.def)             Requested size: 330.05322pt x 319.48724pt.
 
 Underfull \vbox (badness 1845) has occurred while \output is active []
@@ -822,7 +810,7 @@ File: Pictures/models/input_random.png Graphic file (type png)
 
 <use Pictures/models/input_random.png>
 Package pdftex.def Info: Pictures/models/input_random.png used on input line 18
-5.
+2.
 (pdftex.def)             Requested size: 165.02661pt x 165.02237pt.
 
 <Pictures/models/input_structure.png, id=119, 1027.84pt x 1027.84pt>
@@ -830,7 +818,7 @@ File: Pictures/models/input_structure.png Graphic file (type png)
 
 <use Pictures/models/input_structure.png>
 Package pdftex.def Info: Pictures/models/input_structure.png used on input line
- 185.
+ 182.
 (pdftex.def)             Requested size: 165.02661pt x 165.02237pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -841,7 +829,7 @@ File: Pictures/models/stacked_neurons3.png Graphic file (type png)
 
 <use Pictures/models/stacked_neurons3.png>
 Package pdftex.def Info: Pictures/models/stacked_neurons3.png used on input lin
-e 195.
+e 192.
 (pdftex.def)             Requested size: 165.02661pt x 182.74115pt.
 
 <Pictures/models/stacked_neurons2.png, id=125, 1047.915pt x 1174.3875pt>
@@ -849,7 +837,7 @@ File: Pictures/models/stacked_neurons2.png Graphic file (type png)
 
 <use Pictures/models/stacked_neurons2.png>
 Package pdftex.def Info: Pictures/models/stacked_neurons2.png used on input lin
-e 195.
+e 192.
 (pdftex.def)             Requested size: 165.02661pt x 184.93117pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -861,26 +849,26 @@ File: Pictures/models/stacked_neurons.png Graphic file (type png)
 
 <use Pictures/models/stacked_neurons.png>
 Package pdftex.def Info: Pictures/models/stacked_neurons.png used on input line
- 197.
+ 194.
 (pdftex.def)             Requested size: 61.88536pt x 126.69629pt.
 
 <Pictures/models/neuron2.png, id=132, 250.9375pt x 250.9375pt>
 File: Pictures/models/neuron2.png Graphic file (type png)
 
 <use Pictures/models/neuron2.png>
-Package pdftex.def Info: Pictures/models/neuron2.png used on input line 197.
+Package pdftex.def Info: Pictures/models/neuron2.png used on input line 194.
 (pdftex.def)             Requested size: 61.88536pt x 61.88417pt.
  [27 <./Pictures/models/stacked_neurons3.png> <./Pictures/models/stacked_neuron
 s2.png> <./Pictures/models/stacked_neurons.png> <./Pictures/models/neuron2.png>
 ]
 
-LaTeX Warning: Reference `neuron5' on page 28 undefined on input line 210.
+LaTeX Warning: Reference `neuron5' on page 28 undefined on input line 207.
 
 [28] <Pictures/models/neuron1.png, id=145, 756.8275pt x 754.82pt>
 File: Pictures/models/neuron1.png Graphic file (type png)
 
 <use Pictures/models/neuron1.png>
-Package pdftex.def Info: Pictures/models/neuron1.png used on input line 248.
+Package pdftex.def Info: Pictures/models/neuron1.png used on input line 245.
 (pdftex.def)             Requested size: 288.79422pt x 288.03241pt.
 
 Underfull \vbox (badness 7522) has occurred while \output is active []
@@ -891,21 +879,21 @@ Underfull \vbox (badness 7522) has occurred while \output is active []
 File: Pictures/models/weight1.jpg Graphic file (type jpg)
 
 <use Pictures/models/weight1.jpg>
-Package pdftex.def Info: Pictures/models/weight1.jpg used on input line 278.
+Package pdftex.def Info: Pictures/models/weight1.jpg used on input line 275.
 (pdftex.def)             Requested size: 136.14719pt x 102.09627pt.
 
 <Pictures/models/weight2.jpg, id=155, 4015.0pt x 3011.25pt>
 File: Pictures/models/weight2.jpg Graphic file (type jpg)
 
 <use Pictures/models/weight2.jpg>
-Package pdftex.def Info: Pictures/models/weight2.jpg used on input line 278.
+Package pdftex.def Info: Pictures/models/weight2.jpg used on input line 275.
 (pdftex.def)             Requested size: 136.14719pt x 102.09627pt.
 
 <Pictures/models/weight3.jpg, id=156, 4015.0pt x 3011.25pt>
 File: Pictures/models/weight3.jpg Graphic file (type jpg)
 
 <use Pictures/models/weight3.jpg>
-Package pdftex.def Info: Pictures/models/weight3.jpg used on input line 278.
+Package pdftex.def Info: Pictures/models/weight3.jpg used on input line 275.
 (pdftex.def)             Requested size: 136.14719pt x 102.09627pt.
  [31 <./Pictures/models/weight1.jpg> <./Pictures/models/weight2.jpg> <./Picture
 s/models/weight3.jpg>] [32]
@@ -923,7 +911,7 @@ File: Pictures/experiments/fig7/random_r.png Graphic file (type png)
 
 <use Pictures/experiments/fig7/random_r.png>
 Package pdftex.def Info: Pictures/experiments/fig7/random_r.png used on input l
-ine 355.
+ine 352.
 (pdftex.def)             Requested size: 165.02661pt x 165.03195pt.
 
 <Pictures/experiments/fig7/random_r_torus.png, id=177, 215.80624pt x 215.80624p
@@ -931,7 +919,7 @@ t>
 File: Pictures/experiments/fig7/random_r_torus.png Graphic file (type png)
  <use Pictures/experiments/fig7/random_r_torus.png>
 Package pdftex.def Info: Pictures/experiments/fig7/random_r_torus.png used on i
-nput line 355.
+nput line 352.
 (pdftex.def)             Requested size: 165.02661pt x 165.03195pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -944,7 +932,7 @@ File: Pictures/experiments/basics/simpleMises.png Graphic file (type png)
 
 <use Pictures/experiments/basics/simpleMises.png>
 Package pdftex.def Info: Pictures/experiments/basics/simpleMises.png used on in
-put line 362.
+put line 359.
 (pdftex.def)             Requested size: 206.28249pt x 147.4524pt.
 Missing character: There is no ¬ in font cmr12!
 Missing character: There is no ∞ in font cmr12!
@@ -958,7 +946,7 @@ File: Pictures/experiments/basics/misesNumberNeurons.png Graphic file (type png
 )
  <use Pictures/experiments/basics/misesNumberNeurons.png>
 Package pdftex.def Info: Pictures/experiments/basics/misesNumberNeurons.png use
-d on input line 366.
+d on input line 363.
 (pdftex.def)             Requested size: 165.02661pt x 117.96278pt.
 
 <Pictures/experiments/basics/misesNumberNeurons2.png, id=190, 400.3758pt x 286.
@@ -967,21 +955,21 @@ File: Pictures/experiments/basics/misesNumberNeurons2.png Graphic file (type pn
 g)
  <use Pictures/experiments/basics/misesNumberNeurons2.png>
 Package pdftex.def Info: Pictures/experiments/basics/misesNumberNeurons2.png us
-ed on input line 366.
+ed on input line 363.
 (pdftex.def)             Requested size: 165.02661pt x 117.96278pt.
 
 <Pictures/experiments/basics/misesNumberA.png, id=191, 400.3758pt x 286.1892pt>
 File: Pictures/experiments/basics/misesNumberA.png Graphic file (type png)
 <use Pictures/experiments/basics/misesNumberA.png>
 Package pdftex.def Info: Pictures/experiments/basics/misesNumberA.png used on i
-nput line 372.
+nput line 369.
 (pdftex.def)             Requested size: 165.02661pt x 117.96278pt.
 
 <Pictures/experiments/basics/misesNumberB.png, id=192, 400.3758pt x 286.1892pt>
 File: Pictures/experiments/basics/misesNumberB.png Graphic file (type png)
 <use Pictures/experiments/basics/misesNumberB.png>
 Package pdftex.def Info: Pictures/experiments/basics/misesNumberB.png used on i
-nput line 372.
+nput line 369.
 (pdftex.def)             Requested size: 165.02661pt x 117.96278pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -992,600 +980,652 @@ ents/basics/misesNumberNeurons2.png>]
 File: Pictures/experiments/angles.png Graphic file (type png)
 
 <use Pictures/experiments/angles.png>
-Package pdftex.def Info: Pictures/experiments/angles.png used on input line 378
+Package pdftex.def Info: Pictures/experiments/angles.png used on input line 375
 .
 (pdftex.def)             Requested size: 123.77074pt x 147.6668pt.
  [40 <./Pictures/experiments/basics/misesNumberA.png> <./Pictures/experiments/b
-asics/misesNumberB.png> <./Pictures/experiments/angles.png>] [41]
-<Pictures/experiments/fig5/fig5_B2.png, id=208, 317.185pt x 317.185pt>
+asics/misesNumberB.png> <./Pictures/experiments/angles.png>]
+<Pictures/experiments/elastica2/explainEl1.png, id=205, 317.185pt x 317.185pt>
+File: Pictures/experiments/elastica2/explainEl1.png Graphic file (type png)
+
+<use Pictures/experiments/elastica2/explainEl1.png>
+Package pdftex.def Info: Pictures/experiments/elastica2/explainEl1.png used on 
+input line 402.
+(pdftex.def)             Requested size: 206.28249pt x 206.28879pt.
+
+<Pictures/experiments/elastica2/explainEl2.png, id=206, 317.185pt x 317.185pt>
+File: Pictures/experiments/elastica2/explainEl2.png Graphic file (type png)
+
+<use Pictures/experiments/elastica2/explainEl2.png>
+Package pdftex.def Info: Pictures/experiments/elastica2/explainEl2.png used on 
+input line 402.
+(pdftex.def)             Requested size: 206.28249pt x 206.28879pt.
+
+<Pictures/experiments/elastica2/explainEl3.png, id=207, 317.185pt x 317.185pt>
+File: Pictures/experiments/elastica2/explainEl3.png Graphic file (type png)
+
+<use Pictures/experiments/elastica2/explainEl3.png>
+Package pdftex.def Info: Pictures/experiments/elastica2/explainEl3.png used on 
+input line 402.
+(pdftex.def)             Requested size: 206.28249pt x 206.28879pt.
+
+<Pictures/experiments/elastica2/explainEl4.png, id=208, 317.185pt x 317.185pt>
+File: Pictures/experiments/elastica2/explainEl4.png Graphic file (type png)
+
+<use Pictures/experiments/elastica2/explainEl4.png>
+Package pdftex.def Info: Pictures/experiments/elastica2/explainEl4.png used on 
+input line 402.
+(pdftex.def)             Requested size: 206.28249pt x 206.28879pt.
+ [41] [42 <./Pictures/experiments/elastica2/explainEl1.png> <./Pictures/experim
+ents/elastica2/explainEl2.png> <./Pictures/experiments/elastica2/explainEl3.png
+> <./Pictures/experiments/elastica2/explainEl4.png>]
+
+Package caption Warning: \label without proper \caption on input line 425.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `tiltexperiments' on page 43 undefined on input line 4
+23.
+
+[43] <Pictures/experiments/fig5/fig5_B2.png, id=223, 317.185pt x 317.185pt>
 File: Pictures/experiments/fig5/fig5_B2.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/fig5_B2.png>
 Package pdftex.def Info: Pictures/experiments/fig5/fig5_B2.png used on input li
-ne 417.
+ne 429.
 (pdftex.def)             Requested size: 103.14124pt x 103.14197pt.
 
-<Pictures/experiments/fig5/fig5_C2.png, id=209, 317.185pt x 317.185pt>
+<Pictures/experiments/fig5/fig5_C2.png, id=224, 317.185pt x 317.185pt>
 File: Pictures/experiments/fig5/fig5_C2.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/fig5_C2.png>
 Package pdftex.def Info: Pictures/experiments/fig5/fig5_C2.png used on input li
-ne 423.
+ne 435.
 (pdftex.def)             Requested size: 103.14124pt x 103.14197pt.
 
-<Pictures/experiments/fig5/fig5_D2.png, id=210, 317.185pt x 317.185pt>
+<Pictures/experiments/fig5/fig5_D2.png, id=225, 317.185pt x 317.185pt>
 File: Pictures/experiments/fig5/fig5_D2.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/fig5_D2.png>
 Package pdftex.def Info: Pictures/experiments/fig5/fig5_D2.png used on input li
-ne 429.
+ne 441.
 (pdftex.def)             Requested size: 103.14124pt x 103.14197pt.
 
-<Pictures/experiments/fig5/fig5_F2.png, id=211, 317.185pt x 317.185pt>
+<Pictures/experiments/fig5/fig5_F2.png, id=226, 317.185pt x 317.185pt>
 File: Pictures/experiments/fig5/fig5_F2.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/fig5_F2.png>
 Package pdftex.def Info: Pictures/experiments/fig5/fig5_F2.png used on input li
-ne 435.
+ne 447.
 (pdftex.def)             Requested size: 103.14124pt x 103.14197pt.
 File: Pictures/experiments/fig5/fig5_B2.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/fig5_B2.png>
 Package pdftex.def Info: Pictures/experiments/fig5/fig5_B2.png used on input li
-ne 442.
+ne 455.
 (pdftex.def)             Requested size: 123.77074pt x 123.7694pt.
 
-<Pictures/experiments/fig5/figB/matrix_b.png, id=212, 1294.71706pt x 946.0143pt
->
-File: Pictures/experiments/fig5/figB/matrix_b.png Graphic file (type png)
- <use Pictures/experiments/fig5/figB/matrix_b.png>
-Package pdftex.def Info: Pictures/experiments/fig5/figB/matrix_b.png used on in
-put line 443.
-(pdftex.def)             Requested size: 206.28249pt x 150.7158pt.
+Underfull \vbox (badness 1502) has occurred while \output is active []
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [42 <./Pictures/experiments/fig5/fig5_B2.png> <./Pictures/experiments/fig5/fig
+ [44 <./Pictures/experiments/fig5/fig5_B2.png> <./Pictures/experiments/fig5/fig
 5_C2.png> <./Pictures/experiments/fig5/fig5_D2.png> <./Pictures/experiments/fig
 5/fig5_F2.png>]
-<Pictures/experiments/fig5/figB/p_cen_b.png, id=220, 406.1574pt x 278.60085pt>
+<Pictures/experiments/fig5/figB/matrix_b.png, id=234, 400.3758pt x 286.1892pt>
+File: Pictures/experiments/fig5/figB/matrix_b.png Graphic file (type png)
+
+<use Pictures/experiments/fig5/figB/matrix_b.png>
+Package pdftex.def Info: Pictures/experiments/fig5/figB/matrix_b.png used on in
+put line 459.
+(pdftex.def)             Requested size: 206.28249pt x 147.4524pt.
+
+<Pictures/experiments/fig5/figB/matrix_b_nomod.png, id=235, 400.3758pt x 286.18
+92pt>
+File: Pictures/experiments/fig5/figB/matrix_b_nomod.png Graphic file (type png)
+
+ <use Pictures/experiments/fig5/figB/matrix_b_nomod.png>
+Package pdftex.def Info: Pictures/experiments/fig5/figB/matrix_b_nomod.png used
+ on input line 465.
+(pdftex.def)             Requested size: 165.02661pt x 117.96278pt.
+
+<Pictures/experiments/fig5/figB/matrix_b_torus.png, id=236, 400.3758pt x 286.18
+92pt>
+File: Pictures/experiments/fig5/figB/matrix_b_torus.png Graphic file (type png)
+
+ <use Pictures/experiments/fig5/figB/matrix_b_torus.png>
+Package pdftex.def Info: Pictures/experiments/fig5/figB/matrix_b_torus.png used
+ on input line 465.
+(pdftex.def)             Requested size: 165.02661pt x 117.96278pt.
+ [45 <./Pictures/experiments/fig5/figB/matrix_b.png>]
+<Pictures/experiments/fig5/figB/p_cen_b.png, id=241, 405.79605pt x 281.1303pt>
 File: Pictures/experiments/fig5/figB/p_cen_b.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/figB/p_cen_b.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figB/p_cen_b.png used on inp
-ut line 445.
-(pdftex.def)             Requested size: 136.14719pt x 93.38817pt.
+ut line 472.
+(pdftex.def)             Requested size: 136.14719pt x 94.32185pt.
 
-<Pictures/experiments/fig5/figB/d_cen_b.png, id=221, 424.2249pt x 286.1892pt>
+<Pictures/experiments/fig5/figB/d_cen_b.png, id=242, 392.4261pt x 288.71864pt>
 File: Pictures/experiments/fig5/figB/d_cen_b.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/figB/d_cen_b.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figB/d_cen_b.png used on inp
-ut line 445.
-(pdftex.def)             Requested size: 136.14719pt x 91.84442pt.
+ut line 472.
+(pdftex.def)             Requested size: 136.14719pt x 100.16753pt.
 
-<Pictures/experiments/fig5/figB/d_flan_b.png, id=222, 406.1574pt x 278.60085pt>
+<Pictures/experiments/fig5/figB/d_flan_b.png, id=243, 405.79605pt x 288.71864pt
+>
 File: Pictures/experiments/fig5/figB/d_flan_b.png Graphic file (type png)
-<use Pictures/experiments/fig5/figB/d_flan_b.png>
+ <use Pictures/experiments/fig5/figB/d_flan_b.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figB/d_flan_b.png used on in
-put line 445.
-(pdftex.def)             Requested size: 136.14719pt x 93.38817pt.
+put line 472.
+(pdftex.def)             Requested size: 136.14719pt x 96.86781pt.
+ [46 <./Pictures/experiments/fig5/figB/matrix_b_nomod.png> <./Pictures/experime
+nts/fig5/figB/matrix_b_torus.png> <./Pictures/experiments/fig5/figB/p_cen_b.png
+> <./Pictures/experiments/fig5/figB/d_cen_b.png> <./Pictures/experiments/fig5/f
+igB/d_flan_b.png>]
+<Pictures/experiments/fig5/figB/responseB.png, id=252, 400.3758pt x 286.1892pt>
+File: Pictures/experiments/fig5/figB/responseB.png Graphic file (type png)
+<use Pictures/experiments/fig5/figB/responseB.png>
+Package pdftex.def Info: Pictures/experiments/fig5/figB/responseB.png used on i
+nput line 481.
+(pdftex.def)             Requested size: 136.14719pt x 97.3205pt.
+
+<Pictures/experiments/fig5/figB/tilt_time_b.png, id=253, 418.08195pt x 290.1640
+5pt>
+File: Pictures/experiments/fig5/figB/tilt_time_b.png Graphic file (type png)
+ <use Pictures/experiments/fig5/figB/tilt_time_b.png>
+Package pdftex.def Info: Pictures/experiments/fig5/figB/tilt_time_b.png used on
+ input line 481.
+(pdftex.def)             Requested size: 136.14719pt x 94.48814pt.
+
+<Pictures/experiments/fig5/figB/mag_time_b.png, id=254, 399.29175pt x 290.16405
+pt>
+File: Pictures/experiments/fig5/figB/mag_time_b.png Graphic file (type png)
+ <use Pictures/experiments/fig5/figB/mag_time_b.png>
+Package pdftex.def Info: Pictures/experiments/fig5/figB/mag_time_b.png used on 
+input line 481.
+(pdftex.def)             Requested size: 136.14719pt x 98.93782pt.
 File: Pictures/experiments/fig5/fig5_C2.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/fig5_C2.png>
 Package pdftex.def Info: Pictures/experiments/fig5/fig5_C2.png used on input li
-ne 447.
+ne 486.
 (pdftex.def)             Requested size: 123.77074pt x 123.7694pt.
 
-<Pictures/experiments/fig5/figC/p_cen_c.png, id=223, 406.1574pt x 278.60085pt>
+<Pictures/experiments/fig5/figC/p_cen_c.png, id=255, 406.1574pt x 278.60085pt>
 File: Pictures/experiments/fig5/figC/p_cen_c.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/figC/p_cen_c.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figC/p_cen_c.png used on inp
-ut line 448.
+ut line 487.
 (pdftex.def)             Requested size: 136.14719pt x 93.38817pt.
 
-<Pictures/experiments/fig5/figC/d_cen_C.png, id=224, 406.1574pt x 278.60085pt>
+<Pictures/experiments/fig5/figC/d_cen_C.png, id=256, 406.1574pt x 278.60085pt>
 File: Pictures/experiments/fig5/figC/d_cen_C.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/figC/d_cen_C.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figC/d_cen_C.png used on inp
-ut line 448.
+ut line 487.
 (pdftex.def)             Requested size: 136.14719pt x 93.38817pt.
 
-<Pictures/experiments/fig5/figC/d_flan_c.png, id=225, 406.1574pt x 278.60085pt>
+<Pictures/experiments/fig5/figC/d_flan_c.png, id=257, 406.1574pt x 278.60085pt>
 File: Pictures/experiments/fig5/figC/d_flan_c.png Graphic file (type png)
 <use Pictures/experiments/fig5/figC/d_flan_c.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figC/d_flan_c.png used on in
-put line 448.
+put line 487.
 (pdftex.def)             Requested size: 136.14719pt x 93.38817pt.
- [43 <./Pictures/experiments/fig5/figB/matrix_b.png> <./Pictures/experiments/fi
-g5/figB/p_cen_b.png> <./Pictures/experiments/fig5/figB/d_cen_b.png> <./Pictures
-/experiments/fig5/figB/d_flan_b.png>]
+
+Underfull \vbox (badness 3088) has occurred while \output is active []
+
+ [47 <./Pictures/experiments/fig5/figB/responseB.png> <./Pictures/experiments/f
+ig5/figB/tilt_time_b.png> <./Pictures/experiments/fig5/figB/mag_time_b.png>]
 File: Pictures/experiments/fig5/fig5_D2.png Graphic file (type png)
- <use Pictures/experiments/fig5/fig5_D2.png>
+
+<use Pictures/experiments/fig5/fig5_D2.png>
 Package pdftex.def Info: Pictures/experiments/fig5/fig5_D2.png used on input li
-ne 450.
+ne 489.
 (pdftex.def)             Requested size: 123.77074pt x 123.7694pt.
 
-<Pictures/experiments/fig5/figD/p_cen_d.png, id=234, 414.1071pt x 278.60085pt>
+<Pictures/experiments/fig5/figD/p_cen_d.png, id=264, 414.1071pt x 278.60085pt>
 File: Pictures/experiments/fig5/figD/p_cen_d.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/figD/p_cen_d.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figD/p_cen_d.png used on inp
-ut line 451.
+ut line 490.
 (pdftex.def)             Requested size: 136.14719pt x 91.59846pt.
 
-<Pictures/experiments/fig5/figD/d_cen_d.png, id=235, 406.1574pt x 286.1892pt>
+<Pictures/experiments/fig5/figD/d_cen_d.png, id=265, 406.1574pt x 286.1892pt>
 File: Pictures/experiments/fig5/figD/d_cen_d.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/figD/d_cen_d.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figD/d_cen_d.png used on inp
-ut line 451.
+ut line 490.
 (pdftex.def)             Requested size: 136.14719pt x 95.93182pt.
 
-<Pictures/experiments/fig5/figD/d_flan_d.png, id=236, 406.1574pt x 278.60085pt>
+<Pictures/experiments/fig5/figD/d_flan_d.png, id=266, 406.1574pt x 278.60085pt>
 File: Pictures/experiments/fig5/figD/d_flan_d.png Graphic file (type png)
 <use Pictures/experiments/fig5/figD/d_flan_d.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figD/d_flan_d.png used on in
-put line 451.
+put line 490.
 (pdftex.def)             Requested size: 136.14719pt x 93.38817pt.
- [44 <./Pictures/experiments/fig5/figC/p_cen_c.png> <./Pictures/experiments/fig
+ [48 <./Pictures/experiments/fig5/figC/p_cen_c.png> <./Pictures/experiments/fig
 5/figC/d_cen_C.png> <./Pictures/experiments/fig5/figC/d_flan_c.png>]
 File: Pictures/experiments/fig5/fig5_F2.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/fig5_F2.png>
 Package pdftex.def Info: Pictures/experiments/fig5/fig5_F2.png used on input li
-ne 453.
+ne 492.
 (pdftex.def)             Requested size: 123.77074pt x 123.7694pt.
 
-<Pictures/experiments/fig5/figF/p_cen_f.png, id=243, 406.1574pt x 286.1892pt>
+<Pictures/experiments/fig5/figF/p_cen_f.png, id=273, 406.1574pt x 286.1892pt>
 File: Pictures/experiments/fig5/figF/p_cen_f.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/figF/p_cen_f.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figF/p_cen_f.png used on inp
-ut line 454.
+ut line 493.
 (pdftex.def)             Requested size: 165.02661pt x 116.28152pt.
 
-<Pictures/experiments/fig5/figF/d_cen_f.png, id=244, 429.2838pt x 286.1892pt>
+<Pictures/experiments/fig5/figF/d_cen_f.png, id=274, 429.2838pt x 286.1892pt>
 File: Pictures/experiments/fig5/figF/d_cen_f.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/figF/d_cen_f.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figF/d_cen_f.png used on inp
-ut line 454.
+ut line 493.
 (pdftex.def)             Requested size: 165.02661pt x 110.01505pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [45 <./Pictures/experiments/fig5/figD/p_cen_d.png> <./Pictures/experiments/fig
+ [49 <./Pictures/experiments/fig5/figD/p_cen_d.png> <./Pictures/experiments/fig
 5/figD/d_cen_d.png> <./Pictures/experiments/fig5/figD/d_flan_d.png>]
-<Pictures/experiments/fig5/figF/d_flan_f1.png, id=251, 429.2838pt x 286.1892pt>
+<Pictures/experiments/fig5/figF/d_flan_f1.png, id=283, 429.2838pt x 286.1892pt>
 File: Pictures/experiments/fig5/figF/d_flan_f1.png Graphic file (type png)
 <use Pictures/experiments/fig5/figF/d_flan_f1.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figF/d_flan_f1.png used on i
-nput line 456.
+nput line 495.
 (pdftex.def)             Requested size: 202.15909pt x 134.77094pt.
 
-<Pictures/experiments/fig5/figF/d_flan_f2.png, id=252, 414.1071pt x 286.1892pt>
+<Pictures/experiments/fig5/figF/d_flan_f2.png, id=284, 429.2838pt x 286.1892pt>
 File: Pictures/experiments/fig5/figF/d_flan_f2.png Graphic file (type png)
 <use Pictures/experiments/fig5/figF/d_flan_f2.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figF/d_flan_f2.png used on i
-nput line 456.
-(pdftex.def)             Requested size: 202.15909pt x 139.71426pt.
+nput line 495.
+(pdftex.def)             Requested size: 202.15909pt x 134.77094pt.
 
-<Pictures/experiments/fig5/figF/d_flan_f3.png, id=253, 424.2249pt x 278.60085pt
+<Pictures/experiments/fig5/figF/d_flan_f3.png, id=285, 424.2249pt x 278.60085pt
 >
 File: Pictures/experiments/fig5/figF/d_flan_f3.png Graphic file (type png)
  <use Pictures/experiments/fig5/figF/d_flan_f3.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figF/d_flan_f3.png used on i
-nput line 456.
+nput line 495.
 (pdftex.def)             Requested size: 202.15909pt x 132.76187pt.
 
-<Pictures/experiments/fig5/figF/d_flan_f4.png, id=254, 424.2249pt x 286.1892pt>
+<Pictures/experiments/fig5/figF/d_flan_f4.png, id=286, 414.1071pt x 286.1892pt>
 File: Pictures/experiments/fig5/figF/d_flan_f4.png Graphic file (type png)
 <use Pictures/experiments/fig5/figF/d_flan_f4.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figF/d_flan_f4.png used on i
-nput line 456.
-(pdftex.def)             Requested size: 202.15909pt x 136.37796pt.
+nput line 495.
+(pdftex.def)             Requested size: 202.15909pt x 139.71426pt.
 
-<Pictures/experiments/fig5/figF/d_flan_f5.png, id=255, 424.2249pt x 286.1892pt>
+<Pictures/experiments/fig5/figF/d_flan_f5.png, id=287, 414.1071pt x 286.1892pt>
 File: Pictures/experiments/fig5/figF/d_flan_f5.png Graphic file (type png)
 <use Pictures/experiments/fig5/figF/d_flan_f5.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figF/d_flan_f5.png used on i
-nput line 456.
-(pdftex.def)             Requested size: 202.15909pt x 136.37796pt.
+nput line 495.
+(pdftex.def)             Requested size: 202.15909pt x 139.71426pt.
 
-<Pictures/experiments/fig5/figF/d_flan_f6.png, id=256, 424.2249pt x 286.1892pt>
+<Pictures/experiments/fig5/figF/d_flan_f6.png, id=288, 414.1071pt x 286.1892pt>
 File: Pictures/experiments/fig5/figF/d_flan_f6.png Graphic file (type png)
 <use Pictures/experiments/fig5/figF/d_flan_f6.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figF/d_flan_f6.png used on i
-nput line 456.
-(pdftex.def)             Requested size: 202.15909pt x 136.37796pt.
+nput line 495.
+(pdftex.def)             Requested size: 202.15909pt x 139.71426pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [46 <./Pictures/experiments/fig5/figF/p_cen_f.png> <./Pictures/experiments/fig
+ [50 <./Pictures/experiments/fig5/figF/p_cen_f.png> <./Pictures/experiments/fig
 5/figF/d_cen_f.png>]
-<Pictures/experiments/fig5/figF/a30/p_cen_f3.png, id=262, 406.1574pt x 286.1892
+<Pictures/experiments/fig5/figF/a30/p_cen_f3.png, id=294, 406.1574pt x 286.1892
 pt>
 File: Pictures/experiments/fig5/figF/a30/p_cen_f3.png Graphic file (type png)
  <use Pictures/experiments/fig5/figF/a30/p_cen_f3.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figF/a30/p_cen_f3.png used o
-n input line 458.
+n input line 497.
 (pdftex.def)             Requested size: 165.02661pt x 116.28152pt.
 
-<Pictures/experiments/fig5/figF/a30/d_cen_f3.png, id=263, 406.1574pt x 278.6008
+<Pictures/experiments/fig5/figF/a30/d_cen_f3.png, id=295, 406.1574pt x 278.6008
 5pt>
 File: Pictures/experiments/fig5/figF/a30/d_cen_f3.png Graphic file (type png)
  <use Pictures/experiments/fig5/figF/a30/d_cen_f3.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figF/a30/d_cen_f3.png used o
-n input line 458.
+n input line 497.
 (pdftex.def)             Requested size: 165.02661pt x 113.1983pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [47 <./Pictures/experiments/fig5/figF/d_flan_f1.png> <./Pictures/experiments/f
+ [51 <./Pictures/experiments/fig5/figF/d_flan_f1.png> <./Pictures/experiments/f
 ig5/figF/d_flan_f2.png> <./Pictures/experiments/fig5/figF/d_flan_f3.png> <./Pic
 tures/experiments/fig5/figF/d_flan_f4.png> <./Pictures/experiments/fig5/figF/d_
 flan_f5.png> <./Pictures/experiments/fig5/figF/d_flan_f6.png>]
-<Pictures/experiments/fig5/figF/a30/d_flan_f13.png, id=273, 424.2249pt x 286.18
+<Pictures/experiments/fig5/figF/a30/d_flan_f13.png, id=305, 424.2249pt x 286.18
 92pt>
 File: Pictures/experiments/fig5/figF/a30/d_flan_f13.png Graphic file (type png)
 
  <use Pictures/experiments/fig5/figF/a30/d_flan_f13.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figF/a30/d_flan_f13.png used
- on input line 460.
+ on input line 499.
 (pdftex.def)             Requested size: 202.15909pt x 136.37796pt.
 
-<Pictures/experiments/fig5/figF/a30/d_flan_f23.png, id=274, 424.2249pt x 286.18
+<Pictures/experiments/fig5/figF/a30/d_flan_f23.png, id=306, 424.2249pt x 286.18
 92pt>
 File: Pictures/experiments/fig5/figF/a30/d_flan_f23.png Graphic file (type png)
 
  <use Pictures/experiments/fig5/figF/a30/d_flan_f23.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figF/a30/d_flan_f23.png used
- on input line 460.
+ on input line 499.
 (pdftex.def)             Requested size: 202.15909pt x 136.37796pt.
 
-<Pictures/experiments/fig5/figF/a30/d_flan_f33.png, id=275, 424.2249pt x 286.18
+<Pictures/experiments/fig5/figF/a30/d_flan_f33.png, id=307, 424.2249pt x 286.18
 92pt>
 File: Pictures/experiments/fig5/figF/a30/d_flan_f33.png Graphic file (type png)
 
  <use Pictures/experiments/fig5/figF/a30/d_flan_f33.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figF/a30/d_flan_f33.png used
- on input line 460.
+ on input line 499.
 (pdftex.def)             Requested size: 202.15909pt x 136.37796pt.
 
-<Pictures/experiments/fig5/figF/a30/d_flan_f43.png, id=276, 424.2249pt x 286.18
+<Pictures/experiments/fig5/figF/a30/d_flan_f43.png, id=308, 424.2249pt x 286.18
 92pt>
 File: Pictures/experiments/fig5/figF/a30/d_flan_f43.png Graphic file (type png)
 
  <use Pictures/experiments/fig5/figF/a30/d_flan_f43.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figF/a30/d_flan_f43.png used
- on input line 460.
+ on input line 499.
 (pdftex.def)             Requested size: 202.15909pt x 136.37796pt.
 
-<Pictures/experiments/fig5/figF/a30/d_flan_f53.png, id=277, 424.2249pt x 286.18
+<Pictures/experiments/fig5/figF/a30/d_flan_f53.png, id=309, 424.2249pt x 286.18
 92pt>
 File: Pictures/experiments/fig5/figF/a30/d_flan_f53.png Graphic file (type png)
 
  <use Pictures/experiments/fig5/figF/a30/d_flan_f53.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figF/a30/d_flan_f53.png used
- on input line 460.
+ on input line 499.
 (pdftex.def)             Requested size: 202.15909pt x 136.37796pt.
 
-<Pictures/experiments/fig5/figF/a30/d_flan_f63.png, id=278, 424.2249pt x 286.18
+<Pictures/experiments/fig5/figF/a30/d_flan_f63.png, id=310, 424.2249pt x 286.18
 92pt>
 File: Pictures/experiments/fig5/figF/a30/d_flan_f63.png Graphic file (type png)
 
  <use Pictures/experiments/fig5/figF/a30/d_flan_f63.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figF/a30/d_flan_f63.png used
- on input line 460.
+ on input line 499.
 (pdftex.def)             Requested size: 202.15909pt x 136.37796pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [48 <./Pictures/experiments/fig5/figF/a30/p_cen_f3.png> <./Pictures/experiment
+ [52 <./Pictures/experiments/fig5/figF/a30/p_cen_f3.png> <./Pictures/experiment
 s/fig5/figF/a30/d_cen_f3.png>]
-<Pictures/experiments/fig5/figF/a60/p_cen_f6.png, id=284, 406.1574pt x 286.1892
+<Pictures/experiments/fig5/figF/a60/p_cen_f6.png, id=316, 406.1574pt x 286.1892
 pt>
 File: Pictures/experiments/fig5/figF/a60/p_cen_f6.png Graphic file (type png)
  <use Pictures/experiments/fig5/figF/a60/p_cen_f6.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figF/a60/p_cen_f6.png used o
-n input line 462.
+n input line 501.
 (pdftex.def)             Requested size: 165.02661pt x 116.28152pt.
 
-<Pictures/experiments/fig5/figF/a60/d_cen_f6.png, id=285, 406.1574pt x 278.6008
+<Pictures/experiments/fig5/figF/a60/d_cen_f6.png, id=317, 406.1574pt x 278.6008
 5pt>
 File: Pictures/experiments/fig5/figF/a60/d_cen_f6.png Graphic file (type png)
  <use Pictures/experiments/fig5/figF/a60/d_cen_f6.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figF/a60/d_cen_f6.png used o
-n input line 462.
+n input line 501.
 (pdftex.def)             Requested size: 165.02661pt x 113.1983pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [49 <./Pictures/experiments/fig5/figF/a30/d_flan_f13.png> <./Pictures/experime
+ [53 <./Pictures/experiments/fig5/figF/a30/d_flan_f13.png> <./Pictures/experime
 nts/fig5/figF/a30/d_flan_f23.png> <./Pictures/experiments/fig5/figF/a30/d_flan_
 f33.png> <./Pictures/experiments/fig5/figF/a30/d_flan_f43.png> <./Pictures/expe
 riments/fig5/figF/a30/d_flan_f53.png> <./Pictures/experiments/fig5/figF/a30/d_f
 lan_f63.png>]
-<Pictures/experiments/fig5/figF/a60/d_flan_f16.png, id=297, 424.2249pt x 278.60
+<Pictures/experiments/fig5/figF/a60/d_flan_f16.png, id=327, 424.2249pt x 278.60
 085pt>
 File: Pictures/experiments/fig5/figF/a60/d_flan_f16.png Graphic file (type png)
 
  <use Pictures/experiments/fig5/figF/a60/d_flan_f16.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figF/a60/d_flan_f16.png used
- on input line 464.
+ on input line 503.
 (pdftex.def)             Requested size: 202.15909pt x 132.76187pt.
 
-<Pictures/experiments/fig5/figF/a60/d_flan_f26.png, id=298, 424.2249pt x 278.60
+<Pictures/experiments/fig5/figF/a60/d_flan_f26.png, id=328, 424.2249pt x 278.60
 085pt>
 File: Pictures/experiments/fig5/figF/a60/d_flan_f26.png Graphic file (type png)
 
  <use Pictures/experiments/fig5/figF/a60/d_flan_f26.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figF/a60/d_flan_f26.png used
- on input line 464.
+ on input line 503.
 (pdftex.def)             Requested size: 202.15909pt x 132.76187pt.
 
-<Pictures/experiments/fig5/figF/a60/d_flan_f36.png, id=299, 424.2249pt x 278.60
+<Pictures/experiments/fig5/figF/a60/d_flan_f36.png, id=329, 424.2249pt x 278.60
 085pt>
 File: Pictures/experiments/fig5/figF/a60/d_flan_f36.png Graphic file (type png)
 
  <use Pictures/experiments/fig5/figF/a60/d_flan_f36.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figF/a60/d_flan_f36.png used
- on input line 464.
+ on input line 503.
 (pdftex.def)             Requested size: 202.15909pt x 132.76187pt.
 
-<Pictures/experiments/fig5/figF/a60/d_flan_f46.png, id=300, 434.3427pt x 286.18
+<Pictures/experiments/fig5/figF/a60/d_flan_f46.png, id=330, 434.3427pt x 286.18
 92pt>
 File: Pictures/experiments/fig5/figF/a60/d_flan_f46.png Graphic file (type png)
 
  <use Pictures/experiments/fig5/figF/a60/d_flan_f46.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figF/a60/d_flan_f46.png used
- on input line 464.
+ on input line 503.
 (pdftex.def)             Requested size: 202.15909pt x 133.20323pt.
 
-<Pictures/experiments/fig5/figF/a60/d_flan_f56.png, id=301, 434.3427pt x 286.18
+<Pictures/experiments/fig5/figF/a60/d_flan_f56.png, id=331, 434.3427pt x 286.18
 92pt>
 File: Pictures/experiments/fig5/figF/a60/d_flan_f56.png Graphic file (type png)
 
  <use Pictures/experiments/fig5/figF/a60/d_flan_f56.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figF/a60/d_flan_f56.png used
- on input line 464.
+ on input line 503.
 (pdftex.def)             Requested size: 202.15909pt x 133.20323pt.
 
-<Pictures/experiments/fig5/figF/a60/d_flan_f66.png, id=302, 424.2249pt x 278.60
+<Pictures/experiments/fig5/figF/a60/d_flan_f66.png, id=332, 424.2249pt x 278.60
 085pt>
 File: Pictures/experiments/fig5/figF/a60/d_flan_f66.png Graphic file (type png)
 
  <use Pictures/experiments/fig5/figF/a60/d_flan_f66.png>
 Package pdftex.def Info: Pictures/experiments/fig5/figF/a60/d_flan_f66.png used
- on input line 464.
+ on input line 503.
 (pdftex.def)             Requested size: 202.15909pt x 132.76187pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [50 <./Pictures/experiments/fig5/figF/a60/p_cen_f6.png> <./Pictures/experiment
+ [54 <./Pictures/experiments/fig5/figF/a60/p_cen_f6.png> <./Pictures/experiment
 s/fig5/figF/a60/d_cen_f6.png>]
-<Pictures/experiments/fig5/bar.png, id=308, 215.80624pt x 215.80624pt>
+<Pictures/experiments/fig5/bar.png, id=338, 215.80624pt x 215.80624pt>
 File: Pictures/experiments/fig5/bar.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/bar.png>
-Package pdftex.def Info: Pictures/experiments/fig5/bar.png used on input line 4
-75.
+Package pdftex.def Info: Pictures/experiments/fig5/bar.png used on input line 5
+14.
 (pdftex.def)             Requested size: 136.14719pt x 136.14963pt.
 
-<Pictures/experiments/fig5/bar_without.png, id=309, 215.80624pt x 215.80624pt>
+<Pictures/experiments/fig5/bar_without.png, id=339, 215.80624pt x 215.80624pt>
 File: Pictures/experiments/fig5/bar_without.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/bar_without.png>
 Package pdftex.def Info: Pictures/experiments/fig5/bar_without.png used on inpu
-t line 480.
+t line 519.
 (pdftex.def)             Requested size: 136.14719pt x 136.14963pt.
 
-<Pictures/experiments/fig5/bar_torus.png, id=310, 215.80624pt x 215.80624pt>
+<Pictures/experiments/fig5/bar_torus.png, id=340, 215.80624pt x 215.80624pt>
 File: Pictures/experiments/fig5/bar_torus.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/bar_torus.png>
 Package pdftex.def Info: Pictures/experiments/fig5/bar_torus.png used on input 
-line 485.
+line 524.
 (pdftex.def)             Requested size: 136.14719pt x 136.14963pt.
 
-<Pictures/experiments/fig5/line.png, id=311, 215.80624pt x 215.80624pt>
+<Pictures/experiments/fig5/line.png, id=341, 215.80624pt x 215.80624pt>
 File: Pictures/experiments/fig5/line.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/line.png>
 Package pdftex.def Info: Pictures/experiments/fig5/line.png used on input line 
-490.
+529.
 (pdftex.def)             Requested size: 136.14719pt x 136.14963pt.
 
-<Pictures/experiments/fig5/line_without.png, id=312, 215.80624pt x 215.80624pt>
+<Pictures/experiments/fig5/line_without.png, id=342, 215.80624pt x 215.80624pt>
 File: Pictures/experiments/fig5/line_without.png Graphic file (type png)
 <use Pictures/experiments/fig5/line_without.png>
 Package pdftex.def Info: Pictures/experiments/fig5/line_without.png used on inp
-ut line 495.
+ut line 534.
 (pdftex.def)             Requested size: 136.14719pt x 136.14963pt.
 
-<Pictures/experiments/fig5/line_torus.png, id=313, 215.80624pt x 215.80624pt>
+<Pictures/experiments/fig5/line_torus.png, id=343, 215.80624pt x 215.80624pt>
 File: Pictures/experiments/fig5/line_torus.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/line_torus.png>
 Package pdftex.def Info: Pictures/experiments/fig5/line_torus.png used on input
- line 500.
+ line 539.
 (pdftex.def)             Requested size: 136.14719pt x 136.14963pt.
 
-<Pictures/experiments/fig5/random.png, id=314, 215.80624pt x 215.80624pt>
+<Pictures/experiments/fig5/random.png, id=344, 215.80624pt x 215.80624pt>
 File: Pictures/experiments/fig5/random.png Graphic file (type png)
 
 <use Pictures/experiments/fig5/random.png>
 Package pdftex.def Info: Pictures/experiments/fig5/random.png used on input lin
-e 505.
+e 544.
 (pdftex.def)             Requested size: 136.14719pt x 136.14963pt.
 
-<Pictures/experiments/fig5/random_without.png, id=315, 215.80624pt x 215.80624p
+<Pictures/experiments/fig5/random_without.png, id=345, 215.80624pt x 215.80624p
 t>
 File: Pictures/experiments/fig5/random_without.png Graphic file (type png)
  <use Pictures/experiments/fig5/random_without.png>
 Package pdftex.def Info: Pictures/experiments/fig5/random_without.png used on i
-nput line 510.
+nput line 549.
 (pdftex.def)             Requested size: 136.14719pt x 136.14963pt.
 
-<Pictures/experiments/fig5/random_torus.png, id=316, 215.80624pt x 215.80624pt>
+<Pictures/experiments/fig5/random_torus.png, id=346, 215.80624pt x 215.80624pt>
 File: Pictures/experiments/fig5/random_torus.png Graphic file (type png)
 <use Pictures/experiments/fig5/random_torus.png>
 Package pdftex.def Info: Pictures/experiments/fig5/random_torus.png used on inp
-ut line 515.
+ut line 554.
 (pdftex.def)             Requested size: 136.14719pt x 136.14963pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [51 <./Pictures/experiments/fig5/figF/a60/d_flan_f16.png> <./Pictures/experime
+ [55 <./Pictures/experiments/fig5/figF/a60/d_flan_f16.png> <./Pictures/experime
 nts/fig5/figF/a60/d_flan_f26.png> <./Pictures/experiments/fig5/figF/a60/d_flan_
 f36.png> <./Pictures/experiments/fig5/figF/a60/d_flan_f46.png> <./Pictures/expe
 riments/fig5/figF/a60/d_flan_f56.png> <./Pictures/experiments/fig5/figF/a60/d_f
-lan_f66.png>]
-Underfull \vbox (badness 1681) has occurred while \output is active []
-
- [52 <./Pictures/experiments/fig5/bar.png> <./Pictures/experiments/fig5/bar_wit
-hout.png> <./Pictures/experiments/fig5/bar_torus.png> <./Pictures/experiments/f
-ig5/line.png> <./Pictures/experiments/fig5/line_without.png> <./Pictures/experi
-ments/fig5/line_torus.png> <./Pictures/experiments/fig5/random.png> <./Pictures
-/experiments/fig5/random_without.png> <./Pictures/experiments/fig5/random_torus
-.png>]
-<Pictures/experiments/elastica2/explainEl1.png, id=338, 317.185pt x 317.185pt>
-File: Pictures/experiments/elastica2/explainEl1.png Graphic file (type png)
-
-<use Pictures/experiments/elastica2/explainEl1.png>
-Package pdftex.def Info: Pictures/experiments/elastica2/explainEl1.png used on 
-input line 537.
-(pdftex.def)             Requested size: 206.28249pt x 206.28879pt.
-
-<Pictures/experiments/elastica2/explainEl2.png, id=339, 317.185pt x 317.185pt>
-File: Pictures/experiments/elastica2/explainEl2.png Graphic file (type png)
-
-<use Pictures/experiments/elastica2/explainEl2.png>
-Package pdftex.def Info: Pictures/experiments/elastica2/explainEl2.png used on 
-input line 542.
-(pdftex.def)             Requested size: 206.28249pt x 206.28879pt.
-
-<Pictures/experiments/elastica2/explainEl3.png, id=340, 317.185pt x 317.185pt>
-File: Pictures/experiments/elastica2/explainEl3.png Graphic file (type png)
-
-<use Pictures/experiments/elastica2/explainEl3.png>
-Package pdftex.def Info: Pictures/experiments/elastica2/explainEl3.png used on 
-input line 547.
-(pdftex.def)             Requested size: 206.28249pt x 206.28879pt.
-
-<Pictures/experiments/elastica2/explainEl4.png, id=341, 317.185pt x 317.185pt>
-File: Pictures/experiments/elastica2/explainEl4.png Graphic file (type png)
-
-<use Pictures/experiments/elastica2/explainEl4.png>
-Package pdftex.def Info: Pictures/experiments/elastica2/explainEl4.png used on 
-input line 552.
-(pdftex.def)             Requested size: 206.28249pt x 206.28879pt.
-
-<Pictures/experiments/exp1_fig2/2bars.png, id=342, 253.748pt x 253.748pt>
+lan_f66.png>] [56 <./Pictures/experiments/fig5/bar.png> <./Pictures/experiments
+/fig5/bar_without.png> <./Pictures/experiments/fig5/bar_torus.png> <./Pictures/
+experiments/fig5/line.png> <./Pictures/experiments/fig5/line_without.png> <./Pi
+ctures/experiments/fig5/line_torus.png> <./Pictures/experiments/fig5/random.png
+> <./Pictures/experiments/fig5/random_without.png> <./Pictures/experiments/fig5
+/random_torus.png>]
+<Pictures/experiments/exp1_fig2/2bars.png, id=369, 253.748pt x 253.748pt>
 File: Pictures/experiments/exp1_fig2/2bars.png Graphic file (type png)
 
 <use Pictures/experiments/exp1_fig2/2bars.png>
 Package pdftex.def Info: Pictures/experiments/exp1_fig2/2bars.png used on input
- line 557.
+ line 579.
 (pdftex.def)             Requested size: 206.28249pt x 206.28975pt.
 
-<Pictures/experiments/exp1_fig2/el_ener.png, id=343, 400.3758pt x 288.71864pt>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [57]
+<Pictures/experiments/exp1_fig2/el_ener.png, id=373, 400.3758pt x 288.71864pt>
 File: Pictures/experiments/exp1_fig2/el_ener.png Graphic file (type png)
 
 <use Pictures/experiments/exp1_fig2/el_ener.png>
 Package pdftex.def Info: Pictures/experiments/exp1_fig2/el_ener.png used on inp
-ut line 558.
+ut line 583.
 (pdftex.def)             Requested size: 202.15909pt x 145.78633pt.
 
-<Pictures/experiments/exp1_fig2/h_add.png, id=344, 403.62794pt x 288.71864pt>
+<Pictures/experiments/exp1_fig2/h_add.png, id=374, 403.62794pt x 288.71864pt>
 File: Pictures/experiments/exp1_fig2/h_add.png Graphic file (type png)
 
 <use Pictures/experiments/exp1_fig2/h_add.png>
 Package pdftex.def Info: Pictures/experiments/exp1_fig2/h_add.png used on input
- line 558.
+ line 583.
 (pdftex.def)             Requested size: 202.15909pt x 144.60567pt.
 
-<Pictures/experiments/exp1_fig2/h_mul.png, id=345, 403.62794pt x 288.71864pt>
+<Pictures/experiments/exp1_fig2/h_mul.png, id=375, 403.62794pt x 288.71864pt>
 File: Pictures/experiments/exp1_fig2/h_mul.png Graphic file (type png)
 
 <use Pictures/experiments/exp1_fig2/h_mul.png>
 Package pdftex.def Info: Pictures/experiments/exp1_fig2/h_mul.png used on input
- line 558.
+ line 583.
 (pdftex.def)             Requested size: 202.15909pt x 144.60567pt.
 
-<Pictures/experiments/exp1_fig2/cen.png, id=346, 405.4347pt x 288.71864pt>
+<Pictures/experiments/exp1_fig2/cen.png, id=376, 405.4347pt x 288.71864pt>
 File: Pictures/experiments/exp1_fig2/cen.png Graphic file (type png)
 
 <use Pictures/experiments/exp1_fig2/cen.png>
 Package pdftex.def Info: Pictures/experiments/exp1_fig2/cen.png used on input l
-ine 558.
+ine 583.
 (pdftex.def)             Requested size: 202.15909pt x 143.96246pt.
 
-<Pictures/experiments/exp1_fig2/ad_comb.png, id=347, 418.80466pt x 288.71864pt>
+<Pictures/experiments/exp1_fig2/ad_comb.png, id=377, 418.80466pt x 288.71864pt>
 File: Pictures/experiments/exp1_fig2/ad_comb.png Graphic file (type png)
 <use Pictures/experiments/exp1_fig2/ad_comb.png>
 Package pdftex.def Info: Pictures/experiments/exp1_fig2/ad_comb.png used on inp
-ut line 558.
+ut line 583.
 (pdftex.def)             Requested size: 202.15909pt x 139.36754pt.
 
-<Pictures/experiments/exp1_fig2/mul_comb.png, id=348, 405.4347pt x 288.71864pt>
+<Pictures/experiments/exp1_fig2/mul_comb.png, id=378, 405.4347pt x 288.71864pt>
 File: Pictures/experiments/exp1_fig2/mul_comb.png Graphic file (type png)
 <use Pictures/experiments/exp1_fig2/mul_comb.png>
 Package pdftex.def Info: Pictures/experiments/exp1_fig2/mul_comb.png used on in
-put line 558.
+put line 583.
 (pdftex.def)             Requested size: 202.15909pt x 143.96246pt.
- [53 <./Pictures/experiments/elastica2/explainEl1.png> <./Pictures/experiments/
-elastica2/explainEl2.png> <./Pictures/experiments/elastica2/explainEl3.png> <./
-Pictures/experiments/elastica2/explainEl4.png>]
-<Pictures/experiments/exp1_fig2/ADD_vs_MULT.png, id=356, 400.73715pt x 277.1554
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [58 <./Pictures/experiments/exp1_fig2/2bars.png>]
+Underfull \vbox (badness 1178) has occurred while \output is active []
+
+ [59 <./Pictures/experiments/exp1_fig2/el_ener.png> <./Pictures/experiments/exp
+1_fig2/h_add.png> <./Pictures/experiments/exp1_fig2/h_mul.png> <./Pictures/expe
+riments/exp1_fig2/cen.png> <./Pictures/experiments/exp1_fig2/ad_comb.png> <./Pi
+ctures/experiments/exp1_fig2/mul_comb.png>]
+<Pictures/experiments/exp1_fig2/ADD_vs_MULT.png, id=392, 400.73715pt x 277.1554
 6pt>
 File: Pictures/experiments/exp1_fig2/ADD_vs_MULT.png Graphic file (type png)
  <use Pictures/experiments/exp1_fig2/ADD_vs_MULT.png>
 Package pdftex.def Info: Pictures/experiments/exp1_fig2/ADD_vs_MULT.png used on
- input line 559.
+ input line 587.
 (pdftex.def)             Requested size: 330.05322pt x 228.27545pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [54 <./Pictures/experiments/exp1_fig2/2bars.png>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [55 <./Pictures/experiments/exp1_fig2/el_ener.png> <./Pictures/experiments/exp
-1_fig2/h_add.png> <./Pictures/experiments/exp1_fig2/h_mul.png> <./Pictures/expe
-riments/exp1_fig2/cen.png> <./Pictures/experiments/exp1_fig2/ad_comb.png> <./Pi
-ctures/experiments/exp1_fig2/mul_comb.png>]
-<Pictures/experiments/rnn/simple.png, id=371, 444.4605pt x 295.22295pt>
+ [60 <./Pictures/experiments/exp1_fig2/ADD_vs_MULT.png>]
+<Pictures/experiments/rnn/simple.png, id=397, 444.4605pt x 295.22295pt>
 File: Pictures/experiments/rnn/simple.png Graphic file (type png)
 
 <use Pictures/experiments/rnn/simple.png>
 Package pdftex.def Info: Pictures/experiments/rnn/simple.png used on input line
- 571.
+ 601.
 (pdftex.def)             Requested size: 206.28249pt x 137.01596pt.
-
-Underfull \vbox (badness 4492) has occurred while \output is active []
-
- [56 <./Pictures/experiments/exp1_fig2/ADD_vs_MULT.png>] [57 <./Pictures/experi
-ments/rnn/simple.png>] [58
+ [61 <./Pictures/experiments/rnn/simple.png>] [62
 
 ]
 Chapter 7.
-[59] [60
+[63] [64
 
 ]
 Chapter 8.
 
-Overfull \hbox (31.88782pt too wide) in paragraph at lines 630--633
+Overfull \hbox (31.88782pt too wide) in paragraph at lines 660--663
  [][] 
  []
 
-[61] [62]
+[65] [66]
 Chapter 9.
-(./skeleton.bbl [63
+(./skeleton.bbl [67
 
-] [64
+] [68
 
 ]
 Underfull \hbox (badness 1067) in paragraph at lines 9--14
@@ -1614,7 +1654,7 @@ Missing character: There is no ù in font cmr12!
 
 Underfull \vbox (badness 3078) has occurred while \output is active []
 
- [65]
+ [69]
 Underfull \hbox (badness 1694) in paragraph at lines 63--67
 []\OT1/cmr/m/n/12 Sander Keemink.  Elas-tica code.  $\OT1/cmtt/m/n/12 https : /
  / github . com / swkeemink /
@@ -1623,7 +1663,7 @@ Underfull \hbox (badness 1694) in paragraph at lines 63--67
 Missing character: There is no ‚ in font cmti12!
 Missing character: There is no Ä in font cmti12!
 Missing character: There is no î in font cmti12!
-[66]) [67] (./skeleton.aux)
+[70]) [71] (./skeleton.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1632,29 +1672,27 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 14018 strings out of 495063
- 265396 string characters out of 3182201
- 312203 words of memory out of 3000000
- 16793 multiletter control sequences out of 15000+200000
- 11251 words of font info for 40 fonts, out of 3000000 for 9000
- 14 hyphenation exceptions out of 8191
- 58i,9n,61p,1630b,722s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-ti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.p
-fb>
-Output written on skeleton.pdf (67 pages, 10076518 bytes).
+ 15744 strings out of 493054
+ 311725 string characters out of 6140585
+ 358840 words of memory out of 5000000
+ 18840 multiletter control sequences out of 15000+600000
+ 11251 words of font info for 40 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 57i,9n,63p,1630b,756s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on skeleton.pdf (71 pages, 12599521 bytes).
 PDF statistics:
- 459 PDF objects out of 1000 (max. 8388607)
- 194 compressed objects within 2 object streams
+ 482 PDF objects out of 1000 (max. 8388607)
+ 202 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 500 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 525 words of extra memory for PDF output out of 10000 (max. 10000000)
 

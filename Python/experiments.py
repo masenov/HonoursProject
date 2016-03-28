@@ -55,8 +55,8 @@ def calculateMatrixB(nosn=100, E0=4):
 			theta2 = orientations4[second_neuron[0],second_neuron[1],second_neuron[2]]
 			energy = en.E(theta1,theta2,[x,y])
 			distance = np.sqrt(np.power(x,2) + np.power(y,2))
-			#matrix[i,j] = -(energy-E0)/distance
 			matrix[i,j] = -(energy-E0)/distance
+			#matrix[i,j] = -(energy-E0)
 			matrix[j,i] = matrix[i,j]
 	#showWeights(matrix, fig_size=10)
 	matrix[0:nosn,:] = 0
@@ -170,5 +170,5 @@ def calculateMatrixF(locations, nosn=100, E0=4):
 			matrix[i,j] = -(energy-E0)/distance
 			matrix[j,i] = matrix[i,j]
 	showWeights(matrix, fig_size=10)
-	matrix[nosn:,:] = 0
+	#matrix[nosn:,:] = 0
 	return matrix

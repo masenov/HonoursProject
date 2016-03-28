@@ -21,16 +21,15 @@
 \contentsline {section}{\numberline {5.4}Final model changes}{36}
 \contentsline {chapter}{\numberline {6}Experiments}{37}
 \contentsline {section}{\numberline {6.1}Model setup}{37}
-\contentsline {section}{\numberline {6.2}Static vs Dynamic models}{41}
-\contentsline {section}{\numberline {6.3}Tilt effects}{42}
-\contentsline {subsection}{\numberline {6.3.1}Tilt effect 1}{43}
-\contentsline {subsection}{\numberline {6.3.2}Tilt effect 2}{44}
-\contentsline {subsection}{\numberline {6.3.3}Tilt effect 3}{44}
-\contentsline {subsection}{\numberline {6.3.4}Tilt effect 4}{45}
-\contentsline {section}{\numberline {6.4}Pop out effects}{52}
-\contentsline {section}{\numberline {6.5}Additive and Multiplicative model}{52}
-\contentsline {section}{\numberline {6.6}Recurrent Neural Network}{56}
-\contentsline {chapter}{\numberline {7}Evaluation}{59}
-\contentsline {chapter}{\numberline {8}Timeline}{61}
-\contentsline {chapter}{\numberline {9}Conclusions}{63}
-\contentsline {chapter}{Bibliography}{65}
+\contentsline {section}{\numberline {6.2}Tilt illusions}{44}
+\contentsline {subsection}{\numberline {6.2.1}Tilt effect 1}{44}
+\contentsline {subsection}{\numberline {6.2.2}Tilt effect 2}{48}
+\contentsline {subsection}{\numberline {6.2.3}Tilt effect 3}{48}
+\contentsline {subsection}{\numberline {6.2.4}Tilt effect 4}{49}
+\contentsline {section}{\numberline {6.3}Pop out effects and contour extraction}{56}
+\contentsline {section}{\numberline {6.4}Additive and Multiplicative rules}{56}
+\contentsline {section}{\numberline {6.5}Recurrent Neural Network}{60}
+\contentsline {chapter}{\numberline {7}Evaluation}{63}
+\contentsline {chapter}{\numberline {8}Timeline}{65}
+\contentsline {chapter}{\numberline {9}Conclusions}{67}
+\contentsline {chapter}{Bibliography}{69}
